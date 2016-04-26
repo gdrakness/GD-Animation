@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "GDMainViewController.h"
+#import "GDSetingViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +17,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    UIViewController *mainView = [[GDMainViewController alloc]init];
+    UIViewController *leftView = [[GDSetingViewController alloc]init];
+    
+    UINavigationController *mainNavC = [[UINavigationController alloc]initWithRootViewController:mainView];
+    UINavigationController *leftNavC = [[UINavigationController alloc]initWithRootViewController:leftView];
+    
+    [[UIBarButtonItem appearance]setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
+    
+    
     return YES;
 }
 

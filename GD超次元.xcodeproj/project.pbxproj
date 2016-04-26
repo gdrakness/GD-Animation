@@ -11,12 +11,15 @@
 		873A5BC46D72F4C8FBACF7EF /* libPods-GD超次元Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8861B4731EAB7257101CE163 /* libPods-GD超次元Tests.a */; };
 		D71655A21CCE73FE003CE4B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D71655A11CCE73FE003CE4B8 /* main.m */; };
 		D71655A51CCE73FE003CE4B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D71655A41CCE73FE003CE4B8 /* AppDelegate.m */; };
-		D71655A81CCE73FE003CE4B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71655A71CCE73FE003CE4B8 /* ViewController.m */; };
 		D71655AB1CCE73FE003CE4B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71655A91CCE73FE003CE4B8 /* Main.storyboard */; };
 		D71655AD1CCE73FE003CE4B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D71655AC1CCE73FE003CE4B8 /* Assets.xcassets */; };
 		D71655B01CCE73FE003CE4B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71655AE1CCE73FE003CE4B8 /* LaunchScreen.storyboard */; };
 		D71655BB1CCE73FE003CE4B8 /* GD___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D71655BA1CCE73FE003CE4B8 /* GD___Tests.m */; };
 		D71655C61CCE73FE003CE4B8 /* GD___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D71655C51CCE73FE003CE4B8 /* GD___UITests.m */; };
+		D716569C1CCE918E003CE4B8 /* GDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D716569B1CCE918E003CE4B8 /* GDMainViewController.m */; };
+		D71656A71CCE9699003CE4B8 /* GDSetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656A61CCE9699003CE4B8 /* GDSetingViewController.m */; };
+		D71656AB1CCE9C57003CE4B8 /* GDNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656AA1CCE9C57003CE4B8 /* GDNetWorkManager.m */; };
+		D71656AD1CCE9E0B003CE4B8 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656AC1CCE9E0B003CE4B8 /* libAFNetworking.a */; };
 		DE1256EE700CC31CD4702BF2 /* libPods-GD超次元.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D27DDE861046152EDF4668E /* libPods-GD超次元.a */; };
 /* End PBXBuildFile section */
 
@@ -49,8 +52,6 @@
 		D71655A11CCE73FE003CE4B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D71655A31CCE73FE003CE4B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D71655A41CCE73FE003CE4B8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D71655A61CCE73FE003CE4B8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../../ViewController.h; sourceTree = "<group>"; };
-		D71655A71CCE73FE003CE4B8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../../ViewController.m; sourceTree = "<group>"; };
 		D71655AA1CCE73FE003CE4B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D71655AC1CCE73FE003CE4B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D71655AF1CCE73FE003CE4B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +62,14 @@
 		D71655C11CCE73FE003CE4B8 /* GD超次元UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GD超次元UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71655C51CCE73FE003CE4B8 /* GD___UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GD___UITests.m"; sourceTree = "<group>"; };
 		D71655C71CCE73FE003CE4B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D716569A1CCE918E003CE4B8 /* GDMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDMainViewController.h; sourceTree = "<group>"; };
+		D716569B1CCE918E003CE4B8 /* GDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDMainViewController.m; sourceTree = "<group>"; };
+		D71656A51CCE9699003CE4B8 /* GDSetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDSetingViewController.h; sourceTree = "<group>"; };
+		D71656A61CCE9699003CE4B8 /* GDSetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDSetingViewController.m; sourceTree = "<group>"; };
+		D71656A81CCE9862003CE4B8 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D71656A91CCE9C57003CE4B8 /* GDNetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDNetWorkManager.h; sourceTree = "<group>"; };
+		D71656AA1CCE9C57003CE4B8 /* GDNetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDNetWorkManager.m; sourceTree = "<group>"; };
+		D71656AC1CCE9E0B003CE4B8 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
 		D721750E4E15F54EC19FD3D4 /* Pods-GD超次元UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GD超次元UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GD超次元UITests/Pods-GD超次元UITests.release.xcconfig"; sourceTree = "<group>"; };
 		E6C1DC9F184FC589A78F1DFF /* Pods-GD超次元Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GD超次元Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GD超次元Tests/Pods-GD超次元Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71656AD1CCE9E0B003CE4B8 /* libAFNetworking.a in Frameworks */,
 				DE1256EE700CC31CD4702BF2 /* libPods-GD超次元.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +119,7 @@
 		2E96D9A89E298E8A838B85C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D71656AC1CCE9E0B003CE4B8 /* libAFNetworking.a */,
 				3D27DDE861046152EDF4668E /* libPods-GD超次元.a */,
 				8861B4731EAB7257101CE163 /* libPods-GD超次元Tests.a */,
 				81BD9A983DF8C645833F1251 /* libPods-GD超次元UITests.a */,
@@ -143,6 +154,7 @@
 			children = (
 				D71655A31CCE73FE003CE4B8 /* AppDelegate.h */,
 				D71655A41CCE73FE003CE4B8 /* AppDelegate.m */,
+				D71656A81CCE9862003CE4B8 /* PrefixHeader.pch */,
 				D71656751CCE8F85003CE4B8 /* Classes */,
 				D71655A01CCE73FE003CE4B8 /* Supporting Files */,
 			);
@@ -222,14 +234,14 @@
 		D716567A1CCE8F85003CE4B8 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				D716569D1CCE9655003CE4B8 /* SettingControl */,
+				D71656A11CCE9655003CE4B8 /* TimetableControl */,
+				D716568B1CCE8F85003CE4B8 /* MainControl */,
 				D716567B1CCE8F85003CE4B8 /* ClassControl */,
 				D716567F1CCE8F85003CE4B8 /* CompositorControl */,
 				D71656831CCE8F85003CE4B8 /* GroupControl */,
 				D71656871CCE8F85003CE4B8 /* InformationControl */,
-				D716568B1CCE8F85003CE4B8 /* MainControl */,
 				D716568F1CCE8F85003CE4B8 /* SearchControl */,
-				D71656931CCE8F85003CE4B8 /* SettingControl */,
-				D71656941CCE8F85003CE4B8 /* TimetableControl */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -371,6 +383,8 @@
 		D716568C1CCE8F85003CE4B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D716569A1CCE918E003CE4B8 /* GDMainViewController.h */,
+				D716569B1CCE918E003CE4B8 /* GDMainViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -420,25 +434,9 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D71656931CCE8F85003CE4B8 /* SettingControl */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SettingControl;
-			sourceTree = "<group>";
-		};
-		D71656941CCE8F85003CE4B8 /* TimetableControl */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TimetableControl;
-			sourceTree = "<group>";
-		};
 		D71656951CCE8F85003CE4B8 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				D71655A61CCE73FE003CE4B8 /* ViewController.h */,
-				D71655A71CCE73FE003CE4B8 /* ViewController.m */,
 				D71655A91CCE73FE003CE4B8 /* Main.storyboard */,
 				D71655AE1CCE73FE003CE4B8 /* LaunchScreen.storyboard */,
 			);
@@ -448,8 +446,74 @@
 		D71656961CCE8F85003CE4B8 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D71656A91CCE9C57003CE4B8 /* GDNetWorkManager.h */,
+				D71656AA1CCE9C57003CE4B8 /* GDNetWorkManager.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		D716569D1CCE9655003CE4B8 /* SettingControl */ = {
+			isa = PBXGroup;
+			children = (
+				D716569E1CCE9655003CE4B8 /* Controller */,
+				D716569F1CCE9655003CE4B8 /* Model */,
+				D71656A01CCE9655003CE4B8 /* View */,
+			);
+			path = SettingControl;
+			sourceTree = "<group>";
+		};
+		D716569E1CCE9655003CE4B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D71656A51CCE9699003CE4B8 /* GDSetingViewController.h */,
+				D71656A61CCE9699003CE4B8 /* GDSetingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D716569F1CCE9655003CE4B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D71656A01CCE9655003CE4B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D71656A11CCE9655003CE4B8 /* TimetableControl */ = {
+			isa = PBXGroup;
+			children = (
+				D71656A21CCE9655003CE4B8 /* Controller */,
+				D71656A31CCE9655003CE4B8 /* Model */,
+				D71656A41CCE9655003CE4B8 /* View */,
+			);
+			path = TimetableControl;
+			sourceTree = "<group>";
+		};
+		D71656A21CCE9655003CE4B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D71656A31CCE9655003CE4B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D71656A41CCE9655003CE4B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,6 +586,7 @@
 		D71655951CCE73FE003CE4B8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GD;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = gdarkness;
 				TargetAttributes = {
@@ -716,9 +781,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D71655A81CCE73FE003CE4B8 /* ViewController.m in Sources */,
+				D716569C1CCE918E003CE4B8 /* GDMainViewController.m in Sources */,
 				D71655A51CCE73FE003CE4B8 /* AppDelegate.m in Sources */,
+				D71656AB1CCE9C57003CE4B8 /* GDNetWorkManager.m in Sources */,
 				D71655A21CCE73FE003CE4B8 /* main.m in Sources */,
+				D71656A71CCE9699003CE4B8 /* GDSetingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,8 +927,14 @@
 			baseConfigurationReference = 92D05EBCBE12BB958E71B5C3 /* Pods-GD超次元.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SOURCE_ROOT)/$(PRODUCT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = "GD超次元/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$CONFIGURATION_BUILD_DIR/AFNetworking\"",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "gdarkness.GD---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -872,8 +945,14 @@
 			baseConfigurationReference = D2A4327AD280E56DC0E6379B /* Pods-GD超次元.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SOURCE_ROOT)/$(PRODUCT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = "GD超次元/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$CONFIGURATION_BUILD_DIR/AFNetworking\"",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "gdarkness.GD---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
