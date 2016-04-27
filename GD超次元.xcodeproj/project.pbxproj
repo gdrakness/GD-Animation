@@ -20,6 +20,20 @@
 		D71656A71CCE9699003CE4B8 /* GDSetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656A61CCE9699003CE4B8 /* GDSetingViewController.m */; };
 		D71656AB1CCE9C57003CE4B8 /* GDNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656AA1CCE9C57003CE4B8 /* GDNetWorkManager.m */; };
 		D71656AD1CCE9E0B003CE4B8 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656AC1CCE9E0B003CE4B8 /* libAFNetworking.a */; };
+		D71656B71CCFC2C2003CE4B8 /* libMasonry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656AE1CCFC2C2003CE4B8 /* libMasonry.a */; };
+		D71656B81CCFC2C2003CE4B8 /* libMJExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656AF1CCFC2C2003CE4B8 /* libMJExtension.a */; };
+		D71656B91CCFC2C2003CE4B8 /* libMMDrawerController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B01CCFC2C2003CE4B8 /* libMMDrawerController.a */; };
+		D71656BA1CCFC2C2003CE4B8 /* libPods-GD超次元Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B11CCFC2C2003CE4B8 /* libPods-GD超次元Tests.a */; };
+		D71656BB1CCFC2C2003CE4B8 /* libPods-GD超次元UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B21CCFC2C2003CE4B8 /* libPods-GD超次元UITests.a */; };
+		D71656BC1CCFC2C2003CE4B8 /* libSDCycleScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B31CCFC2C2003CE4B8 /* libSDCycleScrollView.a */; };
+		D71656BD1CCFC2C2003CE4B8 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B41CCFC2C2003CE4B8 /* libSDWebImage.a */; };
+		D71656BE1CCFC2C2003CE4B8 /* libSVProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B51CCFC2C2003CE4B8 /* libSVProgressHUD.a */; };
+		D71656BF1CCFC2C2003CE4B8 /* libWMPageController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B61CCFC2C2003CE4B8 /* libWMPageController.a */; };
+		D71656C21CCFC89A003CE4B8 /* GDClassTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656C11CCFC89A003CE4B8 /* GDClassTableViewController.m */; };
+		D71656C51CCFC918003CE4B8 /* GDInformationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656C41CCFC918003CE4B8 /* GDInformationTableViewController.m */; };
+		D71656C81CCFC952003CE4B8 /* GDGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656C71CCFC952003CE4B8 /* GDGroupViewController.m */; };
+		D71656CB1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656CA1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m */; };
+		D71656D11CCFE00A003CE4B8 /* GDRequestMCDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656D01CCFE00A003CE4B8 /* GDRequestMCDataModel.m */; };
 		DE1256EE700CC31CD4702BF2 /* libPods-GD超次元.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D27DDE861046152EDF4668E /* libPods-GD超次元.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +84,25 @@
 		D71656A91CCE9C57003CE4B8 /* GDNetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDNetWorkManager.h; sourceTree = "<group>"; };
 		D71656AA1CCE9C57003CE4B8 /* GDNetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDNetWorkManager.m; sourceTree = "<group>"; };
 		D71656AC1CCE9E0B003CE4B8 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
+		D71656AE1CCFC2C2003CE4B8 /* libMasonry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMasonry.a; path = "Pods/../build/Debug-iphoneos/Masonry/libMasonry.a"; sourceTree = "<group>"; };
+		D71656AF1CCFC2C2003CE4B8 /* libMJExtension.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMJExtension.a; path = "Pods/../build/Debug-iphoneos/MJExtension/libMJExtension.a"; sourceTree = "<group>"; };
+		D71656B01CCFC2C2003CE4B8 /* libMMDrawerController.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMMDrawerController.a; path = "Pods/../build/Debug-iphoneos/MMDrawerController/libMMDrawerController.a"; sourceTree = "<group>"; };
+		D71656B11CCFC2C2003CE4B8 /* libPods-GD超次元Tests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-GD超次元Tests.a"; path = "Pods/../build/Debug-iphoneos/libPods-GD超次元Tests.a"; sourceTree = "<group>"; };
+		D71656B21CCFC2C2003CE4B8 /* libPods-GD超次元UITests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-GD超次元UITests.a"; path = "Pods/../build/Debug-iphoneos/libPods-GD超次元UITests.a"; sourceTree = "<group>"; };
+		D71656B31CCFC2C2003CE4B8 /* libSDCycleScrollView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDCycleScrollView.a; path = "Pods/../build/Debug-iphoneos/SDCycleScrollView/libSDCycleScrollView.a"; sourceTree = "<group>"; };
+		D71656B41CCFC2C2003CE4B8 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "Pods/../build/Debug-iphoneos/SDWebImage/libSDWebImage.a"; sourceTree = "<group>"; };
+		D71656B51CCFC2C2003CE4B8 /* libSVProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSVProgressHUD.a; path = "Pods/../build/Debug-iphoneos/SVProgressHUD/libSVProgressHUD.a"; sourceTree = "<group>"; };
+		D71656B61CCFC2C2003CE4B8 /* libWMPageController.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWMPageController.a; path = "Pods/../build/Debug-iphoneos/WMPageController/libWMPageController.a"; sourceTree = "<group>"; };
+		D71656C01CCFC89A003CE4B8 /* GDClassTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDClassTableViewController.h; sourceTree = "<group>"; };
+		D71656C11CCFC89A003CE4B8 /* GDClassTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDClassTableViewController.m; sourceTree = "<group>"; };
+		D71656C31CCFC918003CE4B8 /* GDInformationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformationTableViewController.h; sourceTree = "<group>"; };
+		D71656C41CCFC918003CE4B8 /* GDInformationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInformationTableViewController.m; sourceTree = "<group>"; };
+		D71656C61CCFC952003CE4B8 /* GDGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDGroupViewController.h; sourceTree = "<group>"; };
+		D71656C71CCFC952003CE4B8 /* GDGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDGroupViewController.m; sourceTree = "<group>"; };
+		D71656C91CCFC9DB003CE4B8 /* GDCompositorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDCompositorTableViewController.h; sourceTree = "<group>"; };
+		D71656CA1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDCompositorTableViewController.m; sourceTree = "<group>"; };
+		D71656CF1CCFE00A003CE4B8 /* GDRequestMCDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDRequestMCDataModel.h; sourceTree = "<group>"; };
+		D71656D01CCFE00A003CE4B8 /* GDRequestMCDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDRequestMCDataModel.m; sourceTree = "<group>"; };
 		D721750E4E15F54EC19FD3D4 /* Pods-GD超次元UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GD超次元UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GD超次元UITests/Pods-GD超次元UITests.release.xcconfig"; sourceTree = "<group>"; };
 		E6C1DC9F184FC589A78F1DFF /* Pods-GD超次元Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GD超次元Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GD超次元Tests/Pods-GD超次元Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +112,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71656B71CCFC2C2003CE4B8 /* libMasonry.a in Frameworks */,
+				D71656B81CCFC2C2003CE4B8 /* libMJExtension.a in Frameworks */,
+				D71656B91CCFC2C2003CE4B8 /* libMMDrawerController.a in Frameworks */,
+				D71656BA1CCFC2C2003CE4B8 /* libPods-GD超次元Tests.a in Frameworks */,
+				D71656BB1CCFC2C2003CE4B8 /* libPods-GD超次元UITests.a in Frameworks */,
+				D71656BC1CCFC2C2003CE4B8 /* libSDCycleScrollView.a in Frameworks */,
+				D71656BD1CCFC2C2003CE4B8 /* libSDWebImage.a in Frameworks */,
+				D71656BE1CCFC2C2003CE4B8 /* libSVProgressHUD.a in Frameworks */,
+				D71656BF1CCFC2C2003CE4B8 /* libWMPageController.a in Frameworks */,
 				D71656AD1CCE9E0B003CE4B8 /* libAFNetworking.a in Frameworks */,
 				DE1256EE700CC31CD4702BF2 /* libPods-GD超次元.a in Frameworks */,
 			);
@@ -119,6 +161,15 @@
 		2E96D9A89E298E8A838B85C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D71656AE1CCFC2C2003CE4B8 /* libMasonry.a */,
+				D71656AF1CCFC2C2003CE4B8 /* libMJExtension.a */,
+				D71656B01CCFC2C2003CE4B8 /* libMMDrawerController.a */,
+				D71656B11CCFC2C2003CE4B8 /* libPods-GD超次元Tests.a */,
+				D71656B21CCFC2C2003CE4B8 /* libPods-GD超次元UITests.a */,
+				D71656B31CCFC2C2003CE4B8 /* libSDCycleScrollView.a */,
+				D71656B41CCFC2C2003CE4B8 /* libSDWebImage.a */,
+				D71656B51CCFC2C2003CE4B8 /* libSVProgressHUD.a */,
+				D71656B61CCFC2C2003CE4B8 /* libWMPageController.a */,
 				D71656AC1CCE9E0B003CE4B8 /* libAFNetworking.a */,
 				3D27DDE861046152EDF4668E /* libPods-GD超次元.a */,
 				8861B4731EAB7257101CE163 /* libPods-GD超次元Tests.a */,
@@ -259,6 +310,8 @@
 		D716567C1CCE8F85003CE4B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D71656C01CCFC89A003CE4B8 /* GDClassTableViewController.h */,
+				D71656C11CCFC89A003CE4B8 /* GDClassTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -290,6 +343,8 @@
 		D71656801CCE8F85003CE4B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D71656C91CCFC9DB003CE4B8 /* GDCompositorTableViewController.h */,
+				D71656CA1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,6 +376,8 @@
 		D71656841CCE8F85003CE4B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D71656C61CCFC952003CE4B8 /* GDGroupViewController.h */,
+				D71656C71CCFC952003CE4B8 /* GDGroupViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -352,6 +409,8 @@
 		D71656881CCE8F85003CE4B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D71656C31CCFC918003CE4B8 /* GDInformationTableViewController.h */,
+				D71656C41CCFC918003CE4B8 /* GDInformationTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -392,6 +451,8 @@
 		D716568D1CCE8F85003CE4B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D71656CF1CCFE00A003CE4B8 /* GDRequestMCDataModel.h */,
+				D71656D01CCFE00A003CE4B8 /* GDRequestMCDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -782,7 +843,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D716569C1CCE918E003CE4B8 /* GDMainViewController.m in Sources */,
+				D71656C81CCFC952003CE4B8 /* GDGroupViewController.m in Sources */,
+				D71656C21CCFC89A003CE4B8 /* GDClassTableViewController.m in Sources */,
+				D71656C51CCFC918003CE4B8 /* GDInformationTableViewController.m in Sources */,
+				D71656D11CCFE00A003CE4B8 /* GDRequestMCDataModel.m in Sources */,
 				D71655A51CCE73FE003CE4B8 /* AppDelegate.m in Sources */,
+				D71656CB1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m in Sources */,
 				D71656AB1CCE9C57003CE4B8 /* GDNetWorkManager.m in Sources */,
 				D71655A21CCE73FE003CE4B8 /* main.m in Sources */,
 				D71656A71CCE9699003CE4B8 /* GDSetingViewController.m in Sources */,
@@ -931,8 +997,15 @@
 				INFOPLIST_FILE = "GD超次元/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
+					"\"$CONFIGURATION_BUILD_DIR/MMDrawerController\"",
 					"\"$CONFIGURATION_BUILD_DIR/AFNetworking\"",
 					"$(inherited)",
+					"\"$CONFIGURATION_BUILD_DIR/Masonry\"",
+					"\"$CONFIGURATION_BUILD_DIR/MJExtension\"",
+					"\"$CONFIGURATION_BUILD_DIR/SDCycleScrollView\"",
+					"\"$CONFIGURATION_BUILD_DIR/SDWebImage\"",
+					"\"$CONFIGURATION_BUILD_DIR/WMPageController\"",
+					"\"$CONFIGURATION_BUILD_DIR/SVProgressHUD\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "gdarkness.GD---";
@@ -949,8 +1022,15 @@
 				INFOPLIST_FILE = "GD超次元/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
+					"\"$CONFIGURATION_BUILD_DIR/MMDrawerController\"",
 					"\"$CONFIGURATION_BUILD_DIR/AFNetworking\"",
 					"$(inherited)",
+					"\"$CONFIGURATION_BUILD_DIR/Masonry\"",
+					"\"$CONFIGURATION_BUILD_DIR/MJExtension\"",
+					"\"$CONFIGURATION_BUILD_DIR/SDCycleScrollView\"",
+					"\"$CONFIGURATION_BUILD_DIR/SDWebImage\"",
+					"\"$CONFIGURATION_BUILD_DIR/WMPageController\"",
+					"\"$CONFIGURATION_BUILD_DIR/SVProgressHUD\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "gdarkness.GD---";

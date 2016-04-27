@@ -18,11 +18,48 @@
 @property (nonatomic, strong) NSMutableArray *frames;
 @property (nonatomic, readonly) NSInteger titlesCount;
 @end
+
 // 下划线的高度
 static CGFloat   const WMProgressHeight = 2.0;
 static CGFloat   const WMMenuItemWidth  = 60.0;
 static NSInteger const WMMenuItemTagOffset = 6250;
+
 @implementation WMMenuView
+
+#pragma mark - Setter
+- (void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    
+    // Make the contentView center, because system will change menuView's frame if it's a titleView.
+    if (self.scrollView && (self.scrollView.frame.origin.x + self.scrollView.frame.size.width / 2) != (self.bounds.origin.x + self.bounds.size.width / 2)) {
+        CGRect contentFrame = self.scrollView.frame;
+        contentFrame.origin.x = self.bounds.origin.x - (contentFrame.size.width - self.bounds.size.width) / 2;
+        self.scrollView.frame = contentFrame;
+    }
+    
+}
+
+- (void)setLeftView:(UIView *)leftView {
+    if (self.leftView) {
+        [self.leftView removeFromSuperview];
+        self.leftView = nil;
+    }
+    [self addSubview:leftView];
+    _leftView = leftView;
+    
+    [self resetFrames];
+}
+
+- (void)setRightView:(UIView *)rightView {
+    if (self.rightView) {
+        [self.rightView removeFromSuperview];
+        self.rightView = nil;
+    }
+    [self addSubview:rightView];
+    _rightView = rightView;
+    
+    [self resetFrames];
+}
 
 #pragma mark - Getter
 - (CGFloat)progressHeight {
@@ -64,7 +101,7 @@ static NSInteger const WMMenuItemTagOffset = 6250;
     if ([self.delegate respondsToSelector:@selector(menuView:titleSizeForState:)]) {
         return [self.delegate menuView:self titleSizeForState:WMMenuItemStateSelected];
     }
-    return 15.0;
+    return 18.0;
 }
 
 - (CGFloat)normalSize {
@@ -75,6 +112,17 @@ static NSInteger const WMMenuItemTagOffset = 6250;
 }
 
 #pragma mark - Public Methods
+- (void)reload {
+    [self.frames removeAllObjects];
+    [self.progressView removeFromSuperview];
+    [self.scrollView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperview];
+    }];
+    
+    [self addItems];
+    [self makeStyle];
+}
+
 - (void)slideMenuAtProgress:(CGFloat)progress {
     if (self.progressView) {
         self.progressView.progress = progress;
@@ -133,7 +181,23 @@ static NSInteger const WMMenuItemTagOffset = 6250;
 }
 
 - (void)resetFrames {
-    self.scrollView.frame = self.bounds;
+    CGRect frame = self.bounds;
+    if (self.rightView) {
+        CGRect rightFrame = self.rightView.frame;
+        rightFrame.origin.x = frame.size.width - rightFrame.size.width;
+        self.rightView.frame = rightFrame;
+        frame.size.width -= rightFrame.size.width;
+    }
+    
+    if (self.leftView) {
+        CGRect leftFrame = self.leftView.frame;
+        leftFrame.origin.x = 0;
+        self.leftView.frame = leftFrame;
+        frame.origin.x += leftFrame.size.width;
+        frame.size.width -= leftFrame.size.width;
+    }
+    
+    self.scrollView.frame = frame;
     [self resetFramesFromIndex:0];
     [self refreshContenOffset];
 }
@@ -205,7 +269,7 @@ static NSInteger const WMMenuItemTagOffset = 6250;
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator   = NO;
-    scrollView.backgroundColor = self.bgColor;
+    scrollView.backgroundColor = self.backgroundColor;
     scrollView.scrollsToTop = NO;
     [self addSubview:scrollView];
     self.scrollView = scrollView;
@@ -258,16 +322,16 @@ static NSInteger const WMMenuItemTagOffset = 6250;
         contentWidth += itemW + [self itemMarginAtIndex:i+1];
     }
     // 如果总宽度小于屏幕宽,重新计算frame,为item间添加间距
-    if (contentWidth < self.frame.size.width) {
+    if (contentWidth < self.scrollView.frame.size.width) {
         // 计算间距
-        CGFloat distance = self.frame.size.width - contentWidth;
+        CGFloat distance = self.scrollView.frame.size.width - contentWidth;
         CGFloat gap = distance / (self.titlesCount + 1);
         for (int i = 0; i < self.frames.count; i++) {
             CGRect frame = [self.frames[i] CGRectValue];
             frame.origin.x += gap * (i+1);
             self.frames[i] = [NSValue valueWithCGRect:frame];
         }
-        contentWidth = self.frame.size.width;
+        contentWidth = self.scrollView.frame.size.width;
     }
     self.scrollView.contentSize = CGSizeMake(contentWidth, self.frame.size.height);
 }

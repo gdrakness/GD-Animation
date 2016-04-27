@@ -1,20 +1,20 @@
 PODS:
-  - AFNetworking (3.0.4):
-    - AFNetworking/NSURLSession (= 3.0.4)
-    - AFNetworking/Reachability (= 3.0.4)
-    - AFNetworking/Security (= 3.0.4)
-    - AFNetworking/Serialization (= 3.0.4)
-    - AFNetworking/UIKit (= 3.0.4)
-  - AFNetworking/NSURLSession (3.0.4):
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.0.4)
-  - AFNetworking/Security (3.0.4)
-  - AFNetworking/Serialization (3.0.4)
-  - AFNetworking/UIKit (3.0.4):
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Masonry (0.6.4)
+  - Masonry (1.0.0)
   - MJExtension (3.0.10)
   - MMDrawerController (0.6.0):
     - MMDrawerController/Core (= 0.6.0)
@@ -28,13 +28,14 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.6.0):
     - MMDrawerController/Core
-  - SDCycleScrollView (1.61):
+  - SDCycleScrollView (1.64):
     - SDWebImage (~> 3.7)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
-  - SVProgressHUD (2.0)
-  - WMPageController (1.4.1)
+  - SVProgressHUD (2.0.3)
+  - WMPageController (1.4.6)
+  - YYModel (1.0.3)
 
 DEPENDENCIES:
   - AFNetworking
@@ -45,17 +46,19 @@ DEPENDENCIES:
   - SDWebImage
   - SVProgressHUD
   - WMPageController
+  - YYModel
 
 SPEC CHECKSUMS:
-  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
-  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
-  SDCycleScrollView: a002d85b30cfa9d0ac74069cd3973ca19ff4f22f
+  SDCycleScrollView: 806fedb9342ab03b58b84442f985517b42c7cbb7
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
-  SVProgressHUD: e9e7c893686a20da55a28015ed384d9425e15479
-  WMPageController: 3b6d2aa2ddcd53f2cbc2319f2473f27b4ea4fe89
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  WMPageController: 1a68967d39d59ae317594d24fc0a720970f1c65b
+  YYModel: 63142c2f07c5c8c9d1c261689cf3827ea6ab2886
 
-PODFILE CHECKSUM: 5d553d40386ae66709ddbfbcaef0f467af90de24
+PODFILE CHECKSUM: 0696f197dd22542a3c41fe36f9e5942f8474dc7c
 
 COCOAPODS: 1.0.0.beta.8

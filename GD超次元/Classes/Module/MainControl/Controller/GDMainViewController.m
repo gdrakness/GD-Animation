@@ -7,8 +7,12 @@
 //
 
 #import "GDMainViewController.h"
+#import "GDCompositorTableViewController.h"
+#import "GDClassTableViewController.h"
+#import "GDInformationTableViewController.h"
+#import "GDGroupViewController.h"
 
-@interface GDMainViewController ()
+@interface GDMainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -16,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = blueColor;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +29,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
++(WMPageController *)pageControlStyleFlood{
+    NSArray *viewControl = @[[GDCompositorTableViewController class],[GDClassTableViewController class],[GDMainViewController class],[GDInformationTableViewController class],[GDGroupViewController class]];
+    NSArray *title = @[@"动画排行",@"分类推荐",@"新番速递",@"动漫资讯",@"兴趣小组"];
+    
+    WMPageController *pageControl = [[WMPageController alloc]initWithViewControllerClasses:viewControl andTheirTitles:title];
+    pageControl.titleSizeSelected = 15;
+    pageControl.pageAnimatable = YES;
+    pageControl.menuViewStyle = WMMenuViewStyleFoold;
+    pageControl.titleColorSelected = [UIColor whiteColor];
+    pageControl.titleColorNormal = blueColor;
+    pageControl.progressColor = blueColor;
+    pageControl.itemsWidths = @[@(80),@(80),@(80),@(80),@(80)];
+    pageControl.selectIndex = 2;
+    
+    return pageControl;
 }
-*/
+
+
+
++(NSString *)enCodeString:(NSString *)encode{
+    NSMutableString *string=[NSMutableString stringWithString:encode];
+    // NSMutableString *string=[NSMutableString stringWithString:encodedString];
+    [string replaceOccurrencesOfString:@"\\" withString:@"" options:1 range:NSMakeRange(0, string.length)];
+    NSLog(@"%@",string);
+    return  string;
+}
+
 
 @end

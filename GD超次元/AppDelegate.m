@@ -9,23 +9,37 @@
 #import "AppDelegate.h"
 #import "GDMainViewController.h"
 #import "GDSetingViewController.h"
-@interface AppDelegate ()
 
+@interface AppDelegate ()
+@property (nonatomic, strong)MMDrawerController  *drawerControl;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    UIViewController *mainView = [[GDMainViewController alloc]init];
+    UIViewController *mainView = [GDMainViewController pageControlStyleFlood];
+    
     UIViewController *leftView = [[GDSetingViewController alloc]init];
     
     UINavigationController *mainNavC = [[UINavigationController alloc]initWithRootViewController:mainView];
     UINavigationController *leftNavC = [[UINavigationController alloc]initWithRootViewController:leftView];
     
     [[UIBarButtonItem appearance]setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
     
     
+    self.drawerControl = [[MMDrawerController alloc]initWithCenterViewController:mainNavC leftDrawerViewController:leftNavC];
+    
+    self.drawerControl.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
+    self.drawerControl.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
+    
+    self.drawerControl.maximumLeftDrawerWidth = [UIScreen mainScreen].bounds.size.width * 0.8;
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window setRootViewController:self.drawerControl];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

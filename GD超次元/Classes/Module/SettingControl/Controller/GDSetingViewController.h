@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GDSetingViewController : UITableViewController
+@interface GDSetingViewController : UIViewController
 
 @end

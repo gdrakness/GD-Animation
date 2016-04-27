@@ -16,6 +16,7 @@ pod 'MMDrawerController'
 pod 'SDCycleScrollView'
 pod 'SVProgressHUD'
 pod 'MJExtension'
+pod 'YYModel'
 end
 
 target 'GD超次元UITests' do
