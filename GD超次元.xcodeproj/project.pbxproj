@@ -34,6 +34,7 @@
 		D71656C81CCFC952003CE4B8 /* GDGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656C71CCFC952003CE4B8 /* GDGroupViewController.m */; };
 		D71656CB1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656CA1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m */; };
 		D71656D11CCFE00A003CE4B8 /* GDRequestMCDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656D01CCFE00A003CE4B8 /* GDRequestMCDataModel.m */; };
+		D72F23591CD2556800F76589 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D72F23581CD2556800F76589 /* Images.xcassets */; };
 		DE1256EE700CC31CD4702BF2 /* libPods-GD超次元.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D27DDE861046152EDF4668E /* libPods-GD超次元.a */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		D71656CF1CCFE00A003CE4B8 /* GDRequestMCDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDRequestMCDataModel.h; sourceTree = "<group>"; };
 		D71656D01CCFE00A003CE4B8 /* GDRequestMCDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDRequestMCDataModel.m; sourceTree = "<group>"; };
 		D721750E4E15F54EC19FD3D4 /* Pods-GD超次元UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GD超次元UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GD超次元UITests/Pods-GD超次元UITests.release.xcconfig"; sourceTree = "<group>"; };
+		D72F23581CD2556800F76589 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E6C1DC9F184FC589A78F1DFF /* Pods-GD超次元Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GD超次元Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GD超次元Tests/Pods-GD超次元Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +209,7 @@
 				D71655A41CCE73FE003CE4B8 /* AppDelegate.m */,
 				D71656A81CCE9862003CE4B8 /* PrefixHeader.pch */,
 				D71656751CCE8F85003CE4B8 /* Classes */,
+				D72F23581CD2556800F76589 /* Images.xcassets */,
 				D71655A01CCE73FE003CE4B8 /* Supporting Files */,
 			);
 			path = "GD超次元";
@@ -693,6 +696,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D71655B01CCE73FE003CE4B8 /* LaunchScreen.storyboard in Resources */,
+				D72F23591CD2556800F76589 /* Images.xcassets in Resources */,
 				D71655AD1CCE73FE003CE4B8 /* Assets.xcassets in Resources */,
 				D71655AB1CCE73FE003CE4B8 /* Main.storyboard in Resources */,
 			);
@@ -993,6 +997,7 @@
 			baseConfigurationReference = 92D05EBCBE12BB958E71B5C3 /* Pods-GD超次元.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "$(SOURCE_ROOT)/$(PRODUCT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = "GD超次元/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1018,6 +1023,7 @@
 			baseConfigurationReference = D2A4327AD280E56DC0E6379B /* Pods-GD超次元.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "$(SOURCE_ROOT)/$(PRODUCT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = "GD超次元/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

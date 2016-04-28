@@ -34,13 +34,14 @@
     NSArray *title = @[@"动画排行",@"分类推荐",@"新番速递",@"动漫资讯",@"兴趣小组"];
     
     WMPageController *pageControl = [[WMPageController alloc]initWithViewControllerClasses:viewControl andTheirTitles:title];
-    pageControl.titleSizeSelected = 15;
+    pageControl.titleSizeNormal = 13;
+    pageControl.titleSizeSelected = 13;
     pageControl.pageAnimatable = YES;
     pageControl.menuViewStyle = WMMenuViewStyleFoold;
     pageControl.titleColorSelected = [UIColor whiteColor];
     pageControl.titleColorNormal = blueColor;
     pageControl.progressColor = blueColor;
-    pageControl.itemsWidths = @[@(80),@(80),@(80),@(80),@(80)];
+    pageControl.itemsWidths = @[@(65),@(65),@(65),@(65),@(65)];
     pageControl.selectIndex = 2;
     
     return pageControl;
