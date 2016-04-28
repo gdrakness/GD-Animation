@@ -9,8 +9,9 @@
 #import "GDGroupViewController.h"
 #import "GDRequestMCDataModel.h"
 
-@interface GDGroupViewController ()
 
+@interface GDGroupViewController ()
+@property (nonatomic, copy) NSMutableArray *image;
 @end
 
 @implementation GDGroupViewController
@@ -26,12 +27,22 @@
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+   _image = [NSMutableArray new];
+    
     [[GDNetWorkManager shareManager]requestWithGET:URL paramaeters:nil success:^(id responseObjcet) {
-       // NSMutableArray *data = [NSMutableArray array];
-       GDRequestMCDataModel *data = [GDRequestMCDataModel yy_modelWithJSON:responseObjcet];
-        NSLog(@"%@",data.img);
+        [GDRequestMCDataModel mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"posts":@"GDRequestMCDataModel"
+                     };
+        }];
+            GDRequestMCDataModel *dataModel = [GDRequestMCDataModel mj_objectWithKeyValues:responseObjcet];
+        for (GDRequestMCDataModel *posts in dataModel.posts) {
+            [_image addObject:posts];
+            NSLog(@"====%@",_image);
+        }
         
     } error:nil];
+//    NSLog(@"%@",_image);
 }
 
 /*

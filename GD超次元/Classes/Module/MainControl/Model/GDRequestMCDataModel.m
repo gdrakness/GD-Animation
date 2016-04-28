@@ -8,11 +8,12 @@
 
 #import "GDRequestMCDataModel.h"
 
-
 @implementation GDRequestMCDataModel
 
 
-
-
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
+}
+ 
 
 @end

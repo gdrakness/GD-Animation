@@ -25,4 +25,4 @@
 #import <MMDrawerController.h>
 #import <WMPageController.h>
 #import "GDNetWorkManager.h"
-#import <YYModel.h>
+#import <MJExtension.h>

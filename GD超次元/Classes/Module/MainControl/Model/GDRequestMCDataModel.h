@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+@class DataModel;
+@interface DataModel : NSObject
+
+@end
 
 @interface GDRequestMCDataModel : NSObject
+
 //集数
 @property (nonatomic, copy) NSString *latest;
 //图片
@@ -25,8 +30,10 @@
 @property (nonatomic, copy) NSString *type;
 //跳转url
 @property (nonatomic, copy) NSString *url;
-
-@property (nonatomic, strong) NSArray *model;
+//视频编号
+@property (nonatomic, assign) NSInteger *video;
+//模型
+@property (nonatomic, strong) NSMutableArray <DataModel *> *posts;
 
 
 @end
