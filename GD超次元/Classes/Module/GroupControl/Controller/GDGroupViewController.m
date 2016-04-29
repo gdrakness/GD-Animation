@@ -30,16 +30,21 @@
    _image = [NSMutableArray new];
     
     [[GDNetWorkManager shareManager]requestWithGET:URL paramaeters:nil success:^(id responseObjcet) {
-        [GDRequestMCDataModel mj_setupObjectClassInArray:^NSDictionary *{
-            return @{
-                     @"posts":@"GDRequestMCDataModel"
-                     };
-        }];
+        //NSLog(@"%@",responseObjcet);
+//        [GDRequestMCDataModel mj_setupObjectClassInArray:^NSDictionary *{
+//            return @{
+//                     @"posts":@"GDRequestMCDataModel"
+//                     };
+//        }];
             GDRequestMCDataModel *dataModel = [GDRequestMCDataModel mj_objectWithKeyValues:responseObjcet];
-        for (GDRequestMCDataModel *posts in dataModel.posts) {
-            [_image addObject:posts];
-            NSLog(@"====%@",_image);
-        }
+        NSLog(@"%@",dataModel.posts.firstObject.img);
+        
+        
+        
+//        for (GDRequestMCDataModel *posts in dataModel.posts) {
+//            [_image addObject:posts];
+//            NSLog(@"====%@",_image);
+//        }
         
     } error:nil];
 //    NSLog(@"%@",_image);

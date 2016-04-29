@@ -18,7 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    UIViewController *mainView = [GDMainViewController pageControlStyleFlood];
+    UIViewController *mainView = [GDMainViewController new];
     
     UIViewController *leftView = [[GDSetingViewController alloc]init];
     

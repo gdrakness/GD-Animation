@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 @class DataModel;
 @interface DataModel : NSObject
+@property (nonatomic, copy) NSString *img;
 
 @end
 
@@ -17,7 +18,7 @@
 //集数
 @property (nonatomic, copy) NSString *latest;
 //图片
-@property (nonatomic, copy) NSString *img;
+
 //时间
 @property (nonatomic, assign) NSInteger *time;
 //更新集数
