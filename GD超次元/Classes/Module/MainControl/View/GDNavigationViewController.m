@@ -15,7 +15,7 @@
 @implementation GDNavigationViewController
 
 +(void)initialize{
-    [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"new_top"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"new_top@2x"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidLoad {
