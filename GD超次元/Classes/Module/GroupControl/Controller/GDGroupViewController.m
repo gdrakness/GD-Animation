@@ -9,7 +9,6 @@
 #import "GDGroupViewController.h"
 #import "GDRequestMCDataModel.h"
 
-
 @interface GDGroupViewController ()
 @property (nonatomic, copy) NSMutableArray *image;
 @end
@@ -29,16 +28,16 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
    _image = [NSMutableArray new];
     
-    [[GDNetWorkManager shareManager]requestWithGET:URL paramaeters:nil success:^(id responseObjcet) {
+//    [[GDNetWorkManager shareManager]requestWithGET:URL paramaeters:nil success:^(id responseObjcet) {
         //NSLog(@"%@",responseObjcet);
 //        [GDRequestMCDataModel mj_setupObjectClassInArray:^NSDictionary *{
 //            return @{
 //                     @"posts":@"GDRequestMCDataModel"
 //                     };
 //        }];
-            GDRequestMCDataModel *dataModel = [GDRequestMCDataModel mj_objectWithKeyValues:responseObjcet];
-        NSLog(@"%@",dataModel.posts.firstObject.img);
-        
+//            GDRequestMCDataModel *dataModel = [GDRequestMCDataModel mj_objectWithKeyValues:responseObjcet];
+//        NSLog(@"%@",dataModel.posts.firstObject.img);
+    
         
         
 //        for (GDRequestMCDataModel *posts in dataModel.posts) {
@@ -46,8 +45,21 @@
 //            NSLog(@"====%@",_image);
 //        }
         
-    } error:nil];
+//    } error:nil];
 //    NSLog(@"%@",_image);
+    NSMutableDictionary *parame = [NSMutableDictionary dictionary];
+    parame[@"savePath"] = @"D:\\test2\\";
+    parame[@"fileName"] = @"test.jpg";
+    
+    [[GDNetWorkManager shareManager]requestWithGET:@"http://192.168.1.9:9001/FileUpload/downloadFileServlet?fileDescribe=" paramaeters:parame success:^(id responseObjcet) {
+        
+        NSLog(@"%@",responseObjcet);
+        
+    } error:^(NSError *erroerInfo) {
+        
+        NSLog(@"%@",erroerInfo);
+    }];
+    
 }
 
 /*

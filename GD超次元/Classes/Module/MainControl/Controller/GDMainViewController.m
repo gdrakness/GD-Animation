@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = blueColor;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,19 +48,10 @@
     pageControl.itemsWidths = @[@(65),@(65),@(65),@(65),@(65)];
     pageControl.selectIndex = 2;
     
-    
     return pageControl;
 }
 
--(void)setNavigation:(WMPageController *)barItem{
-    
-    GDBarButtonItem *settingItem = [GDBarButtonItem barButtonItemWithImageHighlighted:@"set_hover@2x" image:@"set@2x" target:self action:@selector(settingAction:)];
-    
-    GDBarButtonItem *searchItem = [GDBarButtonItem barButtonItemWithImageHighlighted:@"glass_hover@2x" image:@"glass@2x" target:self action:@selector(searchAction:)];
-    
-    barItem.navigationItem.leftBarButtonItems = @[settingItem,searchItem];
-    
-}
+
 
 +(NSString *)enCodeString:(NSString *)encode{
     NSMutableString *string=[NSMutableString stringWithString:encode];
@@ -71,11 +63,4 @@
 
 
 
--(void)searchAction:(id)sender{
-    NSLog(@"%s",__func__);
-}
-
--(void)settingAction:(id)sender{
-    NSLog(@"%s",__func__);
-}
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "GDMainViewController.h"
+#import "GDTabBarController.h"
 #import "GDSetingViewController.h"
 
 @interface AppDelegate ()
@@ -18,7 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    UIViewController *mainView = [GDMainViewController pageControlStyleFlood];
+    UIViewController *mainView = [[GDTabBarController alloc]init];
     
     UIViewController *leftView = [[GDSetingViewController alloc]init];
     

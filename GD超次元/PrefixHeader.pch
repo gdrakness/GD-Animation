@@ -20,7 +20,6 @@
 #define BaseUrl [NSURL URLWithString:@"http://api.18touch.com/index.php?c=acg&a=lists&limit=500&v=2"]
 #define URL @"http://api.18touch.com/index.php?c=acg&a=lists&limit=500&v=2"
 
-
 #import "UIView+GDSize.h"
 #import "GDNetWorkManager.h"
 
