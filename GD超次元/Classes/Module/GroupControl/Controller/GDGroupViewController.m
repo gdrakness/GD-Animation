@@ -8,9 +8,9 @@
 
 #import "GDGroupViewController.h"
 #import "GDRequestMCDataModel.h"
+#import "GDHomeManager.h"
 
 @interface GDGroupViewController ()
-@property (nonatomic, copy) NSMutableArray *image;
 @end
 
 @implementation GDGroupViewController
@@ -26,40 +26,40 @@
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-   _image = [NSMutableArray new];
+    
+    [[GDHomeManager shareInstance]getFindDealsWithParams:nil success:^(GDRequestMCDataModel *dataModel) {
+        NSLog(@"GDGroupViewController %@",dataModel);
+    } error:^(NSError *error) {
+        
+    }];
+
     
 //    [[GDNetWorkManager shareManager]requestWithGET:URL paramaeters:nil success:^(id responseObjcet) {
-        //NSLog(@"%@",responseObjcet);
+////        NSLog(@"%@",responseObjcet);
 //        [GDRequestMCDataModel mj_setupObjectClassInArray:^NSDictionary *{
 //            return @{
-//                     @"posts":@"GDRequestMCDataModel"
+//                     @"posts":@"DataModel"
 //                     };
 //        }];
 //            GDRequestMCDataModel *dataModel = [GDRequestMCDataModel mj_objectWithKeyValues:responseObjcet];
-//        NSLog(@"%@",dataModel.posts.firstObject.img);
-    
-        
-        
-//        for (GDRequestMCDataModel *posts in dataModel.posts) {
-//            [_image addObject:posts];
-//            NSLog(@"====%@",_image);
-//        }
-        
+//        NSLog(@"%@",dataModel.posts);
+//    
+//     
 //    } error:nil];
-//    NSLog(@"%@",_image);
-    NSMutableDictionary *parame = [NSMutableDictionary dictionary];
-    parame[@"savePath"] = @"D:\\test2\\";
-    parame[@"fileName"] = @"test.jpg";
     
-    [[GDNetWorkManager shareManager]requestWithGET:@"http://192.168.1.9:9001/FileUpload/downloadFileServlet?fileDescribe=" paramaeters:parame success:^(id responseObjcet) {
-        
-        NSLog(@"%@",responseObjcet);
-        
-    } error:^(NSError *erroerInfo) {
-        
-        NSLog(@"%@",erroerInfo);
-    }];
-    
+//    NSMutableDictionary *parame = [NSMutableDictionary dictionary];
+//    parame[@"savePath"] = @"D:\\test2\\";
+//    parame[@"fileName"] = @"test.jpg";
+//    
+//    [[GDNetWorkManager shareManager]requestWithGET:@"http://192.168.1.9:9001/FileUpload/downloadFileServlet?fileDescribe=" paramaeters:parame success:^(id responseObjcet) {
+//        
+//        NSLog(@"%@",responseObjcet);
+//        
+//    } error:^(NSError *erroerInfo) {
+//        
+//        NSLog(@"%@",erroerInfo);
+//    }];
+//    
 }
 
 /*

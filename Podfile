@@ -17,6 +17,7 @@ pod 'SDCycleScrollView'
 pod 'SVProgressHUD'
 pod 'MJExtension'
 pod 'MJExtension'
+pod 'YYModel'
 
 end
 

@@ -33,6 +33,8 @@
 		D71656CB1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656CA1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m */; };
 		D71656D11CCFE00A003CE4B8 /* GDRequestMCDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656D01CCFE00A003CE4B8 /* GDRequestMCDataModel.m */; };
 		D730D7501D13088A00273EAA /* GDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D730D74F1D13088A00273EAA /* GDTabBarController.m */; };
+		D77D2AE11D1535DC00C838D0 /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */; };
+		D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE41D177CA200C838D0 /* GDHomeManager.m */; };
 		D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78039E21CD3BE56001AD14C /* GDNavigationViewController.m */; };
 		D7803A4F1CD3C015001AD14C /* bg_head_allGroup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7803A2C1CD3C015001AD14C /* bg_head_allGroup@2x.png */; };
 		D7803A501CD3C015001AD14C /* bg_head_myGroup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7803A2D1CD3C015001AD14C /* bg_head_myGroup@2x.png */; };
@@ -141,6 +143,10 @@
 		D721750E4E15F54EC19FD3D4 /* Pods-GD超次元UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GD超次元UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GD超次元UITests/Pods-GD超次元UITests.release.xcconfig"; sourceTree = "<group>"; };
 		D730D74E1D13088A00273EAA /* GDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTabBarController.h; sourceTree = "<group>"; };
 		D730D74F1D13088A00273EAA /* GDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTabBarController.m; sourceTree = "<group>"; };
+		D77D2ADF1D1535DC00C838D0 /* NSObject+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Log.h"; sourceTree = "<group>"; };
+		D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Log.m"; sourceTree = "<group>"; };
+		D77D2AE31D177CA200C838D0 /* GDHomeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDHomeManager.h; sourceTree = "<group>"; };
+		D77D2AE41D177CA200C838D0 /* GDHomeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDHomeManager.m; sourceTree = "<group>"; };
 		D78039E11CD3BE56001AD14C /* GDNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDNavigationViewController.h; sourceTree = "<group>"; };
 		D78039E21CD3BE56001AD14C /* GDNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDNavigationViewController.m; sourceTree = "<group>"; };
 		D7803A2C1CD3C015001AD14C /* bg_head_allGroup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_head_allGroup@2x.png"; sourceTree = "<group>"; };
@@ -322,6 +328,7 @@
 		D71656751CCE8F85003CE4B8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D77D2AE21D153C6300C838D0 /* HomeManager */,
 				D730D74A1D1306B800273EAA /* Other */,
 				D7803A761CD3C295001AD14C /* Category */,
 				D71656761CCE8F85003CE4B8 /* Library */,
@@ -693,6 +700,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D77D2AE21D153C6300C838D0 /* HomeManager */ = {
+			isa = PBXGroup;
+			children = (
+				D77D2AE31D177CA200C838D0 /* GDHomeManager.h */,
+				D77D2AE41D177CA200C838D0 /* GDHomeManager.m */,
+			);
+			path = HomeManager;
+			sourceTree = "<group>";
+		};
 		D7803A2B1CD3C015001AD14C /* image */ = {
 			isa = PBXGroup;
 			children = (
@@ -738,6 +754,8 @@
 		D7803A761CD3C295001AD14C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				D77D2ADF1D1535DC00C838D0 /* NSObject+Log.h */,
+				D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */,
 				D7803A7A1CD3C2F5001AD14C /* UIView+GDSize.h */,
 				D7803A7B1CD3C2F5001AD14C /* UIView+GDSize.m */,
 			);
@@ -1044,12 +1062,14 @@
 			files = (
 				D716569C1CCE918E003CE4B8 /* GDMainViewController.m in Sources */,
 				D71656C81CCFC952003CE4B8 /* GDGroupViewController.m in Sources */,
+				D77D2AE11D1535DC00C838D0 /* NSObject+Log.m in Sources */,
 				D71656C21CCFC89A003CE4B8 /* GDClassTableViewController.m in Sources */,
 				D71656C51CCFC918003CE4B8 /* GDInformationTableViewController.m in Sources */,
 				D71656D11CCFE00A003CE4B8 /* GDRequestMCDataModel.m in Sources */,
 				D71655A51CCE73FE003CE4B8 /* AppDelegate.m in Sources */,
 				D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */,
 				D7803A741CD3C0C4001AD14C /* GDBarButtonItem.m in Sources */,
+				D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */,
 				D730D7501D13088A00273EAA /* GDTabBarController.m in Sources */,
 				D71656CB1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m in Sources */,
 				D7803A7C1CD3C2F5001AD14C /* UIView+GDSize.m in Sources */,

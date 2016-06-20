@@ -35,6 +35,7 @@ PODS:
   - SDWebImage/Core (3.7.5)
   - SVProgressHUD (2.0.3)
   - WMPageController (1.4.6)
+  - YYModel (1.0.3)
 
 DEPENDENCIES:
   - AFNetworking
@@ -45,6 +46,7 @@ DEPENDENCIES:
   - SDWebImage
   - SVProgressHUD
   - WMPageController
+  - YYModel
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -55,7 +57,8 @@ SPEC CHECKSUMS:
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   WMPageController: 1a68967d39d59ae317594d24fc0a720970f1c65b
+  YYModel: 63142c2f07c5c8c9d1c261689cf3827ea6ab2886
 
-PODFILE CHECKSUM: 474bc2c629453e152defd899081386c2f5c37ef9
+PODFILE CHECKSUM: 70d6b157850ffd2473b8f71d7b80b54415b50dd8
 
 COCOAPODS: 1.0.0.beta.8

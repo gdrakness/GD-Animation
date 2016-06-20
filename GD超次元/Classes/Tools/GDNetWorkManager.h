@@ -15,5 +15,5 @@
 
 -(void)requestPostWithURL:(NSString *)url parameters:(NSDictionary *)parameters success:(void(^)(id responseObject))success error:(void(^)(NSError *errorInfo))error;
 
--(void)requestWithGET:(NSString *)url paramaeters:(NSDictionary *)parameters success:(void(^)(id responseObjcet))successe error:(void(^)(NSError *erroerInfo))error;
+-(void)requestWithGET:(NSString *)url paramaeters:(NSDictionary *)parameters success:(void(^)(id responseObjcet))successe error:(void(^)(NSError *errorInfo))error;
 @end

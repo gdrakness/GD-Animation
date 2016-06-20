@@ -46,7 +46,7 @@
     }];
 }
 
--(void)requestWithGET:(NSString *)url paramaeters:(NSDictionary *)parameters success:(void(^)(id responseObjcet))successe error:(void(^)(NSError *erroerInfo))error{
+-(void)requestWithGET:(NSString *)url paramaeters:(NSDictionary *)parameters success:(void(^)(id responseObjcet))successe error:(void(^)(NSError *errorInfo))error{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (successe) {

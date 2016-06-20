@@ -8,12 +8,24 @@
 
 #import "GDRequestMCDataModel.h"
 
+@implementation DataModel
+
+
+@end
+
 @implementation GDRequestMCDataModel
+
+//+ (NSDictionary *)modelContainerPropertyGenericClass{
+//    
+//    return @{
+//             @"posts" : [DataModel class]
+//             };
+//}
 
 
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key{
     
 }
- 
+
 
 @end

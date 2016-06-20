@@ -51,8 +51,7 @@
     return pageControl;
 }
 
-
-
+//去掉字符串的 "\\"
 +(NSString *)enCodeString:(NSString *)encode{
     NSMutableString *string=[NSMutableString stringWithString:encode];
     // NSMutableString *string=[NSMutableString stringWithString:encodedString];
@@ -60,6 +59,7 @@
     NSLog(@"%@",string);
     return  string;
 }
+
 
 
 
