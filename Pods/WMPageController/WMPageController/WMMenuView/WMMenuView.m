@@ -7,14 +7,9 @@
 //
 
 #import "WMMenuView.h"
-#import "WMProgressView.h"
-#import "WMFooldView.h"
 
 @interface WMMenuView () <WMMenuItemDelegate>
-@property (nonatomic, weak) UIScrollView *scrollView;
-@property (nonatomic, weak) WMProgressView *progressView;
 @property (nonatomic, weak) WMMenuItem *selItem;
-@property (nonatomic, strong) UIColor *bgColor;
 @property (nonatomic, strong) NSMutableArray *frames;
 @property (nonatomic, readonly) NSInteger titlesCount;
 @end
@@ -22,52 +17,87 @@
 // 下划线的高度
 static CGFloat   const WMProgressHeight = 2.0;
 static CGFloat   const WMMenuItemWidth  = 60.0;
-static NSInteger const WMMenuItemTagOffset = 6250;
-
+static NSInteger const WMMenuItemTagOffset  = 6250;
+static NSInteger const WMBadgeViewTagOffset = 1212;
 @implementation WMMenuView
 
 #pragma mark - Setter
 - (void)setFrame:(CGRect)frame {
     [super setFrame:frame];
     
-    // Make the contentView center, because system will change menuView's frame if it's a titleView.
-    if (self.scrollView && (self.scrollView.frame.origin.x + self.scrollView.frame.size.width / 2) != (self.bounds.origin.x + self.bounds.size.width / 2)) {
-        CGRect contentFrame = self.scrollView.frame;
-        contentFrame.origin.x = self.bounds.origin.x - (contentFrame.size.width - self.bounds.size.width) / 2;
-        self.scrollView.frame = contentFrame;
-    }
+    if (!self.scrollView) { return; }
     
+    CGFloat leftMargin = self.contentMargin + self.leftView.frame.size.width;
+    CGFloat rightMargin = self.contentMargin + self.rightView.frame.size.width;
+    CGFloat contentWidth = self.scrollView.frame.size.width + leftMargin + rightMargin;
+    CGFloat startX = self.leftView.frame.origin.x + self.scrollView.frame.origin.x - self.contentMargin;
+    
+    // Make the contentView center, because system will change menuView's frame if it's a titleView.
+    if (startX + contentWidth / 2 != self.bounds.size.width / 2) {
+        
+        CGFloat xOffset = (contentWidth - self.bounds.size.width) / 2;
+        self.scrollView.frame = ({
+            CGRect frame = self.scrollView.frame;
+            frame.origin.x -= xOffset;
+            frame;
+        });
+        
+        self.leftView.frame = ({
+            CGRect frame = self.leftView.frame;
+            frame.origin.x -= xOffset;
+            frame;
+        });
+        
+        self.rightView.frame = ({
+            CGRect frame = self.rightView.frame;
+            frame.origin.x -= xOffset;
+            frame;
+        });
+        
+    }
+
+}
+
+- (void)setProgressWidths:(NSArray *)progressWidths {
+    _progressWidths = progressWidths;
+    
+    if (!self.progressView.superview) { return; }
+    
+    [self resetFramesFromIndex:0];
 }
 
 - (void)setLeftView:(UIView *)leftView {
     if (self.leftView) {
         [self.leftView removeFromSuperview];
-        self.leftView = nil;
+        _leftView = nil;
     }
-    [self addSubview:leftView];
-    _leftView = leftView;
-    
+    if (leftView) {
+        [self addSubview:leftView];
+        _leftView = leftView;
+    }
     [self resetFrames];
 }
 
 - (void)setRightView:(UIView *)rightView {
     if (self.rightView) {
         [self.rightView removeFromSuperview];
-        self.rightView = nil;
+        _rightView = nil;
     }
-    [self addSubview:rightView];
-    _rightView = rightView;
-    
+    if (rightView) {
+        [self addSubview:rightView];
+        _rightView = rightView;
+    }
     [self resetFrames];
 }
 
-#pragma mark - Getter
-- (CGFloat)progressHeight {
-    if (_progressHeight == 0.0) {
-        _progressHeight = WMProgressHeight;
+- (void)setContentMargin:(CGFloat)contentMargin {
+    _contentMargin = contentMargin;
+    if (self.scrollView) {
+        [self resetFrames];
     }
-    return _progressHeight;
 }
+
+#pragma mark - Getter
 
 - (UIColor *)lineColor {
     if (!_lineColor) {
@@ -111,6 +141,19 @@ static NSInteger const WMMenuItemTagOffset = 6250;
     return 15.0;
 }
 
+- (UIView *)badgeViewAtIndex:(NSInteger)index {
+    if (![self.dataSource respondsToSelector:@selector(menuView:badgeViewAtIndex:)]) {
+        return nil;
+    }
+    UIView *badgeView = [self.dataSource menuView:self badgeViewAtIndex:index];
+    if (!badgeView) {
+        return nil;
+    }
+    badgeView.tag = index + WMBadgeViewTagOffset;
+
+    return badgeView;
+}
+
 #pragma mark - Public Methods
 - (void)reload {
     [self.frames removeAllObjects];
@@ -146,6 +189,8 @@ static NSInteger const WMMenuItemTagOffset = 6250;
 - (void)selectItemAtIndex:(NSInteger)index {
     NSInteger tag = index + WMMenuItemTagOffset;
     NSInteger currentIndex = self.selItem.tag - WMMenuItemTagOffset;
+    if (index == currentIndex || !self.selItem) { return; }
+    
     WMMenuItem *item = (WMMenuItem *)[self viewWithTag:tag];
     [self.selItem deselectedItemWithoutAnimation];
     self.selItem = item;
@@ -166,6 +211,15 @@ static NSInteger const WMMenuItemTagOffset = 6250;
     [self resetFrames];
 }
 
+- (void)updateBadgeViewAtIndex:(NSInteger)index {
+    UIView *oldBadgeView = [self.scrollView viewWithTag:WMBadgeViewTagOffset + index];
+    if (oldBadgeView) {
+        [oldBadgeView removeFromSuperview];
+    }
+    
+    [self addBadgeViewAtIndex:index];
+}
+
 #pragma mark - Data source
 - (NSInteger)titlesCount {
     return [self.dataSource numbersOfTitlesInMenuView:self];
@@ -178,6 +232,7 @@ static NSInteger const WMMenuItemTagOffset = 6250;
     [self addScrollView];
     [self addItems];
     [self makeStyle];
+    [self addBadgeViews];
 }
 
 - (void)resetFrames {
@@ -197,6 +252,8 @@ static NSInteger const WMMenuItemTagOffset = 6250;
         frame.size.width -= leftFrame.size.width;
     }
     
+    frame.origin.x += self.contentMargin;
+    frame.size.width -= self.contentMargin * 2;
     self.scrollView.frame = frame;
     [self resetFramesFromIndex:0];
     [self refreshContenOffset];
@@ -209,18 +266,56 @@ static NSInteger const WMMenuItemTagOffset = 6250;
         WMMenuItem *item = (WMMenuItem *)[self viewWithTag:(WMMenuItemTagOffset + i)];
         CGRect frame = [self.frames[i] CGRectValue];
         item.frame = frame;
+        
+        UIView *badgeView = [self.scrollView viewWithTag:(WMBadgeViewTagOffset + i)];
+        if (badgeView) {
+            CGRect badgeFrame = [self badgeViewAtIndex:i].frame;
+            badgeFrame.origin.x += frame.origin.x;
+            badgeView.frame = badgeFrame;
+        }
     }
     if (!self.progressView.superview) { return; }
     CGRect frame = self.progressView.frame;
     frame.size.width = self.scrollView.contentSize.width;
-    if ([self.progressView isKindOfClass:[WMFooldView class]]) {
+    if ([self.progressView isKindOfClass:[WMFloodView class]]) {
         frame.origin.y = 0;
     } else {
-        frame.origin.y = self.frame.size.height - self.progressHeight;
+        frame.origin.y = self.frame.size.height - self.progressHeight - self.progressViewBottomSpace;
     }
     self.progressView.frame = frame;
-    self.progressView.itemFrames = self.frames;
+    self.progressView.itemFrames = [self convertProgressWidthsToFrames];
     [self.progressView setNeedsDisplay];
+}
+
+- (NSArray *)convertProgressWidthsToFrames {
+    if (!self.frames.count) { NSAssert(NO, @"BUUUUUUUG...SHOULDN'T COME HERE!!"); }
+    
+    if (self.progressWidths.count) {
+        NSMutableArray *progressFrames = [NSMutableArray array];
+        for (int i = 0; i < self.frames.count; i++) {
+            CGRect itemFrame = [self.frames[i] CGRectValue];
+            CGFloat progressWidth = [self.progressWidths[i] floatValue];
+            CGFloat x = itemFrame.origin.x + (itemFrame.size.width - progressWidth) / 2;
+            CGRect progressFrame = CGRectMake(x, itemFrame.origin.y, progressWidth, 0);
+            [progressFrames addObject:[NSValue valueWithCGRect:progressFrame]];
+        }
+        return progressFrames.copy;
+    }
+    
+    return self.frames;
+}
+
+- (void)addBadgeViews {
+    for (int i = 0; i < self.titlesCount; i++) {
+        [self addBadgeViewAtIndex:i];
+    }
+}
+
+- (void)addBadgeViewAtIndex:(NSInteger)index {
+    UIView *badgeView = [self badgeViewAtIndex:index];
+    if (badgeView) {
+        [self.scrollView addSubview:badgeView];
+    }
 }
 
 - (void)makeStyle {
@@ -228,11 +323,11 @@ static NSInteger const WMMenuItemTagOffset = 6250;
         case WMMenuViewStyleLine:
             [self addProgressView];
             break;
-        case WMMenuViewStyleFoold:
-            [self addFooldViewHollow:NO];
+        case WMMenuViewStyleFlood:
+            [self addFloodViewHollow:NO];
             break;
-        case WMMenuViewStyleFooldHollow:
-            [self addFooldViewHollow:YES];
+        case WMMenuViewStyleFloodHollow:
+            [self addFloodViewHollow:YES];
             break;
         default:
             break;
@@ -260,16 +355,29 @@ static NSInteger const WMMenuItemTagOffset = 6250;
     } else {
         [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
     }
+    // MARK: 暂时解决多选中问题 (需要复现并找到根本原因 see#67)
+    [self deselectedItemsIfNeeded];
+}
+
+- (void)deselectedItemsIfNeeded {
+    [self.scrollView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[WMMenuItem class]]) {
+            WMMenuItem *item = (WMMenuItem *)obj;
+            if (item != self.selItem) {
+                [item deselectedItemWithoutAnimation];
+            }
+        }
+    }];
 }
 
 - (void)addScrollView {
-    CGFloat width = self.frame.size.width;
+    CGFloat width = self.frame.size.width - self.contentMargin * 2;
     CGFloat height = self.frame.size.height;
-    CGRect frame = CGRectMake(0, 0, width, height);
+    CGRect frame = CGRectMake(self.contentMargin, 0, width, height);
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator   = NO;
-    scrollView.backgroundColor = self.backgroundColor;
+    scrollView.backgroundColor = [UIColor clearColor];
     scrollView.scrollsToTop = NO;
     [self addSubview:scrollView];
     self.scrollView = scrollView;
@@ -345,22 +453,25 @@ static NSInteger const WMMenuItemTagOffset = 6250;
 
 // MARK:Progress View
 - (void)addProgressView {
+    self.progressHeight = self.progressHeight > 0 ? self.progressHeight : WMProgressHeight;
     WMProgressView *pView = [[WMProgressView alloc] initWithFrame:CGRectMake(0, self.frame.size.height - self.progressHeight, self.scrollView.contentSize.width, self.progressHeight)];
-    pView.itemFrames = self.frames;
+    pView.itemFrames = [self convertProgressWidthsToFrames];
     pView.color = self.lineColor.CGColor;
     pView.backgroundColor = [UIColor clearColor];
     self.progressView = pView;
     [self.scrollView addSubview:pView];
 }
 
-- (void)addFooldViewHollow:(BOOL)isHollow {
-    WMFooldView *fooldView = [[WMFooldView alloc] initWithFrame:CGRectMake(0, 0, self.scrollView.contentSize.width, self.frame.size.height)];
-    fooldView.itemFrames = self.frames;
-    fooldView.color = self.lineColor.CGColor;
-    fooldView.hollow = isHollow;
-    fooldView.backgroundColor = [UIColor clearColor];
-    self.progressView = fooldView;
-    [self.scrollView insertSubview:fooldView atIndex:0];
+- (void)addFloodViewHollow:(BOOL)isHollow {
+    CGFloat floodHeight = self.progressHeight > 0 ? self.progressHeight : self.frame.size.height;
+    CGFloat floodY = self.frame.size.height - floodHeight - self.progressViewBottomSpace;
+    WMFloodView *floodView = [[WMFloodView alloc] initWithFrame:CGRectMake(0, floodY, self.scrollView.contentSize.width, floodHeight)];
+    floodView.itemFrames = [self convertProgressWidthsToFrames];
+    floodView.color = self.lineColor.CGColor;
+    floodView.hollow = isHollow;
+    floodView.backgroundColor = [UIColor clearColor];
+    self.progressView = floodView;
+    [self.scrollView insertSubview:floodView atIndex:0];
 }
 
 #pragma mark - Menu item delegate
@@ -378,8 +489,12 @@ static NSInteger const WMMenuItemTagOffset = 6250;
     menuItem.selected = YES;
     self.selItem.selected = NO;
     self.selItem = menuItem;
-    // 让选中的item位于中间
-    [self refreshContenOffset];
+    
+    NSTimeInterval delay = self.style == WMMenuViewStyleDefault ? 0 : 0.3f;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 让选中的item位于中间
+        [self refreshContenOffset];
+    });
 }
 
 @end

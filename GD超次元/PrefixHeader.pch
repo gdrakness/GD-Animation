@@ -17,14 +17,17 @@
 
 #define blueColor [UIColor colorWithRed:88/255.0 green:194/255.0 blue:247/255.0 alpha:1]
 
-#define BaseUrl [NSURL URLWithString:@"http://api.18touch.com/index.php?c=acg&a=lists&limit=500&v=2"]
-#define URL @"http://api.18touch.com/index.php?c=acg&a=lists&limit=500&v=2"
+//#define BaseUrl [NSURL URLWithString:@"http://api.18touch.com/index.php?c=acg&a=lists&limit=500&v=2"]
+#define BaseUrl @"http://api.18touch.com/index.php?c=acg&a=lists&limit=500&v=2"
 
 #import "UIView+GDSize.h"
-#import "GDNetWorkManager.h"
+//#import "GDNetWorkManager.h"
 
-#import "AFNetworkReachabilityManager.h"
-#import "AFHTTPSessionManager.h"
+#import "UIImageView+WebCache.h"
+
+//#import "AFNetworkReachabilityManager.h"
+//#import "AFHTTPSessionManager.h"
+#import "UIImageView+WebCache.h"
 #import <MMDrawerController.h>
 #import <WMPageController.h>
 #import <MJExtension.h>

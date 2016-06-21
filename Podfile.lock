@@ -1,19 +1,4 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
-    - AFNetworking/NSURLSession
   - Masonry (1.0.0)
   - MJExtension (3.0.10)
   - MMDrawerController (0.6.0):
@@ -38,7 +23,6 @@ PODS:
   - YYModel (1.0.3)
 
 DEPENDENCIES:
-  - AFNetworking
   - Masonry
   - MJExtension
   - MMDrawerController
@@ -49,7 +33,6 @@ DEPENDENCIES:
   - YYModel
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
@@ -59,6 +42,6 @@ SPEC CHECKSUMS:
   WMPageController: 1a68967d39d59ae317594d24fc0a720970f1c65b
   YYModel: 63142c2f07c5c8c9d1c261689cf3827ea6ab2886
 
-PODFILE CHECKSUM: 70d6b157850ffd2473b8f71d7b80b54415b50dd8
+PODFILE CHECKSUM: 39832051a5b8badb66030355f3e268018ea4251b
 
 COCOAPODS: 1.0.0.beta.8

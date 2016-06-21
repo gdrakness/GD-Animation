@@ -215,6 +215,10 @@ typedef NS_ENUM(NSUInteger, WMPageControllerPreloadPolicy) {
 @property (nonatomic, strong) UIColor *progressColor;
 
 /**
+ *  定制进度条在各个 item 下的宽度
+ */
+@property (nonatomic, strong) NSArray *progressViewWidths;
+/**
  *  是否发送在创建控制器或者视图完全展现在用户眼前时通知观察者，默认为不开启，如需利用通知请开启
  *  Whether notify observer when finish init or fully displayed to user, the default is NO.
  *  See `WMPageConst.h` for more information.
@@ -268,13 +272,19 @@ typedef NS_ENUM(NSUInteger, WMPageControllerPreloadPolicy) {
 @property (nonatomic, assign) CGFloat itemMargin;
 
 /** 顶部 menuView 和 scrollView 之间的间隙 */
-@property (nonatomic, assign) CGFloat menuViewBottom;
+@property (nonatomic, assign) CGFloat menuViewBottomSpace;
+
+/**  */
+@property (nonatomic, assign) CGFloat progressViewBottomSpace;
 
 /** 顶部导航栏 */
 @property (nonatomic, weak) WMMenuView *menuView;
 
 /** 内部容器 */
 @property (nonatomic, weak) WMScrollView *scrollView;
+
+/** MenuView 内部视图与左右的间距 */
+@property (nonatomic, assign) CGFloat menuViewContentMargin;
 
 /**
  *  左滑时同时启用其他手势，比如系统左滑、sidemenu左滑。默认 NO

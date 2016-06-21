@@ -9,9 +9,9 @@
 //
 
 #import "GDHomeManager.h"
-#import "GDNetWorkManager.h"
+//#import "GDNetWorkManager.h"
 #import "GDRequestMCDataModel.h"
-
+#import "LORequestManger.h"
 @interface GDHomeManager ()
 
 @property (nonatomic, copy) void (^success)(id);
@@ -34,21 +34,25 @@
     self.success = success;
     self.error = error;
     
-    [[GDNetWorkManager shareManager]requestWithGET:URL paramaeters:nil success:^(id responseObjcet) {
+//    [[GDNetWorkManager shareManager]requestWithGET:URL paramaeters:nil success:^(id responseObjcet) {
+    
+    
+    [LORequestManger GET:BaseUrl success:^(id response) {
 //        NSLog(@"%@",responseObjcet);
         [GDRequestMCDataModel mj_setupObjectClassInArray:^NSDictionary *{
             return @{
                      @"posts":@"DataModel"
                      };
         }];
-        GDRequestMCDataModel *data = [GDRequestMCDataModel mj_objectWithKeyValues:responseObjcet];
+        GDRequestMCDataModel *dataModel = [GDRequestMCDataModel mj_objectWithKeyValues:response];
         
-        self.success(data);
+        self.success(dataModel);
+//                NSLog(@"%@",data);
         
-    } error:^(NSError *errorInfo) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        NSLog(@"%@",errorInfo);
     }];
+    
     
 }
 @end

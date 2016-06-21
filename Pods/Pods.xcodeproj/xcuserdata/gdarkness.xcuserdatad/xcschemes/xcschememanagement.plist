@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFNetworking.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,12 +62,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0DC0D17B524994E66C62A346AE83A655</key>
+		<key>073ECEE6C0910EB1F6BC48DCE9D42CBC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>295B824E024439C81534E28B665018CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>2E6AB6001D3AED7EE5036B65DCBF32B8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>38D1412A04AA8506D5A7877138BE1D3E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C0156A91CBE762426E3A2DD041D3AC7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>928353533005A4198EBDA5B700D37B64</key>
+		<key>8CACCB2F0052BB5F1395D02AA48F7C0E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,22 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B8E0B76E63A2D0DDE3D3167A39917DBC</key>
+		<key>AFB402443B866532C5E1FE8B5616ED8A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BA6CF0488B7F8E1851F17F7084E99807</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EEA1839D89701C9EA302E8A18F86D2E6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F9355BEF12CB318227BC0C3FA90E44EF</key>
+		<key>CC72CBF1903815F2755F6083C43C64B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

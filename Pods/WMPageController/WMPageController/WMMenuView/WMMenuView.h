@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "WMMenuItem.h"
+#import "WMFloodView.h"
 @class WMMenuView;
 
 typedef NS_ENUM(NSUInteger, WMMenuViewStyle) {
     WMMenuViewStyleDefault,     // 默认
     WMMenuViewStyleLine,        // 带下划线 (若要选中字体大小不变，设置选中和非选中大小一样即可)
-    WMMenuViewStyleFoold,       // 涌入效果 (填充)
-    WMMenuViewStyleFooldHollow, // 涌入效果 (空心的)
+    WMMenuViewStyleFlood,       // 涌入效果 (填充)
+    WMMenuViewStyleFloodHollow, // 涌入效果 (空心的)
 };
 
 @protocol WMMenuViewDelegate <NSObject>
@@ -30,12 +31,26 @@ typedef NS_ENUM(NSUInteger, WMMenuViewStyle) {
 @required
 - (NSInteger)numbersOfTitlesInMenuView:(WMMenuView *)menu;
 - (NSString *)menuView:(WMMenuView *)menu titleAtIndex:(NSInteger)index;
+@optional
+/**
+ *  角标 (例如消息提醒的小红点) 的数据源方法，在 WMPageController 中实现这个方法来为 menuView 提供一个 badgeView
+    需要在返回的时候同时设置角标的 frame 属性，该 frame 为相对于 menuItem 的位置
+ *
+ *  @param index 角标的序号
+ *
+ *  @return 返回一个设置好 frame 的角标视图
+ */
+- (UIView *)menuView:(WMMenuView *)menu badgeViewAtIndex:(NSInteger)index;
 @end
 
 @interface WMMenuView : UIView
+@property (nonatomic, strong) NSArray *progressWidths;
+@property (nonatomic, weak) WMProgressView *progressView;
 @property (nonatomic, assign) CGFloat progressHeight;
 @property (nonatomic, assign) WMMenuViewStyle style;
+@property (nonatomic, assign) CGFloat contentMargin;
 @property (nonatomic, strong) UIColor *lineColor;
+@property (nonatomic, assign) CGFloat progressViewBottomSpace;
 @property (nonatomic, weak) id<WMMenuViewDelegate> delegate;
 @property (nonatomic, weak) id<WMMenuViewDataSource> dataSource;
 @property (nonatomic, weak) UIView *leftView;
@@ -47,10 +62,17 @@ typedef NS_ENUM(NSUInteger, WMMenuViewStyle) {
 @property (nonatomic, readonly) UIColor *selectedColor;
 @property (nonatomic, readonly) UIColor *normalColor;
 
+@property (nonatomic, weak) UIScrollView *scrollView;
+
 - (void)slideMenuAtProgress:(CGFloat)progress;
 - (void)selectItemAtIndex:(NSInteger)index;
 - (void)resetFrames;
 - (void)reload;
 - (void)updateTitle:(NSString *)title atIndex:(NSInteger)index andWidth:(BOOL)update;
+
+/**
+ *  更新角标视图，如要移除，在 -menuView:badgeViewAtIndex: 中返回 nil 即可
+ */
+- (void)updateBadgeViewAtIndex:(NSInteger)index;
 
 @end

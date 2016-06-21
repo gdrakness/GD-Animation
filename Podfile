@@ -8,7 +8,7 @@ target 'GD超次元' do
 end
 
 target 'GD超次元Tests' do
-pod 'AFNetworking'
+
 pod 'WMPageController'
 pod 'SDWebImage'
 pod 'Masonry'
