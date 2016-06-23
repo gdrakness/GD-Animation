@@ -71,6 +71,10 @@
 		D7803A711CD3C015001AD14C /* videoranktitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7803A4E1CD3C015001AD14C /* videoranktitle@2x.png */; };
 		D7803A741CD3C0C4001AD14C /* GDBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7803A731CD3C0C4001AD14C /* GDBarButtonItem.m */; };
 		D7803A7C1CD3C2F5001AD14C /* UIView+GDSize.m in Sources */ = {isa = PBXBuildFile; fileRef = D7803A7B1CD3C2F5001AD14C /* UIView+GDSize.m */; };
+		D797B3081D198E0A00209739 /* libMJRefresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D797B3071D198E0A00209739 /* libMJRefresh.a */; };
+		D797B30B1D19B03A00209739 /* GDDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D797B30A1D19B03A00209739 /* GDDetailsViewController.m */; };
+		D797B30E1D19B20900209739 /* GDDetailsDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D797B30D1D19B20900209739 /* GDDetailsDataModel.m */; };
+		D79C20541D1981C6000EBB31 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D79C20531D1981C6000EBB31 /* arrow@2x.png */; };
 		D7D983A11D1822050027FAF6 /* GDMainViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983A01D1822050027FAF6 /* GDMainViewTableViewCell.m */; };
 		D7D983A41D18DFC50027FAF6 /* LORequestManger.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983A31D18DFC50027FAF6 /* LORequestManger.m */; };
 		D7D984021D18E7340027FAF6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983DE1D18E7340027FAF6 /* AFHTTPRequestOperation.m */; };
@@ -203,6 +207,12 @@
 		D7803A731CD3C0C4001AD14C /* GDBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDBarButtonItem.m; sourceTree = "<group>"; };
 		D7803A7A1CD3C2F5001AD14C /* UIView+GDSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GDSize.h"; sourceTree = "<group>"; };
 		D7803A7B1CD3C2F5001AD14C /* UIView+GDSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GDSize.m"; sourceTree = "<group>"; };
+		D797B3071D198E0A00209739 /* libMJRefresh.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMJRefresh.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/MJRefresh/libMJRefresh.a"; sourceTree = "<group>"; };
+		D797B3091D19B03A00209739 /* GDDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDDetailsViewController.h; sourceTree = "<group>"; };
+		D797B30A1D19B03A00209739 /* GDDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDetailsViewController.m; sourceTree = "<group>"; };
+		D797B30C1D19B20900209739 /* GDDetailsDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDDetailsDataModel.h; sourceTree = "<group>"; };
+		D797B30D1D19B20900209739 /* GDDetailsDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDetailsDataModel.m; sourceTree = "<group>"; };
+		D79C20531D1981C6000EBB31 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 		D7D9839F1D1822050027FAF6 /* GDMainViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDMainViewTableViewCell.h; sourceTree = "<group>"; };
 		D7D983A01D1822050027FAF6 /* GDMainViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDMainViewTableViewCell.m; sourceTree = "<group>"; };
 		D7D983A21D18DFC50027FAF6 /* LORequestManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LORequestManger.h; sourceTree = "<group>"; };
@@ -251,6 +261,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D797B3081D198E0A00209739 /* libMJRefresh.a in Frameworks */,
 				D71656B71CCFC2C2003CE4B8 /* libMasonry.a in Frameworks */,
 				D71656B81CCFC2C2003CE4B8 /* libMJExtension.a in Frameworks */,
 				D71656B91CCFC2C2003CE4B8 /* libMMDrawerController.a in Frameworks */,
@@ -299,6 +310,7 @@
 		2E96D9A89E298E8A838B85C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D797B3071D198E0A00209739 /* libMJRefresh.a */,
 				D71656AE1CCFC2C2003CE4B8 /* libMasonry.a */,
 				D71656AF1CCFC2C2003CE4B8 /* libMJExtension.a */,
 				D71656B01CCFC2C2003CE4B8 /* libMMDrawerController.a */,
@@ -586,6 +598,8 @@
 			children = (
 				D716569A1CCE918E003CE4B8 /* GDMainViewController.h */,
 				D716569B1CCE918E003CE4B8 /* GDMainViewController.m */,
+				D797B3091D19B03A00209739 /* GDDetailsViewController.h */,
+				D797B30A1D19B03A00209739 /* GDDetailsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -595,6 +609,8 @@
 			children = (
 				D71656CF1CCFE00A003CE4B8 /* GDRequestMCDataModel.h */,
 				D71656D01CCFE00A003CE4B8 /* GDRequestMCDataModel.m */,
+				D797B30C1D19B20900209739 /* GDDetailsDataModel.h */,
+				D797B30D1D19B20900209739 /* GDDetailsDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -767,6 +783,7 @@
 		D7803A2B1CD3C015001AD14C /* image */ = {
 			isa = PBXGroup;
 			children = (
+				D79C20531D1981C6000EBB31 /* arrow@2x.png */,
 				D7803A2C1CD3C015001AD14C /* bg_head_allGroup@2x.png */,
 				D7803A2D1CD3C015001AD14C /* bg_head_myGroup@2x.png */,
 				D7803A2E1CD3C015001AD14C /* clean@2x.png */,
@@ -1010,6 +1027,7 @@
 				D7803A6D1CD3C015001AD14C /* user_btn2@2x.png in Resources */,
 				D7803A691CD3C015001AD14C /* searchnew@2x.png in Resources */,
 				D7803A581CD3C015001AD14C /* name1_hover@2x.png in Resources */,
+				D79C20541D1981C6000EBB31 /* arrow@2x.png in Resources */,
 				D7803A551CD3C015001AD14C /* glass_hover@2x.png in Resources */,
 				D7803A651CD3C015001AD14C /* new_logo@2x.png in Resources */,
 				D7803A621CD3C015001AD14C /* name6_hover@2x.png in Resources */,
@@ -1176,6 +1194,7 @@
 				D7D983A11D1822050027FAF6 /* GDMainViewTableViewCell.m in Sources */,
 				D77D2AE11D1535DC00C838D0 /* NSObject+Log.m in Sources */,
 				D71656C21CCFC89A003CE4B8 /* GDClassTableViewController.m in Sources */,
+				D797B30B1D19B03A00209739 /* GDDetailsViewController.m in Sources */,
 				D7D9840C1D18E7340027FAF6 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				D71656C51CCFC918003CE4B8 /* GDInformationTableViewController.m in Sources */,
 				D7D984121D18E7340027FAF6 /* UIWebView+AFNetworking.m in Sources */,
@@ -1194,6 +1213,7 @@
 				D7D984081D18E7340027FAF6 /* AFURLRequestSerialization.m in Sources */,
 				D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */,
 				D730D7501D13088A00273EAA /* GDTabBarController.m in Sources */,
+				D797B30E1D19B20900209739 /* GDDetailsDataModel.m in Sources */,
 				D71656CB1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m in Sources */,
 				D7803A7C1CD3C2F5001AD14C /* UIView+GDSize.m in Sources */,
 				D71655A21CCE73FE003CE4B8 /* main.m in Sources */,
@@ -1328,13 +1348,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$CONFIGURATION_BUILD_DIR/MMDrawerController\"",
-					"$(inherited)",
-					"\"$CONFIGURATION_BUILD_DIR/Masonry\"",
 					"\"$CONFIGURATION_BUILD_DIR/MJExtension\"",
+					"\"$CONFIGURATION_BUILD_DIR/Masonry\"",
 					"\"$CONFIGURATION_BUILD_DIR/SDCycleScrollView\"",
 					"\"$CONFIGURATION_BUILD_DIR/SDWebImage\"",
 					"\"$CONFIGURATION_BUILD_DIR/WMPageController\"",
 					"\"$CONFIGURATION_BUILD_DIR/SVProgressHUD\"",
+					"\"$CONFIGURATION_BUILD_DIR/MJRefresh\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "gdarkness.GD---";
@@ -1353,13 +1373,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$CONFIGURATION_BUILD_DIR/MMDrawerController\"",
-					"$(inherited)",
-					"\"$CONFIGURATION_BUILD_DIR/Masonry\"",
 					"\"$CONFIGURATION_BUILD_DIR/MJExtension\"",
+					"\"$CONFIGURATION_BUILD_DIR/Masonry\"",
 					"\"$CONFIGURATION_BUILD_DIR/SDCycleScrollView\"",
 					"\"$CONFIGURATION_BUILD_DIR/SDWebImage\"",
 					"\"$CONFIGURATION_BUILD_DIR/WMPageController\"",
 					"\"$CONFIGURATION_BUILD_DIR/SVProgressHUD\"",
+					"\"$CONFIGURATION_BUILD_DIR/MJRefresh\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "gdarkness.GD---";

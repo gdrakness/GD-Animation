@@ -11,7 +11,8 @@
 #import "GDClassTableViewController.h"
 #import "GDInformationTableViewController.h"
 #import "GDGroupViewController.h"
-#import "GDHomeManager.h"
+#import "GDDetailsViewController.h"
+
 #import "GDRequestMCDataModel.h"
 #import "GDMainViewTableViewCell.h"
 
@@ -43,6 +44,7 @@
 
 @implementation GDMainViewController
 
+//@synthesize tableView = tableView;
 static NSString *Identifier = @"Identifier";
 
 
@@ -53,14 +55,52 @@ static NSString *Identifier = @"Identifier";
     [self.tableView registerClass:[GDMainViewTableViewCell class] forCellReuseIdentifier:Identifier];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    __weak typeof(self) weakSelf=self;
-    [weakSelf getDataIsMore:NO];
+    [self setRefresh];
+    [self.tableView.mj_header beginRefreshing];
+}
 
+- (void)viewDidAppear:(BOOL)animated {
+//    [self.tableView triggerPullToRefresh];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)setRefresh{
+    
+    __unsafe_unretained UITableView *tableView = self.tableView;
+    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(getDataIsMore:)];
+    
+    [header setTitle:@"下拉刷新..." forState:MJRefreshStateIdle];
+    [header setTitle:@"松开刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"正奋力加载中..." forState:MJRefreshStateRefreshing];
+
+    self.tableView.mj_header = header;
+    
+    // 下拉刷新
+//    tableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            NSLog(@"下拉刷新");
+//            // 结束刷新
+//            [tableView.mj_header endRefreshing];
+//        });
+//    }];
+//    // 设置自动切换透明度(在导航栏下面自动隐藏)
+//    tableView.mj_header.automaticallyChangeAlpha = YES;
+//    
+//    // 上拉刷新
+    tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 结束刷新
+            
+            [tableView.mj_footer endRefreshing];
+        });
+    }];
+
 }
 
 
@@ -152,9 +192,18 @@ static NSString *Identifier = @"Identifier";
         cell.layer.shadowOffset = CGSizeMake(0, 0);
         [UIView commitAnimations];
     }
-    
 //    [cell cellOffset];
     cell.model = model;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    GDDetailsViewController *viewControl = [[GDDetailsViewController alloc]init];
+    
+     DataModel *model = self.posts[indexPath.row];
+     viewControl.url = model.url;
+    
+    [self.navigationController pushViewController:viewControl animated:YES];
 }
 
 -(void)getDataIsMore:(BOOL)isMore{
@@ -170,16 +219,19 @@ static NSString *Identifier = @"Identifier";
 //            NSLog(@"%@",dataModel);
             
                 [self.posts addObjectsFromArray:dataModel.posts];
-
+//            NSLog(@"%@",self.posts);
                 [self.tableView reloadData];
 //            });
-         
+
+//            //结束刷新
+            [self.tableView.mj_header endRefreshing];
+//            [self.tableView.pullToRefreshView stopAnimating];
+//            [self.tableView.infiniteScrollingView stopAnimating];
+            
         } error:^(NSError *error) {
             
             NSLog(@"%@",error);
         }];
-    
-    NSLog(@"%@",_posts);
 
 }
 
@@ -188,7 +240,6 @@ static NSString *Identifier = @"Identifier";
     if (_posts != nil) {
         return _posts;
     }
-    
     //实例化
     _posts = [NSMutableArray array];
     

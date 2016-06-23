@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MMDrawerController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -49,6 +54,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SVPullToRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>WMPageController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,22 +72,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>073ECEE6C0910EB1F6BC48DCE9D42CBC</key>
+		<key>0D9899A6208E4E77673F489BDCD118E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>295B824E024439C81534E28B665018CC</key>
+		<key>279FC386C8C3E0D992C1E99509548D45</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>2E6AB6001D3AED7EE5036B65DCBF32B8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>38D1412A04AA8506D5A7877138BE1D3E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7BF8DE88408195961516A113E9E55884</key>
+		<key>5C6A705356B88DE7DF97B2FC7D8CCF05</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8CACCB2F0052BB5F1395D02AA48F7C0E</key>
+		<key>5F9AF18105ED9AE1A9283856C4FD18D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>70BC44266C6FFE30D2C57129458E070B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7BF8DE88408195961516A113E9E55884</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,12 +122,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AFB402443B866532C5E1FE8B5616ED8A</key>
+		<key>C35EA4F6B1DBEDF99C96A3A74E793C18</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC72CBF1903815F2755F6083C43C64B5</key>
+		<key>E097F7D5EFA2A7563E5F323E56415BF3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E4042FA7E4B571DE8D3B2627582B6226</key>
 		<dict>
 			<key>primary</key>
 			<true/>

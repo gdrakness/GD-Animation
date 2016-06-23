@@ -20,14 +20,16 @@
 //#define BaseUrl [NSURL URLWithString:@"http://api.18touch.com/index.php?c=acg&a=lists&limit=500&v=2"]
 #define BaseUrl @"http://api.18touch.com/index.php?c=acg&a=lists&limit=500&v=2"
 
+
 #import "UIView+GDSize.h"
 //#import "GDNetWorkManager.h"
-
 #import "UIImageView+WebCache.h"
-
 //#import "AFNetworkReachabilityManager.h"
 //#import "AFHTTPSessionManager.h"
 #import "UIImageView+WebCache.h"
 #import <MMDrawerController.h>
 #import <WMPageController.h>
 #import <MJExtension.h>
+#import "MJRefresh.h"
+
+#import "GDHomeManager.h"

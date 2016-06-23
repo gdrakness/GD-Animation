@@ -16,8 +16,9 @@ pod 'MMDrawerController'
 pod 'SDCycleScrollView'
 pod 'SVProgressHUD'
 pod 'MJExtension'
-pod 'MJExtension'
+pod 'SVPullToRefresh'
 pod 'YYModel'
+pod 'MJRefresh'
 
 end
 

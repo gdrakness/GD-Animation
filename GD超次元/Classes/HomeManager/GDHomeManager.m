@@ -9,13 +9,16 @@
 //
 
 #import "GDHomeManager.h"
-//#import "GDNetWorkManager.h"
+
 #import "GDRequestMCDataModel.h"
+#import "GDDetailsDataModel.h"
+
 #import "LORequestManger.h"
 @interface GDHomeManager ()
 
 @property (nonatomic, copy) void (^success)(id);
 @property (nonatomic, copy) void (^error)(NSError *);
+
 @end
 
 @implementation GDHomeManager
@@ -33,26 +36,44 @@
     
     self.success = success;
     self.error = error;
-    
-//    [[GDNetWorkManager shareManager]requestWithGET:URL paramaeters:nil success:^(id responseObjcet) {
-    
-    
+   
     [LORequestManger GET:BaseUrl success:^(id response) {
 //        NSLog(@"%@",responseObjcet);
         [GDRequestMCDataModel mj_setupObjectClassInArray:^NSDictionary *{
-            return @{
-                     @"posts":@"DataModel"
-                     };
+        return @{
+                 @"posts":@"DataModel"
+                };
         }];
         GDRequestMCDataModel *dataModel = [GDRequestMCDataModel mj_objectWithKeyValues:response];
         
         self.success(dataModel);
-//                NSLog(@"%@",data);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
+        self.error(error);
     }];
+
+}
+
+-(void)getDetailsWithURL:(NSString *)url sccess:(void(^)(GDDetailsDataModel *detailsData))success error:(void(^)(NSError *error))error{
     
+    self.success = success;
+    self.error = error;
     
+    [LORequestManger GET:url success:^(id response) {
+        
+            [GDDetailsDataModel mj_setupObjectClassInArray:^NSDictionary *{
+                return @{
+                         @"videos":@"GDVideosDetailsModel"
+                        };
+            }];
+        GDDetailsDataModel *dataModel = [GDDetailsDataModel mj_objectWithKeyValues:response];
+        
+        self.success(dataModel);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        self.error(error);
+    }];
 }
 @end
