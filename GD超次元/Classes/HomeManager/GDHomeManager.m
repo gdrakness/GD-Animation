@@ -12,6 +12,7 @@
 
 #import "GDRequestMCDataModel.h"
 #import "GDDetailsDataModel.h"
+#import "GDClassRequstDataModel.h"
 
 #import "LORequestManger.h"
 @interface GDHomeManager ()
@@ -37,7 +38,7 @@
     self.success = success;
     self.error = error;
    
-    [LORequestManger GET:BaseUrl success:^(id response) {
+    [LORequestManger GET:MainURL success:^(id response) {
 //        NSLog(@"%@",responseObjcet);
         [GDRequestMCDataModel mj_setupObjectClassInArray:^NSDictionary *{
         return @{
@@ -55,7 +56,7 @@
 
 }
 
--(void)getDetailsWithURL:(NSString *)url sccess:(void(^)(GDDetailsDataModel *detailsData))success error:(void(^)(NSError *error))error{
+-(void)getDetailsWithURL:(NSString *)url success:(void(^)(GDDetailsDataModel *detailsData))success error:(void(^)(NSError *error))error{
     
     self.success = success;
     self.error = error;
@@ -75,5 +76,27 @@
         
         self.error(error);
     }];
+}
+
+-(void)getFindClassRequstWithURL:(NSString *)url success:(void(^)(GDClassRequstDataModel *classDataModel))success error:(void(^)(NSError *error))error{
+    
+    self.success = success;
+    self.error = error;
+    
+    [LORequestManger GET:ClassURL success:^(id response) {
+        
+        [GDClassRequstDataModel mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"data":@"ClassDataModel"
+                     };
+        }];
+        GDClassRequstDataModel *dataModel = [GDClassRequstDataModel mj_objectWithKeyValues:response];
+        self.success(dataModel);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        self.error(error);
+    }];
+    
 }
 @end

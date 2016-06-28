@@ -17,7 +17,7 @@
     
     if (self) {
         
-        self.selectionStyle = UITableViewCellSelectionStyleGray;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         self.clipsToBounds = YES;
         

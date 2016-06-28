@@ -18,10 +18,12 @@
 #define blueColor [UIColor colorWithRed:88/255.0 green:194/255.0 blue:247/255.0 alpha:1]
 
 //#define BaseUrl [NSURL URLWithString:@"http://api.18touch.com/index.php?c=acg&a=lists&limit=500&v=2"]
-#define BaseUrl @"http://api.18touch.com/index.php?c=acg&a=lists&limit=500&v=2"
+
 
 
 #import "UIView+GDSize.h"
+#import "NSString_GDURL.h"
+
 //#import "GDNetWorkManager.h"
 #import "UIImageView+WebCache.h"
 //#import "AFNetworkReachabilityManager.h"

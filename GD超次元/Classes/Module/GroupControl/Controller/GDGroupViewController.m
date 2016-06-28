@@ -8,6 +8,7 @@
 
 #import "GDGroupViewController.h"
 #import "GDRequestMCDataModel.h"
+#import "LORequestManger.h"
 #import "GDHomeManager.h"
 
 @interface GDGroupViewController ()
@@ -27,13 +28,16 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    [[GDHomeManager shareInstance]getFindDealsWithParams:nil success:^(GDRequestMCDataModel *dataModel) {
-        NSLog(@"GDGroupViewController %@",dataModel);
-    } error:^(NSError *error) {
+    [LORequestManger GET:CompositorURL success:^(id response) {
+        
+        NSLog(@"%@",response);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
-
     
+
+
 //    [[GDNetWorkManager shareManager]requestWithGET:URL paramaeters:nil success:^(id responseObjcet) {
 ////        NSLog(@"%@",responseObjcet);
 //        [GDRequestMCDataModel mj_setupObjectClassInArray:^NSDictionary *{

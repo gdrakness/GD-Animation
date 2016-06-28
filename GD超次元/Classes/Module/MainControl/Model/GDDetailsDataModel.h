@@ -19,7 +19,7 @@
 
 @interface GDDetailsDataModel : NSObject
 @property(nonatomic,copy)NSString *status;
-@property(nonatomic,strong)NSString *thumb;//more跳转URL
+@property(nonatomic,strong)NSString *thumb;//图片
 @property(nonatomic,copy)NSString *cast;//声优列表
 @property(nonatomic,copy)NSString *type;//animation类型
 @property(nonatomic,copy)NSString *desc;//animation details

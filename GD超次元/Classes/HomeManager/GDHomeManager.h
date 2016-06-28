@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 @class GDRequestMCDataModel;
 @class GDDetailsDataModel;
+@class GDClassRequstDataModel;
 
 @interface GDHomeManager : NSObject
 
@@ -17,5 +18,7 @@
 //主页
 -(void)getFindDealsWithParams:(NSMutableDictionary *)params success:(void(^)(GDRequestMCDataModel *dataModel))success error:(void(^)(NSError *error))error;
 //主页详情
--(void)getDetailsWithURL:(NSString *)url sccess:(void(^)(GDDetailsDataModel *detailsData))success error:(void(^)(NSError *error))error;
+-(void)getDetailsWithURL:(NSString *)url success:(void(^)(GDDetailsDataModel *detailsData))success error:(void(^)(NSError *error))error;
+//分类
+-(void)getFindClassRequstWithURL:(NSString *)url success:(void(^)(GDClassRequstDataModel *classDataModel))success error:(void(^)(NSError *error))error;
 @end
