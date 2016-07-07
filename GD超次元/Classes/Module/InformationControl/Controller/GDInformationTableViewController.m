@@ -7,6 +7,7 @@
 //
 
 #import "GDInformationTableViewController.h"
+#import "GDInformationTableViewCell.h"
 
 @interface GDInformationTableViewController ()
 
@@ -16,6 +17,9 @@
 static NSString *Identifier = @"InformationCell";
 
 - (void)viewDidLoad {
+    
+   
+    
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -32,21 +36,17 @@ static NSString *Identifier = @"InformationCell";
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 0;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
-    
-    return cell;
-}
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
+//    
+//    return cell;
+//}
 
 
 /*

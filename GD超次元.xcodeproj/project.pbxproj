@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		086EE7617976D595DE611A67 /* libPods-GD超次元UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BD9A983DF8C645833F1251 /* libPods-GD超次元UITests.a */; };
 		873A5BC46D72F4C8FBACF7EF /* libPods-GD超次元Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8861B4731EAB7257101CE163 /* libPods-GD超次元Tests.a */; };
+		D7023D771D2DB0A4001139EC /* q10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7023D751D2DB0A4001139EC /* q10.jpg */; };
+		D7023D781D2DB0A4001139EC /* q14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7023D761D2DB0A4001139EC /* q14.jpg */; };
+		D7023D7A1D2DB0AC001139EC /* s8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7023D791D2DB0AC001139EC /* s8.jpg */; };
+		D7023D7C1D2DB0CF001139EC /* 1425449776105451.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7023D7B1D2DB0CF001139EC /* 1425449776105451.jpg */; };
+		D7023D801D2E4FCE001139EC /* UIView+Roundify.m in Sources */ = {isa = PBXBuildFile; fileRef = D7023D7F1D2E4FCE001139EC /* UIView+Roundify.m */; };
 		D71655A21CCE73FE003CE4B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D71655A11CCE73FE003CE4B8 /* main.m */; };
 		D71655A51CCE73FE003CE4B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D71655A41CCE73FE003CE4B8 /* AppDelegate.m */; };
 		D71655AD1CCE73FE003CE4B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D71655AC1CCE73FE003CE4B8 /* Assets.xcassets */; };
@@ -37,6 +42,7 @@
 		D71825F41D22C049001AE243 /* tjstar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D71825F11D22C049001AE243 /* tjstar@2x.png */; };
 		D71825FD1D22C397001AE243 /* GDInformationRequstDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D71825FC1D22C397001AE243 /* GDInformationRequstDataModel.m */; };
 		D71826001D22C6B6001AE243 /* GDInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71825FF1D22C6B6001AE243 /* GDInformationTableViewCell.m */; };
+		D71826031D22D119001AE243 /* GDCompositorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71826021D22D119001AE243 /* GDCompositorTableViewCell.m */; };
 		D730D7501D13088A00273EAA /* GDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D730D74F1D13088A00273EAA /* GDTabBarController.m */; };
 		D77D2AE11D1535DC00C838D0 /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */; };
 		D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE41D177CA200C838D0 /* GDHomeManager.m */; };
@@ -134,6 +140,12 @@
 		8861B4731EAB7257101CE163 /* libPods-GD超次元Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GD超次元Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D05EBCBE12BB958E71B5C3 /* Pods-GD超次元.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GD超次元.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GD超次元/Pods-GD超次元.debug.xcconfig"; sourceTree = "<group>"; };
 		D2A4327AD280E56DC0E6379B /* Pods-GD超次元.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GD超次元.release.xcconfig"; path = "Pods/Target Support Files/Pods-GD超次元/Pods-GD超次元.release.xcconfig"; sourceTree = "<group>"; };
+		D7023D751D2DB0A4001139EC /* q10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = q10.jpg; path = ../../../Image111/q10.jpg; sourceTree = "<group>"; };
+		D7023D761D2DB0A4001139EC /* q14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = q14.jpg; path = ../../../Image111/q14.jpg; sourceTree = "<group>"; };
+		D7023D791D2DB0AC001139EC /* s8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = s8.jpg; path = ../../../Image111/s8.jpg; sourceTree = "<group>"; };
+		D7023D7B1D2DB0CF001139EC /* 1425449776105451.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1425449776105451.jpg; path = ../../../Image111/1425449776105451.jpg; sourceTree = "<group>"; };
+		D7023D7E1D2E4FCE001139EC /* UIView+Roundify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Roundify.h"; sourceTree = "<group>"; };
+		D7023D7F1D2E4FCE001139EC /* UIView+Roundify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Roundify.m"; sourceTree = "<group>"; };
 		D716559D1CCE73FE003CE4B8 /* GD超次元.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GD超次元.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71655A11CCE73FE003CE4B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D71655A31CCE73FE003CE4B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -179,6 +191,8 @@
 		D71825FC1D22C397001AE243 /* GDInformationRequstDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInformationRequstDataModel.m; sourceTree = "<group>"; };
 		D71825FE1D22C6B6001AE243 /* GDInformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformationTableViewCell.h; sourceTree = "<group>"; };
 		D71825FF1D22C6B6001AE243 /* GDInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInformationTableViewCell.m; sourceTree = "<group>"; };
+		D71826011D22D119001AE243 /* GDCompositorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDCompositorTableViewCell.h; sourceTree = "<group>"; };
+		D71826021D22D119001AE243 /* GDCompositorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDCompositorTableViewCell.m; sourceTree = "<group>"; };
 		D721750E4E15F54EC19FD3D4 /* Pods-GD超次元UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GD超次元UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GD超次元UITests/Pods-GD超次元UITests.release.xcconfig"; sourceTree = "<group>"; };
 		D730D74E1D13088A00273EAA /* GDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTabBarController.h; sourceTree = "<group>"; };
 		D730D74F1D13088A00273EAA /* GDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTabBarController.m; sourceTree = "<group>"; };
@@ -551,6 +565,8 @@
 		D71656821CCE8F85003CE4B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D71826011D22D119001AE243 /* GDCompositorTableViewCell.h */,
+				D71826021D22D119001AE243 /* GDCompositorTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -827,6 +843,10 @@
 		D7803A2B1CD3C015001AD14C /* image */ = {
 			isa = PBXGroup;
 			children = (
+				D7023D7B1D2DB0CF001139EC /* 1425449776105451.jpg */,
+				D7023D791D2DB0AC001139EC /* s8.jpg */,
+				D7023D751D2DB0A4001139EC /* q10.jpg */,
+				D7023D761D2DB0A4001139EC /* q14.jpg */,
 				D71825EF1D22C049001AE243 /* tjhalfstar@2x.png */,
 				D71825F01D22C049001AE243 /* tjstar_full@2x.png */,
 				D71825F11D22C049001AE243 /* tjstar@2x.png */,
@@ -882,6 +902,8 @@
 				D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */,
 				D7803A7A1CD3C2F5001AD14C /* UIView+GDSize.h */,
 				D7803A7B1CD3C2F5001AD14C /* UIView+GDSize.m */,
+				D7023D7E1D2E4FCE001139EC /* UIView+Roundify.h */,
+				D7023D7F1D2E4FCE001139EC /* UIView+Roundify.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1058,11 +1080,13 @@
 				D7803A681CD3C015001AD14C /* sc_hover@2x.png in Resources */,
 				D7803A5C1CD3C015001AD14C /* name3_hover@2x.png in Resources */,
 				D7803A6A1CD3C015001AD14C /* set@2x.png in Resources */,
+				D7023D7A1D2DB0AC001139EC /* s8.jpg in Resources */,
 				D71655AD1CCE73FE003CE4B8 /* Assets.xcassets in Resources */,
 				D71825EE1D22BF7A001AE243 /* cover23@2x.png in Resources */,
 				D7803A661CD3C015001AD14C /* new_top@2x.png in Resources */,
 				D71825EC1D22BF7A001AE243 /* cover@2x.png in Resources */,
 				D7803A541CD3C015001AD14C /* glass@2x.png in Resources */,
+				D7023D7C1D2DB0CF001139EC /* 1425449776105451.jpg in Resources */,
 				D7803A601CD3C015001AD14C /* name5_hover@2x.png in Resources */,
 				D7803A571CD3C015001AD14C /* name1@2x.png in Resources */,
 				D7803A611CD3C015001AD14C /* name6@2x.png in Resources */,
@@ -1076,10 +1100,12 @@
 				D7803A6E1CD3C015001AD14C /* user_btn3@2x.png in Resources */,
 				D71825ED1D22BF7A001AE243 /* cover1@2x.png in Resources */,
 				D7803A5D1CD3C015001AD14C /* name4@2x.png in Resources */,
+				D7023D781D2DB0A4001139EC /* q14.jpg in Resources */,
 				D7803A521CD3C015001AD14C /* clock@2x.png in Resources */,
 				D7803A701CD3C015001AD14C /* user_btn5@2x.png in Resources */,
 				D7803A6D1CD3C015001AD14C /* user_btn2@2x.png in Resources */,
 				D71825F41D22C049001AE243 /* tjstar@2x.png in Resources */,
+				D7023D771D2DB0A4001139EC /* q10.jpg in Resources */,
 				D7803A691CD3C015001AD14C /* searchnew@2x.png in Resources */,
 				D7803A581CD3C015001AD14C /* name1_hover@2x.png in Resources */,
 				D79C20541D1981C6000EBB31 /* arrow@2x.png in Resources */,
@@ -1242,6 +1268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7023D801D2E4FCE001139EC /* UIView+Roundify.m in Sources */,
 				D7D984101D18E7340027FAF6 /* UIProgressView+AFNetworking.m in Sources */,
 				D7D9840F1D18E7340027FAF6 /* UIImageView+AFNetworking.m in Sources */,
 				D7D984021D18E7340027FAF6 /* AFHTTPRequestOperation.m in Sources */,
@@ -1261,6 +1288,7 @@
 				D7D9840D1D18E7340027FAF6 /* UIAlertView+AFNetworking.m in Sources */,
 				D7866F991D1CCB2A00A0B1E0 /* GDVideoDetailsTableViewCell.m in Sources */,
 				D71655A51CCE73FE003CE4B8 /* AppDelegate.m in Sources */,
+				D71826031D22D119001AE243 /* GDCompositorTableViewCell.m in Sources */,
 				D7D984051D18E7340027FAF6 /* AFNetworkReachabilityManager.m in Sources */,
 				D7D9840A1D18E7340027FAF6 /* AFURLSessionManager.m in Sources */,
 				D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */,

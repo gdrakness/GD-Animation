@@ -81,7 +81,7 @@ static NSString * const reuseIdentifier = @"calssCell";
             //如果不是更多,则清空原来数据
             [self.data removeAllObjects];
         }
-        NSLog(@"%@",classDataModel);
+//        NSLog(@"%@",classDataModel);
         [self.data addObjectsFromArray:classDataModel.data];
         
 //        NSLog(@"%@",self.data);

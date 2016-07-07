@@ -7,6 +7,7 @@
 //
 
 #import "GDCompositorTableViewController.h"
+#import "GDCompositorTableViewCell.h"
 
 
 @interface GDCompositorTableViewController ()
@@ -14,10 +15,13 @@
 @end
 
 @implementation GDCompositorTableViewController
+static NSString *Identifier = @"CompositorIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView registerClass:[GDCompositorTableViewCell class] forCellReuseIdentifier:Identifier];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -35,24 +39,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 1;
 }
 
-/*
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 700;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    GDCompositorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
+
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
