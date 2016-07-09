@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GDInformationTableViewController : UITableViewController
+@interface GDInformationTableViewController : UITableViewController 
 
 @end

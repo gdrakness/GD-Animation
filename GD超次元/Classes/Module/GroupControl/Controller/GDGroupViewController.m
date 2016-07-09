@@ -28,7 +28,7 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    [LORequestManger GET:CompositorURL success:^(id response) {
+    [LORequestManger GET:TimeURL success:^(id response) {
         
         NSLog(@"%@",response);
         

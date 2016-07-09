@@ -42,7 +42,7 @@
     
     GDBarButtonItem *searchItem = [GDBarButtonItem barButtonItemWithImageHighlighted:@"glass_hover@2x" image:@"glass@2x" target:self action:@selector(searchAction:)];
     
-    self.navigationItem.leftBarButtonItems = @[settingItem,searchItem];
+    self.navigationItem.leftBarButtonItems = @[settingItem,searchItem,];
     
     GDBarButtonItem *scheduleItem = [GDBarButtonItem barButtonItemWithImageHighlighted:@"clock_hover@2x" image:@"clock@2x" target:self action:@selector(scheduleAction:)];
     

@@ -16,10 +16,14 @@
 @property(nonatomic,strong)UILabel *groupTitle;
 @property(nonatomic,strong)UIImageView *firstCoverView;
 @property(nonatomic,strong)UIImageView *firstView;
+@property(nonatomic,strong)UIButton *firstViewBtn;
 @property(nonatomic,strong)UILabel *title;
 @property(nonatomic,strong)UILabel *videoLable;
+@property(nonatomic,strong)UILabel *descLable;
 @property(nonatomic,strong)UIImageView *secondCoverView;
 @property(nonatomic,strong)UIImageView *secondView;
+@property(nonatomic,strong)UIButton *secondViewFBtn;
+@property(nonatomic,strong)UIButton *secondViewSBtn;
 @property(nonatomic,strong)UIView *thirdlyCoverView;
 @property(nonatomic,strong)UIImageView *thrirdlyChildView;
 @property(nonatomic,strong)UILabel *titleLable;
@@ -54,6 +58,10 @@
         _firstCoverView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 35, [UIScreen mainScreen].bounds.size.width - 10, 140)];
         [_firstCoverView setImage:[UIImage imageNamed:@"cover1"]];
         [self.contentView addSubview:_firstCoverView];
+        
+        _firstViewBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width - 10, 140)];
+        [_firstViewBtn setBackgroundColor:[UIColor clearColor]];
+        [_firstCoverView addSubview:_firstViewBtn];
         
         _title = [[UILabel alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 120, 5, 100, 15)];
         [_title setText:@"绝对双刀"];
@@ -92,6 +100,13 @@
             [_firstCoverView addSubview:view];
         }
         
+        _descLable = [[UILabel alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 125, 57, 110, 80)];
+        [_descLable setText:@"因出色异能而受到了学校众人的关注的透流，遵照被称为“绊双刃”的学园拍档制度，须与银发美少女茱莉整天在同一房间里一同度过……"];
+        _descLable.font = [UIFont systemFontOfSize:10];
+        _descLable.textColor = [UIColor grayColor];
+        _descLable.numberOfLines = 0;
+        [_firstCoverView addSubview: _descLable];
+        
         _secondView = [[UIImageView alloc]initWithFrame:CGRectMake(6, 182, [UIScreen mainScreen].bounds.size.width - 12, 116)];
         [_secondView setImage:[UIImage imageNamed:@"1421044163414588.jpg"]];
         [self.contentView addSubview:_secondView];
@@ -100,8 +115,15 @@
         [_secondCoverView setImage:[UIImage imageNamed:@"cover23"]];
         [self.contentView addSubview:_secondCoverView];
         
+        _secondViewFBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width - 200, 120)];
+        [_secondViewFBtn setBackgroundColor:[UIColor clearColor]];
+        [_secondCoverView addSubview:_secondViewFBtn];
+        
+        _secondViewSBtn = [[UIButton alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 125, 0, [UIScreen mainScreen].bounds.size.width - 200, 120)];
+        [_secondViewSBtn setBackgroundColor:[UIColor clearColor]];
+        [_secondCoverView addSubview:_secondViewSBtn];
+        
         _thirdlyCoverView = [[UIView alloc]initWithFrame:CGRectMake(5, 310, [UIScreen mainScreen].bounds.size.width - 10, 300)];
-//        [_thirdlyCoverView setBackgroundColor:[UIColor grayColor]];
         [self.contentView addSubview:_thirdlyCoverView];
         
         CGFloat BtnWidth = (_thirdlyCoverView.frame.size.width / 2) - 7;

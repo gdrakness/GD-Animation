@@ -16,6 +16,8 @@
 		D7023D801D2E4FCE001139EC /* UIView+Roundify.m in Sources */ = {isa = PBXBuildFile; fileRef = D7023D7F1D2E4FCE001139EC /* UIView+Roundify.m */; };
 		D7023D831D2EB8C0001139EC /* 1421035825228917.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023D811D2EB8C0001139EC /* 1421035825228917.png */; };
 		D7023D841D2EB8C0001139EC /* 1421044163414588.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7023D821D2EB8C0001139EC /* 1421044163414588.jpg */; };
+		D7023D871D30E79A001139EC /* GDTimetableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7023D861D30E79A001139EC /* GDTimetableController.m */; };
+		D7023D8A1D30E7D0001139EC /* GDTimeTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7023D891D30E7D0001139EC /* GDTimeTableModel.m */; };
 		D71655A21CCE73FE003CE4B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D71655A11CCE73FE003CE4B8 /* main.m */; };
 		D71655A51CCE73FE003CE4B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D71655A41CCE73FE003CE4B8 /* AppDelegate.m */; };
 		D71655AD1CCE73FE003CE4B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D71655AC1CCE73FE003CE4B8 /* Assets.xcassets */; };
@@ -150,6 +152,10 @@
 		D7023D7F1D2E4FCE001139EC /* UIView+Roundify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Roundify.m"; sourceTree = "<group>"; };
 		D7023D811D2EB8C0001139EC /* 1421035825228917.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1421035825228917.png; path = ../../../Image111/1421035825228917.png; sourceTree = "<group>"; };
 		D7023D821D2EB8C0001139EC /* 1421044163414588.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1421044163414588.jpg; path = ../../../Image111/1421044163414588.jpg; sourceTree = "<group>"; };
+		D7023D851D30E79A001139EC /* GDTimetableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTimetableController.h; sourceTree = "<group>"; };
+		D7023D861D30E79A001139EC /* GDTimetableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTimetableController.m; sourceTree = "<group>"; };
+		D7023D881D30E7D0001139EC /* GDTimeTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTimeTableModel.h; sourceTree = "<group>"; };
+		D7023D891D30E7D0001139EC /* GDTimeTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTimeTableModel.m; sourceTree = "<group>"; };
 		D716559D1CCE73FE003CE4B8 /* GD超次元.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GD超次元.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71655A11CCE73FE003CE4B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D71655A31CCE73FE003CE4B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -784,6 +790,8 @@
 		D71656A21CCE9655003CE4B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D7023D851D30E79A001139EC /* GDTimetableController.h */,
+				D7023D861D30E79A001139EC /* GDTimetableController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -791,6 +799,8 @@
 		D71656A31CCE9655003CE4B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D7023D881D30E7D0001139EC /* GDTimeTableModel.h */,
+				D7023D891D30E7D0001139EC /* GDTimeTableModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1300,6 +1310,7 @@
 				D7D984051D18E7340027FAF6 /* AFNetworkReachabilityManager.m in Sources */,
 				D7D9840A1D18E7340027FAF6 /* AFURLSessionManager.m in Sources */,
 				D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */,
+				D7023D871D30E79A001139EC /* GDTimetableController.m in Sources */,
 				D7803A741CD3C0C4001AD14C /* GDBarButtonItem.m in Sources */,
 				D7D984071D18E7340027FAF6 /* AFURLConnectionOperation.m in Sources */,
 				D7D984091D18E7340027FAF6 /* AFURLResponseSerialization.m in Sources */,
@@ -1313,6 +1324,7 @@
 				D7866FA71D1E543300A0B1E0 /* GDClassRequstDataModel.m in Sources */,
 				D71655A21CCE73FE003CE4B8 /* main.m in Sources */,
 				D7D9840E1D18E7340027FAF6 /* UIButton+AFNetworking.m in Sources */,
+				D7023D8A1D30E7D0001139EC /* GDTimeTableModel.m in Sources */,
 				D7866F9E1D1DB56800A0B1E0 /* GDCompositorDataModel.m in Sources */,
 				D7D984111D18E7340027FAF6 /* UIRefreshControl+AFNetworking.m in Sources */,
 				D7D984031D18E7340027FAF6 /* AFHTTPRequestOperationManager.m in Sources */,

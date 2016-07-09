@@ -15,10 +15,12 @@
 
 +(instancetype)shareInstance;
 
-//主页
+//新番速递
 -(void)getFindDealsWithParams:(NSMutableDictionary *)params success:(void(^)(GDRequestMCDataModel *dataModel))success error:(void(^)(NSError *error))error;
-//主页详情
+//新番详情
 -(void)getDetailsWithURL:(NSString *)url success:(void(^)(GDDetailsDataModel *detailsData))success error:(void(^)(NSError *error))error;
-//分类
+//分类推荐
 -(void)getFindClassRequstWithURL:(NSString *)url success:(void(^)(GDClassRequstDataModel *classDataModel))success error:(void(^)(NSError *error))error;
+//动画排行
+
 @end
