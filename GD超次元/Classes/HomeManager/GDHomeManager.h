@@ -10,6 +10,7 @@
 @class GDRequestMCDataModel;
 @class GDDetailsDataModel;
 @class GDClassRequstDataModel;
+@class GDTimeTableModel;
 
 @interface GDHomeManager : NSObject
 
@@ -22,5 +23,6 @@
 //分类推荐
 -(void)getFindClassRequstWithURL:(NSString *)url success:(void(^)(GDClassRequstDataModel *classDataModel))success error:(void(^)(NSError *error))error;
 //动画排行
-
+//时间表
+-(void)getFindTimeTableRequstWithURL:(NSString *)url success:(void(^)(GDTimeTableModel *dataModel))success error:(void(^)(NSError *error))error;
 @end

@@ -9,6 +9,10 @@
 #import "GDTabBarController.h"
 #import "GDMainViewController.h"
 #import "GDBarButtonItem.h"
+#import "GDTimetableController.h"
+#import "GDSetingViewController.h"
+#import <MMDrawerBarButtonItem.h>
+#import <UIViewController+MMDrawerController.h>
 
 @interface GDTabBarController ()
 
@@ -57,11 +61,14 @@
 }
 
 -(void)settingAction:(id)sender{
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 -(void)scheduleAction:(id)sender{
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
+   GDTimetableController *Tvc =  [[GDTimetableController alloc]init];
+    [self.navigationController pushViewController:Tvc animated:YES];
 }
 
 -(void)collectionAction:(id)sender{

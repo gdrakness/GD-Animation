@@ -16,8 +16,22 @@
 		D7023D801D2E4FCE001139EC /* UIView+Roundify.m in Sources */ = {isa = PBXBuildFile; fileRef = D7023D7F1D2E4FCE001139EC /* UIView+Roundify.m */; };
 		D7023D831D2EB8C0001139EC /* 1421035825228917.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023D811D2EB8C0001139EC /* 1421035825228917.png */; };
 		D7023D841D2EB8C0001139EC /* 1421044163414588.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7023D821D2EB8C0001139EC /* 1421044163414588.jpg */; };
-		D7023D871D30E79A001139EC /* GDTimetableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7023D861D30E79A001139EC /* GDTimetableController.m */; };
 		D7023D8A1D30E7D0001139EC /* GDTimeTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7023D891D30E7D0001139EC /* GDTimeTableModel.m */; };
+		D7023D8D1D30F821001139EC /* fri@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023D8B1D30F821001139EC /* fri@2x.png */; };
+		D7023D8E1D30F821001139EC /* fri2.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023D8C1D30F821001139EC /* fri2.png */; };
+		D7023D951D30F888001139EC /* sat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023D931D30F888001139EC /* sat@2x.png */; };
+		D7023D961D30F888001139EC /* sat2.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023D941D30F888001139EC /* sat2.png */; };
+		D7023D991D30F89A001139EC /* sun@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023D971D30F89A001139EC /* sun@2x.png */; };
+		D7023D9A1D30F89A001139EC /* sun2.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023D981D30F89A001139EC /* sun2.png */; };
+		D7023D9D1D30F8AC001139EC /* thu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023D9B1D30F8AC001139EC /* thu@2x.png */; };
+		D7023D9E1D30F8AC001139EC /* thu2.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023D9C1D30F8AC001139EC /* thu2.png */; };
+		D7023DA11D30F8D1001139EC /* tue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023D9F1D30F8D1001139EC /* tue@2x.png */; };
+		D7023DA21D30F8D1001139EC /* tue2.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023DA01D30F8D1001139EC /* tue2.png */; };
+		D7023DA51D30F8EB001139EC /* wed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023DA31D30F8EB001139EC /* wed@2x.png */; };
+		D7023DA61D30F8EB001139EC /* wed2.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023DA41D30F8EB001139EC /* wed2.png */; };
+		D7023DAD1D30F97E001139EC /* mon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023DAB1D30F97E001139EC /* mon@2x.png */; };
+		D7023DAE1D30F97E001139EC /* mon2.png in Resources */ = {isa = PBXBuildFile; fileRef = D7023DAC1D30F97E001139EC /* mon2.png */; };
+		D7023DB11D30FA7B001139EC /* GDTimetableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7023DB01D30FA7B001139EC /* GDTimetableController.m */; };
 		D71655A21CCE73FE003CE4B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D71655A11CCE73FE003CE4B8 /* main.m */; };
 		D71655A51CCE73FE003CE4B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D71655A41CCE73FE003CE4B8 /* AppDelegate.m */; };
 		D71655AD1CCE73FE003CE4B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D71655AC1CCE73FE003CE4B8 /* Assets.xcassets */; };
@@ -47,6 +61,8 @@
 		D71825FD1D22C397001AE243 /* GDInformationRequstDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D71825FC1D22C397001AE243 /* GDInformationRequstDataModel.m */; };
 		D71826001D22C6B6001AE243 /* GDInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71825FF1D22C6B6001AE243 /* GDInformationTableViewCell.m */; };
 		D71826031D22D119001AE243 /* GDCompositorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71826021D22D119001AE243 /* GDCompositorTableViewCell.m */; };
+		D72D2AD51D31763E00940A53 /* GDTableViewMondelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D72D2AD41D31763E00940A53 /* GDTableViewMondelCell.m */; };
+		D72D2ADB1D33497900940A53 /* GDTimeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D72D2ADA1D33497900940A53 /* GDTimeCollectionViewCell.m */; };
 		D730D7501D13088A00273EAA /* GDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D730D74F1D13088A00273EAA /* GDTabBarController.m */; };
 		D77D2AE11D1535DC00C838D0 /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */; };
 		D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE41D177CA200C838D0 /* GDHomeManager.m */; };
@@ -152,10 +168,24 @@
 		D7023D7F1D2E4FCE001139EC /* UIView+Roundify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Roundify.m"; sourceTree = "<group>"; };
 		D7023D811D2EB8C0001139EC /* 1421035825228917.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1421035825228917.png; path = ../../../Image111/1421035825228917.png; sourceTree = "<group>"; };
 		D7023D821D2EB8C0001139EC /* 1421044163414588.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1421044163414588.jpg; path = ../../../Image111/1421044163414588.jpg; sourceTree = "<group>"; };
-		D7023D851D30E79A001139EC /* GDTimetableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTimetableController.h; sourceTree = "<group>"; };
-		D7023D861D30E79A001139EC /* GDTimetableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTimetableController.m; sourceTree = "<group>"; };
 		D7023D881D30E7D0001139EC /* GDTimeTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTimeTableModel.h; sourceTree = "<group>"; };
 		D7023D891D30E7D0001139EC /* GDTimeTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTimeTableModel.m; sourceTree = "<group>"; };
+		D7023D8B1D30F821001139EC /* fri@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fri@2x.png"; path = "../../../超次元新番 2.4/Payload/ACG.app/fri@2x.png"; sourceTree = "<group>"; };
+		D7023D8C1D30F821001139EC /* fri2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fri2.png; path = "../../../超次元新番 2.4/Payload/ACG.app/fri2.png"; sourceTree = "<group>"; };
+		D7023D931D30F888001139EC /* sat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sat@2x.png"; path = "../../../超次元新番 2.4/Payload/ACG.app/sat@2x.png"; sourceTree = "<group>"; };
+		D7023D941D30F888001139EC /* sat2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sat2.png; path = "../../../超次元新番 2.4/Payload/ACG.app/sat2.png"; sourceTree = "<group>"; };
+		D7023D971D30F89A001139EC /* sun@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sun@2x.png"; path = "../../../超次元新番 2.4/Payload/ACG.app/sun@2x.png"; sourceTree = "<group>"; };
+		D7023D981D30F89A001139EC /* sun2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sun2.png; path = "../../../超次元新番 2.4/Payload/ACG.app/sun2.png"; sourceTree = "<group>"; };
+		D7023D9B1D30F8AC001139EC /* thu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thu@2x.png"; path = "../../../超次元新番 2.4/Payload/ACG.app/thu@2x.png"; sourceTree = "<group>"; };
+		D7023D9C1D30F8AC001139EC /* thu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thu2.png; path = "../../../超次元新番 2.4/Payload/ACG.app/thu2.png"; sourceTree = "<group>"; };
+		D7023D9F1D30F8D1001139EC /* tue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tue@2x.png"; path = "../../../超次元新番 2.4/Payload/ACG.app/tue@2x.png"; sourceTree = "<group>"; };
+		D7023DA01D30F8D1001139EC /* tue2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tue2.png; path = "../../../超次元新番 2.4/Payload/ACG.app/tue2.png"; sourceTree = "<group>"; };
+		D7023DA31D30F8EB001139EC /* wed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wed@2x.png"; path = "../../../超次元新番 2.4/Payload/ACG.app/wed@2x.png"; sourceTree = "<group>"; };
+		D7023DA41D30F8EB001139EC /* wed2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wed2.png; path = "../../../超次元新番 2.4/Payload/ACG.app/wed2.png"; sourceTree = "<group>"; };
+		D7023DAB1D30F97E001139EC /* mon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mon@2x.png"; path = "../../../超次元新番 2.4/Payload/ACG.app/mon@2x.png"; sourceTree = "<group>"; };
+		D7023DAC1D30F97E001139EC /* mon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mon2.png; path = "../../../超次元新番 2.4/Payload/ACG.app/mon2.png"; sourceTree = "<group>"; };
+		D7023DAF1D30FA7B001139EC /* GDTimetableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTimetableController.h; sourceTree = "<group>"; };
+		D7023DB01D30FA7B001139EC /* GDTimetableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTimetableController.m; sourceTree = "<group>"; };
 		D716559D1CCE73FE003CE4B8 /* GD超次元.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GD超次元.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71655A11CCE73FE003CE4B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D71655A31CCE73FE003CE4B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -204,6 +234,10 @@
 		D71826011D22D119001AE243 /* GDCompositorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDCompositorTableViewCell.h; sourceTree = "<group>"; };
 		D71826021D22D119001AE243 /* GDCompositorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDCompositorTableViewCell.m; sourceTree = "<group>"; };
 		D721750E4E15F54EC19FD3D4 /* Pods-GD超次元UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GD超次元UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GD超次元UITests/Pods-GD超次元UITests.release.xcconfig"; sourceTree = "<group>"; };
+		D72D2AD31D31763E00940A53 /* GDTableViewMondelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTableViewMondelCell.h; sourceTree = "<group>"; };
+		D72D2AD41D31763E00940A53 /* GDTableViewMondelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTableViewMondelCell.m; sourceTree = "<group>"; };
+		D72D2AD91D33497900940A53 /* GDTimeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTimeCollectionViewCell.h; sourceTree = "<group>"; };
+		D72D2ADA1D33497900940A53 /* GDTimeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTimeCollectionViewCell.m; sourceTree = "<group>"; };
 		D730D74E1D13088A00273EAA /* GDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTabBarController.h; sourceTree = "<group>"; };
 		D730D74F1D13088A00273EAA /* GDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTabBarController.m; sourceTree = "<group>"; };
 		D77D2ADF1D1535DC00C838D0 /* NSObject+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Log.h"; sourceTree = "<group>"; };
@@ -790,8 +824,8 @@
 		D71656A21CCE9655003CE4B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D7023D851D30E79A001139EC /* GDTimetableController.h */,
-				D7023D861D30E79A001139EC /* GDTimetableController.m */,
+				D7023DAF1D30FA7B001139EC /* GDTimetableController.h */,
+				D7023DB01D30FA7B001139EC /* GDTimetableController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -808,6 +842,10 @@
 		D71656A41CCE9655003CE4B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D72D2AD31D31763E00940A53 /* GDTableViewMondelCell.h */,
+				D72D2AD41D31763E00940A53 /* GDTableViewMondelCell.m */,
+				D72D2AD91D33497900940A53 /* GDTimeCollectionViewCell.h */,
+				D72D2ADA1D33497900940A53 /* GDTimeCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -857,6 +895,20 @@
 		D7803A2B1CD3C015001AD14C /* image */ = {
 			isa = PBXGroup;
 			children = (
+				D7023DAB1D30F97E001139EC /* mon@2x.png */,
+				D7023DAC1D30F97E001139EC /* mon2.png */,
+				D7023DA31D30F8EB001139EC /* wed@2x.png */,
+				D7023DA41D30F8EB001139EC /* wed2.png */,
+				D7023D9F1D30F8D1001139EC /* tue@2x.png */,
+				D7023DA01D30F8D1001139EC /* tue2.png */,
+				D7023D9B1D30F8AC001139EC /* thu@2x.png */,
+				D7023D9C1D30F8AC001139EC /* thu2.png */,
+				D7023D971D30F89A001139EC /* sun@2x.png */,
+				D7023D981D30F89A001139EC /* sun2.png */,
+				D7023D931D30F888001139EC /* sat@2x.png */,
+				D7023D941D30F888001139EC /* sat2.png */,
+				D7023D8B1D30F821001139EC /* fri@2x.png */,
+				D7023D8C1D30F821001139EC /* fri2.png */,
 				D7023D811D2EB8C0001139EC /* 1421035825228917.png */,
 				D7023D821D2EB8C0001139EC /* 1421044163414588.jpg */,
 				D7023D7B1D2DB0CF001139EC /* 1425449776105451.jpg */,
@@ -1100,25 +1152,37 @@
 				D7023D7A1D2DB0AC001139EC /* s8.jpg in Resources */,
 				D71655AD1CCE73FE003CE4B8 /* Assets.xcassets in Resources */,
 				D71825EE1D22BF7A001AE243 /* cover23@2x.png in Resources */,
+				D7023D961D30F888001139EC /* sat2.png in Resources */,
+				D7023D8D1D30F821001139EC /* fri@2x.png in Resources */,
 				D7803A661CD3C015001AD14C /* new_top@2x.png in Resources */,
 				D71825EC1D22BF7A001AE243 /* cover@2x.png in Resources */,
 				D7803A541CD3C015001AD14C /* glass@2x.png in Resources */,
 				D7023D7C1D2DB0CF001139EC /* 1425449776105451.jpg in Resources */,
 				D7803A601CD3C015001AD14C /* name5_hover@2x.png in Resources */,
+				D7023DAD1D30F97E001139EC /* mon@2x.png in Resources */,
 				D7803A571CD3C015001AD14C /* name1@2x.png in Resources */,
+				D7023D9E1D30F8AC001139EC /* thu2.png in Resources */,
 				D7023D841D2EB8C0001139EC /* 1421044163414588.jpg in Resources */,
 				D7803A611CD3C015001AD14C /* name6@2x.png in Resources */,
 				D7803A6C1CD3C015001AD14C /* user_btn1@2x.png in Resources */,
+				D7023D8E1D30F821001139EC /* fri2.png in Resources */,
 				D7803A5F1CD3C015001AD14C /* name5@2x.png in Resources */,
 				D7803A671CD3C015001AD14C /* sc@2x.png in Resources */,
 				D7803A501CD3C015001AD14C /* bg_head_myGroup@2x.png in Resources */,
+				D7023DA51D30F8EB001139EC /* wed@2x.png in Resources */,
 				D7803A641CD3C015001AD14C /* name7_hover@2x.png in Resources */,
+				D7023DAE1D30F97E001139EC /* mon2.png in Resources */,
 				D7803A711CD3C015001AD14C /* videoranktitle@2x.png in Resources */,
 				D71825F21D22C049001AE243 /* tjhalfstar@2x.png in Resources */,
+				D7023DA21D30F8D1001139EC /* tue2.png in Resources */,
+				D7023D991D30F89A001139EC /* sun@2x.png in Resources */,
 				D7803A6E1CD3C015001AD14C /* user_btn3@2x.png in Resources */,
 				D71825ED1D22BF7A001AE243 /* cover1@2x.png in Resources */,
 				D7803A5D1CD3C015001AD14C /* name4@2x.png in Resources */,
 				D7023D781D2DB0A4001139EC /* q14.jpg in Resources */,
+				D7023D951D30F888001139EC /* sat@2x.png in Resources */,
+				D7023DA11D30F8D1001139EC /* tue@2x.png in Resources */,
+				D7023D9D1D30F8AC001139EC /* thu@2x.png in Resources */,
 				D7803A521CD3C015001AD14C /* clock@2x.png in Resources */,
 				D7803A701CD3C015001AD14C /* user_btn5@2x.png in Resources */,
 				D7803A6D1CD3C015001AD14C /* user_btn2@2x.png in Resources */,
@@ -1133,6 +1197,8 @@
 				D7803A511CD3C015001AD14C /* clean@2x.png in Resources */,
 				D7803A531CD3C015001AD14C /* clock_hover@2x.png in Resources */,
 				D7803A5A1CD3C015001AD14C /* name2_hover@2x.png in Resources */,
+				D7023D9A1D30F89A001139EC /* sun2.png in Resources */,
+				D7023DA61D30F8EB001139EC /* wed2.png in Resources */,
 				D7803A6F1CD3C015001AD14C /* user_btn4@2x.png in Resources */,
 				D71825F31D22C049001AE243 /* tjstar_full@2x.png in Resources */,
 				D7803A6B1CD3C015001AD14C /* set_hover@2x.png in Resources */,
@@ -1290,7 +1356,9 @@
 				D7D984101D18E7340027FAF6 /* UIProgressView+AFNetworking.m in Sources */,
 				D7D9840F1D18E7340027FAF6 /* UIImageView+AFNetworking.m in Sources */,
 				D7D984021D18E7340027FAF6 /* AFHTTPRequestOperation.m in Sources */,
+				D72D2AD51D31763E00940A53 /* GDTableViewMondelCell.m in Sources */,
 				D716569C1CCE918E003CE4B8 /* GDMainViewController.m in Sources */,
+				D72D2ADB1D33497900940A53 /* GDTimeCollectionViewCell.m in Sources */,
 				D71656C81CCFC952003CE4B8 /* GDGroupViewController.m in Sources */,
 				D7D983A11D1822050027FAF6 /* GDMainViewTableViewCell.m in Sources */,
 				D77D2AE11D1535DC00C838D0 /* NSObject+Log.m in Sources */,
@@ -1310,7 +1378,6 @@
 				D7D984051D18E7340027FAF6 /* AFNetworkReachabilityManager.m in Sources */,
 				D7D9840A1D18E7340027FAF6 /* AFURLSessionManager.m in Sources */,
 				D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */,
-				D7023D871D30E79A001139EC /* GDTimetableController.m in Sources */,
 				D7803A741CD3C0C4001AD14C /* GDBarButtonItem.m in Sources */,
 				D7D984071D18E7340027FAF6 /* AFURLConnectionOperation.m in Sources */,
 				D7D984091D18E7340027FAF6 /* AFURLResponseSerialization.m in Sources */,
@@ -1329,6 +1396,7 @@
 				D7D984111D18E7340027FAF6 /* UIRefreshControl+AFNetworking.m in Sources */,
 				D7D984031D18E7340027FAF6 /* AFHTTPRequestOperationManager.m in Sources */,
 				D7D984061D18E7340027FAF6 /* AFSecurityPolicy.m in Sources */,
+				D7023DB11D30FA7B001139EC /* GDTimetableController.m in Sources */,
 				D71826001D22C6B6001AE243 /* GDInformationTableViewCell.m in Sources */,
 				D7866FAA1D1E5B1200A0B1E0 /* GDClassCollectionViewCell.m in Sources */,
 				D71656A71CCE9699003CE4B8 /* GDSetingViewController.m in Sources */,

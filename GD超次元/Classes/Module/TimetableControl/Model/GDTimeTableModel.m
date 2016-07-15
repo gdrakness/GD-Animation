@@ -9,6 +9,13 @@
 
 #import "GDTimeTableModel.h"
 
+@implementation GDTimeTableDescModel
+
+@end
+
 @implementation GDTimeTableModel
 
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
+}
 @end

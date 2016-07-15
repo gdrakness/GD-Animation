@@ -16,11 +16,11 @@
 @end
 
 @interface GDTimeTableModel : NSObject
-@property(nonatomic,strong)NSMutableArray <GDTimeTableDescModel *> *mon;
-@property(nonatomic,strong)NSMutableArray <GDTimeTableDescModel *> *tue;
-@property(nonatomic,strong)NSMutableArray <GDTimeTableDescModel *> *wed;
-@property(nonatomic,strong)NSMutableArray <GDTimeTableDescModel *> *thu;
-@property(nonatomic,strong)NSMutableArray <GDTimeTableDescModel *> *fri;
-@property(nonatomic,strong)NSMutableArray <GDTimeTableDescModel *> *sat;
-@property(nonatomic,strong)NSMutableArray <GDTimeTableDescModel *> *sun;
+@property(nonatomic,strong)NSArray <GDTimeTableDescModel *> *mon;
+@property(nonatomic,strong)NSArray <GDTimeTableDescModel *> *tue;
+@property(nonatomic,strong)NSArray <GDTimeTableDescModel *> *wed;
+@property(nonatomic,strong)NSArray <GDTimeTableDescModel *> *thu;
+@property(nonatomic,strong)NSArray <GDTimeTableDescModel *> *fri;
+@property(nonatomic,strong)NSArray <GDTimeTableDescModel *> *sat;
+@property(nonatomic,strong)NSArray <GDTimeTableDescModel *> *sun;
 @end

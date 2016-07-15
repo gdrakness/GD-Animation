@@ -16,6 +16,8 @@
 
 
 #define blueColor [UIColor colorWithRed:88/255.0 green:194/255.0 blue:247/255.0 alpha:1]
+#define SblueColor [UIColor colorWithRed:51/255.0 green:122/255.0 blue:231/255.0 alpha:0.7]
+
 
 //#define BaseUrl [NSURL URLWithString:@"http://api.18touch.com/index.php?c=acg&a=lists&limit=500&v=2"]
 

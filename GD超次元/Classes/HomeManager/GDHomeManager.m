@@ -13,6 +13,7 @@
 #import "GDRequestMCDataModel.h"
 #import "GDDetailsDataModel.h"
 #import "GDClassRequstDataModel.h"
+#import "GDTimeTableModel.h"
 
 #import "LORequestManger.h"
 @interface GDHomeManager ()
@@ -33,6 +34,8 @@
     return instance;
 }
 
+
+/***********************新番速递************************/
 -(void)getFindDealsWithParams:(NSMutableDictionary *)params success:(void(^)(GDRequestMCDataModel *dataModel))success error:(void(^)(NSError *error))error{
     
     self.success = success;
@@ -56,6 +59,7 @@
 
 }
 
+/***********************新番详情************************/
 -(void)getDetailsWithURL:(NSString *)url success:(void(^)(GDDetailsDataModel *detailsData))success error:(void(^)(NSError *error))error{
     
     self.success = success;
@@ -78,6 +82,8 @@
     }];
 }
 
+
+/***********************分类推荐************************/
 -(void)getFindClassRequstWithURL:(NSString *)url success:(void(^)(GDClassRequstDataModel *classDataModel))success error:(void(^)(NSError *error))error{
     
     self.success = success;
@@ -98,5 +104,33 @@
         self.error(error);
     }];
     
+}
+
+
+/***********************时间表************************/
+-(void)getFindTimeTableRequstWithURL:(NSString *)url success:(void(^)(GDTimeTableModel *dataModel))success error:(void(^)(NSError *error))error{
+    self.success = success;
+    self.error = error;
+    
+    [LORequestManger GET:TimeURL success:^(id response) {
+        
+        [GDTimeTableModel mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"mon":@"GDTimeTableDescModel",
+                     @"tue":@"GDTimeTableDescModel",
+                     @"wed":@"GDTimeTableDescModel",
+                     @"thu":@"GDTimeTableDescModel",
+                     @"fri":@"GDTimeTableDescModel",
+                     @"sat":@"GDTimeTableDescModel",
+                     @"sun":@"GDTimeTableDescModel",
+                     };
+        }];
+        GDTimeTableModel *dataModel = [GDTimeTableModel mj_objectWithKeyValues:response];
+        self.success(dataModel);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    
+        self.error(error);
+    }];
 }
 @end

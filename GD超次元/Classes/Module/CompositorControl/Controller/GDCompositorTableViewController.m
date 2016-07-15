@@ -30,7 +30,6 @@ static NSString *Identifier = @"CompositorIdentifier";
 }
 
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
