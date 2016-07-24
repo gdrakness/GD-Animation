@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GDTableViewSundayCell : UITableViewCell
+@interface GDTableViewSundayCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @end

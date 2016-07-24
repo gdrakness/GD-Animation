@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GDTableViewThursdayCell : UITableViewCell
+@interface GDTableViewThursdayCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @end

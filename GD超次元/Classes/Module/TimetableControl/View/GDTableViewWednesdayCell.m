@@ -52,6 +52,7 @@ static NSString *Identifier = @"GDTimeCollectionViewCell";
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.itemSize = CGSizeMake((WIDTH - 18) / 4, (HEIGHT + 60) / 4);
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     flowLayout.minimumLineSpacing = 5;
     flowLayout.minimumInteritemSpacing = 5;
     flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);

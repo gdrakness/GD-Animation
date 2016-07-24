@@ -7,13 +7,20 @@
 //
 
 #import "GDTableViewThursdayCell.h"
+#import "GDTimeCollectionViewCell.h"
+
+#import "GDHomeManager.h"
+#import "GDTimeTableModel.h"
 
 @interface GDTableViewThursdayCell ()
+@property(nonatomic,strong)UICollectionView *collectionView;
 @property(nonatomic,strong)UIImageView *image;
 @property(nonatomic,strong)UIView *view;
+@property(nonatomic,strong)NSMutableArray<GDTimeTableDescModel*> *thu;
 @end
 
 @implementation GDTableViewThursdayCell
+static NSString *Identifier = @"GDTimeCollectionViewCell";
 
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -35,9 +42,66 @@
         [_image setImage:[UIImage imageNamed:@"thu"]];
         [self.contentView addSubview:_image];
         
-        //        [self getCollection];
+        [self getCollection];
     }
     return self;
+}
+
+-(void)getCollection{
+    
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+    flowLayout.itemSize = CGSizeMake((WIDTH - 18) / 4, (HEIGHT +60) / 4);
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    flowLayout.minimumLineSpacing = 5;
+    flowLayout.minimumInteritemSpacing = 5;
+    flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
+    
+    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, _view.bounds.size.width, _view.bounds.size.height) collectionViewLayout:flowLayout];
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+    
+    [self.collectionView registerClass:[GDTimeCollectionViewCell  class]forCellWithReuseIdentifier:Identifier];
+    [_view addSubview:self.collectionView];
+    
+}
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    
+    return 1;
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    
+    return  self.thu.count;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    GDTimeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:Identifier forIndexPath:indexPath];
+    
+    GDTimeTableDescModel *cellItem = self.thu[indexPath.item];
+    [cell setModel:cellItem];
+    
+    return cell;
+}
+
+-(NSMutableArray<GDTimeTableDescModel *> *)thu{
+    
+    if (_thu != nil) {
+        return _thu;
+    }
+    //实例化
+    _thu = [NSMutableArray array];
+    
+    [[GDHomeManager shareInstance]getFindTimeTableRequstWithURL:nil success:^(GDTimeTableModel *dataModel) {
+        [self.thu addObjectsFromArray:dataModel.thu];
+        [self.collectionView reloadData];
+    } error:^(NSError *error) {
+        
+    }];
+    
+    return _thu;
 }
 
 - (void)awakeFromNib {
