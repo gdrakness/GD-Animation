@@ -6,7 +6,7 @@
 //  Copyright © 2016年 gdarkness. All rights reserved.
 //
 
-#import "GDTableViewMondelCell.h"
+#import "GDTableViewMondayCell.h"
 #import "GDTimeCollectionViewCell.h"
 
 #import "GDHomeManager.h"
@@ -15,14 +15,14 @@
 
 #define WIDTH self.view.bounds.size.width
 #define HEIGHT self.view.bounds.size.height
-@interface GDTableViewMondelCell ()
+@interface GDTableViewMondayCell ()
 @property(nonatomic,strong)UIImageView *image;
 @property(nonatomic,strong)UIView *view;
 @property(nonatomic,strong)NSMutableArray<GDTimeTableDescModel *> *mon;
 
 @end
 
-@implementation GDTableViewMondelCell
+@implementation GDTableViewMondayCell
 static NSString *Identifier = @"GDTimeCollectionViewCell";
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{

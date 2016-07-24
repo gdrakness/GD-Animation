@@ -7,19 +7,21 @@
 //
 
 #import "GDTimetableController.h"
-#import "GDTableViewMondelCell.h"
+
+#import "GDTableViewMondayCell.h"
+#import "GDTableViewTuesdayCell.h"
+#import "GDTableViewWednesdayCell.h"
+#import "GDTableViewThursdayCell.h"
+#import "GDTableViewFridayCell.h"
+#import "GDTableViewSaturdayCell.h"
+#import "GDTableViewSundayCell.h"
+
 #import "GDHomeManager.h"
 #import "GDTimeTableModel.h"
 
 @class GDTimeTableDescModel;
 @interface GDTimetableController ()
-@property(nonatomic,strong)NSMutableArray<GDTimeTableDescModel *> *mon;
-@property(nonatomic,strong)NSMutableArray<GDTimeTableDescModel *> *tue;
-@property(nonatomic,strong)NSMutableArray<GDTimeTableDescModel *> *wed;
-@property(nonatomic,strong)NSMutableArray<GDTimeTableDescModel *> *thu;
-@property(nonatomic,strong)NSMutableArray<GDTimeTableDescModel *> *fri;
-@property(nonatomic,strong)NSMutableArray<GDTimeTableDescModel *> *sat;
-@property(nonatomic,strong)NSMutableArray<GDTimeTableDescModel *> *sun;
+
 @end
 
 @implementation GDTimetableController
@@ -28,7 +30,7 @@ static NSString *Identifier = @"timeTableController";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[GDTableViewMondelCell class] forCellReuseIdentifier:Identifier];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:Identifier];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 }
@@ -37,28 +39,6 @@ static NSString *Identifier = @"timeTableController";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
--(void)getDataIsMore{
-    
-    [[GDHomeManager shareInstance]getFindTimeTableRequstWithURL:nil success:^(GDTimeTableModel *dataModel) {
-        
-        [self.mon addObjectsFromArray:dataModel.mon];
-        [self.tue addObjectsFromArray:dataModel.tue];
-        [self.wed addObjectsFromArray:dataModel.wed];
-        [self.thu addObjectsFromArray:dataModel.thu];
-        [self.fri addObjectsFromArray:dataModel.fri];
-        [self.sat addObjectsFromArray:dataModel.sat];
-        [self.sun addObjectsFromArray:dataModel.sun];
-        
-//        NSLog(@"%@",self.tue);
-        [self.tableView reloadData];
-    } error:^(NSError *error) {
-        
-        NSLog(@"%@",error);
-    }];
-    
-}
-
 
 #pragma mark - Table view data source
 
@@ -74,93 +54,41 @@ static NSString *Identifier = @"timeTableController";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return [GDTableViewMondelCell getCellOfHeight];
+    return [GDTableViewMondayCell getCellOfHeight];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
     
-    GDTableViewMondelCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
+    switch (indexPath.row) {
+        case 0:
+            cell = [[GDTableViewMondayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
+            break;
+        case 1:
+            cell = [[GDTableViewTuesdayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
+            break;
+        case 2:
+            cell = [[GDTableViewWednesdayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
+            break;
+        case 3:
+            cell = [[GDTableViewThursdayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
+            break;
+        case 4:
+            cell = [[GDTableViewFridayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
+            break;
+        case 5:
+            cell = [[GDTableViewSaturdayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
+            break;
+        case 6:
+            cell = [[GDTableViewSundayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
+            break;
+    }
 //    cell.imageView.image = [UIImage imageNamed:@"mon2"];
     [cell sizeToFit];
     return cell;
     
 }
 
--(NSMutableArray<GDTimeTableDescModel *> *)mon{
-    
-    if (_mon != nil) {
-        return _mon;
-    }
-    //实例化
-    _mon = [NSMutableArray array];
-//    [self getDataIsMore];
-    return _mon;
-}
-
--(NSMutableArray<GDTimeTableDescModel *> *)tue{
-    
-    if (_tue != nil) {
-        return _tue;
-    }
-    //实例化
-    _tue = [NSMutableArray array];
-    
-    return _tue;
-}
-
--(NSMutableArray<GDTimeTableDescModel *> *)wed{
-    
-    if (_wed != nil) {
-        return _wed;
-    }
-    //实例化
-    _wed = [NSMutableArray array];
-    
-    return _wed;
-}
-
--(NSMutableArray<GDTimeTableDescModel *> *)thu{
-    
-    if (_thu != nil) {
-        return _thu;
-    }
-    //实例化
-    _thu = [NSMutableArray array];
-    
-    return _thu;
-}
--(NSMutableArray<GDTimeTableDescModel *> *)fri{
-    
-    if (_fri != nil) {
-        return _fri;
-    }
-    //实例化
-    _fri = [NSMutableArray array];
-    
-    return _fri;
-}
-
--(NSMutableArray<GDTimeTableDescModel *> *)sat{
-    
-    if (_sat != nil) {
-        return _sat;
-    }
-    //实例化
-    _sat = [NSMutableArray array];
-    
-    return _sat;
-}
-
--(NSMutableArray<GDTimeTableDescModel *> *)sun{
-    
-    if (_sun != nil) {
-        return _sun;
-    }
-    //实例化
-    _sun = [NSMutableArray array];
-    
-    return _sun;
-}
 
 
 
