@@ -13,8 +13,7 @@
 #import "GDTimeTableModel.h"
 
 
-#define WIDTH self.view.bounds.size.width
-#define HEIGHT self.view.bounds.size.height
+
 @interface GDTableViewMondayCell ()
 @property(nonatomic,strong)UIImageView *image;
 @property(nonatomic,strong)UIView *view;
@@ -99,7 +98,7 @@ static NSString *Identifier = @"GDTimeCollectionViewCell";
     //实例化
     _mon = [NSMutableArray array];
     [[GDHomeManager shareInstance]getFindTimeTableRequstWithURL:nil success:^(GDTimeTableModel *dataModel) {
-        [_mon removeAllObjects];
+//        [_mon removeAllObjects];
 
         [self.mon addObjectsFromArray:dataModel.mon];
         [self.collectionView reloadData];
