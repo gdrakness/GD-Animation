@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GDTimeTableModel.h"
 
+@class GDTimeTableDescModel;
 @interface GDTableViewMondelCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property(nonatomic,strong)UICollectionView *collectionView;
+//@property(nonatomic,strong)GDTimeTableDescModel *model;
+
 
 +(CGFloat)getCellOfHeight;
 @end

@@ -20,7 +20,6 @@
 @property(nonatomic,strong)NSMutableArray<GDTimeTableDescModel *> *fri;
 @property(nonatomic,strong)NSMutableArray<GDTimeTableDescModel *> *sat;
 @property(nonatomic,strong)NSMutableArray<GDTimeTableDescModel *> *sun;
-
 @end
 
 @implementation GDTimetableController
@@ -28,10 +27,10 @@ static NSString *Identifier = @"timeTableController";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self.tableView registerClass:[GDTableViewMondelCell class] forCellReuseIdentifier:Identifier];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    [self getDataIsMore:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,7 +38,7 @@ static NSString *Identifier = @"timeTableController";
     // Dispose of any resources that can be recreated.
 }
 
--(void)getDataIsMore:(BOOL)isMore{
+-(void)getDataIsMore{
     
     [[GDHomeManager shareInstance]getFindTimeTableRequstWithURL:nil success:^(GDTimeTableModel *dataModel) {
         
@@ -51,23 +50,26 @@ static NSString *Identifier = @"timeTableController";
         [self.sat addObjectsFromArray:dataModel.sat];
         [self.sun addObjectsFromArray:dataModel.sun];
         
-        NSLog(@"%@",self.mon);
-        
+//        NSLog(@"%@",self.tue);
+        [self.tableView reloadData];
     } error:^(NSError *error) {
         
         NSLog(@"%@",error);
     }];
+    
 }
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 7;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+
+    return 7;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -76,10 +78,12 @@ static NSString *Identifier = @"timeTableController";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     GDTableViewMondelCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
 //    cell.imageView.image = [UIImage imageNamed:@"mon2"];
-    
+    [cell sizeToFit];
     return cell;
+    
 }
 
 -(NSMutableArray<GDTimeTableDescModel *> *)mon{
@@ -89,7 +93,7 @@ static NSString *Identifier = @"timeTableController";
     }
     //实例化
     _mon = [NSMutableArray array];
-    
+//    [self getDataIsMore];
     return _mon;
 }
 

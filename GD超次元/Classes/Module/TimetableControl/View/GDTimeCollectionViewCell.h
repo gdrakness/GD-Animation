@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class GDTimeTableDescModel;
 @interface GDTimeCollectionViewCell : UICollectionViewCell
+
+-(void)setModel:(GDTimeTableDescModel *)model;
 
 @end
