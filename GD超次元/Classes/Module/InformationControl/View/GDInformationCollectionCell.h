@@ -1,5 +1,5 @@
 //
-//  GDInformationTableViewCell.h
+//  GDInformationCollectionCell.h
 //  GD超次元
 //
 //  Created by gdarkness on 16/7/25.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GDInformationTableViewCell : UITableViewCell
+@interface GDInformationCollectionCell : UICollectionViewCell
 
 @end

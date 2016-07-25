@@ -48,7 +48,6 @@
 		D71656BD1CCFC2C2003CE4B8 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B41CCFC2C2003CE4B8 /* libSDWebImage.a */; };
 		D71656BE1CCFC2C2003CE4B8 /* libSVProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B51CCFC2C2003CE4B8 /* libSVProgressHUD.a */; };
 		D71656BF1CCFC2C2003CE4B8 /* libWMPageController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B61CCFC2C2003CE4B8 /* libWMPageController.a */; };
-		D71656C51CCFC918003CE4B8 /* GDInformationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656C41CCFC918003CE4B8 /* GDInformationTableViewController.m */; };
 		D71656C81CCFC952003CE4B8 /* GDGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656C71CCFC952003CE4B8 /* GDGroupViewController.m */; };
 		D71656CB1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656CA1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m */; };
 		D71656D11CCFE00A003CE4B8 /* GDRequestMCDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656D01CCFE00A003CE4B8 /* GDRequestMCDataModel.m */; };
@@ -59,7 +58,6 @@
 		D71825F31D22C049001AE243 /* tjstar_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D71825F01D22C049001AE243 /* tjstar_full@2x.png */; };
 		D71825F41D22C049001AE243 /* tjstar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D71825F11D22C049001AE243 /* tjstar@2x.png */; };
 		D71825FD1D22C397001AE243 /* GDInformationRequstDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D71825FC1D22C397001AE243 /* GDInformationRequstDataModel.m */; };
-		D71826001D22C6B6001AE243 /* GDInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71825FF1D22C6B6001AE243 /* GDInformationTableViewCell.m */; };
 		D71826031D22D119001AE243 /* GDCompositorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71826021D22D119001AE243 /* GDCompositorTableViewCell.m */; };
 		D71D98B41D449CEA000DFED3 /* GDTableViewTuesdayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D98B31D449CEA000DFED3 /* GDTableViewTuesdayCell.m */; };
 		D71D98B71D449DEF000DFED3 /* GDTableViewWednesdayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D98B61D449DEF000DFED3 /* GDTableViewWednesdayCell.m */; };
@@ -67,6 +65,7 @@
 		D71D98BD1D449EF9000DFED3 /* GDTableViewFridayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D98BC1D449EF9000DFED3 /* GDTableViewFridayCell.m */; };
 		D71D98C01D449F6B000DFED3 /* GDTableViewSaturdayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D98BF1D449F6B000DFED3 /* GDTableViewSaturdayCell.m */; };
 		D71D98C31D449F77000DFED3 /* GDTableViewSundayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D98C21D449F77000DFED3 /* GDTableViewSundayCell.m */; };
+		D71D98C61D45B961000DFED3 /* GDInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D98C51D45B961000DFED3 /* GDInformationController.m */; };
 		D72D2AD51D31763E00940A53 /* GDTableViewMondayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D72D2AD41D31763E00940A53 /* GDTableViewMondayCell.m */; };
 		D72D2ADB1D33497900940A53 /* GDTimeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D72D2ADA1D33497900940A53 /* GDTimeCollectionViewCell.m */; };
 		D730D7501D13088A00273EAA /* GDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D730D74F1D13088A00273EAA /* GDTabBarController.m */; };
@@ -119,6 +118,8 @@
 		D797B30B1D19B03A00209739 /* GDDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D797B30A1D19B03A00209739 /* GDDetailsViewController.m */; };
 		D797B30E1D19B20900209739 /* GDDetailsDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D797B30D1D19B20900209739 /* GDDetailsDataModel.m */; };
 		D79C20541D1981C6000EBB31 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D79C20531D1981C6000EBB31 /* arrow@2x.png */; };
+		D7C93D501D46505300AF96EE /* GDInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C93D4F1D46505300AF96EE /* GDInformationTableViewCell.m */; };
+		D7C93D531D4650DA00AF96EE /* GDInformationCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C93D521D4650DA00AF96EE /* GDInformationCollectionCell.m */; };
 		D7D983A11D1822050027FAF6 /* GDMainViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983A01D1822050027FAF6 /* GDMainViewTableViewCell.m */; };
 		D7D983A41D18DFC50027FAF6 /* LORequestManger.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983A31D18DFC50027FAF6 /* LORequestManger.m */; };
 		D7D984021D18E7340027FAF6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983DE1D18E7340027FAF6 /* AFHTTPRequestOperation.m */; };
@@ -219,8 +220,6 @@
 		D71656B41CCFC2C2003CE4B8 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "Pods/../build/Debug-iphoneos/SDWebImage/libSDWebImage.a"; sourceTree = "<group>"; };
 		D71656B51CCFC2C2003CE4B8 /* libSVProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSVProgressHUD.a; path = "Pods/../build/Debug-iphoneos/SVProgressHUD/libSVProgressHUD.a"; sourceTree = "<group>"; };
 		D71656B61CCFC2C2003CE4B8 /* libWMPageController.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWMPageController.a; path = "Pods/../build/Debug-iphoneos/WMPageController/libWMPageController.a"; sourceTree = "<group>"; };
-		D71656C31CCFC918003CE4B8 /* GDInformationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformationTableViewController.h; sourceTree = "<group>"; };
-		D71656C41CCFC918003CE4B8 /* GDInformationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInformationTableViewController.m; sourceTree = "<group>"; };
 		D71656C61CCFC952003CE4B8 /* GDGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDGroupViewController.h; sourceTree = "<group>"; };
 		D71656C71CCFC952003CE4B8 /* GDGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDGroupViewController.m; sourceTree = "<group>"; };
 		D71656C91CCFC9DB003CE4B8 /* GDCompositorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDCompositorTableViewController.h; sourceTree = "<group>"; };
@@ -235,8 +234,6 @@
 		D71825F11D22C049001AE243 /* tjstar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tjstar@2x.png"; path = "../../../超次元新番 2.4/Payload/ACG.app/tjstar@2x.png"; sourceTree = "<group>"; };
 		D71825FB1D22C397001AE243 /* GDInformationRequstDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformationRequstDataModel.h; sourceTree = "<group>"; };
 		D71825FC1D22C397001AE243 /* GDInformationRequstDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInformationRequstDataModel.m; sourceTree = "<group>"; };
-		D71825FE1D22C6B6001AE243 /* GDInformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformationTableViewCell.h; sourceTree = "<group>"; };
-		D71825FF1D22C6B6001AE243 /* GDInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInformationTableViewCell.m; sourceTree = "<group>"; };
 		D71826011D22D119001AE243 /* GDCompositorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDCompositorTableViewCell.h; sourceTree = "<group>"; };
 		D71826021D22D119001AE243 /* GDCompositorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDCompositorTableViewCell.m; sourceTree = "<group>"; };
 		D71D98B21D449CEA000DFED3 /* GDTableViewTuesdayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTableViewTuesdayCell.h; sourceTree = "<group>"; };
@@ -251,6 +248,8 @@
 		D71D98BF1D449F6B000DFED3 /* GDTableViewSaturdayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTableViewSaturdayCell.m; sourceTree = "<group>"; };
 		D71D98C11D449F77000DFED3 /* GDTableViewSundayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTableViewSundayCell.h; sourceTree = "<group>"; };
 		D71D98C21D449F77000DFED3 /* GDTableViewSundayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTableViewSundayCell.m; sourceTree = "<group>"; };
+		D71D98C41D45B961000DFED3 /* GDInformationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformationController.h; sourceTree = "<group>"; };
+		D71D98C51D45B961000DFED3 /* GDInformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInformationController.m; sourceTree = "<group>"; };
 		D721750E4E15F54EC19FD3D4 /* Pods-GD超次元UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GD超次元UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GD超次元UITests/Pods-GD超次元UITests.release.xcconfig"; sourceTree = "<group>"; };
 		D72D2AD31D31763E00940A53 /* GDTableViewMondayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTableViewMondayCell.h; sourceTree = "<group>"; };
 		D72D2AD41D31763E00940A53 /* GDTableViewMondayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTableViewMondayCell.m; sourceTree = "<group>"; };
@@ -320,6 +319,10 @@
 		D797B30C1D19B20900209739 /* GDDetailsDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDDetailsDataModel.h; sourceTree = "<group>"; };
 		D797B30D1D19B20900209739 /* GDDetailsDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDetailsDataModel.m; sourceTree = "<group>"; };
 		D79C20531D1981C6000EBB31 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		D7C93D4E1D46505300AF96EE /* GDInformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformationTableViewCell.h; sourceTree = "<group>"; };
+		D7C93D4F1D46505300AF96EE /* GDInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInformationTableViewCell.m; sourceTree = "<group>"; };
+		D7C93D511D4650DA00AF96EE /* GDInformationCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformationCollectionCell.h; sourceTree = "<group>"; };
+		D7C93D521D4650DA00AF96EE /* GDInformationCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInformationCollectionCell.m; sourceTree = "<group>"; };
 		D7D9839F1D1822050027FAF6 /* GDMainViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDMainViewTableViewCell.h; sourceTree = "<group>"; };
 		D7D983A01D1822050027FAF6 /* GDMainViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDMainViewTableViewCell.m; sourceTree = "<group>"; };
 		D7D983A21D18DFC50027FAF6 /* LORequestManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LORequestManger.h; sourceTree = "<group>"; };
@@ -679,8 +682,8 @@
 		D71656881CCE8F85003CE4B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D71656C31CCFC918003CE4B8 /* GDInformationTableViewController.h */,
-				D71656C41CCFC918003CE4B8 /* GDInformationTableViewController.m */,
+				D71D98C41D45B961000DFED3 /* GDInformationController.h */,
+				D71D98C51D45B961000DFED3 /* GDInformationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -697,8 +700,10 @@
 		D716568A1CCE8F85003CE4B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D71825FE1D22C6B6001AE243 /* GDInformationTableViewCell.h */,
-				D71825FF1D22C6B6001AE243 /* GDInformationTableViewCell.m */,
+				D7C93D4E1D46505300AF96EE /* GDInformationTableViewCell.h */,
+				D7C93D4F1D46505300AF96EE /* GDInformationTableViewCell.m */,
+				D7C93D511D4650DA00AF96EE /* GDInformationCollectionCell.h */,
+				D7C93D521D4650DA00AF96EE /* GDInformationCollectionCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1396,7 +1401,6 @@
 				D797B30B1D19B03A00209739 /* GDDetailsViewController.m in Sources */,
 				D7D9840C1D18E7340027FAF6 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				D71825FD1D22C397001AE243 /* GDInformationRequstDataModel.m in Sources */,
-				D71656C51CCFC918003CE4B8 /* GDInformationTableViewController.m in Sources */,
 				D7866FA41D1E52C200A0B1E0 /* GDClassViewController.m in Sources */,
 				D7D984121D18E7340027FAF6 /* UIWebView+AFNetworking.m in Sources */,
 				D7D984041D18E7340027FAF6 /* AFHTTPSessionManager.m in Sources */,
@@ -1416,6 +1420,7 @@
 				D7D983A41D18DFC50027FAF6 /* LORequestManger.m in Sources */,
 				D71D98BD1D449EF9000DFED3 /* GDTableViewFridayCell.m in Sources */,
 				D7D984081D18E7340027FAF6 /* AFURLRequestSerialization.m in Sources */,
+				D7C93D501D46505300AF96EE /* GDInformationTableViewCell.m in Sources */,
 				D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */,
 				D71D98BA1D449EDE000DFED3 /* GDTableViewThursdayCell.m in Sources */,
 				D730D7501D13088A00273EAA /* GDTabBarController.m in Sources */,
@@ -1426,14 +1431,15 @@
 				D7866FA71D1E543300A0B1E0 /* GDClassRequstDataModel.m in Sources */,
 				D71655A21CCE73FE003CE4B8 /* main.m in Sources */,
 				D7D9840E1D18E7340027FAF6 /* UIButton+AFNetworking.m in Sources */,
+				D7C93D531D4650DA00AF96EE /* GDInformationCollectionCell.m in Sources */,
 				D7023D8A1D30E7D0001139EC /* GDTimeTableModel.m in Sources */,
 				D7866F9E1D1DB56800A0B1E0 /* GDCompositorDataModel.m in Sources */,
 				D7D984111D18E7340027FAF6 /* UIRefreshControl+AFNetworking.m in Sources */,
 				D7D984031D18E7340027FAF6 /* AFHTTPRequestOperationManager.m in Sources */,
+				D71D98C61D45B961000DFED3 /* GDInformationController.m in Sources */,
 				D7D984061D18E7340027FAF6 /* AFSecurityPolicy.m in Sources */,
 				D71D98B41D449CEA000DFED3 /* GDTableViewTuesdayCell.m in Sources */,
 				D7023DB11D30FA7B001139EC /* GDTimetableController.m in Sources */,
-				D71826001D22C6B6001AE243 /* GDInformationTableViewCell.m in Sources */,
 				D7866FAA1D1E5B1200A0B1E0 /* GDClassCollectionViewCell.m in Sources */,
 				D71656A71CCE9699003CE4B8 /* GDSetingViewController.m in Sources */,
 			);
