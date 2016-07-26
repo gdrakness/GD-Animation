@@ -8,6 +8,8 @@
 
 #import "GDInformationController.h"
 
+#import "GDInformationCollectionCell.h"
+
 @interface GDInformationController ()
 @property(nonatomic,strong)UISegmentedControl *segmented;
 @property(nonatomic,strong)NSMutableArray *array;
@@ -64,6 +66,8 @@ static NSString *identifier = @"GDInformationCollectionCell";
     }
 }
 
+
+
 -(void)addTableView{
     
     [_collectionView removeFromSuperview];
@@ -94,7 +98,7 @@ static NSString *identifier = @"GDInformationCollectionCell";
     [_collectionView setDataSource:self];
     [_collectionView setDelegate:self];
     
-    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:identifier];
+    [_collectionView registerClass:[GDInformationCollectionCell class] forCellWithReuseIdentifier:identifier];
     [self.view addSubview:_collectionView];
     
 }
@@ -138,7 +142,7 @@ static NSString *identifier = @"GDInformationCollectionCell";
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    GDInformationCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     cell.layer.cornerRadius = 5;
     cell.backgroundColor = [UIColor whiteColor];

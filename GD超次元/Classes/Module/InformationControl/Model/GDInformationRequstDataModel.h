@@ -8,26 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GDInformationPostsModel : NSObject
-@property(nonatomic,copy)NSString *img;//展示图片
-@property (nonatomic, assign) NSInteger sort;//顺序
-@property (nonatomic, assign) NSInteger score;//分数
-@property(nonatomic,copy)NSString *video_info;//更新集数
-@property(nonatomic,copy)NSString *title;//标题
-@property (nonatomic, assign) NSInteger time;//时间
-@property (nonatomic, assign) NSInteger bbsid;
-@property(nonatomic,copy)NSString *video;//集数
-@property(nonatomic,copy)NSString *desc;//简介内容
-@property(nonatomic,copy)NSString *url;//跳转url
-@end
-
 @interface GDInformationDataModel : NSObject
-@property(nonatomic,copy)NSString *type;//类型
-@property (nonatomic, assign) NSInteger cat_id;
-@property(nonatomic,strong)NSMutableArray<GDInformationPostsModel *> *posts;
+@property (nonatomic, assign) NSInteger id;//id编号
+@property(nonatomic,copy)NSString *title;//标题
+@property(nonatomic,copy)NSString *author;//作者
+@property(nonatomic,copy)NSString *url;//跳转的url
+@property (nonatomic, assign) NSInteger posttime;//用于刷新帖子时间
+@property(nonatomic,copy)NSString *img;//图片
 @end
 
 @interface GDInformationRequstDataModel : NSObject
 @property(nonatomic,copy)NSString *status;//状态
-@property(nonatomic,strong)NSMutableArray<GDInformationDataModel *> *data;
+@property (nonatomic, assign) NSInteger pages;//数据包
+@property (nonatomic, assign) NSInteger count;//总数量
+@property(nonatomic,strong)NSMutableArray<GDInformationDataModel *> *posts;
 @end

@@ -14,6 +14,7 @@
 #import "GDDetailsDataModel.h"
 #import "GDClassRequstDataModel.h"
 #import "GDTimeTableModel.h"
+#import "GDInformationRequstDataModel.h"
 
 #import "LORequestManger.h"
 @interface GDHomeManager ()
@@ -133,4 +134,27 @@
         self.error(error);
     }];
 }
+
+/***********************资讯1************************/
+-(void)getFindInformationRequestWithURL:(NSString *)url success:(void(^)(GDInformationRequstDataModel *dataModel))success error:(void(^)(NSError *error))error{
+    self.success = success;
+    self.error = error;
+    
+    [LORequestManger GET:INformationURL success:^(id response) {
+        
+        [GDInformationRequstDataModel mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"posts":@"GDInformationDataModel"
+                     };
+        }];
+        GDInformationRequstDataModel *dataModel = [GDInformationRequstDataModel mj_objectWithKeyValues:response];
+        self.success(dataModel);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        self.error(error);
+    }];
+    
+}
+
 @end

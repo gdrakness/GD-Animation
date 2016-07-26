@@ -7,9 +7,12 @@
 //
 
 #import "GDInformationCollectionCell.h"
+#import "UIView+Roundify.h"
 
 @interface GDInformationCollectionCell ()
-
+@property(nonatomic,strong)UIImageView *imageView;
+@property(nonatomic,strong)UILabel *titleLable;
+@property(nonatomic,strong)NSString *url;
 @end
 
 @implementation GDInformationCollectionCell
@@ -21,9 +24,22 @@
     
     if (self) {
         
+        _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.contentView.width, 100)];
+        _imageView.backgroundColor = blueColor;
+        [_imageView addRoundedCorners:UIRectCornerTopLeft | UIRectCornerTopRight withRadii:CGSizeMake(5, 5)];
+        [self.contentView addSubview:_imageView];
         
+        _titleLable = [[UILabel alloc]initWithFrame:CGRectMake(0, 103, self.contentView.width, 30)];
+        _titleLable.font = [UIFont systemFontOfSize:11];
+        _titleLable.textAlignment = NSTextAlignmentCenter;
+        _titleLable.tintColor = [UIColor blackColor];
+        _titleLable.numberOfLines = 0;
+        [_titleLable setText:@"夏日炎炎 正是露肉的佳季！“让人眼前一亮的二次元泳装妹纸”TOP10"];
+        [self.contentView addSubview:_titleLable];
     }
     
     return self;
 }
+
+
 @end

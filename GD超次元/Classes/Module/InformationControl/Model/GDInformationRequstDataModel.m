@@ -12,6 +12,11 @@
 
 #import "GDInformationRequstDataModel.h"
 
+@implementation GDInformationDataModel
+
+
+@end
+
 @implementation GDInformationRequstDataModel
 
 @end

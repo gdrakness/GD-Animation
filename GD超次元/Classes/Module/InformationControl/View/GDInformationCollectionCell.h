@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class GDInformationDataModel;
 @interface GDInformationCollectionCell : UICollectionViewCell
+
+-(void)setModel:(GDInformationDataModel *)model;
 
 @end
