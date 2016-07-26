@@ -10,6 +10,9 @@
 
 #import "GDInformationCollectionCell.h"
 
+#import "GDHomeManager.h"
+#import "GDInformationRequstDataModel.h"
+
 @interface GDInformationController ()
 @property(nonatomic,strong)UISegmentedControl *segmented;
 @property(nonatomic,strong)NSMutableArray *array;
@@ -17,6 +20,8 @@
 
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)UICollectionView *collectionView;
+
+@property(nonatomic,strong)NSMutableArray<GDInformationDataModel *> *posts;
 @end
 
 @implementation GDInformationController
@@ -62,8 +67,52 @@ static NSString *identifier = @"GDInformationCollectionCell";
             
         case 1:
             [self addCollectionView];
+            [self getCollectionDataIsMore:NO];
+            [self setCollectionRefresh];
             break;
     }
+}
+
+-(void)setCollectionRefresh{
+    
+    __unsafe_unretained UICollectionView *collectionView = self.collectionView;
+    
+    MJRefreshGifHeader *header =[MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(getCollectionDataIsMore:)];
+    
+    [header setTitle:@"下拉刷新..." forState:MJRefreshStateIdle];
+    [header setTitle:@"松开刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"正奋力加载中..." forState:MJRefreshStateRefreshing];
+    
+    self.collectionView.mj_header = header;
+    
+    collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 结束刷新
+            
+            [collectionView.mj_footer endRefreshing];
+        });
+    }];
+}
+
+-(void)getCollectionDataIsMore:(BOOL)isMore{
+    
+    [[GDHomeManager shareInstance]getFindInformationRequestWithURL:InformationURL success:^(GDInformationRequstDataModel *dataModel) {
+        
+        if (!isMore) {
+            
+            [self.posts removeAllObjects];
+        }
+        
+        [self.posts addObjectsFromArray:dataModel.posts];
+        [self.collectionView reloadData];
+        [self.collectionView.mj_footer endRefreshing];
+        [self.collectionView.mj_header endRefreshing];
+        NSLog(@"%@",self.posts);
+        
+    } error:^(NSError *error) {
+        
+    }];
 }
 
 
@@ -137,12 +186,15 @@ static NSString *identifier = @"GDInformationCollectionCell";
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return 20;
+    return self.posts.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     GDInformationCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    
+    GDInformationDataModel *cellItem = self.posts[indexPath.item];
+    [cell setModel:cellItem];
     
     cell.layer.cornerRadius = 5;
     cell.backgroundColor = [UIColor whiteColor];
@@ -207,4 +259,15 @@ static NSString *identifier = @"GDInformationCollectionCell";
     [UIView commitAnimations];
 }
 
+
+-(NSMutableArray<GDInformationDataModel *> *)posts{
+    
+    if (_posts != nil) {
+        return _posts;
+    }
+    //实例化
+    _posts = [NSMutableArray array];
+    
+    return _posts;
+}
 @end

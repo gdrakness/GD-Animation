@@ -8,6 +8,7 @@
 
 #import "GDInformationCollectionCell.h"
 #import "UIView+Roundify.h"
+#import "GDInformationRequstDataModel.h"
 
 @interface GDInformationCollectionCell ()
 @property(nonatomic,strong)UIImageView *imageView;
@@ -29,17 +30,22 @@
         [_imageView addRoundedCorners:UIRectCornerTopLeft | UIRectCornerTopRight withRadii:CGSizeMake(5, 5)];
         [self.contentView addSubview:_imageView];
         
-        _titleLable = [[UILabel alloc]initWithFrame:CGRectMake(0, 103, self.contentView.width, 30)];
+        _titleLable = [[UILabel alloc]initWithFrame:CGRectMake(2, 103, self.contentView.width - 2, 30)];
         _titleLable.font = [UIFont systemFontOfSize:11];
         _titleLable.textAlignment = NSTextAlignmentCenter;
         _titleLable.tintColor = [UIColor blackColor];
         _titleLable.numberOfLines = 0;
-        [_titleLable setText:@"夏日炎炎 正是露肉的佳季！“让人眼前一亮的二次元泳装妹纸”TOP10"];
+//        [_titleLable setText:@"夏日炎炎 正是露肉的佳季！“让人眼前一亮的二次元泳装妹纸”TOP10"];
         [self.contentView addSubview:_titleLable];
     }
     
     return self;
 }
 
-
+-(void)setModel:(GDInformationDataModel *)model{
+    
+    [_imageView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:nil];
+    
+    _titleLable.text = model.title;
+}
 @end

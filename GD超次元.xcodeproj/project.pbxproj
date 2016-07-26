@@ -118,7 +118,6 @@
 		D797B30B1D19B03A00209739 /* GDDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D797B30A1D19B03A00209739 /* GDDetailsViewController.m */; };
 		D797B30E1D19B20900209739 /* GDDetailsDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D797B30D1D19B20900209739 /* GDDetailsDataModel.m */; };
 		D79C20541D1981C6000EBB31 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D79C20531D1981C6000EBB31 /* arrow@2x.png */; };
-		D7C93D501D46505300AF96EE /* GDInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C93D4F1D46505300AF96EE /* GDInformationTableViewCell.m */; };
 		D7C93D531D4650DA00AF96EE /* GDInformationCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C93D521D4650DA00AF96EE /* GDInformationCollectionCell.m */; };
 		D7D983A11D1822050027FAF6 /* GDMainViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983A01D1822050027FAF6 /* GDMainViewTableViewCell.m */; };
 		D7D983A41D18DFC50027FAF6 /* LORequestManger.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983A31D18DFC50027FAF6 /* LORequestManger.m */; };
@@ -319,8 +318,6 @@
 		D797B30C1D19B20900209739 /* GDDetailsDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDDetailsDataModel.h; sourceTree = "<group>"; };
 		D797B30D1D19B20900209739 /* GDDetailsDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDetailsDataModel.m; sourceTree = "<group>"; };
 		D79C20531D1981C6000EBB31 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
-		D7C93D4E1D46505300AF96EE /* GDInformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformationTableViewCell.h; sourceTree = "<group>"; };
-		D7C93D4F1D46505300AF96EE /* GDInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInformationTableViewCell.m; sourceTree = "<group>"; };
 		D7C93D511D4650DA00AF96EE /* GDInformationCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformationCollectionCell.h; sourceTree = "<group>"; };
 		D7C93D521D4650DA00AF96EE /* GDInformationCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInformationCollectionCell.m; sourceTree = "<group>"; };
 		D7D9839F1D1822050027FAF6 /* GDMainViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDMainViewTableViewCell.h; sourceTree = "<group>"; };
@@ -700,8 +697,6 @@
 		D716568A1CCE8F85003CE4B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D7C93D4E1D46505300AF96EE /* GDInformationTableViewCell.h */,
-				D7C93D4F1D46505300AF96EE /* GDInformationTableViewCell.m */,
 				D7C93D511D4650DA00AF96EE /* GDInformationCollectionCell.h */,
 				D7C93D521D4650DA00AF96EE /* GDInformationCollectionCell.m */,
 			);
@@ -1420,7 +1415,6 @@
 				D7D983A41D18DFC50027FAF6 /* LORequestManger.m in Sources */,
 				D71D98BD1D449EF9000DFED3 /* GDTableViewFridayCell.m in Sources */,
 				D7D984081D18E7340027FAF6 /* AFURLRequestSerialization.m in Sources */,
-				D7C93D501D46505300AF96EE /* GDInformationTableViewCell.m in Sources */,
 				D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */,
 				D71D98BA1D449EDE000DFED3 /* GDTableViewThursdayCell.m in Sources */,
 				D730D7501D13088A00273EAA /* GDTabBarController.m in Sources */,

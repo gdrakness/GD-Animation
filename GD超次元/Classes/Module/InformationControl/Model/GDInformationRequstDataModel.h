@@ -15,6 +15,7 @@
 @property(nonatomic,copy)NSString *url;//跳转的url
 @property (nonatomic, assign) NSInteger posttime;//用于刷新帖子时间
 @property(nonatomic,copy)NSString *img;//图片
+@property(nonatomic,copy)NSString *summary;//详情
 @end
 
 @interface GDInformationRequstDataModel : NSObject

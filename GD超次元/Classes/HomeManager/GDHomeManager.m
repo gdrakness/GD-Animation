@@ -140,7 +140,7 @@
     self.success = success;
     self.error = error;
     
-    [LORequestManger GET:INformationURL success:^(id response) {
+    [LORequestManger GET:url success:^(id response) {
         
         [GDInformationRequstDataModel mj_setupObjectClassInArray:^NSDictionary *{
             return @{
