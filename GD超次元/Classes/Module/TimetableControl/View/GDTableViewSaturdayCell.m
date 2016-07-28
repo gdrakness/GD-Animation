@@ -21,7 +21,7 @@
 @end
 
 @implementation GDTableViewSaturdayCell
-static NSString *Identifier = @"GDTimeCollectionViewCell";
+static NSString *Identifier = @"GDTimeCollectionViewCell6";
 
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{

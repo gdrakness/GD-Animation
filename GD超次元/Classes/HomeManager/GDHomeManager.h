@@ -12,6 +12,7 @@
 @class GDClassRequstDataModel;
 @class GDTimeTableModel;
 @class GDInformationRequstDataModel;
+@class GDHTMLDataModel;
 
 @interface GDHomeManager : NSObject
 
@@ -27,5 +28,7 @@
 //时间表
 -(void)getFindTimeTableRequstWithURL:(NSString *)url success:(void(^)(GDTimeTableModel *dataModel))success error:(void(^)(NSError *error))error;
 //资讯
--(void)getFindInformationRequestWithURL:(NSString *)url success:(void(^)(GDInformationRequstDataModel *dataModel))success error:(void(^)(NSError *error))error;
+-(void)getFindInformationRequestWithURL:(NSString *)url params:(NSDictionary *)params success:(void(^)(GDInformationRequstDataModel *dataModel))success error:(void(^)(NSError *error))error;
+
+-(void)parsingHTMLRequestWithURL:(NSString *)url success:(void(^)(GDHTMLDataModel *dataMoedel))success error:(void(^)(NSError *error))error;
 @end

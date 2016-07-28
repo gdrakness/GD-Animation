@@ -15,6 +15,7 @@
 #import "GDClassRequstDataModel.h"
 #import "GDTimeTableModel.h"
 #import "GDInformationRequstDataModel.h"
+#import "GDHTMLDataModel.h"
 
 #import "LORequestManger.h"
 @interface GDHomeManager ()
@@ -41,20 +42,19 @@
     
     self.success = success;
     self.error = error;
-   
-    [LORequestManger GET:MainURL success:^(id response) {
-//        NSLog(@"%@",responseObjcet);
+    
+    [LORequestManger GET:MainURL parame:nil success:^(id response) {
+        
         [GDRequestMCDataModel mj_setupObjectClassInArray:^NSDictionary *{
-        return @{
-                 @"posts":@"DataModel"
-                };
+            return @{
+                     @"posts":@"DataModel"
+                     };
         }];
         GDRequestMCDataModel *dataModel = [GDRequestMCDataModel mj_objectWithKeyValues:response];
         
         self.success(dataModel);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
         self.error(error);
     }];
 
@@ -66,13 +66,13 @@
     self.success = success;
     self.error = error;
     
-    [LORequestManger GET:url success:^(id response) {
+    [LORequestManger GET:url parame:nil success:^(id response) {
         
-            [GDDetailsDataModel mj_setupObjectClassInArray:^NSDictionary *{
-                return @{
-                         @"videos":@"GDVideosDetailsModel"
-                        };
-            }];
+        [GDDetailsDataModel mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"videos":@"GDVideosDetailsModel"
+                     };
+        }];
         GDDetailsDataModel *dataModel = [GDDetailsDataModel mj_objectWithKeyValues:response];
         
         self.success(dataModel);
@@ -80,6 +80,7 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         self.error(error);
+
     }];
 }
 
@@ -90,7 +91,7 @@
     self.success = success;
     self.error = error;
     
-    [LORequestManger GET:ClassURL success:^(id response) {
+    [LORequestManger GET:ClassURL parame:nil success:^(id response) {
         
         [GDClassRequstDataModel mj_setupObjectClassInArray:^NSDictionary *{
             return @{
@@ -113,7 +114,7 @@
     self.success = success;
     self.error = error;
     
-    [LORequestManger GET:TimeURL success:^(id response) {
+    [LORequestManger GET:TimeURL parame:nil success:^(id response) {
         
         [GDTimeTableModel mj_setupObjectClassInArray:^NSDictionary *{
             return @{
@@ -130,17 +131,17 @@
         self.success(dataModel);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    
+        
         self.error(error);
     }];
 }
 
 /***********************资讯1************************/
--(void)getFindInformationRequestWithURL:(NSString *)url success:(void(^)(GDInformationRequstDataModel *dataModel))success error:(void(^)(NSError *error))error{
+-(void)getFindInformationRequestWithURL:(NSString *)url params:(NSDictionary *)params success:(void(^)(GDInformationRequstDataModel *dataModel))success error:(void(^)(NSError *error))error{
     self.success = success;
     self.error = error;
     
-    [LORequestManger GET:url success:^(id response) {
+    [LORequestManger GET:url parame:params success:^(id response) {
         
         [GDInformationRequstDataModel mj_setupObjectClassInArray:^NSDictionary *{
             return @{
@@ -148,13 +149,29 @@
                      };
         }];
         GDInformationRequstDataModel *dataModel = [GDInformationRequstDataModel mj_objectWithKeyValues:response];
-        self.success(dataModel);
+//        NSLog(@"%@",dataModel);
+            self.success(dataModel);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         self.error(error);
     }];
     
+}
+
+-(void)parsingHTMLRequestWithURL:(NSString *)url success:(void(^)(GDHTMLDataModel *dataMoedel))success error:(void(^)(NSError *error))error{
+    self.success = success;
+    self.error = error;
+    
+    [LORequestManger GET:url parame:nil success:^(id response) {
+        
+        GDHTMLDataModel *dataModel = [GDHTMLDataModel mj_objectWithKeyValues:response];
+        self.success(dataModel);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        self.error(error);
+    }];
 }
 
 @end

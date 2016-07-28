@@ -46,6 +46,7 @@
 }
 
 + (void)GET:(NSString *)URL
+    parame:(NSDictionary *)parame
     success:(void (^)(id response))success
     failure:(void (^)(AFHTTPRequestOperation *operation,NSError *error))Error
 {
@@ -63,7 +64,7 @@
 
    
     // 发送GET请求
-    [manager GET:getStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:getStr parameters:parame success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //        NSLog(@"getStr------------%@",getStr);
         NSDictionary *responseDict = (NSDictionary *)responseObject;
      

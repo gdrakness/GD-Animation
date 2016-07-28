@@ -20,6 +20,7 @@
 
 
 + (void)GET:(NSString *)URL
+     parame:(NSDictionary *)parame
     success:(void (^)(id response))success
     failure:(void (^)(AFHTTPRequestOperation *operation,NSError *error))Error;
 

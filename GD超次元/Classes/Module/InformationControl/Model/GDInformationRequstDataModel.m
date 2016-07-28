@@ -14,6 +14,13 @@
 
 @implementation GDInformationDataModel
 
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
+//    if ([key isEqualToString:@"id"]) {
+//        self.lastid = value;
+//    }
+    
+}
 
 @end
 
@@ -21,6 +28,7 @@
 
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key{
     
+
 }
 
 @end

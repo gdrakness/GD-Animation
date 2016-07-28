@@ -20,7 +20,7 @@
 //组
 #define GroupURL @"http://api.bbs.18touch.com/Forum?zone=8700&dk=4ccb74169a048eaf055cda8f6c8f5eb5965aae10"
 //资信1
-#define INformationURL @"http://api.18touch.com/?c=Nzs&a=getlist&cat=%E5%8A%A8%E6%BC%AB%E8%B5%84%E8%AE%AF&img=1&summary=1&lastid=0&lasttime=0"
+#define INformationURL @"http://api.18touch.com/?c=Nzs&a=getlist&cat=%E5%8A%A8%E6%BC%AB%E8%B5%84%E8%AE%AF&img=1&summary=1&"
 //资信2
 #define InformationURL @"http://api.18touch.com/?c=Nzs&a=getlist&helper=ACG%E7%B2%BE%E5%93%81%E6%96%87%E7%AB%A0&img=1&lastid=0&lasttime=0"
 //时间表外

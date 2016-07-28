@@ -14,6 +14,7 @@
 @interface GDGroupViewController ()
 @end
 
+#define textURL @"http://api.18touch.com/index.php?c=Nzs&a=getcontent&helper=ACG%E7%B2%BE%E5%93%81%E6%96%87%E7%AB%A0&id=751403&v=a07271552&type=acg"
 @implementation GDGroupViewController
 
 - (void)viewDidLoad {
@@ -27,8 +28,9 @@
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+
     
-    [LORequestManger GET:INformationURL success:^(id response) {
+    [LORequestManger GET:textURL parame:nil success:^(id response) {
         
         NSLog(@"%@",response);
         
@@ -75,5 +77,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end

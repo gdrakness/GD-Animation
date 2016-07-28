@@ -7,8 +7,12 @@
 //
 
 #import "GDInformationController.h"
+#import "GDWebViewController.h"
 
 #import "GDInformationCollectionCell.h"
+#import "GDInformatTableBigPictureCell.h"
+#import "GDInformatTablePictureCell.h"
+#import "GDInformatTableViewCell.h"
 
 #import "GDHomeManager.h"
 #import "GDInformationRequstDataModel.h"
@@ -25,7 +29,10 @@
 @end
 
 @implementation GDInformationController
-static NSString *Identifier = @"GDInformationTableViewCell";
+static NSString *Identifier1 = @"GDInformationTableViewCell1";
+static NSString *Identifier2 = @"GDInformationTableViewCell2";
+static NSString *Identifier3 = @"GDInformationTableViewCell3";
+
 static NSString *identifier = @"GDInformationCollectionCell";
 
 - (void)viewDidLoad {
@@ -63,12 +70,16 @@ static NSString *identifier = @"GDInformationCollectionCell";
     switch (Index) {
         case 0:
             [self addTableView];
+            
             break;
             
         case 1:
             [self addCollectionView];
-            [self getCollectionDataIsMore:NO];
-            [self setCollectionRefresh];
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+                [self getCollectionDataIsMore:NO];
+                
+//            });
             break;
     }
 }
@@ -86,18 +97,40 @@ static NSString *identifier = @"GDInformationCollectionCell";
     self.collectionView.mj_header = header;
     
     collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 结束刷新
-            
-            [collectionView.mj_footer endRefreshing];
-        });
+        
+        [self getCollectionDataIsMore:YES];
+    }];
+}
+
+-(void)setTableRefresh{
+    
+    __unsafe_unretained UITableView *tableView = self.tableView;
+    
+    MJRefreshGifHeader *header =[MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(getTableDataIsMore:)];
+    
+    [header setTitle:@"下拉刷新..." forState:MJRefreshStateIdle];
+    [header setTitle:@"松开刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"正奋力加载中..." forState:MJRefreshStateRefreshing];
+    
+    self.tableView.mj_header = header;
+    
+    tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        
+        [self getTableDataIsMore:YES];
     }];
 }
 
 -(void)getCollectionDataIsMore:(BOOL)isMore{
     
-    [[GDHomeManager shareInstance]getFindInformationRequestWithURL:InformationURL success:^(GDInformationRequstDataModel *dataModel) {
+    NSMutableDictionary *parame = [NSMutableDictionary dictionary];
+
+    GDInformationDataModel *lastOj = self.posts.lastObject;
+    parame[@"lastid"] = lastOj.id;
+    parame[@"lasttime"] = lastOj.posttime;
+    
+    NSLog(@"%@",parame);
+    
+    [[GDHomeManager shareInstance]getFindInformationRequestWithURL:InformationURL params:parame success:^(GDInformationRequstDataModel *dataModel) {
         
         if (!isMore) {
             
@@ -108,7 +141,35 @@ static NSString *identifier = @"GDInformationCollectionCell";
         [self.collectionView reloadData];
         [self.collectionView.mj_footer endRefreshing];
         [self.collectionView.mj_header endRefreshing];
-        NSLog(@"%@",self.posts);
+        //        NSLog(@"%@",self.posts);
+        
+    } error:^(NSError *error) {
+        
+    }];
+}
+
+-(void)getTableDataIsMore:(BOOL)isMore{
+    
+    NSMutableDictionary *parame = [NSMutableDictionary dictionary];
+    
+    GDInformationDataModel *lastOj = self.posts.lastObject;
+    parame[@"lastid"] = lastOj.id;
+    parame[@"lasttime"] = lastOj.posttime;
+    
+    NSLog(@"%@ --- %@",lastOj.id,lastOj.posttime);
+
+    [[GDHomeManager shareInstance]getFindInformationRequestWithURL:INformationURL params:parame success:^(GDInformationRequstDataModel *dataModel) {
+        
+        if (!isMore) {
+            
+            [self.posts removeAllObjects];
+        }
+        
+        [self.posts addObjectsFromArray:dataModel.posts];
+        [self.tableView reloadData];
+        [self.tableView.mj_footer endRefreshing];
+        [self.tableView.mj_header endRefreshing];
+//                NSLog(@"%@",self.posts);
         
     } error:^(NSError *error) {
         
@@ -120,20 +181,29 @@ static NSString *identifier = @"GDInformationCollectionCell";
 -(void)addTableView{
     
     [_collectionView removeFromSuperview];
-    
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 50, self.view.width, self.view.height)];
+    [self.posts removeAllObjects];
+
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 50, self.view.width, self.view.height - 45)];
     [_tableView setDataSource:self];
     [_tableView setDelegate:self];
     
-    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:Identifier];
+    [_tableView registerClass:[GDInformatTableBigPictureCell class] forCellReuseIdentifier:Identifier1];
+    [_tableView registerClass:[GDInformatTablePictureCell class] forCellReuseIdentifier:Identifier2];
+    [_tableView registerClass:[GDInformatTableViewCell class] forCellReuseIdentifier:Identifier3];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self.view addSubview:_tableView];
+    
+    [self getTableDataIsMore:NO];
+
+    [self setTableRefresh];
 }
 
 -(void)addCollectionView{
     
     [_tableView removeFromSuperview];
+    [self.posts removeAllObjects];
+
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.itemSize = CGSizeMake((WIDTH - 30) / 2, (HEIGHT - 200) / 2);
@@ -141,14 +211,18 @@ static NSString *identifier = @"GDInformationCollectionCell";
     flowLayout.minimumInteritemSpacing = 10;
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 45, self.view.width, self.view.height) collectionViewLayout:flowLayout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 45, self.view.width, self.view.height - 40) collectionViewLayout:flowLayout];
     _collectionView.backgroundColor = [UIColor colorWithRed:208 / 255.0f green:208 / 255.0f blue:208 / 255.0f alpha:0.5];
 ;
     [_collectionView setDataSource:self];
     [_collectionView setDelegate:self];
     
+    
     [_collectionView registerClass:[GDInformationCollectionCell class] forCellWithReuseIdentifier:identifier];
     [self.view addSubview:_collectionView];
+    
+    [self setCollectionRefresh];
+
     
 }
 
@@ -162,19 +236,41 @@ static NSString *identifier = @"GDInformationCollectionCell";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 10;
+    return self.posts.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 50;
+    if (indexPath.row % 8 == 0) {
+       return [GDInformatTableBigPictureCell getCellHeight];
+    }else if (indexPath.row % 4 == 0){
+        return  100;
+    }else {
+        return 87;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
-    cell.backgroundColor = blueColor;
-    return cell;
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
+    
+    GDInformationDataModel *cellItme = self.posts[indexPath.row];
+    
+    if ((indexPath.row % 8 == 0)) {
+        GDInformatTableBigPictureCell  *cell = [tableView dequeueReusableCellWithIdentifier:Identifier1];
+        [cell setModel:cellItme];
+        return cell;
+    }else if ((indexPath.row % 4 == 0)){
+        GDInformatTablePictureCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier2];
+        [cell setModel:cellItme];
+        return cell;
+    }else{
+        GDInformatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier3];
+        [cell setModel:cellItme];
+        return cell;
+    }
+    
+//    return cell;
 }
 
 /***********************CollectionView************************/
@@ -200,6 +296,16 @@ static NSString *identifier = @"GDInformationCollectionCell";
     cell.backgroundColor = [UIColor whiteColor];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    GDWebViewController *webView = [[GDWebViewController alloc]init];
+    GDInformationDataModel *cellItem = self.posts[indexPath.item];
+    webView.url = cellItem.url;
+    
+    [self.navigationController pushViewController:webView animated:YES];
+
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -30,6 +30,8 @@ static NSString *Identifier = @"timeTableController";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationController setTitle:@"时间表"];
+    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:Identifier];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
@@ -63,6 +65,7 @@ static NSString *Identifier = @"timeTableController";
     switch (indexPath.row) {
         case 0:
             cell = [[GDTableViewMondayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
+//            cell.backgroundColor = [UIColor redColor];
             break;
         case 1:
             cell = [[GDTableViewTuesdayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
