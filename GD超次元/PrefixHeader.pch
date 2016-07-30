@@ -38,5 +38,6 @@
 #import <WMPageController.h>
 #import <MJExtension.h>
 #import "MJRefresh.h"
+#import "SVProgressHUD.h"
 
 #import "GDHomeManager.h"

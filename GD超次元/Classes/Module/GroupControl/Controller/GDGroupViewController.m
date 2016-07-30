@@ -20,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [SVProgressHUD showInfoWithStatus:@"load"];
+
 }
 
 - (void)didReceiveMemoryWarning {

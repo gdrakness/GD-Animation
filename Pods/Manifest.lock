@@ -1,5 +1,5 @@
 PODS:
-  - Masonry (1.0.0)
+  - Masonry (1.0.1)
   - MJExtension (3.0.10)
   - MJRefresh (3.1.8)
   - MMDrawerController (0.6.0):
@@ -14,15 +14,15 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.6.0):
     - MMDrawerController/Core
-  - SDCycleScrollView (1.64):
+  - SDCycleScrollView (1.65):
     - SDWebImage (~> 3.7)
-  - SDWebImage (3.7.5):
-    - SDWebImage/Core (= 3.7.5)
-  - SDWebImage/Core (3.7.5)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
   - SVProgressHUD (2.0.3)
   - SVPullToRefresh (0.4.1)
-  - WMPageController (1.4.6)
-  - YYModel (1.0.3)
+  - WMPageController (1.6.2)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - Masonry
@@ -37,16 +37,16 @@ DEPENDENCIES:
   - YYModel
 
 SPEC CHECKSUMS:
-  Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: d226bbe0b1ec398f426ba1dc99319b4e51182e19
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
-  SDCycleScrollView: 806fedb9342ab03b58b84442f985517b42c7cbb7
-  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
-  WMPageController: 1a68967d39d59ae317594d24fc0a720970f1c65b
-  YYModel: 63142c2f07c5c8c9d1c261689cf3827ea6ab2886
+  WMPageController: 06386e1590d914c5dee140846c6479c297e43d25
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: a6d28c421933c6236c0be2c1ac380e3b290145bb
 
