@@ -8,6 +8,7 @@
 
 #import "GDInformationController.h"
 #import "GDWebViewController.h"
+#import "GDWKWebViewController.h"
 
 #import "GDInformationCollectionCell.h"
 #import "GDInformatTableBigPictureCell.h"
@@ -300,10 +301,19 @@ static NSString *identifier = @"GDInformationCollectionCell";
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    GDWebViewController *webView = [[GDWebViewController alloc]init];
+    GDWKWebViewController *webView = [[GDWKWebViewController alloc]init];
     GDInformationDataModel *cellItem = self.posts[indexPath.item];
     webView.url = cellItem.url;
     
+    [self.navigationController pushViewController:webView animated:YES];
+
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    GDWKWebViewController *webView = [[GDWKWebViewController alloc]init];
+    GDInformationDataModel *cellItem = self.posts[indexPath.item];
+    webView.url = cellItem.url;
     [self.navigationController pushViewController:webView animated:YES];
 
 }

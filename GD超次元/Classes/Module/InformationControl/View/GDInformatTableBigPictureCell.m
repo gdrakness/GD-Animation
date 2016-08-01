@@ -26,7 +26,7 @@
         [self.contentView addSubview:_image];
         
         UIView *alphaView = [[UIView alloc]initWithFrame:CGRectMake(0,(_image.height * 0.81), self.contentView.width, 30)];
-        alphaView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
+        alphaView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
         [self.contentView addSubview:alphaView];
         
         _titleLable = [[UILabel alloc]initWithFrame:CGRectMake(5, 2, self.contentView.width, 30)];

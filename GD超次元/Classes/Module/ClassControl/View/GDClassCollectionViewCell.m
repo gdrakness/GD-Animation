@@ -34,13 +34,14 @@
         [self.contentView addSubview:_picture];
         
         _alphaView = [[UIView alloc]initWithFrame:CGRectMake(0, 100, 100, 25)];
-        _alphaView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4];
+//        _alphaView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4];
+        _alphaView.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:_alphaView];
         
         _titleLable = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 25)];
         _titleLable.font = [UIFont systemFontOfSize:13];
         _titleLable.textAlignment = NSTextAlignmentCenter;
-        _titleLable.textColor = [UIColor whiteColor];
+        _titleLable.textColor = [UIColor blackColor];
         [_alphaView addSubview: _titleLable];
     }
     

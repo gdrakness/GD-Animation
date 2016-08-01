@@ -7,12 +7,14 @@
 //
 
 #import "GDDetailsViewController.h"
-#import "GDDetailsDataModel.h"
 #import "GDVideoDetailsTableViewCell.h"
+#import "GDVideoBluesTableViewCell.h"
 #import "GDDetailsDataModel.h"
+
 
 @interface GDDetailsViewController ()
 @property(nonatomic,strong)NSMutableArray<GDVideosDetailsModel *> *videos;
+@property(nonatomic,strong)GDDetailsDataModel *detailsModel;
 @property(nonatomic,strong)UIView *detailsView;
 @property(nonatomic,strong)UIButton *labBtn;
 @end
@@ -27,9 +29,14 @@ static NSString *sIdentifier = @"sDetailsView";
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor grayColor];
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    [self.tableView registerClass:[GDVideoDetailsTableViewCell class] forCellReuseIdentifier:fIdentifier];
+    [self.tableView registerClass:[GDVideoBluesTableViewCell class] forCellReuseIdentifier:sIdentifier];
+    self.tableView.backgroundColor = [UIColor colorWithRed:236 / 255.0f green:239 / 255.0f blue:243 / 255.0f alpha:1];
+    //    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     [self getDataIsMore:NO];
+    
+    self.tableView.scrollEnabled = NO;
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
@@ -44,12 +51,13 @@ static NSString *sIdentifier = @"sDetailsView";
     
     if (indexPath.section == 0) {
         
-//        UITableViewCell *cell = [self tableView: tableView cellForRowAtIndexPath:indexPath];
-//        
-//        return cell.height;
-        return 100;
+        return 170;
+        
+    }else if (indexPath.section == 1){
+        
+        return 250;
     }
-    return 50;
+    return 55;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -67,40 +75,32 @@ static NSString *sIdentifier = @"sDetailsView";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:fIdentifier];
-    
-    
     if (indexPath.section == 0) {
-        GDVideosDetailsModel *model = self.videos[indexPath.row];
+        GDVideoDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:fIdentifier];
+        GDDetailsDataModel *cellItem = self.detailsModel;
+        [cell setModel:cellItem];
+        return cell;
+    }else{
+        GDVideoBluesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:sIdentifier];
         
-       GDVideoDetailsTableViewCell* cell1 = [[GDVideoDetailsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:fIdentifier];
-        
-        cell1.model = model;
-        cell = cell1;
-    
+        return cell;
     }
-    
-    else if (indexPath.section == 1){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:sIdentifier];
-        cell.backgroundColor = [UIColor greenColor];
-        }
-    return cell;
 }
 
 
 -(void)getDataIsMore:(BOOL)isMore{
     
-    [[GDHomeManager shareInstance]getDetailsWithURL:self.url success:^(GDDetailsDataModel *detailsData) {
+    [[GDHomeManager shareInstance]getDetailsWithURL:_url success:^(GDDetailsDataModel *detailsData) {
         
         if (!isMore) {
             //如果不是更多,则清空原来数据
             [self.videos removeAllObjects];
         }
-        
+        self.detailsModel = detailsData;
         [self.videos addObjectsFromArray:detailsData.videos];
         [self.tableView reloadData];
         
-        NSLog(@"=======%@",self.videos);
+        NSLog(@"=======%@",detailsData);
     } error:^(NSError *error) {
         
     }];

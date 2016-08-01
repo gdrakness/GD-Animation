@@ -50,13 +50,15 @@ static NSString *Identifier = @"Identifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = blueColor;
+//    self.view.backgroundColor = blueColor;
     
     [self.tableView registerClass:[GDMainViewTableViewCell class] forCellReuseIdentifier:Identifier];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.contentInset = UIEdgeInsetsMake(8, 0, 0, 0);
     
     [self setRefresh];
-    [self.tableView.mj_header beginRefreshing];
+//    [self.tableView.mj_header beginRefreshing];
+    [self getDataIsMore:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -202,6 +204,7 @@ static NSString *Identifier = @"Identifier";
     
      DataModel *model = self.posts[indexPath.row];
      viewControl.url = model.url;
+//        NSLog(@"%@",viewControl.url);
     
     [self.navigationController pushViewController:viewControl animated:YES];
 }

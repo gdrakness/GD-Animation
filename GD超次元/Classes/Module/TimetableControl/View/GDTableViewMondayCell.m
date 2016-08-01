@@ -43,7 +43,10 @@ static NSString *Identifier = @"GDTimeCollectionViewCell1";
         [_image setImage:[UIImage imageNamed:@"mon"]];
         [self.contentView addSubview:_image];
         
-        [self getCollection];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [self getCollection];
+        });
     }
     return self;
 }
