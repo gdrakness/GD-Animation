@@ -10,10 +10,10 @@
 #import "GDVideoDetailsTableViewCell.h"
 #import "GDVideoBluesTableViewCell.h"
 #import "GDDetailsDataModel.h"
+#import "LORequestManger.h"
 
 
 @interface GDDetailsViewController ()
-@property(nonatomic,strong)NSMutableArray<GDVideosDetailsModel *> *videos;
 @property(nonatomic,strong)GDDetailsDataModel *detailsModel;
 @property(nonatomic,strong)UIView *detailsView;
 @property(nonatomic,strong)UIButton *labBtn;
@@ -82,38 +82,24 @@ static NSString *sIdentifier = @"sDetailsView";
         return cell;
     }else{
         GDVideoBluesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:sIdentifier];
-        
+        cell.url = _url;
+    
         return cell;
     }
 }
 
-
 -(void)getDataIsMore:(BOOL)isMore{
     
-    [[GDHomeManager shareInstance]getDetailsWithURL:_url success:^(GDDetailsDataModel *detailsData) {
+    [LORequestManger GET:_url parame:nil success:^(id response) {
         
-        if (!isMore) {
-            //如果不是更多,则清空原来数据
-            [self.videos removeAllObjects];
-        }
-        self.detailsModel = detailsData;
-        [self.videos addObjectsFromArray:detailsData.videos];
+        GDDetailsDataModel *dataModel = [GDDetailsDataModel mj_objectWithKeyValues:response];
+        self.detailsModel = dataModel;
         [self.tableView reloadData];
         
-        NSLog(@"=======%@",detailsData);
-    } error:^(NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
 }
 
--(NSMutableArray<GDVideosDetailsModel *> *)videos{
-    if (_videos != nil) {
-        return _videos;
-    }
-    //实例化
-    _videos = [NSMutableArray array];
-    
-    return _videos;
-}
 
 @end

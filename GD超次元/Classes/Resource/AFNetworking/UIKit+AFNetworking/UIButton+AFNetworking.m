@@ -253,7 +253,7 @@ static const char * af_backgroundImageRequestOperationKeyForState(UIControlState
 
         __weak __typeof(self)weakSelf = self;
         AFHTTPRequestOperation *backgroundImageRequestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
-        backgroundImageRequestOperation.responseSerializer = self.imageResponseSerializer;
+        backgroundImageRequestOperation.responseSerializer = weakSelf.imageResponseSerializer;
         [backgroundImageRequestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             __strong __typeof(weakSelf)strongSelf = weakSelf;
             if ([[urlRequest URL] isEqual:[operation.request URL]]) {

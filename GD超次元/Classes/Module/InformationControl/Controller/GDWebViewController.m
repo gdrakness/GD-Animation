@@ -15,7 +15,6 @@
 @interface GDWebViewController ()<UIWebViewDelegate>
 @property(nonatomic,strong)UIWebView *webView;
 @property(nonatomic,strong)GDHTMLDataModel *htmlString;
-@property(nonatomic,strong)UIAlertView *myAlert;
 @end
 
 @implementation GDWebViewController

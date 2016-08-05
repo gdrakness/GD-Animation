@@ -8,11 +8,6 @@
 
 #import "GDDetailsDataModel.h"
 
-@implementation GDVideosDetailsModel
-
-
-
-@end
 
 @implementation GDDetailsDataModel
 

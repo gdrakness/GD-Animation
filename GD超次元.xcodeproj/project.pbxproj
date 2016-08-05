@@ -121,6 +121,7 @@
 		D797B30B1D19B03A00209739 /* GDDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D797B30A1D19B03A00209739 /* GDDetailsViewController.m */; };
 		D797B30E1D19B20900209739 /* GDDetailsDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D797B30D1D19B20900209739 /* GDDetailsDataModel.m */; };
 		D79C20541D1981C6000EBB31 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D79C20531D1981C6000EBB31 /* arrow@2x.png */; };
+		D7A522BC1D4FCC3100C72837 /* GDDetailBluesDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A522BB1D4FCC3100C72837 /* GDDetailBluesDataModel.m */; };
 		D7C93D531D4650DA00AF96EE /* GDInformationCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C93D521D4650DA00AF96EE /* GDInformationCollectionCell.m */; };
 		D7C93D561D47A57300AF96EE /* GDInformatTableBigPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C93D551D47A57300AF96EE /* GDInformatTableBigPictureCell.m */; };
 		D7C93D591D47A59800AF96EE /* GDInformatTablePictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C93D581D47A59800AF96EE /* GDInformatTablePictureCell.m */; };
@@ -133,7 +134,6 @@
 		D7D161E41D4E35C200B20DFA /* btn_rankVideo_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D161E21D4E35C200B20DFA /* btn_rankVideo_hl@2x.png */; };
 		D7D161E51D4E35C200B20DFA /* btn_rankVideo_norm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D161E31D4E35C200B20DFA /* btn_rankVideo_norm@2x.png */; };
 		D7D161E71D4E373800B20DFA /* tip_canPlay_recordV_high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D161E61D4E373800B20DFA /* tip_canPlay_recordV_high@2x.png */; };
-		D7D161EA1D4E5C9A00B20DFA /* GDButtonCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D161E91D4E5C9A00B20DFA /* GDButtonCollectionViewCell.m */; };
 		D7D983A11D1822050027FAF6 /* GDMainViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983A01D1822050027FAF6 /* GDMainViewTableViewCell.m */; };
 		D7D983A41D18DFC50027FAF6 /* LORequestManger.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983A31D18DFC50027FAF6 /* LORequestManger.m */; };
 		D7D984021D18E7340027FAF6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983DE1D18E7340027FAF6 /* AFHTTPRequestOperation.m */; };
@@ -339,6 +339,8 @@
 		D797B30C1D19B20900209739 /* GDDetailsDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDDetailsDataModel.h; sourceTree = "<group>"; };
 		D797B30D1D19B20900209739 /* GDDetailsDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDetailsDataModel.m; sourceTree = "<group>"; };
 		D79C20531D1981C6000EBB31 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		D7A522BA1D4FCC3100C72837 /* GDDetailBluesDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDDetailBluesDataModel.h; sourceTree = "<group>"; };
+		D7A522BB1D4FCC3100C72837 /* GDDetailBluesDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDetailBluesDataModel.m; sourceTree = "<group>"; };
 		D7C93D511D4650DA00AF96EE /* GDInformationCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformationCollectionCell.h; sourceTree = "<group>"; };
 		D7C93D521D4650DA00AF96EE /* GDInformationCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInformationCollectionCell.m; sourceTree = "<group>"; };
 		D7C93D541D47A57300AF96EE /* GDInformatTableBigPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformatTableBigPictureCell.h; sourceTree = "<group>"; };
@@ -356,8 +358,6 @@
 		D7D161E21D4E35C200B20DFA /* btn_rankVideo_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_rankVideo_hl@2x.png"; sourceTree = "<group>"; };
 		D7D161E31D4E35C200B20DFA /* btn_rankVideo_norm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_rankVideo_norm@2x.png"; sourceTree = "<group>"; };
 		D7D161E61D4E373800B20DFA /* tip_canPlay_recordV_high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tip_canPlay_recordV_high@2x.png"; sourceTree = "<group>"; };
-		D7D161E81D4E5C9A00B20DFA /* GDButtonCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDButtonCollectionViewCell.h; sourceTree = "<group>"; };
-		D7D161E91D4E5C9A00B20DFA /* GDButtonCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDButtonCollectionViewCell.m; sourceTree = "<group>"; };
 		D7D9839F1D1822050027FAF6 /* GDMainViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDMainViewTableViewCell.h; sourceTree = "<group>"; };
 		D7D983A01D1822050027FAF6 /* GDMainViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDMainViewTableViewCell.m; sourceTree = "<group>"; };
 		D7D983A21D18DFC50027FAF6 /* LORequestManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LORequestManger.h; sourceTree = "<group>"; };
@@ -781,6 +781,8 @@
 				D71656D01CCFE00A003CE4B8 /* GDRequestMCDataModel.m */,
 				D797B30C1D19B20900209739 /* GDDetailsDataModel.h */,
 				D797B30D1D19B20900209739 /* GDDetailsDataModel.m */,
+				D7A522BA1D4FCC3100C72837 /* GDDetailBluesDataModel.h */,
+				D7A522BB1D4FCC3100C72837 /* GDDetailBluesDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -798,8 +800,6 @@
 				D7866F981D1CCB2A00A0B1E0 /* GDVideoDetailsTableViewCell.m */,
 				D7D161D71D4D1BF900B20DFA /* GDVideoBluesTableViewCell.h */,
 				D7D161D81D4D1BF900B20DFA /* GDVideoBluesTableViewCell.m */,
-				D7D161E81D4E5C9A00B20DFA /* GDButtonCollectionViewCell.h */,
-				D7D161E91D4E5C9A00B20DFA /* GDButtonCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1463,6 +1463,7 @@
 				D71656C81CCFC952003CE4B8 /* GDGroupViewController.m in Sources */,
 				D7C93D591D47A59800AF96EE /* GDInformatTablePictureCell.m in Sources */,
 				D7D983A11D1822050027FAF6 /* GDMainViewTableViewCell.m in Sources */,
+				D7A522BC1D4FCC3100C72837 /* GDDetailBluesDataModel.m in Sources */,
 				D77D2AE11D1535DC00C838D0 /* NSObject+Log.m in Sources */,
 				D797B30B1D19B03A00209739 /* GDDetailsViewController.m in Sources */,
 				D7D9840C1D18E7340027FAF6 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -1497,7 +1498,6 @@
 				D7803A7C1CD3C2F5001AD14C /* UIView+GDSize.m in Sources */,
 				D7866FA71D1E543300A0B1E0 /* GDClassRequstDataModel.m in Sources */,
 				D71655A21CCE73FE003CE4B8 /* main.m in Sources */,
-				D7D161EA1D4E5C9A00B20DFA /* GDButtonCollectionViewCell.m in Sources */,
 				D7D9840E1D18E7340027FAF6 /* UIButton+AFNetworking.m in Sources */,
 				D72FDB451D48A1A500612295 /* GDWebViewController.m in Sources */,
 				D7C93D531D4650DA00AF96EE /* GDInformationCollectionCell.m in Sources */,

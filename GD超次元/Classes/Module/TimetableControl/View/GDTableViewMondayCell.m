@@ -18,6 +18,7 @@
 @property(nonatomic,strong)UIImageView *image;
 @property(nonatomic,strong)UIView *view;
 @property(nonatomic,strong)NSMutableArray<GDTimeTableDescModel *> *mon;
+@property (nonatomic, assign) NSInteger num;
 
 @end
 
@@ -127,6 +128,7 @@ static NSString *Identifier = @"GDTimeCollectionViewCell1";
 +(CGFloat)getCellOfHeight{
     
     return 400+10;
+    
 }
 
 @end

@@ -15,6 +15,7 @@
 #import "GDClassRequstDataModel.h"
 #import "GDTimeTableModel.h"
 #import "GDInformationRequstDataModel.h"
+#import "GDDetailBluesDataModel.h"
 #import "GDHTMLDataModel.h"
 
 #import "LORequestManger.h"
@@ -38,7 +39,9 @@
 
 
 /***********************新番速递************************/
--(void)getFindDealsWithParams:(NSMutableDictionary *)params success:(void(^)(GDRequestMCDataModel *dataModel))success error:(void(^)(NSError *error))error{
+-(void)getFindDealsWithParams:(NSMutableDictionary *)params
+                        success:(void(^)(GDRequestMCDataModel *dataModel))success
+                        error:(void(^)(NSError *error))error{
     
     self.success = success;
     self.error = error;
@@ -61,18 +64,20 @@
 }
 
 /***********************新番详情************************/
--(void)getDetailsWithURL:(NSString *)url success:(void(^)(GDDetailsDataModel *detailsData))success error:(void(^)(NSError *error))error{
+-(void)getDetailsWithURL:(NSString *)url
+                    success:(void(^)(GDDetailsDataModel *detailsData))success
+                    error:(void(^)(NSError *error))error{
     
     self.success = success;
     self.error = error;
     
     [LORequestManger GET:url parame:nil success:^(id response) {
         
-        [GDDetailsDataModel mj_setupObjectClassInArray:^NSDictionary *{
-            return @{
-                     @"videos":@"GDVideosDetailsModel"
-                     };
-        }];
+//        [GDDetailsDataModel mj_setupObjectClassInArray:^NSDictionary *{
+//            return @{
+//                     @"videos":@"GDVideosDetailsModel"
+//                     };
+//        }];
         GDDetailsDataModel *dataModel = [GDDetailsDataModel mj_objectWithKeyValues:response];
         
         self.success(dataModel);
@@ -84,9 +89,36 @@
     }];
 }
 
+-(void)getDetailsBluesWithURL:(NSString *)url
+                        success:(void(^)(GDDetailBluesDataModel *detailsData))success
+                        error:(void(^)(NSError *error))error{
+    
+    self.success = success;
+    self.error = error;
+    
+    [LORequestManger GET:url parame:nil success:^(id response) {
+        
+        [GDDetailBluesDataModel mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"videos":@"GDVideosDetailsModel"
+                     };
+        }];
+        GDDetailBluesDataModel *dataModel = [GDDetailBluesDataModel mj_objectWithKeyValues:response];
+        
+        self.success(dataModel);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        self.error(error);
+        
+    }];
+}
+
 
 /***********************分类推荐************************/
--(void)getFindClassRequstWithURL:(NSString *)url success:(void(^)(GDClassRequstDataModel *classDataModel))success error:(void(^)(NSError *error))error{
+-(void)getFindClassRequstWithURL:(NSString *)url
+                            success:(void(^)(GDClassRequstDataModel *classDataModel))success
+                           error:(void(^)(NSError *error))error{
     
     self.success = success;
     self.error = error;
@@ -110,7 +142,9 @@
 
 
 /***********************时间表************************/
--(void)getFindTimeTableRequstWithURL:(NSString *)url success:(void(^)(GDTimeTableModel *dataModel))success error:(void(^)(NSError *error))error{
+-(void)getFindTimeTableRequstWithURL:(NSString *)url
+                                success:(void(^)(GDTimeTableModel *dataModel))success
+                                error:(void(^)(NSError *error))error{
     self.success = success;
     self.error = error;
     
@@ -137,7 +171,9 @@
 }
 
 /***********************资讯1************************/
--(void)getFindInformationRequestWithURL:(NSString *)url params:(NSDictionary *)params success:(void(^)(GDInformationRequstDataModel *dataModel))success error:(void(^)(NSError *error))error{
+-(void)getFindInformationRequestWithURL:(NSString *)url params:(NSDictionary *)params
+                                    success:(void(^)(GDInformationRequstDataModel *dataModel))success
+                                    error:(void(^)(NSError *error))error{
     self.success = success;
     self.error = error;
     
@@ -158,8 +194,10 @@
     }];
     
 }
-
--(void)parsingHTMLRequestWithURL:(NSString *)url success:(void(^)(GDHTMLDataModel *dataMoedel))success error:(void(^)(NSError *error))error{
+/***********************HTML************************/
+-(void)parsingHTMLRequestWithURL:(NSString *)url
+                            success:(void(^)(GDHTMLDataModel *dataMoedel))success
+                            error:(void(^)(NSError *error))error{
     self.success = success;
     self.error = error;
     
