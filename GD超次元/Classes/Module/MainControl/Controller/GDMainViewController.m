@@ -7,6 +7,7 @@
 //
 
 #import "GDMainViewController.h"
+
 #import "GDCompositorTableViewController.h"
 #import "GDClassViewController.h"
 #import "GDInformationController.h"
@@ -43,7 +44,6 @@
 @end
 
 @implementation GDMainViewController
-
 //@synthesize tableView = tableView;
 static NSString *Identifier = @"Identifier";
 
@@ -54,15 +54,17 @@ static NSString *Identifier = @"Identifier";
     
     [self.tableView registerClass:[GDMainViewTableViewCell class] forCellReuseIdentifier:Identifier];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.contentInset = UIEdgeInsetsMake(8, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(7, 0, 0, 0);
     
     [self setRefresh];
 //    [self.tableView.mj_header beginRefreshing];
     [self getDataIsMore:NO];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 //    [self.tableView triggerPullToRefresh];
+
 }
 
 - (void)didReceiveMemoryWarning {

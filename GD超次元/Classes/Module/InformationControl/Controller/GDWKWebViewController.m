@@ -33,11 +33,10 @@
 
 -(void)loadWKWebView{
     
-    UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 1)];
+    UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 66,self.view.frame.size.width, 8)];
     
-    progressView.tintColor = WebViewNav_TintColor;
-    
-    progressView.trackTintColor = [UIColor redColor];
+    progressView.tintColor = blueColor;
+    progressView.trackTintColor = [UIColor clearColor];
     
     [self.view addSubview:progressView];
     

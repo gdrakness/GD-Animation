@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface GDMainViewController : UITableViewController
+
 +(WMPageController *)pageControlStyleFlood;
 @end

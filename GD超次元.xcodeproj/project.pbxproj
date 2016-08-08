@@ -39,15 +39,6 @@
 		D71655C61CCE73FE003CE4B8 /* GD___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D71655C51CCE73FE003CE4B8 /* GD___UITests.m */; };
 		D716569C1CCE918E003CE4B8 /* GDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D716569B1CCE918E003CE4B8 /* GDMainViewController.m */; };
 		D71656A71CCE9699003CE4B8 /* GDSetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656A61CCE9699003CE4B8 /* GDSetingViewController.m */; };
-		D71656B71CCFC2C2003CE4B8 /* libMasonry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656AE1CCFC2C2003CE4B8 /* libMasonry.a */; };
-		D71656B81CCFC2C2003CE4B8 /* libMJExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656AF1CCFC2C2003CE4B8 /* libMJExtension.a */; };
-		D71656B91CCFC2C2003CE4B8 /* libMMDrawerController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B01CCFC2C2003CE4B8 /* libMMDrawerController.a */; };
-		D71656BA1CCFC2C2003CE4B8 /* libPods-GD超次元Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B11CCFC2C2003CE4B8 /* libPods-GD超次元Tests.a */; };
-		D71656BB1CCFC2C2003CE4B8 /* libPods-GD超次元UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B21CCFC2C2003CE4B8 /* libPods-GD超次元UITests.a */; };
-		D71656BC1CCFC2C2003CE4B8 /* libSDCycleScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B31CCFC2C2003CE4B8 /* libSDCycleScrollView.a */; };
-		D71656BD1CCFC2C2003CE4B8 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B41CCFC2C2003CE4B8 /* libSDWebImage.a */; };
-		D71656BE1CCFC2C2003CE4B8 /* libSVProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B51CCFC2C2003CE4B8 /* libSVProgressHUD.a */; };
-		D71656BF1CCFC2C2003CE4B8 /* libWMPageController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71656B61CCFC2C2003CE4B8 /* libWMPageController.a */; };
 		D71656C81CCFC952003CE4B8 /* GDGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656C71CCFC952003CE4B8 /* GDGroupViewController.m */; };
 		D71656CB1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656CA1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m */; };
 		D71656D11CCFE00A003CE4B8 /* GDRequestMCDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D71656D01CCFE00A003CE4B8 /* GDRequestMCDataModel.m */; };
@@ -117,7 +108,6 @@
 		D7866FA41D1E52C200A0B1E0 /* GDClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7866FA31D1E52C200A0B1E0 /* GDClassViewController.m */; };
 		D7866FA71D1E543300A0B1E0 /* GDClassRequstDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7866FA61D1E543300A0B1E0 /* GDClassRequstDataModel.m */; };
 		D7866FAA1D1E5B1200A0B1E0 /* GDClassCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7866FA91D1E5B1200A0B1E0 /* GDClassCollectionViewCell.m */; };
-		D797B3081D198E0A00209739 /* libMJRefresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D797B3071D198E0A00209739 /* libMJRefresh.a */; };
 		D797B30B1D19B03A00209739 /* GDDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D797B30A1D19B03A00209739 /* GDDetailsViewController.m */; };
 		D797B30E1D19B20900209739 /* GDDetailsDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D797B30D1D19B20900209739 /* GDDetailsDataModel.m */; };
 		D79C20541D1981C6000EBB31 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D79C20531D1981C6000EBB31 /* arrow@2x.png */; };
@@ -134,6 +124,33 @@
 		D7D161E41D4E35C200B20DFA /* btn_rankVideo_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D161E21D4E35C200B20DFA /* btn_rankVideo_hl@2x.png */; };
 		D7D161E51D4E35C200B20DFA /* btn_rankVideo_norm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D161E31D4E35C200B20DFA /* btn_rankVideo_norm@2x.png */; };
 		D7D161E71D4E373800B20DFA /* tip_canPlay_recordV_high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D161E61D4E373800B20DFA /* tip_canPlay_recordV_high@2x.png */; };
+		D7D912B61D56455400CC2950 /* GDVideoWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912B51D56455400CC2950 /* GDVideoWebViewController.m */; };
+		D7D912BA1D57965D00CC2950 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912B91D57965D00CC2950 /* CoreGraphics.framework */; };
+		D7D912BC1D57967100CC2950 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912BB1D57967100CC2950 /* UIKit.framework */; };
+		D7D912BD1D5796A600CC2950 /* libMJRefresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D797B3071D198E0A00209739 /* libMJRefresh.a */; };
+		D7D912C11D5796A600CC2950 /* libMasonry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912BE1D5796A600CC2950 /* libMasonry.a */; };
+		D7D912C21D5796A600CC2950 /* libMJExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912BF1D5796A600CC2950 /* libMJExtension.a */; };
+		D7D912C31D5796A600CC2950 /* libMMDrawerController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912C01D5796A600CC2950 /* libMMDrawerController.a */; };
+		D7D912CA1D5796AE00CC2950 /* libSDCycleScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912C41D5796AE00CC2950 /* libSDCycleScrollView.a */; };
+		D7D912CB1D5796AE00CC2950 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912C51D5796AE00CC2950 /* libSDWebImage.a */; };
+		D7D912CC1D5796AE00CC2950 /* libSVProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912C61D5796AE00CC2950 /* libSVProgressHUD.a */; };
+		D7D912CE1D5796AE00CC2950 /* libWMPageController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912C81D5796AE00CC2950 /* libWMPageController.a */; };
+		D7D912F01D5798BE00CC2950 /* CECardsAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912D21D5798BE00CC2950 /* CECardsAnimationController.m */; };
+		D7D912F11D5798BE00CC2950 /* CECrossfadeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912D41D5798BE00CC2950 /* CECrossfadeAnimationController.m */; };
+		D7D912F21D5798BE00CC2950 /* CECubeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912D61D5798BE00CC2950 /* CECubeAnimationController.m */; };
+		D7D912F31D5798BE00CC2950 /* CEExplodeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912D81D5798BE00CC2950 /* CEExplodeAnimationController.m */; };
+		D7D912F41D5798BE00CC2950 /* CEFlipAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912DA1D5798BE00CC2950 /* CEFlipAnimationController.m */; };
+		D7D912F51D5798BE00CC2950 /* CEFoldAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912DC1D5798BE00CC2950 /* CEFoldAnimationController.m */; };
+		D7D912F61D5798BE00CC2950 /* CENatGeoAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912DE1D5798BE00CC2950 /* CENatGeoAnimationController.m */; };
+		D7D912F71D5798BE00CC2950 /* CEPanAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912E01D5798BE00CC2950 /* CEPanAnimationController.m */; };
+		D7D912F81D5798BE00CC2950 /* CEPortalAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912E21D5798BE00CC2950 /* CEPortalAnimationController.m */; };
+		D7D912F91D5798BE00CC2950 /* CEReversibleAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912E41D5798BE00CC2950 /* CEReversibleAnimationController.m */; };
+		D7D912FA1D5798BE00CC2950 /* CETurnAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912E61D5798BE00CC2950 /* CETurnAnimationController.m */; };
+		D7D912FB1D5798BE00CC2950 /* CEBaseInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912E91D5798BE00CC2950 /* CEBaseInteractionController.m */; };
+		D7D912FC1D5798BE00CC2950 /* CEHorizontalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912EB1D5798BE00CC2950 /* CEHorizontalSwipeInteractionController.m */; };
+		D7D912FD1D5798BE00CC2950 /* CEPinchInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912ED1D5798BE00CC2950 /* CEPinchInteractionController.m */; };
+		D7D912FE1D5798BE00CC2950 /* CEVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912EF1D5798BE00CC2950 /* CEVerticalSwipeInteractionController.m */; };
+		D7D913011D586DA700CC2950 /* GDFooterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D913001D586DA700CC2950 /* GDFooterTableViewCell.m */; };
 		D7D983A11D1822050027FAF6 /* GDMainViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983A01D1822050027FAF6 /* GDMainViewTableViewCell.m */; };
 		D7D983A41D18DFC50027FAF6 /* LORequestManger.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983A31D18DFC50027FAF6 /* LORequestManger.m */; };
 		D7D984021D18E7340027FAF6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983DE1D18E7340027FAF6 /* AFHTTPRequestOperation.m */; };
@@ -358,6 +375,52 @@
 		D7D161E21D4E35C200B20DFA /* btn_rankVideo_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_rankVideo_hl@2x.png"; sourceTree = "<group>"; };
 		D7D161E31D4E35C200B20DFA /* btn_rankVideo_norm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_rankVideo_norm@2x.png"; sourceTree = "<group>"; };
 		D7D161E61D4E373800B20DFA /* tip_canPlay_recordV_high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tip_canPlay_recordV_high@2x.png"; sourceTree = "<group>"; };
+		D7D912B41D56455400CC2950 /* GDVideoWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDVideoWebViewController.h; path = "GD超次元/Classes/Module/MainControl/GDVideoWebViewController.h"; sourceTree = SOURCE_ROOT; };
+		D7D912B51D56455400CC2950 /* GDVideoWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDVideoWebViewController.m; path = "GD超次元/Classes/Module/MainControl/GDVideoWebViewController.m"; sourceTree = SOURCE_ROOT; };
+		D7D912B71D57905700CC2950 /* libVCTransitionsLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVCTransitionsLibrary.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/VCTransitionsLibrary/libVCTransitionsLibrary.a"; sourceTree = "<group>"; };
+		D7D912B91D57965D00CC2950 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D7D912BB1D57967100CC2950 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D7D912BE1D5796A600CC2950 /* libMasonry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMasonry.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/Masonry/libMasonry.a"; sourceTree = "<group>"; };
+		D7D912BF1D5796A600CC2950 /* libMJExtension.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMJExtension.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/MJExtension/libMJExtension.a"; sourceTree = "<group>"; };
+		D7D912C01D5796A600CC2950 /* libMMDrawerController.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMMDrawerController.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/MMDrawerController/libMMDrawerController.a"; sourceTree = "<group>"; };
+		D7D912C41D5796AE00CC2950 /* libSDCycleScrollView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDCycleScrollView.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/SDCycleScrollView/libSDCycleScrollView.a"; sourceTree = "<group>"; };
+		D7D912C51D5796AE00CC2950 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/SDWebImage/libSDWebImage.a"; sourceTree = "<group>"; };
+		D7D912C61D5796AE00CC2950 /* libSVProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSVProgressHUD.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/SVProgressHUD/libSVProgressHUD.a"; sourceTree = "<group>"; };
+		D7D912C71D5796AE00CC2950 /* libSVPullToRefresh.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSVPullToRefresh.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/SVPullToRefresh/libSVPullToRefresh.a"; sourceTree = "<group>"; };
+		D7D912C81D5796AE00CC2950 /* libWMPageController.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWMPageController.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/WMPageController/libWMPageController.a"; sourceTree = "<group>"; };
+		D7D912C91D5796AE00CC2950 /* libYYModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libYYModel.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/YYModel/libYYModel.a"; sourceTree = "<group>"; };
+		D7D912D11D5798BE00CC2950 /* CECardsAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECardsAnimationController.h; sourceTree = "<group>"; };
+		D7D912D21D5798BE00CC2950 /* CECardsAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CECardsAnimationController.m; sourceTree = "<group>"; };
+		D7D912D31D5798BE00CC2950 /* CECrossfadeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECrossfadeAnimationController.h; sourceTree = "<group>"; };
+		D7D912D41D5798BE00CC2950 /* CECrossfadeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CECrossfadeAnimationController.m; sourceTree = "<group>"; };
+		D7D912D51D5798BE00CC2950 /* CECubeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECubeAnimationController.h; sourceTree = "<group>"; };
+		D7D912D61D5798BE00CC2950 /* CECubeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CECubeAnimationController.m; sourceTree = "<group>"; };
+		D7D912D71D5798BE00CC2950 /* CEExplodeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEExplodeAnimationController.h; sourceTree = "<group>"; };
+		D7D912D81D5798BE00CC2950 /* CEExplodeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEExplodeAnimationController.m; sourceTree = "<group>"; };
+		D7D912D91D5798BE00CC2950 /* CEFlipAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEFlipAnimationController.h; sourceTree = "<group>"; };
+		D7D912DA1D5798BE00CC2950 /* CEFlipAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEFlipAnimationController.m; sourceTree = "<group>"; };
+		D7D912DB1D5798BE00CC2950 /* CEFoldAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEFoldAnimationController.h; sourceTree = "<group>"; };
+		D7D912DC1D5798BE00CC2950 /* CEFoldAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEFoldAnimationController.m; sourceTree = "<group>"; };
+		D7D912DD1D5798BE00CC2950 /* CENatGeoAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CENatGeoAnimationController.h; sourceTree = "<group>"; };
+		D7D912DE1D5798BE00CC2950 /* CENatGeoAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CENatGeoAnimationController.m; sourceTree = "<group>"; };
+		D7D912DF1D5798BE00CC2950 /* CEPanAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEPanAnimationController.h; sourceTree = "<group>"; };
+		D7D912E01D5798BE00CC2950 /* CEPanAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPanAnimationController.m; sourceTree = "<group>"; };
+		D7D912E11D5798BE00CC2950 /* CEPortalAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEPortalAnimationController.h; sourceTree = "<group>"; };
+		D7D912E21D5798BE00CC2950 /* CEPortalAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPortalAnimationController.m; sourceTree = "<group>"; };
+		D7D912E31D5798BE00CC2950 /* CEReversibleAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEReversibleAnimationController.h; sourceTree = "<group>"; };
+		D7D912E41D5798BE00CC2950 /* CEReversibleAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEReversibleAnimationController.m; sourceTree = "<group>"; };
+		D7D912E51D5798BE00CC2950 /* CETurnAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CETurnAnimationController.h; sourceTree = "<group>"; };
+		D7D912E61D5798BE00CC2950 /* CETurnAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CETurnAnimationController.m; sourceTree = "<group>"; };
+		D7D912E81D5798BE00CC2950 /* CEBaseInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEBaseInteractionController.h; sourceTree = "<group>"; };
+		D7D912E91D5798BE00CC2950 /* CEBaseInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEBaseInteractionController.m; sourceTree = "<group>"; };
+		D7D912EA1D5798BE00CC2950 /* CEHorizontalSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEHorizontalSwipeInteractionController.h; sourceTree = "<group>"; };
+		D7D912EB1D5798BE00CC2950 /* CEHorizontalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEHorizontalSwipeInteractionController.m; sourceTree = "<group>"; };
+		D7D912EC1D5798BE00CC2950 /* CEPinchInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEPinchInteractionController.h; sourceTree = "<group>"; };
+		D7D912ED1D5798BE00CC2950 /* CEPinchInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPinchInteractionController.m; sourceTree = "<group>"; };
+		D7D912EE1D5798BE00CC2950 /* CEVerticalSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEVerticalSwipeInteractionController.h; sourceTree = "<group>"; };
+		D7D912EF1D5798BE00CC2950 /* CEVerticalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEVerticalSwipeInteractionController.m; sourceTree = "<group>"; };
+		D7D912FF1D586DA700CC2950 /* GDFooterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDFooterTableViewCell.h; sourceTree = "<group>"; };
+		D7D913001D586DA700CC2950 /* GDFooterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDFooterTableViewCell.m; sourceTree = "<group>"; };
 		D7D9839F1D1822050027FAF6 /* GDMainViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDMainViewTableViewCell.h; sourceTree = "<group>"; };
 		D7D983A01D1822050027FAF6 /* GDMainViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDMainViewTableViewCell.m; sourceTree = "<group>"; };
 		D7D983A21D18DFC50027FAF6 /* LORequestManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LORequestManger.h; sourceTree = "<group>"; };
@@ -406,16 +469,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D797B3081D198E0A00209739 /* libMJRefresh.a in Frameworks */,
-				D71656B71CCFC2C2003CE4B8 /* libMasonry.a in Frameworks */,
-				D71656B81CCFC2C2003CE4B8 /* libMJExtension.a in Frameworks */,
-				D71656B91CCFC2C2003CE4B8 /* libMMDrawerController.a in Frameworks */,
-				D71656BA1CCFC2C2003CE4B8 /* libPods-GD超次元Tests.a in Frameworks */,
-				D71656BB1CCFC2C2003CE4B8 /* libPods-GD超次元UITests.a in Frameworks */,
-				D71656BC1CCFC2C2003CE4B8 /* libSDCycleScrollView.a in Frameworks */,
-				D71656BD1CCFC2C2003CE4B8 /* libSDWebImage.a in Frameworks */,
-				D71656BE1CCFC2C2003CE4B8 /* libSVProgressHUD.a in Frameworks */,
-				D71656BF1CCFC2C2003CE4B8 /* libWMPageController.a in Frameworks */,
+				D7D912CA1D5796AE00CC2950 /* libSDCycleScrollView.a in Frameworks */,
+				D7D912CB1D5796AE00CC2950 /* libSDWebImage.a in Frameworks */,
+				D7D912CC1D5796AE00CC2950 /* libSVProgressHUD.a in Frameworks */,
+				D7D912CE1D5796AE00CC2950 /* libWMPageController.a in Frameworks */,
+				D7D912C11D5796A600CC2950 /* libMasonry.a in Frameworks */,
+				D7D912C21D5796A600CC2950 /* libMJExtension.a in Frameworks */,
+				D7D912C31D5796A600CC2950 /* libMMDrawerController.a in Frameworks */,
+				D7D912BD1D5796A600CC2950 /* libMJRefresh.a in Frameworks */,
+				D7D912BC1D57967100CC2950 /* UIKit.framework in Frameworks */,
+				D7D912BA1D57965D00CC2950 /* CoreGraphics.framework in Frameworks */,
 				DE1256EE700CC31CD4702BF2 /* libPods-GD超次元.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +518,18 @@
 		2E96D9A89E298E8A838B85C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7D912C41D5796AE00CC2950 /* libSDCycleScrollView.a */,
+				D7D912C51D5796AE00CC2950 /* libSDWebImage.a */,
+				D7D912C61D5796AE00CC2950 /* libSVProgressHUD.a */,
+				D7D912C71D5796AE00CC2950 /* libSVPullToRefresh.a */,
+				D7D912C81D5796AE00CC2950 /* libWMPageController.a */,
+				D7D912C91D5796AE00CC2950 /* libYYModel.a */,
+				D7D912BE1D5796A600CC2950 /* libMasonry.a */,
+				D7D912BF1D5796A600CC2950 /* libMJExtension.a */,
+				D7D912C01D5796A600CC2950 /* libMMDrawerController.a */,
+				D7D912BB1D57967100CC2950 /* UIKit.framework */,
+				D7D912B91D57965D00CC2950 /* CoreGraphics.framework */,
+				D7D912B71D57905700CC2950 /* libVCTransitionsLibrary.a */,
 				D797B3071D198E0A00209739 /* libMJRefresh.a */,
 				D71656AE1CCFC2C2003CE4B8 /* libMasonry.a */,
 				D71656AF1CCFC2C2003CE4B8 /* libMJExtension.a */,
@@ -770,6 +845,8 @@
 				D716569B1CCE918E003CE4B8 /* GDMainViewController.m */,
 				D797B3091D19B03A00209739 /* GDDetailsViewController.h */,
 				D797B30A1D19B03A00209739 /* GDDetailsViewController.m */,
+				D7D912B41D56455400CC2950 /* GDVideoWebViewController.h */,
+				D7D912B51D56455400CC2950 /* GDVideoWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -800,6 +877,8 @@
 				D7866F981D1CCB2A00A0B1E0 /* GDVideoDetailsTableViewCell.m */,
 				D7D161D71D4D1BF900B20DFA /* GDVideoBluesTableViewCell.h */,
 				D7D161D81D4D1BF900B20DFA /* GDVideoBluesTableViewCell.m */,
+				D7D912FF1D586DA700CC2950 /* GDFooterTableViewCell.h */,
+				D7D913001D586DA700CC2950 /* GDFooterTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1055,6 +1134,8 @@
 		D7803A761CD3C295001AD14C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				D7D912D01D5798BE00CC2950 /* AnimationControllers */,
+				D7D912E71D5798BE00CC2950 /* InteractionControllers */,
 				D7D983A21D18DFC50027FAF6 /* LORequestManger.h */,
 				D7D983A31D18DFC50027FAF6 /* LORequestManger.m */,
 				D77D2ADF1D1535DC00C838D0 /* NSObject+Log.h */,
@@ -1065,6 +1146,50 @@
 				D7023D7F1D2E4FCE001139EC /* UIView+Roundify.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		D7D912D01D5798BE00CC2950 /* AnimationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D7D912D11D5798BE00CC2950 /* CECardsAnimationController.h */,
+				D7D912D21D5798BE00CC2950 /* CECardsAnimationController.m */,
+				D7D912D31D5798BE00CC2950 /* CECrossfadeAnimationController.h */,
+				D7D912D41D5798BE00CC2950 /* CECrossfadeAnimationController.m */,
+				D7D912D51D5798BE00CC2950 /* CECubeAnimationController.h */,
+				D7D912D61D5798BE00CC2950 /* CECubeAnimationController.m */,
+				D7D912D71D5798BE00CC2950 /* CEExplodeAnimationController.h */,
+				D7D912D81D5798BE00CC2950 /* CEExplodeAnimationController.m */,
+				D7D912D91D5798BE00CC2950 /* CEFlipAnimationController.h */,
+				D7D912DA1D5798BE00CC2950 /* CEFlipAnimationController.m */,
+				D7D912DB1D5798BE00CC2950 /* CEFoldAnimationController.h */,
+				D7D912DC1D5798BE00CC2950 /* CEFoldAnimationController.m */,
+				D7D912DD1D5798BE00CC2950 /* CENatGeoAnimationController.h */,
+				D7D912DE1D5798BE00CC2950 /* CENatGeoAnimationController.m */,
+				D7D912DF1D5798BE00CC2950 /* CEPanAnimationController.h */,
+				D7D912E01D5798BE00CC2950 /* CEPanAnimationController.m */,
+				D7D912E11D5798BE00CC2950 /* CEPortalAnimationController.h */,
+				D7D912E21D5798BE00CC2950 /* CEPortalAnimationController.m */,
+				D7D912E31D5798BE00CC2950 /* CEReversibleAnimationController.h */,
+				D7D912E41D5798BE00CC2950 /* CEReversibleAnimationController.m */,
+				D7D912E51D5798BE00CC2950 /* CETurnAnimationController.h */,
+				D7D912E61D5798BE00CC2950 /* CETurnAnimationController.m */,
+			);
+			path = AnimationControllers;
+			sourceTree = "<group>";
+		};
+		D7D912E71D5798BE00CC2950 /* InteractionControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D7D912E81D5798BE00CC2950 /* CEBaseInteractionController.h */,
+				D7D912E91D5798BE00CC2950 /* CEBaseInteractionController.m */,
+				D7D912EA1D5798BE00CC2950 /* CEHorizontalSwipeInteractionController.h */,
+				D7D912EB1D5798BE00CC2950 /* CEHorizontalSwipeInteractionController.m */,
+				D7D912EC1D5798BE00CC2950 /* CEPinchInteractionController.h */,
+				D7D912ED1D5798BE00CC2950 /* CEPinchInteractionController.m */,
+				D7D912EE1D5798BE00CC2950 /* CEVerticalSwipeInteractionController.h */,
+				D7D912EF1D5798BE00CC2950 /* CEVerticalSwipeInteractionController.m */,
+			);
+			path = InteractionControllers;
 			sourceTree = "<group>";
 		};
 		D7D983DC1D18E7340027FAF6 /* AFNetworking */ = {
@@ -1455,11 +1580,13 @@
 				D7D984101D18E7340027FAF6 /* UIProgressView+AFNetworking.m in Sources */,
 				D7D9840F1D18E7340027FAF6 /* UIImageView+AFNetworking.m in Sources */,
 				D7D984021D18E7340027FAF6 /* AFHTTPRequestOperation.m in Sources */,
+				D7D913011D586DA700CC2950 /* GDFooterTableViewCell.m in Sources */,
 				D72D2AD51D31763E00940A53 /* GDTableViewMondayCell.m in Sources */,
 				D716569C1CCE918E003CE4B8 /* GDMainViewController.m in Sources */,
 				D72FDB481D49183B00612295 /* GDHTMLDataModel.m in Sources */,
 				D71D98C31D449F77000DFED3 /* GDTableViewSundayCell.m in Sources */,
 				D72D2ADB1D33497900940A53 /* GDTimeCollectionViewCell.m in Sources */,
+				D7D912F51D5798BE00CC2950 /* CEFoldAnimationController.m in Sources */,
 				D71656C81CCFC952003CE4B8 /* GDGroupViewController.m in Sources */,
 				D7C93D591D47A59800AF96EE /* GDInformatTablePictureCell.m in Sources */,
 				D7D983A11D1822050027FAF6 /* GDMainViewTableViewCell.m in Sources */,
@@ -1469,13 +1596,18 @@
 				D7D9840C1D18E7340027FAF6 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				D71D7F961D4C8DC100A0FF5E /* GDWKWebViewController.m in Sources */,
 				D71825FD1D22C397001AE243 /* GDInformationRequstDataModel.m in Sources */,
+				D7D912F91D5798BE00CC2950 /* CEReversibleAnimationController.m in Sources */,
+				D7D912FC1D5798BE00CC2950 /* CEHorizontalSwipeInteractionController.m in Sources */,
 				D7866FA41D1E52C200A0B1E0 /* GDClassViewController.m in Sources */,
 				D7D984121D18E7340027FAF6 /* UIWebView+AFNetworking.m in Sources */,
 				D7D984041D18E7340027FAF6 /* AFHTTPSessionManager.m in Sources */,
 				D7D9840B1D18E7340027FAF6 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				D7D912FD1D5798BE00CC2950 /* CEPinchInteractionController.m in Sources */,
 				D71656D11CCFE00A003CE4B8 /* GDRequestMCDataModel.m in Sources */,
 				D71D98B71D449DEF000DFED3 /* GDTableViewWednesdayCell.m in Sources */,
+				D7D912F41D5798BE00CC2950 /* CEFlipAnimationController.m in Sources */,
 				D7D9840D1D18E7340027FAF6 /* UIAlertView+AFNetworking.m in Sources */,
+				D7D912F71D5798BE00CC2950 /* CEPanAnimationController.m in Sources */,
 				D7866F991D1CCB2A00A0B1E0 /* GDVideoDetailsTableViewCell.m in Sources */,
 				D71655A51CCE73FE003CE4B8 /* AppDelegate.m in Sources */,
 				D71826031D22D119001AE243 /* GDCompositorTableViewCell.m in Sources */,
@@ -1483,20 +1615,27 @@
 				D7D9840A1D18E7340027FAF6 /* AFURLSessionManager.m in Sources */,
 				D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */,
 				D7C93D561D47A57300AF96EE /* GDInformatTableBigPictureCell.m in Sources */,
+				D7D912FA1D5798BE00CC2950 /* CETurnAnimationController.m in Sources */,
+				D7D912B61D56455400CC2950 /* GDVideoWebViewController.m in Sources */,
 				D7803A741CD3C0C4001AD14C /* GDBarButtonItem.m in Sources */,
+				D7D912F81D5798BE00CC2950 /* CEPortalAnimationController.m in Sources */,
 				D7D984071D18E7340027FAF6 /* AFURLConnectionOperation.m in Sources */,
 				D7D984091D18E7340027FAF6 /* AFURLResponseSerialization.m in Sources */,
 				D7D983A41D18DFC50027FAF6 /* LORequestManger.m in Sources */,
 				D71D98BD1D449EF9000DFED3 /* GDTableViewFridayCell.m in Sources */,
+				D7D912F21D5798BE00CC2950 /* CECubeAnimationController.m in Sources */,
 				D7D984081D18E7340027FAF6 /* AFURLRequestSerialization.m in Sources */,
 				D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */,
 				D71D98BA1D449EDE000DFED3 /* GDTableViewThursdayCell.m in Sources */,
+				D7D912F11D5798BE00CC2950 /* CECrossfadeAnimationController.m in Sources */,
 				D730D7501D13088A00273EAA /* GDTabBarController.m in Sources */,
 				D71D98C01D449F6B000DFED3 /* GDTableViewSaturdayCell.m in Sources */,
 				D797B30E1D19B20900209739 /* GDDetailsDataModel.m in Sources */,
 				D71656CB1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m in Sources */,
 				D7803A7C1CD3C2F5001AD14C /* UIView+GDSize.m in Sources */,
 				D7866FA71D1E543300A0B1E0 /* GDClassRequstDataModel.m in Sources */,
+				D7D912F31D5798BE00CC2950 /* CEExplodeAnimationController.m in Sources */,
+				D7D912F01D5798BE00CC2950 /* CECardsAnimationController.m in Sources */,
 				D71655A21CCE73FE003CE4B8 /* main.m in Sources */,
 				D7D9840E1D18E7340027FAF6 /* UIButton+AFNetworking.m in Sources */,
 				D72FDB451D48A1A500612295 /* GDWebViewController.m in Sources */,
@@ -1506,7 +1645,10 @@
 				D7D984111D18E7340027FAF6 /* UIRefreshControl+AFNetworking.m in Sources */,
 				D7D984031D18E7340027FAF6 /* AFHTTPRequestOperationManager.m in Sources */,
 				D71D98C61D45B961000DFED3 /* GDInformationController.m in Sources */,
+				D7D912FB1D5798BE00CC2950 /* CEBaseInteractionController.m in Sources */,
 				D7D984061D18E7340027FAF6 /* AFSecurityPolicy.m in Sources */,
+				D7D912FE1D5798BE00CC2950 /* CEVerticalSwipeInteractionController.m in Sources */,
+				D7D912F61D5798BE00CC2950 /* CENatGeoAnimationController.m in Sources */,
 				D71D98B41D449CEA000DFED3 /* GDTableViewTuesdayCell.m in Sources */,
 				D7023DB11D30FA7B001139EC /* GDTimetableController.m in Sources */,
 				D7866FAA1D1E5B1200A0B1E0 /* GDClassCollectionViewCell.m in Sources */,

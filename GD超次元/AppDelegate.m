@@ -37,6 +37,7 @@
     self.drawerControl.maximumLeftDrawerWidth = [UIScreen mainScreen].bounds.size.width * 0.8;
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = blueColor;
     [self.window setRootViewController:self.drawerControl];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
