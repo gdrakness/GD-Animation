@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+@class GDCompositorPostsModel;
+
+@protocol GDCompositorDelegate <NSObject>
+
+-(void)getFirstViewButtonPushController:(NSString *)url;
+
+@end
 
 @interface GDCompositorTableViewCell : UITableViewCell
+
+-(void)setModel:(GDCompositorPostsModel *)model;
+@property (nonatomic, weak) id<GDCompositorDelegate> delegate;
 
 @end

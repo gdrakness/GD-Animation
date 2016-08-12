@@ -21,7 +21,7 @@
 @property(nonatomic,copy)NSString *url;//跳转路径
 @end
 
-@interface GDDataModel : NSObject
+@interface GDCompositorDataArrayModel : NSObject
 @property(nonatomic,copy)NSString *type; //组种类
 @property (nonatomic, assign)NSString *cat_id;
 @property(nonatomic,strong)NSMutableArray<GDCompositorPostsModel *> *posts;
@@ -29,5 +29,5 @@
 
 @interface GDCompositorDataModel : NSObject
 @property(nonatomic,copy)NSString *status;
-@property(nonatomic,strong)NSMutableArray<GDDataModel *> *data;
+@property(nonatomic,strong)NSMutableArray<GDCompositorDataArrayModel *> *data;
 @end

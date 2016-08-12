@@ -14,6 +14,7 @@
 @class GDInformationRequstDataModel;
 @class GDHTMLDataModel;
 @class GDDetailBluesDataModel;
+@class GDCompositorDataModel;
 
 @interface GDHomeManager : NSObject
 
@@ -27,10 +28,14 @@
 -(void)getDetailsWithURL:(NSString *)url
                     success:(void(^)(GDDetailsDataModel *detailsData))success
                     error:(void(^)(NSError *error))error;
-
+//新番详细信息
 -(void)getDetailsBluesWithURL:(NSString *)url
                       success:(void(^)(GDDetailBluesDataModel *detailsData))success
                         error:(void(^)(NSError *error))error;
+//首页
+-(void)getCompositorRequestWithURL:(NSString *)url
+                           success:(void (^)(GDCompositorDataModel *compositorDataModel))success
+                             error:(void(^)(NSError *error))error;
 //分类推荐
 -(void)getFindClassRequstWithURL:(NSString *)url
                             success:(void(^)(GDClassRequstDataModel *classDataModel))success
@@ -45,7 +50,7 @@
                                 params:(NSDictionary *)params
                                 success:(void(^)(GDInformationRequstDataModel *dataModel))success
                                 error:(void(^)(NSError *error))error;
-
+//HTML
 -(void)parsingHTMLRequestWithURL:(NSString *)url
                             success:(void(^)(GDHTMLDataModel *dataMoedel))success
                             error:(void(^)(NSError *error))error;

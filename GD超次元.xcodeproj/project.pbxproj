@@ -151,6 +151,7 @@
 		D7D912FD1D5798BE00CC2950 /* CEPinchInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912ED1D5798BE00CC2950 /* CEPinchInteractionController.m */; };
 		D7D912FE1D5798BE00CC2950 /* CEVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912EF1D5798BE00CC2950 /* CEVerticalSwipeInteractionController.m */; };
 		D7D913011D586DA700CC2950 /* GDFooterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D913001D586DA700CC2950 /* GDFooterTableViewCell.m */; };
+		D7D913031D58BC0100CC2950 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D913021D58BC0100CC2950 /* Foundation+Log.m */; };
 		D7D983A11D1822050027FAF6 /* GDMainViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983A01D1822050027FAF6 /* GDMainViewTableViewCell.m */; };
 		D7D983A41D18DFC50027FAF6 /* LORequestManger.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983A31D18DFC50027FAF6 /* LORequestManger.m */; };
 		D7D984021D18E7340027FAF6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D983DE1D18E7340027FAF6 /* AFHTTPRequestOperation.m */; };
@@ -421,6 +422,7 @@
 		D7D912EF1D5798BE00CC2950 /* CEVerticalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEVerticalSwipeInteractionController.m; sourceTree = "<group>"; };
 		D7D912FF1D586DA700CC2950 /* GDFooterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDFooterTableViewCell.h; sourceTree = "<group>"; };
 		D7D913001D586DA700CC2950 /* GDFooterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDFooterTableViewCell.m; sourceTree = "<group>"; };
+		D7D913021D58BC0100CC2950 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Foundation+Log.m"; path = "InteractionControllers/Foundation+Log.m"; sourceTree = "<group>"; };
 		D7D9839F1D1822050027FAF6 /* GDMainViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDMainViewTableViewCell.h; sourceTree = "<group>"; };
 		D7D983A01D1822050027FAF6 /* GDMainViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDMainViewTableViewCell.m; sourceTree = "<group>"; };
 		D7D983A21D18DFC50027FAF6 /* LORequestManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LORequestManger.h; sourceTree = "<group>"; };
@@ -1138,6 +1140,7 @@
 				D7D912E71D5798BE00CC2950 /* InteractionControllers */,
 				D7D983A21D18DFC50027FAF6 /* LORequestManger.h */,
 				D7D983A31D18DFC50027FAF6 /* LORequestManger.m */,
+				D7D913021D58BC0100CC2950 /* Foundation+Log.m */,
 				D77D2ADF1D1535DC00C838D0 /* NSObject+Log.h */,
 				D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */,
 				D7803A7A1CD3C2F5001AD14C /* UIView+GDSize.h */,
@@ -1606,6 +1609,7 @@
 				D71656D11CCFE00A003CE4B8 /* GDRequestMCDataModel.m in Sources */,
 				D71D98B71D449DEF000DFED3 /* GDTableViewWednesdayCell.m in Sources */,
 				D7D912F41D5798BE00CC2950 /* CEFlipAnimationController.m in Sources */,
+				D7D913031D58BC0100CC2950 /* Foundation+Log.m in Sources */,
 				D7D9840D1D18E7340027FAF6 /* UIAlertView+AFNetworking.m in Sources */,
 				D7D912F71D5798BE00CC2950 /* CEPanAnimationController.m in Sources */,
 				D7866F991D1CCB2A00A0B1E0 /* GDVideoDetailsTableViewCell.m in Sources */,

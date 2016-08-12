@@ -13,6 +13,7 @@
 #import "GDRequestMCDataModel.h"
 #import "GDDetailsDataModel.h"
 #import "GDClassRequstDataModel.h"
+#import "GDCompositorDataModel.h"
 #import "GDTimeTableModel.h"
 #import "GDInformationRequstDataModel.h"
 #import "GDDetailBluesDataModel.h"
@@ -72,12 +73,7 @@
     self.error = error;
     
     [LORequestManger GET:url parame:nil success:^(id response) {
-        
-//        [GDDetailsDataModel mj_setupObjectClassInArray:^NSDictionary *{
-//            return @{
-//                     @"videos":@"GDVideosDetailsModel"
-//                     };
-//        }];
+
         GDDetailsDataModel *dataModel = [GDDetailsDataModel mj_objectWithKeyValues:response];
         
         self.success(dataModel);
@@ -88,7 +84,7 @@
 
     }];
 }
-
+/***********************新番详细信息************************/
 -(void)getDetailsBluesWithURL:(NSString *)url
                         success:(void(^)(GDDetailBluesDataModel *detailsData))success
                         error:(void(^)(NSError *error))error{
@@ -112,6 +108,32 @@
         self.error(error);
         
     }];
+}
+/***********************首页************************/
+-(void)getCompositorRequestWithURL:(NSString *)url
+                           success:(void (^)(GDCompositorDataModel *compositorDataModel))success
+                             error:(void(^)(NSError *error))error{
+    self.success = success;
+    self.error = error;
+    [LORequestManger GET:CompositorURL parame:nil success:^(id response) {
+        
+        [GDCompositorDataModel mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"data":@"GDCompositorDataArrayModel"
+                     };
+        }];
+        [GDCompositorDataArrayModel mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"posts":@"GDCompositorPostsModel"
+                     };
+        }];
+        GDCompositorDataModel *dataModel = [GDCompositorDataModel mj_objectWithKeyValues:response];
+        self.success(dataModel);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        self.error(error);
+    }];
+    
 }
 
 

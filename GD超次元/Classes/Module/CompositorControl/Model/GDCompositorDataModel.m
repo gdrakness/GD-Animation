@@ -10,6 +10,20 @@
 
 #import "GDCompositorDataModel.h"
 
-@implementation GDCompositorDataModel
+@implementation GDCompositorPostsModel
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key{
 
+}
+@end
+
+@implementation GDCompositorDataArrayModel
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
+}
+@end
+
+@implementation GDCompositorDataModel
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
+}
 @end

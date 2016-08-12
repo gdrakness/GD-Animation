@@ -84,7 +84,7 @@ static NSString * const reuseIdentifier = @"calssCell";
 //        NSLog(@"%@",classDataModel);
         [self.data addObjectsFromArray:classDataModel.data];
         
-//        NSLog(@"%@",self.data);
+        NSLog(@"%@",self.data);
         
         [self.collectionView reloadData];
         
