@@ -13,6 +13,10 @@
 
 -(void)getFirstViewButtonPushController:(NSString *)url;
 
+-(void)getSecondViewFButtonPushController:(NSString *)url;
+
+-(void)getSecondViewSButtonPushController:(NSString *)url;
+
 @end
 
 @interface GDCompositorTableViewCell : UITableViewCell

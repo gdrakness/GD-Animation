@@ -77,7 +77,7 @@ static NSString *Identifier = @"CompositorIdentifier";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 620;
+    return 610;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -99,6 +99,20 @@ static NSString *Identifier = @"CompositorIdentifier";
 
 -(void)getFirstViewButtonPushController:(NSString *)url{
     
+    [self pushViewControllerWithURL:url];
+}
+
+-(void)getSecondViewFButtonPushController:(NSString *)url{
+    
+    [self pushViewControllerWithURL:url];
+}
+
+-(void)getSecondViewSButtonPushController:(NSString *)url{
+    
+    [self pushViewControllerWithURL:url];
+}
+
+-(void)pushViewControllerWithURL:(NSString *)url{
     GDDetailsViewController *DetailsVC = [[GDDetailsViewController alloc]init];
     DetailsVC.url = url;
     [self.navigationController pushViewController:DetailsVC animated:YES];

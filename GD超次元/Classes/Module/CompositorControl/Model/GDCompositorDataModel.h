@@ -15,7 +15,7 @@
 @property(nonatomic,copy)NSString *video_info;//更新集数
 @property(nonatomic,copy)NSString *title;//标题
 @property (nonatomic, assign)NSString *time;
-@property (nonatomic, assign)NSString *bbsid;
+@property (nonatomic, copy)NSString *bbsid;
 @property(nonatomic,copy)NSString *video;//集数
 @property(nonatomic,copy)NSString *desc;//描述
 @property(nonatomic,copy)NSString *url;//跳转路径
