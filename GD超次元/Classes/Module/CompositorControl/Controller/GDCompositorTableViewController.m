@@ -27,8 +27,6 @@
 static NSString *IdentifierOne = @"CompositorIdentifierOne";
 static NSString *IdentifierTwo = @"CompositorIdentifierTwo";
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -97,6 +95,7 @@ static NSString *IdentifierTwo = @"CompositorIdentifierTwo";
 
     if (indexPath.row == 1 || indexPath.row == 0) {
         GDCompositorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierOne];
+        cell.backgroundColor = GrayColor;
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         cell.delegate = self;
         cell.backgroundColor = [UIColor colorWithRed:236 / 255.0f green:239 / 255.0f blue:243 / 255.0f alpha:1];
@@ -114,6 +113,7 @@ static NSString *IdentifierTwo = @"CompositorIdentifierTwo";
         return cell;
     }
         GDCompositorSecondTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierTwo];
+        cell.backgroundColor = GrayColor;
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         cell.delegate = self;
         if (indexPath.row == 2) {

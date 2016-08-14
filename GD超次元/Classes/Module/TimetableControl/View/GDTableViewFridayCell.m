@@ -34,7 +34,7 @@ static NSString *Identifier = @"GDTimeCollectionViewCell5";
         [self.contentView addSubview:_view];
         
         UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(19,7,3,_view.frame.size.height + 60)];
-        lineView.backgroundColor = SblueColor;
+        lineView.backgroundColor = BlueColor;
         [self.contentView addSubview:lineView];
         
         _image = [[UIImageView alloc]initWithFrame:CGRectMake(5, 5, 33, 30)];

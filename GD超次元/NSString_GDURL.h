@@ -23,8 +23,6 @@
 #define INformationURL @"http://api.18touch.com/?c=Nzs&a=getlist&cat=%E5%8A%A8%E6%BC%AB%E8%B5%84%E8%AE%AF&img=1&summary=1&"
 //资信2
 #define InformationURL @"http://api.18touch.com/?c=Nzs&a=getlist&helper=ACG%E7%B2%BE%E5%93%81%E6%96%87%E7%AB%A0&img=1&lastid=0&lasttime=0"
-//时间表外
-#define timeURL @"http://helloworldln.sinaapp.com/api/onAirList.php"
 //时间表
 #define TimeURL @"http://api.18touch.com/?c=acg&a=timeline"
 
