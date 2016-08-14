@@ -15,16 +15,27 @@
 
 @interface GDCompositorTableViewController ()<GDCompositorDelegate>
 @property(nonatomic,strong)NSMutableArray<GDCompositorDataArrayModel *> *data;
-@property(nonatomic,strong)NSMutableArray <GDCompositorPostsModel *>*posts;
+@property(nonatomic,strong)NSMutableArray <GDCompositorPostsModel *>*firstPosts;
+@property(nonatomic,strong)NSMutableArray <GDCompositorPostsModel *>*secondPosts;
+@property(nonatomic,strong)NSMutableArray <GDCompositorPostsModel *>*thirdlyPosts;
+@property(nonatomic,strong)NSMutableArray <GDCompositorPostsModel *>*fourthPosts;
+
 @end
 
 @implementation GDCompositorTableViewController
-static NSString *Identifier = @"CompositorIdentifier";
+static NSString *IdentifierOne = @"CompositorIdentifierOne";
+static NSString *IdentifierTwo = @"CompositorIdentifierTwo";
+static NSString *IdentifierThree = @"CompositorIdentifierThree";
+static NSString *IdentifierFour = @"CompositorIdentifierFour";
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[GDCompositorTableViewCell class] forCellReuseIdentifier:Identifier];
+    [self.tableView registerClass:[GDCompositorTableViewCell class] forCellReuseIdentifier:IdentifierOne];
+    [self.tableView registerClass:[GDCompositorTableViewCell class] forCellReuseIdentifier:IdentifierTwo];
+    [self.tableView registerClass:[GDCompositorTableViewCell class] forCellReuseIdentifier:IdentifierThree];
+    [self.tableView registerClass:[GDCompositorTableViewCell class] forCellReuseIdentifier:IdentifierFour];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // Uncomment the following line to preserve selection between presentations.
 //     self.clearsSelectionOnViewWillAppear = NO;
@@ -48,15 +59,21 @@ static NSString *Identifier = @"CompositorIdentifier";
         
         for (GDCompositorDataArrayModel *model in [self.data reverseObjectEnumerator]) {
             
-            GDCompositorDataArrayModel *cellItem = model;
-            if ([cellItem.type isEqualToString:@"后宫"]) {
-            [self.posts addObjectsFromArray:model.posts];
+            GDCompositorDataArrayModel *modelType = model;
+            if ([modelType.type isEqualToString:@"后宫"]) {
+                [self.firstPosts addObjectsFromArray:model.posts];
+            }else if ([modelType.type isEqualToString:@"奇幻"]){
+                [self.secondPosts addObjectsFromArray:model.posts];
+            }else if ([modelType.type isEqualToString:@"热血"]){
+                [self.thirdlyPosts addObjectsFromArray:model.posts];
+            }else if ([modelType.type isEqualToString:@"冒险"]){
+                [self.fourthPosts addObjectsFromArray:model.posts];
             }
         }
         
         [self.tableView reloadData];
         
-        NSLog(@"%@",_posts);
+        NSLog(@"%@",_secondPosts);
         
     } error:^(NSError *error) {
         
@@ -77,25 +94,49 @@ static NSString *Identifier = @"CompositorIdentifier";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 610;
+    return 635;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    GDCompositorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
+    GDCompositorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierOne];
     cell.delegate = self;
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     cell.backgroundColor = [UIColor colorWithRed:236 / 255.0f green:239 / 255.0f blue:243 / 255.0f alpha:1];
     
-    if (indexPath.section == 0) {
-        
-        for (GDCompositorPostsModel *posts in [self.posts reverseObjectEnumerator]) {
-            
-            [cell setModel:posts];
-        }
+    switch (indexPath.section) {
+        case 0:
+            for (GDCompositorPostsModel *posts in [self.firstPosts reverseObjectEnumerator]) {
+                [cell setModel:posts];
+            }
+            break;
+        case 1:
+            cell = [tableView dequeueReusableCellWithIdentifier:IdentifierTwo];
+            for (GDCompositorPostsModel *posts in [self.secondPosts reverseObjectEnumerator]) {
+                [cell setModel:posts];
+            }
+            break;
+        case 2:
+            cell = [tableView dequeueReusableCellWithIdentifier:IdentifierThree];
+            for (GDCompositorPostsModel *posts in [self.thirdlyPosts reverseObjectEnumerator]) {
+                [cell setModel:posts];
+            }
+            break;
+        case 3:
+            cell = [tableView dequeueReusableCellWithIdentifier:IdentifierFour];
+            for (GDCompositorPostsModel *posts in [self.fourthPosts reverseObjectEnumerator]) {
+                [cell setModel:posts];
+            }
+            break;
     }
+
+//    while ([cell.contentView.subviews lastObject] != nil) {
+//        [(UIView *)[cell.contentView.subviews lastObject] removeFromSuperview];
+//    }
     return cell;
 }
+
+#pragma mark -- GDCompositorDelegate
 
 -(void)getFirstViewButtonPushController:(NSString *)url{
     
@@ -108,6 +149,26 @@ static NSString *Identifier = @"CompositorIdentifier";
 }
 
 -(void)getSecondViewSButtonPushController:(NSString *)url{
+    
+    [self pushViewControllerWithURL:url];
+}
+
+-(void)getThirdlyViewOneButtonPushController:(NSString *)url{
+    
+    [self pushViewControllerWithURL:url];
+}
+
+-(void)getThirdlyViewTwoButtonPushController:(NSString *)url{
+    
+    [self pushViewControllerWithURL:url];
+}
+
+-(void)getThirdlyViewThreeButtonPushController:(NSString *)url{
+    
+    [self pushViewControllerWithURL:url];
+}
+
+-(void)getThirdlyViewFourButtonPushController:(NSString *)url{
     
     [self pushViewControllerWithURL:url];
 }
@@ -130,15 +191,44 @@ static NSString *Identifier = @"CompositorIdentifier";
     return _data;
 }
 
--(NSMutableArray<GDCompositorPostsModel *> *)posts{
+-(NSMutableArray<GDCompositorPostsModel *> *)firstPosts{
     
-    if (_posts != nil) {
-        return _posts;
+    if (_firstPosts != nil) {
+        return _firstPosts;
     }
     //实例化
-    _posts = [NSMutableArray array];
+    _firstPosts = [NSMutableArray array];
     
-    return _posts;
+    return _firstPosts;
 }
 
+-(NSMutableArray<GDCompositorPostsModel *> *)secondPosts{
+    if (_secondPosts != nil) {
+        return _secondPosts;
+    }
+    //实例化
+    _secondPosts = [NSMutableArray array];
+    
+    return _secondPosts;
+}
+
+-(NSMutableArray<GDCompositorPostsModel *> *)thirdlyPosts{
+    if (_thirdlyPosts != nil) {
+        return _thirdlyPosts;
+    }
+    //实例化
+    _thirdlyPosts = [NSMutableArray array];
+    
+    return _thirdlyPosts;
+}
+
+-(NSMutableArray<GDCompositorPostsModel *> *)fourthPosts{
+    if (_fourthPosts != nil) {
+        return _fourthPosts;
+    }
+    //实例化
+    _fourthPosts = [NSMutableArray array];
+    
+    return _fourthPosts;
+}
 @end

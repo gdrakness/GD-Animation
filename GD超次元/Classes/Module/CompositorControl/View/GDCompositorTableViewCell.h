@@ -17,6 +17,14 @@
 
 -(void)getSecondViewSButtonPushController:(NSString *)url;
 
+-(void)getThirdlyViewOneButtonPushController:(NSString *)url;
+
+-(void)getThirdlyViewTwoButtonPushController:(NSString *)url;
+
+-(void)getThirdlyViewThreeButtonPushController:(NSString *)url;
+
+-(void)getThirdlyViewFourButtonPushController:(NSString *)url;
+
 @end
 
 @interface GDCompositorTableViewCell : UITableViewCell
@@ -24,4 +32,7 @@
 -(void)setModel:(GDCompositorPostsModel *)model;
 @property (nonatomic, weak) id<GDCompositorDelegate> delegate;
 
++(void)getTitleTextLable:(UILabel *)textLable
+               textColor:(UIColor *)textColor
+            textFontSize:(NSUInteger)textSize;
 @end
