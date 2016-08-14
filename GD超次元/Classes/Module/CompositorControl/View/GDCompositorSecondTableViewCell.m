@@ -8,12 +8,12 @@
 //  Copyright © 2016年 gdarkness. All rights reserved.
 //
 
-#import "GDCompositorTableViewCell.h"
+#import "GDCompositorSecondTableViewCell.h"
 #import "GDCompositorDataModel.h"
 #import "UIView+Roundify.h"
 #import "UIImageView+WebCache.h"
 
-@interface GDCompositorTableViewCell ()
+@interface GDCompositorSecondTableViewCell ()
 @property(nonatomic,strong)UIImageView *topView;//顶部视图
 
 @property(nonatomic,strong)UIImageView *firstCoverView;//第一黄色填充框
@@ -54,20 +54,20 @@
 
 @end
 
-@implementation GDCompositorTableViewCell
+@implementation GDCompositorSecondTableViewCell
 
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-        [self prepareUI];
-
+    [self prepareUI];
+    
     return self;
 }
 
 -(void)prepareUI{
     
-/***********************topView************************/
+    /***********************topView************************/
     _topView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 10, [UIScreen mainScreen].bounds.size.width, 20)];
     [_topView setImage:[UIImage imageNamed:@"videoranktitle@2x"]];
     [self.contentView addSubview:_topView];
@@ -79,7 +79,7 @@
 //    _groupTitle.text = @"后宫排行榜";
     [_topView addSubview:_groupTitle];
     
-/***********************firstView************************/
+    /***********************firstView************************/
     _firstView = [[UIImageView alloc]initWithFrame:CGRectMake(9, 39, [UIScreen mainScreen].bounds.size.width - 137, 135)];
     [self.contentView addSubview:_firstView];
     
@@ -118,7 +118,7 @@
     [_firstCoverView addSubview: _descLable];
     
     
-/***********************secondView************************/
+    /***********************secondView************************/
     _secondView = [[UIImageView alloc]initWithFrame:CGRectMake(6, 182, [UIScreen mainScreen].bounds.size.width - 12, 116)];
     [self.contentView addSubview:_secondView];
     
@@ -181,7 +181,7 @@
         _alphaView.layer.cornerRadius = 5;
         
         [_thirdlyCoverView addSubview:_alphaView];
-    
+        
         UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, _alphaView.width, _alphaView.height)];
         button.tag = i+1;
         [button addTarget:self action:@selector(thirdlyViewButtonPushController:) forControlEvents:UIControlEventTouchUpInside];
@@ -207,16 +207,16 @@
     [_thirdlyCoverView addSubview:_fourImageView];
     
     _oneTitleLab = [[UILabel alloc]initWithFrame:CGRectMake(9, _alphaView.height - 27, _alphaView.width - 10, 10)];
-    [GDCompositorTableViewCell getTitleTextLable:_oneTitleLab textColor:[UIColor blackColor] textFontSize:12];
+    [GDCompositorSecondTableViewCell getTitleTextLable:_oneTitleLab textColor:[UIColor blackColor] textFontSize:12];
     
     _twoTitleLab = [[UILabel alloc]initWithFrame:CGRectMake(166, _alphaView.height - 27, _alphaView.width - 10, 10)];
-    [GDCompositorTableViewCell getTitleTextLable:_twoTitleLab textColor:[UIColor blackColor] textFontSize:12];
+    [GDCompositorSecondTableViewCell getTitleTextLable:_twoTitleLab textColor:[UIColor blackColor] textFontSize:12];
     
     _threeTitleLab = [[UILabel alloc]initWithFrame:CGRectMake(9, _alphaView.height - 27 + 164, _alphaView.width - 10, 10)];
-    [GDCompositorTableViewCell getTitleTextLable:_threeTitleLab textColor:[UIColor blackColor] textFontSize:12];
+    [GDCompositorSecondTableViewCell getTitleTextLable:_threeTitleLab textColor:[UIColor blackColor] textFontSize:12];
     
     _fourTitleLab = [[UILabel alloc]initWithFrame:CGRectMake(166, _alphaView.height - 27 + 164, _alphaView.width - 10, 10)];
-    [GDCompositorTableViewCell getTitleTextLable:_fourTitleLab textColor:[UIColor blackColor] textFontSize:12];
+    [GDCompositorSecondTableViewCell getTitleTextLable:_fourTitleLab textColor:[UIColor blackColor] textFontSize:12];
     
     [_thirdlyCoverView addSubview:_oneTitleLab];
     [_thirdlyCoverView addSubview:_twoTitleLab];
@@ -224,16 +224,16 @@
     [_thirdlyCoverView addSubview:_fourTitleLab];
     
     _oneVideoLab = [[UILabel alloc]initWithFrame:CGRectMake(9, _alphaView.height - 14, _alphaView.width - 10, 10)];
-    [GDCompositorTableViewCell getTitleTextLable:_oneVideoLab textColor:[UIColor grayColor] textFontSize:10];
+    [GDCompositorSecondTableViewCell getTitleTextLable:_oneVideoLab textColor:[UIColor grayColor] textFontSize:10];
     
     _twoVideoLab = [[UILabel alloc]initWithFrame:CGRectMake(166, _alphaView.height - 14, _alphaView.width - 10, 10)];
-    [GDCompositorTableViewCell getTitleTextLable:_twoVideoLab textColor:[UIColor grayColor] textFontSize:10];
+    [GDCompositorSecondTableViewCell getTitleTextLable:_twoVideoLab textColor:[UIColor grayColor] textFontSize:10];
     
     _threeVideoLab = [[UILabel alloc]initWithFrame:CGRectMake(9, _alphaView.height - 14 + 164, _alphaView.width - 10, 10)];
-    [GDCompositorTableViewCell getTitleTextLable:_threeVideoLab textColor:[UIColor grayColor] textFontSize:10];
+    [GDCompositorSecondTableViewCell getTitleTextLable:_threeVideoLab textColor:[UIColor grayColor] textFontSize:10];
     
     _fourVideoLab = [[UILabel alloc]initWithFrame:CGRectMake(166, _alphaView.height - 14 + 164, _alphaView.width - 10, 10)];
-    [GDCompositorTableViewCell getTitleTextLable:_fourVideoLab textColor:[UIColor grayColor] textFontSize:10];
+    [GDCompositorSecondTableViewCell getTitleTextLable:_fourVideoLab textColor:[UIColor grayColor] textFontSize:10];
     
     [_thirdlyCoverView addSubview:_oneVideoLab];
     [_thirdlyCoverView addSubview:_twoVideoLab];
@@ -260,26 +260,26 @@
         _secondURL = model.url;
     }
     if (!model.sort) {
-//        NSLog(@"%@---%@",model.bbsid,model.title);
-        if ([model.bbsid isEqualToString:@"210451"] || [model.bbsid isEqualToString:@"179541"]) {
+        NSLog(@"%@---%@",model.bbsid,model.title);
+        if ([model.bbsid isEqualToString:@"148459"] || [model.bbsid isEqualToString:@"213814"]) {
             [_oneImageView sd_setImageWithURL:[NSURL URLWithString:model.img]];
             [_oneTitleLab setText:model.title];
             [_oneVideoLab setText:model.video_info];
             _thirdlyOneURL = model.url;
-
-        }else if ([model.bbsid isEqualToString:@"80962"] || [model.bbsid isEqualToString:@"146528"]){
+            
+        }else if ([model.bbsid isEqualToString:@"217407"] || [model.bbsid isEqualToString:@"179541"]){
             [_twoImageView sd_setImageWithURL:[NSURL URLWithString:model.img]];
             [_twoTitleLab setText:model.title];
             [_twoVideoLab setText:model.video_info];
             _thirdlyTwoURL = model.url;
-
-        }else if ([model.bbsid isEqualToString:@"148944"] || [model.bbsid isEqualToString:@"80967"]){
+            
+        }else if ([model.bbsid isEqualToString:@"146528"]){
             [_threeImageView sd_setImageWithURL:[NSURL URLWithString:model.img]];
             [_threeTitleLab setText:model.title];
             [_threeVideoLab setText:model.video_info];
             _thirdlyThreeURL = model.url;
-
-        }else if ([model.bbsid isEqualToString:@"81179"] || [model.bbsid isEqualToString:@"148973"]){
+            
+        }else if ([model.bbsid isEqualToString:@"204759"] || [model.bbsid isEqualToString:@"148973"]){
             [_fourImageView sd_setImageWithURL:[NSURL URLWithString:model.img]];
             [_fourTitleLab setText:model.title];
             [_fourVideoLab setText:model.video_info];
@@ -332,36 +332,14 @@
                 [_delegate getThirdlyViewFourButtonPushController:_thirdlyFourURL];
             }
             break;
-        
+            
     }
-}
-
-- (UIImage *)scaleToSize:(UIImage *)img
-                    size:(CGSize)size{
-    // 创建一个bitmap的context
-    // 并把它设置成为当前正在使用的context
-    UIGraphicsBeginImageContext(size);
-    // 绘制改变大小的图片
-    [img drawInRect:CGRectMake(0, 0, size.width, size.height)];
-    // 从当前context中创建一个改变大小后的图片
-    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-    // 使当前的context出堆栈
-    UIGraphicsEndImageContext();
-    // 返回新的改变大小后的图片
-    return scaledImage; 
-}
-
--(UIImageView *)oneImageView{
-    if (_oneImageView != nil) {
-        [_oneImageView setImage:[UIImage imageNamed:@""]];
-    }
-    return _oneImageView;
 }
 
 +(void)getTitleTextLable:(UILabel *)textLable
                textColor:(UIColor *)textColor
             textFontSize:(NSUInteger)textSize{
-//    [textLable setText:@"山田君与7位魔女"];
+    //    [textLable setText:@"山田君与7位魔女"];
     textLable.textColor = textColor;
     textLable.textAlignment = NSTextAlignmentLeft;
     textLable.font = [UIFont systemFontOfSize:textSize];
@@ -375,7 +353,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

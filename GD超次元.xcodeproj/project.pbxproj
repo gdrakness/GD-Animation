@@ -108,6 +108,7 @@
 		D7866FA41D1E52C200A0B1E0 /* GDClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7866FA31D1E52C200A0B1E0 /* GDClassViewController.m */; };
 		D7866FA71D1E543300A0B1E0 /* GDClassRequstDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7866FA61D1E543300A0B1E0 /* GDClassRequstDataModel.m */; };
 		D7866FAA1D1E5B1200A0B1E0 /* GDClassCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7866FA91D1E5B1200A0B1E0 /* GDClassCollectionViewCell.m */; };
+		D7975C351D606A0600D66BE2 /* GDCompositorSecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7975C341D606A0600D66BE2 /* GDCompositorSecondTableViewCell.m */; };
 		D797B30B1D19B03A00209739 /* GDDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D797B30A1D19B03A00209739 /* GDDetailsViewController.m */; };
 		D797B30E1D19B20900209739 /* GDDetailsDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D797B30D1D19B20900209739 /* GDDetailsDataModel.m */; };
 		D79C20541D1981C6000EBB31 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D79C20531D1981C6000EBB31 /* arrow@2x.png */; };
@@ -351,6 +352,8 @@
 		D7866FA61D1E543300A0B1E0 /* GDClassRequstDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDClassRequstDataModel.m; sourceTree = "<group>"; };
 		D7866FA81D1E5B1200A0B1E0 /* GDClassCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDClassCollectionViewCell.h; sourceTree = "<group>"; };
 		D7866FA91D1E5B1200A0B1E0 /* GDClassCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDClassCollectionViewCell.m; sourceTree = "<group>"; };
+		D7975C331D606A0600D66BE2 /* GDCompositorSecondTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDCompositorSecondTableViewCell.h; sourceTree = "<group>"; };
+		D7975C341D606A0600D66BE2 /* GDCompositorSecondTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDCompositorSecondTableViewCell.m; sourceTree = "<group>"; };
 		D797B3071D198E0A00209739 /* libMJRefresh.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMJRefresh.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/MJRefresh/libMJRefresh.a"; sourceTree = "<group>"; };
 		D797B3091D19B03A00209739 /* GDDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDDetailsViewController.h; sourceTree = "<group>"; };
 		D797B30A1D19B03A00209739 /* GDDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDetailsViewController.m; sourceTree = "<group>"; };
@@ -744,6 +747,8 @@
 			children = (
 				D71826011D22D119001AE243 /* GDCompositorTableViewCell.h */,
 				D71826021D22D119001AE243 /* GDCompositorTableViewCell.m */,
+				D7975C331D606A0600D66BE2 /* GDCompositorSecondTableViewCell.h */,
+				D7975C341D606A0600D66BE2 /* GDCompositorSecondTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1646,6 +1651,7 @@
 				D7C93D531D4650DA00AF96EE /* GDInformationCollectionCell.m in Sources */,
 				D7023D8A1D30E7D0001139EC /* GDTimeTableModel.m in Sources */,
 				D7866F9E1D1DB56800A0B1E0 /* GDCompositorDataModel.m in Sources */,
+				D7975C351D606A0600D66BE2 /* GDCompositorSecondTableViewCell.m in Sources */,
 				D7D984111D18E7340027FAF6 /* UIRefreshControl+AFNetworking.m in Sources */,
 				D7D984031D18E7340027FAF6 /* AFHTTPRequestOperationManager.m in Sources */,
 				D71D98C61D45B961000DFED3 /* GDInformationController.m in Sources */,

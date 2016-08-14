@@ -1,15 +1,15 @@
 //
-//  GDCompositorTableViewCell.h
+//  GDCompositorSecondTableViewCell.h
 //  GD超次元
 //
-//  Created by gdarkness on 16/6/28.
+//  Created by gdarkness on 16/8/14.
 //  Copyright © 2016年 gdarkness. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 @class GDCompositorPostsModel;
 
-@protocol GDCompositorDelegate <NSObject>
+@protocol GDCompositorSecondDelegate <NSObject>
 
 -(void)getFirstViewButtonPushController:(NSString *)url;
 
@@ -27,13 +27,9 @@
 
 @end
 
-@interface GDCompositorTableViewCell : UITableViewCell
+@interface GDCompositorSecondTableViewCell : UITableViewCell
 
 -(void)setModel:(GDCompositorPostsModel *)model;
 @property(nonatomic,strong)UILabel *groupTitle;//组名
-@property (nonatomic, weak) id<GDCompositorDelegate> delegate;
-
-+(void)getTitleTextLable:(UILabel *)textLable
-               textColor:(UIColor *)textColor
-            textFontSize:(NSUInteger)textSize;
+@property (nonatomic, weak) id<GDCompositorSecondDelegate> delegate;
 @end

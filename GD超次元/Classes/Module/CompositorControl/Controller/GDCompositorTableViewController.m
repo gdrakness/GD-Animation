@@ -7,13 +7,14 @@
 //
 
 #import "GDCompositorTableViewController.h"
+#import "GDCompositorSecondTableViewCell.h"
 #import "GDCompositorTableViewCell.h"
 #import "GDDetailsViewController.h"
 #import "GDHomeManager.h"
 #import "GDCompositorDataModel.h"
 
 
-@interface GDCompositorTableViewController ()<GDCompositorDelegate>
+@interface GDCompositorTableViewController ()<GDCompositorDelegate,GDCompositorSecondDelegate>
 @property(nonatomic,strong)NSMutableArray<GDCompositorDataArrayModel *> *data;
 @property(nonatomic,strong)NSMutableArray <GDCompositorPostsModel *>*firstPosts;
 @property(nonatomic,strong)NSMutableArray <GDCompositorPostsModel *>*secondPosts;
@@ -25,17 +26,14 @@
 @implementation GDCompositorTableViewController
 static NSString *IdentifierOne = @"CompositorIdentifierOne";
 static NSString *IdentifierTwo = @"CompositorIdentifierTwo";
-static NSString *IdentifierThree = @"CompositorIdentifierThree";
-static NSString *IdentifierFour = @"CompositorIdentifierFour";
+
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.tableView registerClass:[GDCompositorTableViewCell class] forCellReuseIdentifier:IdentifierOne];
-    [self.tableView registerClass:[GDCompositorTableViewCell class] forCellReuseIdentifier:IdentifierTwo];
-    [self.tableView registerClass:[GDCompositorTableViewCell class] forCellReuseIdentifier:IdentifierThree];
-    [self.tableView registerClass:[GDCompositorTableViewCell class] forCellReuseIdentifier:IdentifierFour];
+    [self.tableView registerClass:[GDCompositorSecondTableViewCell class] forCellReuseIdentifier:IdentifierTwo];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // Uncomment the following line to preserve selection between presentations.
 //     self.clearsSelectionOnViewWillAppear = NO;
@@ -70,11 +68,9 @@ static NSString *IdentifierFour = @"CompositorIdentifierFour";
                 [self.fourthPosts addObjectsFromArray:model.posts];
             }
         }
-        
         [self.tableView reloadData];
         
-        NSLog(@"%@",_secondPosts);
-        
+//        NSLog(@"%@",_secondPosts);
     } error:^(NSError *error) {
         
     }];
@@ -84,12 +80,12 @@ static NSString *IdentifierFour = @"CompositorIdentifierFour";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return self.data.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 1;
+    return self.data.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -98,43 +94,70 @@ static NSString *IdentifierFour = @"CompositorIdentifierFour";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    GDCompositorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierOne];
-    cell.delegate = self;
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    cell.backgroundColor = [UIColor colorWithRed:236 / 255.0f green:239 / 255.0f blue:243 / 255.0f alpha:1];
-    
-    switch (indexPath.section) {
-        case 0:
+
+    if (indexPath.row == 1 || indexPath.row == 0) {
+        GDCompositorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierOne];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        cell.delegate = self;
+        cell.backgroundColor = [UIColor colorWithRed:236 / 255.0f green:239 / 255.0f blue:243 / 255.0f alpha:1];
+        if (indexPath.row == 0) {
             for (GDCompositorPostsModel *posts in [self.firstPosts reverseObjectEnumerator]) {
                 [cell setModel:posts];
+                [cell.groupTitle setText:@"后宫排行榜"];
             }
-            break;
-        case 1:
-            cell = [tableView dequeueReusableCellWithIdentifier:IdentifierTwo];
+        }else if (indexPath.row == 1){
             for (GDCompositorPostsModel *posts in [self.secondPosts reverseObjectEnumerator]) {
                 [cell setModel:posts];
+                [cell.groupTitle setText:@"奇幻排行榜"];
             }
-            break;
-        case 2:
-            cell = [tableView dequeueReusableCellWithIdentifier:IdentifierThree];
+        }
+        return cell;
+    }
+        GDCompositorSecondTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierTwo];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        cell.delegate = self;
+        if (indexPath.row == 2) {
             for (GDCompositorPostsModel *posts in [self.thirdlyPosts reverseObjectEnumerator]) {
                 [cell setModel:posts];
+                [cell.groupTitle setText:@"热血排行榜"];
             }
-            break;
-        case 3:
-            cell = [tableView dequeueReusableCellWithIdentifier:IdentifierFour];
+        }else if (indexPath.row == 3){
             for (GDCompositorPostsModel *posts in [self.fourthPosts reverseObjectEnumerator]) {
                 [cell setModel:posts];
+                [cell.groupTitle setText:@"冒险排行版"];
             }
-            break;
-    }
-
-//    while ([cell.contentView.subviews lastObject] != nil) {
-//        [(UIView *)[cell.contentView.subviews lastObject] removeFromSuperview];
-//    }
-    return cell;
+        }
+        return  cell;
 }
+
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    CATransform3D rotation;//3D旋转
+    
+    rotation = CATransform3DMakeTranslation(0 ,50 ,20);
+    //        rotation = CATransform3DMakeRotation( M_PI_4 , 0.0, 0.7, 0.4);
+    //逆时针旋转
+    
+    rotation = CATransform3DScale(rotation, 0.9, .9, 1);
+    
+    rotation.m34 = 1.0/ -600;
+    
+    cell.layer.shadowColor = [[UIColor blackColor]CGColor];
+    cell.layer.shadowOffset = CGSizeMake(10, 10);
+    cell.alpha = 0;
+    
+    cell.layer.transform = rotation;
+    
+    [UIView beginAnimations:@"rotation" context:NULL];
+    //旋转时间
+    [UIView setAnimationDuration:0.6];
+    cell.layer.transform = CATransform3DIdentity;
+    cell.alpha = 1;
+    cell.layer.shadowOffset = CGSizeMake(0, 0);
+    [UIView commitAnimations];
+}
+
 
 #pragma mark -- GDCompositorDelegate
 
