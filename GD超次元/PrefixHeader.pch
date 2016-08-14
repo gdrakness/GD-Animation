@@ -25,6 +25,73 @@
 
 
 //#define BaseUrl [NSURL URLWithString:@"http://api.18touch.com/index.php?c=acg&a=lists&limit=500&v=2"]
+搜索
+http://api.18touch.com/index.php?c=acg&a=getHotKeyWords
+http://api.18touch.com/index.php?c=acg&a=getVedioNameList
+
+http://api.18touch.com/index.php?c=acg&a=getListByCategory&cat_id=6
+
+轮播
+http://api.moeju.cn/startup/slider
+
+http://api.moeju.cn/Product/lists
+
+http://api.moeju.cn/picture/special?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&gender=1&os=iOS&v=2.1.0
+http://api.moeju.cn/picture/special?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&v=2.1.0
+http://api.moeju.cn/picture/theme?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&v=2.1.0
+http://api.moeju.cn/startup/openscreen
+
+主界面
+http://api.moeju.cn/picture/special?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&v=2.1.0
+排行版
+http://www.moeju.cn/api/leaderboard?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&v=2.1.0
+
+http://www.moeju.cn/api/leaderboard?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&v=2.1.0
+
+绅士
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=13&v=2.1.0
+腐向
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=12&v=2.1.0
+扫图
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=14&v=2.1.0
+同人
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=19&v=2.1.0
+单行本
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=23&v=2.1.0
+love
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=3&v=2.1.0
+萌系
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=7&v=2.1.0
+杀必死
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=8&v=2.1.0
+舰娘
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=8&v=2.1.0
+兽耳
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=21&v=2.1.0
+制服
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=22&v=2.1.0
+恋物癖
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=20&v=2.1.0
+表情
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=4&v=2.1.0
+新番
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=9&v=2.1.0
+
+足控
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=15&v=2.1.0
+女生向
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=18&v=2.1.0
+经典
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=17&v=2.1.0
+
+东方
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=10&v=2.1.0
+v家
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=5&v=2.1.0
+风景
+http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=11&v=2.1.0
+
+http://api.moeju.cn/picture/imageList?id=15251
 
 #import "UIView+GDSize.h"
 #import "NSString_GDURL.h"
