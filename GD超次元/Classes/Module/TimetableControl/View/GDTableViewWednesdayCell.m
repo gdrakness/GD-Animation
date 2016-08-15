@@ -11,6 +11,7 @@
 
 #import "GDHomeManager.h"
 #import "GDTimeTableModel.h"
+#import "LORequestManger.h"
 
 @interface GDTableViewWednesdayCell ()
 @property(nonatomic,strong)UICollectionView *collectionView;
@@ -34,7 +35,7 @@ static NSString *Identifier = @"GDTimeCollectionViewCell3";
         //        _view.backgroundColor = blueColor;
         [self.contentView addSubview:_view];
         
-        UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(19,7,3,_view.frame.size.height + 60)];
+        UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(19,7,3,_view.frame.size.height + 20)];
         lineView.backgroundColor = BlueColor;
         [self.contentView addSubview:lineView];
         
@@ -59,6 +60,7 @@ static NSString *Identifier = @"GDTimeCollectionViewCell3";
     
     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, _view.bounds.size.width, _view.bounds.size.height) collectionViewLayout:flowLayout];
     self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+    self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.backgroundColor = [UIColor clearColor];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
@@ -88,6 +90,14 @@ static NSString *Identifier = @"GDTimeCollectionViewCell3";
     return cell;
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    GDTimeTableDescModel *cellItem = self.wed[indexPath.item];
+    if ([_delegate respondsToSelector:@selector(getWednesdayTableViewPushDetailsViewControllerWithURL:)]) {
+        [_delegate getWednesdayTableViewPushDetailsViewControllerWithURL:cellItem.url];
+    }
+}
+
 -(NSMutableArray<GDTimeTableDescModel *> *)wed{
     
     if (_wed != nil) {
@@ -95,11 +105,17 @@ static NSString *Identifier = @"GDTimeCollectionViewCell3";
     }
     //实例化
     _wed = [NSMutableArray array];
-    [[GDHomeManager shareInstance]getFindTimeTableRequstWithURL:nil success:^(GDTimeTableModel *dataModel) {
-//        [_wed removeAllObjects];
+    [LORequestManger GET:TimeURL parame:nil success:^(id response) {
+        
+        [GDTimeTableModel mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"wed":@"GDTimeTableDescModel"
+                     };
+        }];
+        GDTimeTableModel *dataModel = [GDTimeTableModel mj_objectWithKeyValues:response];
         [self.wed addObjectsFromArray:dataModel.wed];
         [self.collectionView reloadData];
-    } error:^(NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
     

@@ -32,7 +32,7 @@
         _Aname.textColor = [UIColor blackColor];
         [self.contentView addSubview:_Aname];
         _image = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 65, 90)];
-        _image.backgroundColor = [UIColor blackColor];
+        _image.backgroundColor = blueColor;
         [self.contentView addSubview:_image];
     }
     

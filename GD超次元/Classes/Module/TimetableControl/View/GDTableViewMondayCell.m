@@ -11,6 +11,7 @@
 
 #import "GDHomeManager.h"
 #import "GDTimeTableModel.h"
+#import "LORequestManger.h"
 
 
 
@@ -35,7 +36,7 @@ static NSString *Identifier = @"GDTimeCollectionViewCell1";
 //        _view.backgroundColor = blueColor;
         [self.contentView addSubview:_view];
         
-        UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(19,7,3,_view.frame.size.height + 60)];
+        UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(19,7,3,_view.frame.size.height + 20)];
         lineView.backgroundColor = BlueColor;
         [self.contentView addSubview:lineView];
         
@@ -63,6 +64,7 @@ static NSString *Identifier = @"GDTimeCollectionViewCell1";
     
     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0,_view.bounds.size.width , _view.bounds.size.height) collectionViewLayout:flowLayout];
     self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.backgroundColor = [UIColor clearColor];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
@@ -82,15 +84,24 @@ static NSString *Identifier = @"GDTimeCollectionViewCell1";
     return self.mon.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     GDTimeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:Identifier forIndexPath:indexPath];
 //    cell.backgroundColor = blueColor;
     
         GDTimeTableDescModel *cellItem = self.mon[indexPath.item];
         [cell setModel:cellItem];
+//    NSLog(@"%@",cellItem);
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    GDTimeTableDescModel *cellItem = self.mon[indexPath.item];
+    if ([_delegate respondsToSelector:@selector(getMondayTableViewPushDetailsViewControllerWithURL:)]) {
+        [_delegate getMondayTableViewPushDetailsViewControllerWithURL:cellItem.url];
+    }
 }
 
 -(NSMutableArray<GDTimeTableDescModel *> *)mon{
@@ -101,12 +112,18 @@ static NSString *Identifier = @"GDTimeCollectionViewCell1";
     }
     //实例化
     _mon = [NSMutableArray array];
-    [[GDHomeManager shareInstance]getFindTimeTableRequstWithURL:nil success:^(GDTimeTableModel *dataModel) {
-//        [_mon removeAllObjects];
-
+    [LORequestManger GET:TimeURL parame:nil success:^(id response) {
+        
+        [GDTimeTableModel mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"mon":@"GDTimeTableDescModel"
+                     };
+        }];
+        GDTimeTableModel *dataModel = [GDTimeTableModel mj_objectWithKeyValues:response];
         [self.mon addObjectsFromArray:dataModel.mon];
         [self.collectionView reloadData];
-    } error:^(NSError *error) {
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
     
@@ -127,7 +144,7 @@ static NSString *Identifier = @"GDTimeCollectionViewCell1";
 
 +(CGFloat)getCellOfHeight{
     
-    return 400+10;
+    return 370;
     
 }
 

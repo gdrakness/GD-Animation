@@ -71,10 +71,9 @@
         
         [starView addSubview:lastImage];
         int num = arc4random_uniform(4);
-        if (i < 3 || num >= i) {
+        if (i < 3 || num == i ) {
             [starView addSubview:starImage];
         }
-        
     }
 }
 

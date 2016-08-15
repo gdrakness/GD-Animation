@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "GDTimeTableModel.h"
 
-@class GDTimeTableDescModel;
+@protocol GDTableViewMondayCellDelegate <NSObject>
+
+-(void)getMondayTableViewPushDetailsViewControllerWithURL:(NSString *)url;
+
+@end
+
 @interface GDTableViewMondayCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property(nonatomic,strong)UICollectionView *collectionView;
-//@property(nonatomic,strong)GDTimeTableDescModel *model;
-
-
+@property (nonatomic, weak) id<GDTableViewMondayCellDelegate> delegate;
 +(CGFloat)getCellOfHeight;
 @end

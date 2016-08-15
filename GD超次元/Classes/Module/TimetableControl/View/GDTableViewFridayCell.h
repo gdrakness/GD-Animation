@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GDTableViewFridayCell : UITableViewCell<UICollectionViewDelegate,UICollectionViewDataSource>
+@protocol GDTableViewFridayCellDelegate <NSObject>
 
+-(void)getFridayTableViewPushDetailsViewControllerWithURL:(NSString *)url;
+
+@end
+
+@interface GDTableViewFridayCell : UITableViewCell<UICollectionViewDelegate,UICollectionViewDataSource>
+@property (nonatomic, weak) id<GDTableViewFridayCellDelegate> delegate;
 @end

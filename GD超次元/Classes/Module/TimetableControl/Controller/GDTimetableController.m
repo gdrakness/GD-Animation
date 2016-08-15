@@ -7,6 +7,7 @@
 //
 
 #import "GDTimetableController.h"
+#import "GDDetailsViewController.h"
 
 #import "GDTableViewMondayCell.h"
 #import "GDTableViewTuesdayCell.h"
@@ -20,19 +21,34 @@
 #import "GDTimeTableModel.h"
 
 @class GDTimeTableDescModel;
-@interface GDTimetableController ()
+@interface GDTimetableController ()<GDTableViewMondayCellDelegate,GDTableViewTuesdayCellDelegate,GDTableViewWednesdayCellDelegate,GDTableViewThursdayCellDelegate,GDTableViewFridayCellDelegate,GDTableViewSaturdayCellDelegate,GDTableViewSundayCellDelegate>
 
 @end
 
 @implementation GDTimetableController
 static NSString *Identifier = @"timeTableController";
+static NSString *MonIdentifier = @"MontimeTableController";
+static NSString *TueIdentifier = @"TuetimeTableController";
+static NSString *WedIdentifier = @"WedtimeTableController";
+static NSString *ThuIdentifier = @"ThutimeTableController";
+static NSString *FriIdentifier = @"FirtimeTableController";
+static NSString *SatIdentifier = @"SattimeTableController";
+static NSString *SunIdentifier = @"SuntimeTableController";
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.navigationController setTitle:@"时间表"];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:Identifier];
+//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:Identifier];
+    [self.tableView registerClass:[GDTableViewMondayCell class] forCellReuseIdentifier:MonIdentifier];
+    [self.tableView registerClass:[GDTableViewTuesdayCell class] forCellReuseIdentifier:TueIdentifier];
+    [self.tableView registerClass:[GDTableViewWednesdayCell class] forCellReuseIdentifier:WedIdentifier];
+    [self.tableView registerClass:[GDTableViewThursdayCell class] forCellReuseIdentifier:ThuIdentifier];
+    [self.tableView registerClass:[GDTableViewFridayCell class] forCellReuseIdentifier:FriIdentifier];
+    [self.tableView registerClass:[GDTableViewSaturdayCell class] forCellReuseIdentifier:SatIdentifier];
+    [self.tableView registerClass:[GDTableViewSundayCell class] forCellReuseIdentifier:SunIdentifier];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 }
@@ -60,39 +76,93 @@ static NSString *Identifier = @"timeTableController";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
     
-    switch (indexPath.row) {
-        case 0:
-            cell = [[GDTableViewMondayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
-//            cell.backgroundColor = [UIColor redColor];
-            break;
-        case 1:
-            cell = [[GDTableViewTuesdayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
-            break;
-        case 2:
-            cell = [[GDTableViewWednesdayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
-            break;
-        case 3:
-            cell = [[GDTableViewThursdayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
-            break;
-        case 4:
-            cell = [[GDTableViewFridayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
-            break;
-        case 5:
-            cell = [[GDTableViewSaturdayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
-            break;
-        case 6:
-            cell = [[GDTableViewSundayCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
-            break;
+    if (indexPath.row == 0) {
+        GDTableViewMondayCell *cell = [tableView dequeueReusableCellWithIdentifier:MonIdentifier];
+        cell.delegate = self;
+        return cell;
+    }if (indexPath.row == 1){
+        GDTableViewTuesdayCell *cell = [tableView dequeueReusableCellWithIdentifier:TueIdentifier];
+        cell.delegate = self;
+        return cell;
+    }if (indexPath.row == 2) {
+        GDTableViewWednesdayCell *cell = [tableView dequeueReusableCellWithIdentifier:WedIdentifier];
+        cell.delegate = self;
+        return cell;
+    }if (indexPath.row == 3) {
+        GDTableViewThursdayCell *cell = [tableView dequeueReusableCellWithIdentifier:ThuIdentifier];
+        cell.delegate = self;
+        return cell;
+    }if (indexPath.row == 4) {
+        GDTableViewFridayCell *cell = [tableView dequeueReusableCellWithIdentifier:FriIdentifier];
+        cell.delegate = self;
+        return cell;
+    }if (indexPath.row == 5) {
+        GDTableViewSaturdayCell *cell = [tableView dequeueReusableCellWithIdentifier:SatIdentifier];
+        cell.delegate = self;
+        return cell;
+    }else {
+        GDTableViewSundayCell *cell = [tableView dequeueReusableCellWithIdentifier:SunIdentifier];
+        cell.delegate = self;
+        return cell;
     }
+    //    while ([cell.contentView.subviews lastObject] != nil) {
+//        [(UIView *)[cell.contentView.subviews lastObject] removeFromSuperview];
+//    }
 //    cell.imageView.image = [UIImage imageNamed:@"mon2"];
-    [cell sizeToFit];
-    return cell;
     
 }
 
+#pragma mark -- delegate Method
 
+-(void)getMondayTableViewPushDetailsViewControllerWithURL:(NSString *)url{
+    
+    [self pushViewControllerWithURL:url];
+}
+
+-(void)getTuesdayTableViewPushDetailsViewControllerWithURL:(NSString *)url{
+    
+    [self pushViewControllerWithURL:url];
+
+}
+
+-(void)getWednesdayTableViewPushDetailsViewControllerWithURL:(NSString *)url{
+    
+    [self pushViewControllerWithURL:url];
+
+}
+
+-(void)getThursdayTableViewPushDetailsViewControllerWithURL:(NSString *)url{
+    
+    [self pushViewControllerWithURL:url];
+
+}
+
+-(void)getFridayTableViewPushDetailsViewControllerWithURL:(NSString *)url{
+    
+    [self pushViewControllerWithURL:url];
+
+}
+
+-(void)getSaturdayTableViewPushDetailsViewControllerWithURL:(NSString *)url{
+    
+    [self pushViewControllerWithURL:url];
+
+}
+
+-(void)getSundayTableViewPushDetailsViewControllerWithURL:(NSString *)url{
+    
+    [self pushViewControllerWithURL:url];
+
+}
+
+-(void)pushViewControllerWithURL:(NSString *)url{
+    
+    GDDetailsViewController *detailsVC = [[GDDetailsViewController alloc]init];
+    detailsVC.url = url;
+    [self.navigationController pushViewController:detailsVC animated:YES];
+    
+}
 
 
 @end
