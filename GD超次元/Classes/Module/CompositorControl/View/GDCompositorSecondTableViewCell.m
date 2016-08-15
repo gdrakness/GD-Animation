@@ -72,6 +72,10 @@
     [_topView setImage:[UIImage imageNamed:@"videoranktitle@2x"]];
     [self.contentView addSubview:_topView];
     
+    _moerBtn = [[UIButton alloc]initWithFrame:_topView.frame];
+    _moerBtn.backgroundColor = [UIColor clearColor];
+    [self.contentView addSubview:_moerBtn];
+    
     _groupTitle = [[UILabel alloc]initWithFrame:CGRectMake(5, -15, 80, 50)];
     _groupTitle.font = [UIFont systemFontOfSize:11];
     _groupTitle.textAlignment = NSTextAlignmentLeft;

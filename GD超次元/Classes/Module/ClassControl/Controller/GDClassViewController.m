@@ -9,6 +9,7 @@
 //
 
 #import "GDClassViewController.h"
+#import "GDMoreTableViewController.h"
 #import "GDHomeManager.h"
 #import "GDCompositorDataModel.h"
 #import "GDClassRequstDataModel.h"
@@ -58,7 +59,7 @@ static NSString * const reuseIdentifier = @"calssCell";
     return self.data.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     GDClassCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 
@@ -73,6 +74,14 @@ static NSString * const reuseIdentifier = @"calssCell";
     return cell;
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    GDMoreTableViewController *moreVC = [GDMoreTableViewController new];
+    ClassDataModel *cellItem = self.data[indexPath.item];
+    moreVC.catId = cellItem.cat_id;
+    [self.navigationController pushViewController:moreVC animated:YES];
+}
+
 -(void)getDataIsMore:(BOOL)isMore{
     
     [[GDHomeManager shareInstance]getFindClassRequstWithURL:nil success:^(GDClassRequstDataModel *classDataModel) {
@@ -83,9 +92,6 @@ static NSString * const reuseIdentifier = @"calssCell";
         }
 //        NSLog(@"%@",classDataModel);
         [self.data addObjectsFromArray:classDataModel.data];
-        
-        NSLog(@"%@",self.data);
-        
         [self.collectionView reloadData];
         
     } error:^(NSError *error) {
@@ -104,6 +110,7 @@ static NSString * const reuseIdentifier = @"calssCell";
     return _data;
 }
 
+/***********************init************************/
 -(UICollectionView *)collectionView{
     
     if (_collectionView == nil) {

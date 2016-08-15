@@ -17,6 +17,8 @@
 #define CompositorURL @"http://api.18touch.com/index.php?c=acg&a=getVedioRankList"
 //分类
 #define ClassURL @"http://api.18touch.com/index.php?c=acg&a=getHotCategory"
+#define ClassUrl @"http://api.18touch.com/index.php?c=acg&a=getListByCategory&"
+
 //组
 #define GroupURL @"http://api.bbs.18touch.com/Forum?zone=8700&dk=4ccb74169a048eaf055cda8f6c8f5eb5965aae10"
 //资信1

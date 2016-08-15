@@ -125,6 +125,12 @@
 		D7D161E41D4E35C200B20DFA /* btn_rankVideo_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D161E21D4E35C200B20DFA /* btn_rankVideo_hl@2x.png */; };
 		D7D161E51D4E35C200B20DFA /* btn_rankVideo_norm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D161E31D4E35C200B20DFA /* btn_rankVideo_norm@2x.png */; };
 		D7D161E71D4E373800B20DFA /* tip_canPlay_recordV_high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D161E61D4E373800B20DFA /* tip_canPlay_recordV_high@2x.png */; };
+		D7D1877A1D60CAE70084CA2F /* GDMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D187791D60CAE70084CA2F /* GDMoreTableViewController.m */; };
+		D7D1877D1D60CDE00084CA2F /* GDMoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D1877C1D60CDE00084CA2F /* GDMoreTableViewCell.m */; };
+		D7D187831D60E00F0084CA2F /* GDClassMoreDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D187821D60E00F0084CA2F /* GDClassMoreDataModel.m */; };
+		D7D187861D60F0730084CA2F /* UIImage+GDImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D187851D60F0730084CA2F /* UIImage+GDImageEffects.m */; };
+		D7D187881D60F0A90084CA2F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D187871D60F0A90084CA2F /* Accelerate.framework */; };
+		D7D1878A1D60F79D0084CA2F /* bg_head_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D187891D60F79D0084CA2F /* bg_head_video@2x.png */; };
 		D7D912B61D56455400CC2950 /* GDVideoWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912B51D56455400CC2950 /* GDVideoWebViewController.m */; };
 		D7D912BA1D57965D00CC2950 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912B91D57965D00CC2950 /* CoreGraphics.framework */; };
 		D7D912BC1D57967100CC2950 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912BB1D57967100CC2950 /* UIKit.framework */; };
@@ -379,6 +385,16 @@
 		D7D161E21D4E35C200B20DFA /* btn_rankVideo_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_rankVideo_hl@2x.png"; sourceTree = "<group>"; };
 		D7D161E31D4E35C200B20DFA /* btn_rankVideo_norm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_rankVideo_norm@2x.png"; sourceTree = "<group>"; };
 		D7D161E61D4E373800B20DFA /* tip_canPlay_recordV_high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tip_canPlay_recordV_high@2x.png"; sourceTree = "<group>"; };
+		D7D187781D60CAE70084CA2F /* GDMoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDMoreTableViewController.h; sourceTree = "<group>"; };
+		D7D187791D60CAE70084CA2F /* GDMoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDMoreTableViewController.m; sourceTree = "<group>"; };
+		D7D1877B1D60CDE00084CA2F /* GDMoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDMoreTableViewCell.h; sourceTree = "<group>"; };
+		D7D1877C1D60CDE00084CA2F /* GDMoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDMoreTableViewCell.m; sourceTree = "<group>"; };
+		D7D187811D60E00F0084CA2F /* GDClassMoreDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDClassMoreDataModel.h; sourceTree = "<group>"; };
+		D7D187821D60E00F0084CA2F /* GDClassMoreDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDClassMoreDataModel.m; sourceTree = "<group>"; };
+		D7D187841D60F0730084CA2F /* UIImage+GDImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GDImageEffects.h"; sourceTree = "<group>"; };
+		D7D187851D60F0730084CA2F /* UIImage+GDImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GDImageEffects.m"; sourceTree = "<group>"; };
+		D7D187871D60F0A90084CA2F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		D7D187891D60F79D0084CA2F /* bg_head_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_head_video@2x.png"; sourceTree = "<group>"; };
 		D7D912B41D56455400CC2950 /* GDVideoWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDVideoWebViewController.h; path = "GD超次元/Classes/Module/MainControl/GDVideoWebViewController.h"; sourceTree = SOURCE_ROOT; };
 		D7D912B51D56455400CC2950 /* GDVideoWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDVideoWebViewController.m; path = "GD超次元/Classes/Module/MainControl/GDVideoWebViewController.m"; sourceTree = SOURCE_ROOT; };
 		D7D912B71D57905700CC2950 /* libVCTransitionsLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVCTransitionsLibrary.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/VCTransitionsLibrary/libVCTransitionsLibrary.a"; sourceTree = "<group>"; };
@@ -474,6 +490,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D187881D60F0A90084CA2F /* Accelerate.framework in Frameworks */,
 				D7D912CA1D5796AE00CC2950 /* libSDCycleScrollView.a in Frameworks */,
 				D7D912CB1D5796AE00CC2950 /* libSDWebImage.a in Frameworks */,
 				D7D912CC1D5796AE00CC2950 /* libSVProgressHUD.a in Frameworks */,
@@ -523,6 +540,7 @@
 		2E96D9A89E298E8A838B85C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7D187871D60F0A90084CA2F /* Accelerate.framework */,
 				D7D912C41D5796AE00CC2950 /* libSDCycleScrollView.a */,
 				D7D912C51D5796AE00CC2950 /* libSDWebImage.a */,
 				D7D912C61D5796AE00CC2950 /* libSVProgressHUD.a */,
@@ -692,6 +710,8 @@
 			children = (
 				D7866FA21D1E52C200A0B1E0 /* GDClassViewController.h */,
 				D7866FA31D1E52C200A0B1E0 /* GDClassViewController.m */,
+				D7D187781D60CAE70084CA2F /* GDMoreTableViewController.h */,
+				D7D187791D60CAE70084CA2F /* GDMoreTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -701,6 +721,8 @@
 			children = (
 				D7866FA51D1E543300A0B1E0 /* GDClassRequstDataModel.h */,
 				D7866FA61D1E543300A0B1E0 /* GDClassRequstDataModel.m */,
+				D7D187811D60E00F0084CA2F /* GDClassMoreDataModel.h */,
+				D7D187821D60E00F0084CA2F /* GDClassMoreDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -710,6 +732,8 @@
 			children = (
 				D7866FA81D1E5B1200A0B1E0 /* GDClassCollectionViewCell.h */,
 				D7866FA91D1E5B1200A0B1E0 /* GDClassCollectionViewCell.m */,
+				D7D1877B1D60CDE00084CA2F /* GDMoreTableViewCell.h */,
+				D7D1877C1D60CDE00084CA2F /* GDMoreTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1065,6 +1089,7 @@
 		D7803A2B1CD3C015001AD14C /* image */ = {
 			isa = PBXGroup;
 			children = (
+				D7D187891D60F79D0084CA2F /* bg_head_video@2x.png */,
 				D7023DAB1D30F97E001139EC /* mon@2x.png */,
 				D7023DAC1D30F97E001139EC /* mon2.png */,
 				D7023DA31D30F8EB001139EC /* wed@2x.png */,
@@ -1152,6 +1177,8 @@
 				D7803A7B1CD3C2F5001AD14C /* UIView+GDSize.m */,
 				D7023D7E1D2E4FCE001139EC /* UIView+Roundify.h */,
 				D7023D7F1D2E4FCE001139EC /* UIView+Roundify.m */,
+				D7D187841D60F0730084CA2F /* UIImage+GDImageEffects.h */,
+				D7D187851D60F0730084CA2F /* UIImage+GDImageEffects.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1435,6 +1462,7 @@
 				D7803A5B1CD3C015001AD14C /* name3@2x.png in Resources */,
 				D7803A561CD3C015001AD14C /* line_index@2x.png in Resources */,
 				D7803A4F1CD3C015001AD14C /* bg_head_allGroup@2x.png in Resources */,
+				D7D1878A1D60F79D0084CA2F /* bg_head_video@2x.png in Resources */,
 				D7D161E71D4E373800B20DFA /* tip_canPlay_recordV_high@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1608,6 +1636,7 @@
 				D7D912FC1D5798BE00CC2950 /* CEHorizontalSwipeInteractionController.m in Sources */,
 				D7866FA41D1E52C200A0B1E0 /* GDClassViewController.m in Sources */,
 				D7D984121D18E7340027FAF6 /* UIWebView+AFNetworking.m in Sources */,
+				D7D1877A1D60CAE70084CA2F /* GDMoreTableViewController.m in Sources */,
 				D7D984041D18E7340027FAF6 /* AFHTTPSessionManager.m in Sources */,
 				D7D9840B1D18E7340027FAF6 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				D7D912FD1D5798BE00CC2950 /* CEPinchInteractionController.m in Sources */,
@@ -1617,6 +1646,7 @@
 				D7D913031D58BC0100CC2950 /* Foundation+Log.m in Sources */,
 				D7D9840D1D18E7340027FAF6 /* UIAlertView+AFNetworking.m in Sources */,
 				D7D912F71D5798BE00CC2950 /* CEPanAnimationController.m in Sources */,
+				D7D187861D60F0730084CA2F /* UIImage+GDImageEffects.m in Sources */,
 				D7866F991D1CCB2A00A0B1E0 /* GDVideoDetailsTableViewCell.m in Sources */,
 				D71655A51CCE73FE003CE4B8 /* AppDelegate.m in Sources */,
 				D71826031D22D119001AE243 /* GDCompositorTableViewCell.m in Sources */,
@@ -1638,6 +1668,7 @@
 				D71D98BA1D449EDE000DFED3 /* GDTableViewThursdayCell.m in Sources */,
 				D7D912F11D5798BE00CC2950 /* CECrossfadeAnimationController.m in Sources */,
 				D730D7501D13088A00273EAA /* GDTabBarController.m in Sources */,
+				D7D187831D60E00F0084CA2F /* GDClassMoreDataModel.m in Sources */,
 				D71D98C01D449F6B000DFED3 /* GDTableViewSaturdayCell.m in Sources */,
 				D797B30E1D19B20900209739 /* GDDetailsDataModel.m in Sources */,
 				D71656CB1CCFC9DB003CE4B8 /* GDCompositorTableViewController.m in Sources */,
@@ -1653,6 +1684,7 @@
 				D7866F9E1D1DB56800A0B1E0 /* GDCompositorDataModel.m in Sources */,
 				D7975C351D606A0600D66BE2 /* GDCompositorSecondTableViewCell.m in Sources */,
 				D7D984111D18E7340027FAF6 /* UIRefreshControl+AFNetworking.m in Sources */,
+				D7D1877D1D60CDE00084CA2F /* GDMoreTableViewCell.m in Sources */,
 				D7D984031D18E7340027FAF6 /* AFHTTPRequestOperationManager.m in Sources */,
 				D71D98C61D45B961000DFED3 /* GDInformationController.m in Sources */,
 				D7D912FB1D5798BE00CC2950 /* CEBaseInteractionController.m in Sources */,

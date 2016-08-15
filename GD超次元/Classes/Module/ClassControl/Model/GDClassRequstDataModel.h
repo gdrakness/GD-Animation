@@ -10,7 +10,7 @@
 
 @interface ClassDataModel : NSObject
 @property(nonatomic,copy)NSString *name;
-@property (nonatomic, assign) NSString *cat_id;
+@property (nonatomic, assign)NSString *cat_id;
 @property(nonatomic,copy)NSString *image;
 @end
 

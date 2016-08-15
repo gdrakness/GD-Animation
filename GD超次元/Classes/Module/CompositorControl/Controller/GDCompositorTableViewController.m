@@ -8,6 +8,7 @@
 
 #import "GDCompositorTableViewController.h"
 #import "GDCompositorSecondTableViewCell.h"
+#import "GDMoreTableViewController.h"
 #import "GDCompositorTableViewCell.h"
 #import "GDDetailsViewController.h"
 #import "GDHomeManager.h"
@@ -20,6 +21,10 @@
 @property(nonatomic,strong)NSMutableArray <GDCompositorPostsModel *>*secondPosts;
 @property(nonatomic,strong)NSMutableArray <GDCompositorPostsModel *>*thirdlyPosts;
 @property(nonatomic,strong)NSMutableArray <GDCompositorPostsModel *>*fourthPosts;
+@property(nonatomic,copy)NSString *firstCatID;
+@property(nonatomic,copy)NSString *secondCatID;
+@property(nonatomic,copy)NSString *thirdlyCatID;
+@property(nonatomic,copy)NSString *fourthCatID;
 
 @end
 
@@ -58,16 +63,19 @@ static NSString *IdentifierTwo = @"CompositorIdentifierTwo";
             GDCompositorDataArrayModel *modelType = model;
             if ([modelType.type isEqualToString:@"后宫"]) {
                 [self.firstPosts addObjectsFromArray:model.posts];
+                _firstCatID = model.cat_id;
             }else if ([modelType.type isEqualToString:@"奇幻"]){
                 [self.secondPosts addObjectsFromArray:model.posts];
+                _secondCatID = model.cat_id;
             }else if ([modelType.type isEqualToString:@"热血"]){
                 [self.thirdlyPosts addObjectsFromArray:model.posts];
+                _thirdlyCatID = model.cat_id;
             }else if ([modelType.type isEqualToString:@"冒险"]){
                 [self.fourthPosts addObjectsFromArray:model.posts];
+                _fourthCatID = model.cat_id;
             }
         }
         [self.tableView reloadData];
-        
 //        NSLog(@"%@",_secondPosts);
     } error:^(NSError *error) {
         
@@ -103,11 +111,15 @@ static NSString *IdentifierTwo = @"CompositorIdentifierTwo";
             for (GDCompositorPostsModel *posts in [self.firstPosts reverseObjectEnumerator]) {
                 [cell setModel:posts];
                 [cell.groupTitle setText:@"后宫排行榜"];
+                [cell.moerBtn addTarget:self action:@selector(pushMoreViewControllerWithCatID:) forControlEvents:UIControlEventTouchUpInside];
+                cell.moerBtn.tag = 1;
             }
         }else if (indexPath.row == 1){
             for (GDCompositorPostsModel *posts in [self.secondPosts reverseObjectEnumerator]) {
                 [cell setModel:posts];
                 [cell.groupTitle setText:@"奇幻排行榜"];
+                [cell.moerBtn addTarget:self action:@selector(pushMoreViewControllerWithCatID:) forControlEvents:UIControlEventTouchUpInside];
+                cell.moerBtn.tag = 2;
             }
         }
         return cell;
@@ -120,11 +132,15 @@ static NSString *IdentifierTwo = @"CompositorIdentifierTwo";
             for (GDCompositorPostsModel *posts in [self.thirdlyPosts reverseObjectEnumerator]) {
                 [cell setModel:posts];
                 [cell.groupTitle setText:@"热血排行榜"];
+                [cell.moerBtn addTarget:self action:@selector(pushMoreViewControllerWithCatID:) forControlEvents:UIControlEventTouchUpInside];
+                cell.moerBtn.tag = 3;
             }
         }else if (indexPath.row == 3){
             for (GDCompositorPostsModel *posts in [self.fourthPosts reverseObjectEnumerator]) {
                 [cell setModel:posts];
                 [cell.groupTitle setText:@"冒险排行版"];
+                [cell.moerBtn addTarget:self action:@selector(pushMoreViewControllerWithCatID:) forControlEvents:UIControlEventTouchUpInside];
+                cell.moerBtn.tag = 4;
             }
         }
         return  cell;
@@ -202,6 +218,24 @@ static NSString *IdentifierTwo = @"CompositorIdentifierTwo";
     [self.navigationController pushViewController:DetailsVC animated:YES];
 }
 
+-(void)pushMoreViewControllerWithCatID:(UIButton *)send{
+    GDMoreTableViewController *moreVC = [GDMoreTableViewController new];
+    switch (send.tag) {
+        case 1:
+            moreVC.catId = _firstCatID;
+            break;
+        case 2:
+            moreVC.catId = _secondCatID;
+            break;
+        case 3:
+            moreVC.catId = _thirdlyCatID;
+            break;
+        case 4:
+            moreVC.catId = _fourthCatID;
+            break;
+    }
+    [self.navigationController pushViewController:moreVC animated:YES];
+}
 
 -(NSMutableArray<GDCompositorDataArrayModel *> *)data{
     

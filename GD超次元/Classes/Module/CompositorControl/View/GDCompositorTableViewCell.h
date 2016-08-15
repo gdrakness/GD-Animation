@@ -31,6 +31,8 @@
 
 -(void)setModel:(GDCompositorPostsModel *)model;
 @property(nonatomic,strong)UILabel *groupTitle;//组名
+@property(nonatomic,strong)UIButton *moerBtn;//更多按钮
+
 @property (nonatomic, weak) id<GDCompositorDelegate> delegate;
 
 +(void)getTitleTextLable:(UILabel *)textLable
