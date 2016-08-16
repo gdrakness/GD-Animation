@@ -15,6 +15,7 @@
 @class GDHTMLDataModel;
 @class GDDetailBluesDataModel;
 @class GDCompositorDataModel;
+@class GDSearchDataModel;
 
 @interface GDHomeManager : NSObject
 
@@ -54,4 +55,6 @@
 -(void)parsingHTMLRequestWithURL:(NSString *)url
                             success:(void(^)(GDHTMLDataModel *dataMoedel))success
                             error:(void(^)(NSError *error))error;
+
+
 @end

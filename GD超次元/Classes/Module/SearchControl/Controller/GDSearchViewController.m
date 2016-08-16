@@ -8,24 +8,31 @@
 
 #import "GDSearchViewController.h"
 #import "DBSphereView.h"
-
+#import <QuartzCore/QuartzCore.h>
+#import "GDSearchDataModel.h"
+#import "LORequestManger.h"
+#import "GDMoreTableViewController.h"
 
 @interface GDSearchViewController ()<UISearchBarDelegate>
+@property(nonatomic,strong)NSMutableArray<GDSearchDataModel *> *data;
 @property(nonatomic,strong) DBSphereView *sphereView;
+@property(nonatomic,strong)UIButton *sphereBtn;
 @property(nonatomic,strong)UISearchBar *searchBar;
+@property(nonatomic,strong)UIImageView *btnImage;
+@property (nonatomic, assign) double angle;
+@property (nonatomic, assign) BOOL flag;
 @end
 
 @implementation GDSearchViewController
 
 @synthesize sphereView;
-//@synthesize searchBar;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self showSphereView];
     [self prepareSearchBar];
     [self prepareUploadButton];
+    [self getDataIsMore:NO];
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"搜索" style:UIBarButtonItemStylePlain target:self action:nil];
@@ -39,25 +46,55 @@
     [sphereView timerStop];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [sphereView timerStart];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+-(void)getDataIsMore:(BOOL)isMore{
+    
+    [LORequestManger GET:SearchURL parame:nil success:^(id response) {
+        
+        [GDSearchDataModel mj_setupObjectClassInArray:^NSDictionary *{
+            return@{
+                    @"data":@"GDSearchRequestData"
+                    };
+        }];
+        GDSearchDataModel *dataModel = [GDSearchDataModel mj_objectWithKeyValues:response];
+        [self.data addObjectsFromArray:dataModel.data];
+        
+        [self showSphereView];
+ 
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+}
+
 -(void)showSphereView{
+    
+    
     
     sphereView = [[DBSphereView alloc]initWithFrame:CGRectMake(10, 120, 300, 300)];
     NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:0];
     
-    for (int i = 0; i < 40; i++) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-        [button setTitle:[NSString stringWithFormat:@"Fuck%d",i] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:24];
-        button.frame = CGRectMake(0, 0, 60, 25);
-        [button addTarget:self action:@selector(selectSphereButtonMethod:) forControlEvents:UIControlEventTouchUpInside];
-        [array addObject:button];
-        [sphereView addSubview:button];
+    for (int i = 0; i < 50; i++) {
+        _sphereBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+//        [_sphereBtn setTitle:[NSString stringWithFormat:@"Fuck%d",i] forState:UIControlStateNormal];
+        GDSearchRequestData *nameData = [self.data objectAtIndex:i];
+        [_sphereBtn setTitle:nameData.name forState:UIControlStateNormal];
+        [_sphereBtn setTitleColor:[UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0] forState:UIControlStateNormal];
+        _sphereBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        _sphereBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
+        _sphereBtn.frame = CGRectMake(0, 0, 100, 25);
+        _sphereBtn.tag = i;
+        [_sphereBtn addTarget:self action:@selector(selectSphereButtonMethod:) forControlEvents:UIControlEventTouchUpInside];
+        [array addObject:_sphereBtn];
+        [sphereView addSubview:_sphereBtn];
     }
     [sphereView setCloudTags:array];
     sphereView.backgroundColor = [UIColor whiteColor];
@@ -71,21 +108,37 @@
     button.layer.borderWidth = 1;
     button.layer.borderColor = [[UIColor darkGrayColor]CGColor];
     [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-    [button setTitle:@"更换一组推荐" forState:UIControlStateNormal];
+    [button setTitle:@"   更换一组推荐" forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:20];
     button.layer.cornerRadius = 20;
     [button addTarget:self action:@selector(selectUploadButtonMethod:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
+    _btnImage = [[UIImageView alloc]initWithFrame:CGRectMake(73, self.view.height - 52, 25, 25)];
+    _btnImage.image = [UIImage imageNamed:@"Arrows_01"];
+    [self.view addSubview:_btnImage];
 }
 
 -(void)selectUploadButtonMethod:(UIButton *)send{
-    
-    NSLog(@"%@",send);
+   
+    _angle = 0.0;
+    if (_angle == 0) {
+        [self startAnimation];
+    }
+    _flag = YES;
+
 }
 
 -(void)selectSphereButtonMethod:(UIButton *)send{
     
-    NSLog(@"%@",send);
+    GDSearchRequestData *nameData = [self.data objectAtIndex:send.tag];
+        NSLog(@"%@",nameData.fan_id);
+    GDMoreTableViewController *moreVC = [[GDMoreTableViewController alloc]init];
+    moreVC.catId = nameData.fan_id;
+    [self.navigationController pushViewController:moreVC animated:YES];
+//    _flag = NO;
+//    _angle = 0.0;
+//    [self stopAnimation];
 }
 
 -(void)prepareSearchBar{
@@ -114,6 +167,14 @@
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     
+    if (searchText.length == 0) {
+        
+    }
+//    GDSearchRequestData *
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@",searchText];
+    NSMutableArray *reusltArray = [NSMutableArray arrayWithArray:[self.data filteredArrayUsingPredicate:predicate]];
+    
+    NSLog(@"%@",reusltArray);
 }
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
@@ -151,6 +212,44 @@
     searchBar.showsCancelButton = NO;
 }
 
+
+-(void)startAnimation{
+    
+    CGAffineTransform endAngle = CGAffineTransformMakeRotation(_angle * (M_PI / 180.0f));
+    
+    [UIView animateWithDuration:0.07 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        _btnImage.transform = endAngle;
+        
+    } completion:^(BOOL finished) {
+        _angle += 8;
+        if (_flag) {
+            [self startAnimation];
+        }
+    }];
+}
+
+-(void)stopAnimation{
+    
+    CGAffineTransform endAngle = CGAffineTransformMakeRotation(_angle * (M_PI / 180.0f));
+    
+    [UIView animateWithDuration:0.07 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        _btnImage.transform = endAngle;
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+-(NSMutableArray<GDSearchDataModel *> *)data{
+    
+    if (_data != nil) {
+        return _data;
+    }
+    //实例化
+    _data = [NSMutableArray array];
+    
+    return _data;
+}
 
 /*
 #pragma mark - Navigation

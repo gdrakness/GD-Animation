@@ -18,6 +18,7 @@
 #import "GDInformationRequstDataModel.h"
 #import "GDDetailBluesDataModel.h"
 #import "GDHTMLDataModel.h"
+#import "GDSearchDataModel.h"
 
 #import "LORequestManger.h"
 @interface GDHomeManager ()
@@ -233,5 +234,7 @@
         self.error(error);
     }];
 }
+
+/***********************搜索************************/
 
 @end

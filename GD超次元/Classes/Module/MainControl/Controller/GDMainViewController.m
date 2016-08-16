@@ -123,7 +123,7 @@ static NSString *Identifier = @"Identifier";
     pageControl.titleColorNormal = blueColor;
     pageControl.progressColor = blueColor;
     pageControl.itemsWidths = @[@(65),@(65),@(65),@(65),@(65)];
-    pageControl.selectIndex = 1;
+    pageControl.selectIndex = 4;
     
     return pageControl;
 }

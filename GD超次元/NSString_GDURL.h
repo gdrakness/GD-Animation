@@ -12,7 +12,7 @@
 //主页
 #define MainURL @"http://api.18touch.com/index.php?c=acg&a=lists&limit=500&v=2"
 //搜索
-#define SearchURL @"http://api.18touch.com/index.php?c=acg&a=getHotKeyWords"
+#define SearchURL @"http://api.18touch.com/index.php?c=acg&a=getVedioNameList"
 //首页
 #define CompositorURL @"http://api.18touch.com/index.php?c=acg&a=getVedioRankList"
 //分类
@@ -27,5 +27,6 @@
 #define InformationURL @"http://api.18touch.com/?c=Nzs&a=getlist&helper=ACG%E7%B2%BE%E5%93%81%E6%96%87%E7%AB%A0&img=1&lastid=0&lasttime=0"
 //时间表
 #define TimeURL @"http://api.18touch.com/?c=acg&a=timeline"
+
 
 @end

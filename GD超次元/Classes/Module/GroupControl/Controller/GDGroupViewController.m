@@ -10,6 +10,7 @@
 #import "GDRequestMCDataModel.h"
 #import "LORequestManger.h"
 #import "GDHomeManager.h"
+#import "GDDetailsDataModel.h"
 
 @interface GDGroupViewController ()
 @end
@@ -33,13 +34,14 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
     
-    [LORequestManger GET:textURL parame:nil success:^(id response) {
-        
-        NSLog(@"%@",response);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-    }];
+//    [LORequestManger GET:textURL parame:nil success:^(id response) {
+//        
+//        NSLog(@"%@",response);
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//    }];
+
     
 
 

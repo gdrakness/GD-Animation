@@ -134,7 +134,8 @@
 		D7D187901D6228050084CA2F /* DBSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D1878F1D6228050084CA2F /* DBSphereView.m */; };
 		D7D187961D62287C0084CA2F /* GDSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D187951D62287C0084CA2F /* GDSearchViewController.m */; };
 		D7D187981D62BEA70084CA2F /* bg_ACGinputBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D187971D62BEA70084CA2F /* bg_ACGinputBg@2x.png */; };
-		D7D1879B1D62EA580084CA2F /* Arrows_01.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D1879A1D62EA580084CA2F /* Arrows_01.png */; };
+		D7D187A01D636FAB0084CA2F /* Arrows_01.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D1879F1D636FAB0084CA2F /* Arrows_01.png */; };
+		D7D187A31D63825F0084CA2F /* GDSearchDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D187A21D63825F0084CA2F /* GDSearchDataModel.m */; };
 		D7D912B61D56455400CC2950 /* GDVideoWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912B51D56455400CC2950 /* GDVideoWebViewController.m */; };
 		D7D912BA1D57965D00CC2950 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912B91D57965D00CC2950 /* CoreGraphics.framework */; };
 		D7D912BC1D57967100CC2950 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912BB1D57967100CC2950 /* UIKit.framework */; };
@@ -406,7 +407,9 @@
 		D7D187941D62287C0084CA2F /* GDSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDSearchViewController.h; sourceTree = "<group>"; };
 		D7D187951D62287C0084CA2F /* GDSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDSearchViewController.m; sourceTree = "<group>"; };
 		D7D187971D62BEA70084CA2F /* bg_ACGinputBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_ACGinputBg@2x.png"; sourceTree = "<group>"; };
-		D7D1879A1D62EA580084CA2F /* Arrows_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrows_01.png; sourceTree = "<group>"; };
+		D7D1879F1D636FAB0084CA2F /* Arrows_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrows_01.png; sourceTree = "<group>"; };
+		D7D187A11D63825F0084CA2F /* GDSearchDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDSearchDataModel.h; sourceTree = "<group>"; };
+		D7D187A21D63825F0084CA2F /* GDSearchDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDSearchDataModel.m; sourceTree = "<group>"; };
 		D7D912B41D56455400CC2950 /* GDVideoWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDVideoWebViewController.h; path = "GD超次元/Classes/Module/MainControl/GDVideoWebViewController.h"; sourceTree = SOURCE_ROOT; };
 		D7D912B51D56455400CC2950 /* GDVideoWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDVideoWebViewController.m; path = "GD超次元/Classes/Module/MainControl/GDVideoWebViewController.m"; sourceTree = SOURCE_ROOT; };
 		D7D912B71D57905700CC2950 /* libVCTransitionsLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVCTransitionsLibrary.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/VCTransitionsLibrary/libVCTransitionsLibrary.a"; sourceTree = "<group>"; };
@@ -948,6 +951,8 @@
 		D71656911CCE8F85003CE4B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D7D187A11D63825F0084CA2F /* GDSearchDataModel.h */,
+				D7D187A21D63825F0084CA2F /* GDSearchDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1103,7 +1108,7 @@
 		D7803A2B1CD3C015001AD14C /* image */ = {
 			isa = PBXGroup;
 			children = (
-				D7D1879A1D62EA580084CA2F /* Arrows_01.png */,
+				D7D1879F1D636FAB0084CA2F /* Arrows_01.png */,
 				D7D187971D62BEA70084CA2F /* bg_ACGinputBg@2x.png */,
 				D7D187891D60F79D0084CA2F /* bg_head_video@2x.png */,
 				D7023DAB1D30F97E001139EC /* mon@2x.png */,
@@ -1470,7 +1475,7 @@
 				D7803A6D1CD3C015001AD14C /* user_btn2@2x.png in Resources */,
 				D71825F41D22C049001AE243 /* tjstar@2x.png in Resources */,
 				D7023D771D2DB0A4001139EC /* q10.jpg in Resources */,
-				D7D1879B1D62EA580084CA2F /* Arrows_01.png in Resources */,
+				D7D187A01D636FAB0084CA2F /* Arrows_01.png in Resources */,
 				D7803A691CD3C015001AD14C /* searchnew@2x.png in Resources */,
 				D7D161E41D4E35C200B20DFA /* btn_rankVideo_hl@2x.png in Resources */,
 				D7D161E51D4E35C200B20DFA /* btn_rankVideo_norm@2x.png in Resources */,
@@ -1667,6 +1672,7 @@
 				D7D912FC1D5798BE00CC2950 /* CEHorizontalSwipeInteractionController.m in Sources */,
 				D7866FA41D1E52C200A0B1E0 /* GDClassViewController.m in Sources */,
 				D7D984121D18E7340027FAF6 /* UIWebView+AFNetworking.m in Sources */,
+				D7D187A31D63825F0084CA2F /* GDSearchDataModel.m in Sources */,
 				D7D1877A1D60CAE70084CA2F /* GDMoreTableViewController.m in Sources */,
 				D7D984041D18E7340027FAF6 /* AFHTTPSessionManager.m in Sources */,
 				D7D9840B1D18E7340027FAF6 /* AFNetworkActivityIndicatorManager.m in Sources */,
