@@ -131,6 +131,10 @@
 		D7D187861D60F0730084CA2F /* UIImage+GDImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D187851D60F0730084CA2F /* UIImage+GDImageEffects.m */; };
 		D7D187881D60F0A90084CA2F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D187871D60F0A90084CA2F /* Accelerate.framework */; };
 		D7D1878A1D60F79D0084CA2F /* bg_head_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D187891D60F79D0084CA2F /* bg_head_video@2x.png */; };
+		D7D187901D6228050084CA2F /* DBSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D1878F1D6228050084CA2F /* DBSphereView.m */; };
+		D7D187961D62287C0084CA2F /* GDSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D187951D62287C0084CA2F /* GDSearchViewController.m */; };
+		D7D187981D62BEA70084CA2F /* bg_ACGinputBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D187971D62BEA70084CA2F /* bg_ACGinputBg@2x.png */; };
+		D7D1879B1D62EA580084CA2F /* Arrows_01.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D1879A1D62EA580084CA2F /* Arrows_01.png */; };
 		D7D912B61D56455400CC2950 /* GDVideoWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D912B51D56455400CC2950 /* GDVideoWebViewController.m */; };
 		D7D912BA1D57965D00CC2950 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912B91D57965D00CC2950 /* CoreGraphics.framework */; };
 		D7D912BC1D57967100CC2950 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D912BB1D57967100CC2950 /* UIKit.framework */; };
@@ -395,6 +399,14 @@
 		D7D187851D60F0730084CA2F /* UIImage+GDImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GDImageEffects.m"; sourceTree = "<group>"; };
 		D7D187871D60F0A90084CA2F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		D7D187891D60F79D0084CA2F /* bg_head_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_head_video@2x.png"; sourceTree = "<group>"; };
+		D7D1878C1D6228050084CA2F /* DBMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMatrix.h; sourceTree = "<group>"; };
+		D7D1878D1D6228050084CA2F /* DBPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPoint.h; sourceTree = "<group>"; };
+		D7D1878E1D6228050084CA2F /* DBSphereView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSphereView.h; sourceTree = "<group>"; };
+		D7D1878F1D6228050084CA2F /* DBSphereView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSphereView.m; sourceTree = "<group>"; };
+		D7D187941D62287C0084CA2F /* GDSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDSearchViewController.h; sourceTree = "<group>"; };
+		D7D187951D62287C0084CA2F /* GDSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDSearchViewController.m; sourceTree = "<group>"; };
+		D7D187971D62BEA70084CA2F /* bg_ACGinputBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_ACGinputBg@2x.png"; sourceTree = "<group>"; };
+		D7D1879A1D62EA580084CA2F /* Arrows_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrows_01.png; sourceTree = "<group>"; };
 		D7D912B41D56455400CC2950 /* GDVideoWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDVideoWebViewController.h; path = "GD超次元/Classes/Module/MainControl/GDVideoWebViewController.h"; sourceTree = SOURCE_ROOT; };
 		D7D912B51D56455400CC2950 /* GDVideoWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDVideoWebViewController.m; path = "GD超次元/Classes/Module/MainControl/GDVideoWebViewController.m"; sourceTree = SOURCE_ROOT; };
 		D7D912B71D57905700CC2950 /* libVCTransitionsLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVCTransitionsLibrary.a; path = "../../Library/Developer/Xcode/DerivedData/GD超次元-ffmkkonayefrtygylldyryfrxjue/Build/Products/Debug-iphonesimulator/VCTransitionsLibrary/libVCTransitionsLibrary.a"; sourceTree = "<group>"; };
@@ -927,6 +939,8 @@
 		D71656901CCE8F85003CE4B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D7D187941D62287C0084CA2F /* GDSearchViewController.h */,
+				D7D187951D62287C0084CA2F /* GDSearchViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1089,6 +1103,8 @@
 		D7803A2B1CD3C015001AD14C /* image */ = {
 			isa = PBXGroup;
 			children = (
+				D7D1879A1D62EA580084CA2F /* Arrows_01.png */,
+				D7D187971D62BEA70084CA2F /* bg_ACGinputBg@2x.png */,
 				D7D187891D60F79D0084CA2F /* bg_head_video@2x.png */,
 				D7023DAB1D30F97E001139EC /* mon@2x.png */,
 				D7023DAC1D30F97E001139EC /* mon2.png */,
@@ -1166,6 +1182,7 @@
 		D7803A761CD3C295001AD14C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				D7D1878B1D6228050084CA2F /* DBSphereTagCloud */,
 				D7D912D01D5798BE00CC2950 /* AnimationControllers */,
 				D7D912E71D5798BE00CC2950 /* InteractionControllers */,
 				D7D983A21D18DFC50027FAF6 /* LORequestManger.h */,
@@ -1181,6 +1198,17 @@
 				D7D187851D60F0730084CA2F /* UIImage+GDImageEffects.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		D7D1878B1D6228050084CA2F /* DBSphereTagCloud */ = {
+			isa = PBXGroup;
+			children = (
+				D7D1878C1D6228050084CA2F /* DBMatrix.h */,
+				D7D1878D1D6228050084CA2F /* DBPoint.h */,
+				D7D1878E1D6228050084CA2F /* DBSphereView.h */,
+				D7D1878F1D6228050084CA2F /* DBSphereView.m */,
+			);
+			path = DBSphereTagCloud;
 			sourceTree = "<group>";
 		};
 		D7D912D01D5798BE00CC2950 /* AnimationControllers */ = {
@@ -1438,9 +1466,11 @@
 				D7803A521CD3C015001AD14C /* clock@2x.png in Resources */,
 				D7D161DC1D4E34D100B20DFA /* btn_collectVideo_hl@2x.png in Resources */,
 				D7803A701CD3C015001AD14C /* user_btn5@2x.png in Resources */,
+				D7D187981D62BEA70084CA2F /* bg_ACGinputBg@2x.png in Resources */,
 				D7803A6D1CD3C015001AD14C /* user_btn2@2x.png in Resources */,
 				D71825F41D22C049001AE243 /* tjstar@2x.png in Resources */,
 				D7023D771D2DB0A4001139EC /* q10.jpg in Resources */,
+				D7D1879B1D62EA580084CA2F /* Arrows_01.png in Resources */,
 				D7803A691CD3C015001AD14C /* searchnew@2x.png in Resources */,
 				D7D161E41D4E35C200B20DFA /* btn_rankVideo_hl@2x.png in Resources */,
 				D7D161E51D4E35C200B20DFA /* btn_rankVideo_norm@2x.png in Resources */,
@@ -1618,6 +1648,7 @@
 				D7D984021D18E7340027FAF6 /* AFHTTPRequestOperation.m in Sources */,
 				D7D913011D586DA700CC2950 /* GDFooterTableViewCell.m in Sources */,
 				D72D2AD51D31763E00940A53 /* GDTableViewMondayCell.m in Sources */,
+				D7D187901D6228050084CA2F /* DBSphereView.m in Sources */,
 				D716569C1CCE918E003CE4B8 /* GDMainViewController.m in Sources */,
 				D72FDB481D49183B00612295 /* GDHTMLDataModel.m in Sources */,
 				D71D98C31D449F77000DFED3 /* GDTableViewSundayCell.m in Sources */,
@@ -1656,6 +1687,7 @@
 				D7C93D561D47A57300AF96EE /* GDInformatTableBigPictureCell.m in Sources */,
 				D7D912FA1D5798BE00CC2950 /* CETurnAnimationController.m in Sources */,
 				D7D912B61D56455400CC2950 /* GDVideoWebViewController.m in Sources */,
+				D7D187961D62287C0084CA2F /* GDSearchViewController.m in Sources */,
 				D7803A741CD3C0C4001AD14C /* GDBarButtonItem.m in Sources */,
 				D7D912F81D5798BE00CC2950 /* CEPortalAnimationController.m in Sources */,
 				D7D984071D18E7340027FAF6 /* AFURLConnectionOperation.m in Sources */,
@@ -1833,6 +1865,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "gdarkness.GD---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "-Wno-shorten-64-to-32";
 			};
 			name = Debug;
 		};
@@ -1858,6 +1891,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "gdarkness.GD---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "-Wno-shorten-64-to-32";
 			};
 			name = Release;
 		};

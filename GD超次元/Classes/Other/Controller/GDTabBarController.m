@@ -17,6 +17,7 @@
 #import "GDBarButtonItem.h"
 #import "GDTimetableController.h"
 #import "GDSetingViewController.h"
+#import "GDSearchViewController.h"
 #import <MMDrawerBarButtonItem.h>
 #import <UIViewController+MMDrawerController.h>
 
@@ -141,7 +142,9 @@ CEHorizontalSwipeInteractionController *_swipeInteractionController;
 }
 
 -(void)searchAction:(id)sender{
-    NSLog(@"%s",__func__);
+    
+    GDSearchViewController *searchVC = [[GDSearchViewController alloc]init];
+    [self.navigationController pushViewController:searchVC animated:YES];
 }
 
 -(void)settingAction:(id)sender{

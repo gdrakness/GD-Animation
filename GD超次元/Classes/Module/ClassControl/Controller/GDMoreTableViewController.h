@@ -10,5 +10,6 @@
 
 @interface GDMoreTableViewController : UITableViewController
 
+@property(nonatomic,copy)NSString *name;
 @property (nonatomic, assign) NSString *catId;
 @end

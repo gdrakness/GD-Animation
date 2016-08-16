@@ -37,7 +37,7 @@
     _titleLable = [[UILabel alloc]initWithFrame:CGRectMake(95, 10, [UIScreen mainScreen].bounds.size.width - 100, 20)];
     _titleLable.textAlignment = NSTextAlignmentLeft;
     _titleLable.font = [UIFont systemFontOfSize:15];
-    _titleLable.textColor = [UIColor blackColor];
+    _titleLable.textColor = [UIColor darkGrayColor];
     [self.contentView addSubview:_titleLable];
     
     UILabel *textLable = [[UILabel alloc]initWithFrame:CGRectMake(95, 40, [UIScreen mainScreen].bounds.size.width - 100, 15)];

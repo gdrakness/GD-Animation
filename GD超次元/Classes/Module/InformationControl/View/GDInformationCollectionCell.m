@@ -33,7 +33,7 @@
         _titleLable = [[UILabel alloc]initWithFrame:CGRectMake(2, 103, self.contentView.width - 2, 30)];
         _titleLable.font = [UIFont systemFontOfSize:11];
         _titleLable.textAlignment = NSTextAlignmentCenter;
-        _titleLable.tintColor = [UIColor blackColor];
+        _titleLable.tintColor = [UIColor darkGrayColor];
         _titleLable.numberOfLines = 0;
 //        [_titleLable setText:@"夏日炎炎 正是露肉的佳季！“让人眼前一亮的二次元泳装妹纸”TOP10"];
         [self.contentView addSubview:_titleLable];

@@ -223,15 +223,19 @@ static NSString *IdentifierTwo = @"CompositorIdentifierTwo";
     switch (send.tag) {
         case 1:
             moreVC.catId = _firstCatID;
+            moreVC.name = @"后宫";
             break;
         case 2:
             moreVC.catId = _secondCatID;
+            moreVC.name = @"奇幻";
             break;
         case 3:
             moreVC.catId = _thirdlyCatID;
+            moreVC.name = @"热血";
             break;
         case 4:
             moreVC.catId = _fourthCatID;
+            moreVC.name = @"冒险";
             break;
     }
     [self.navigationController pushViewController:moreVC animated:YES];

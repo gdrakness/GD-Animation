@@ -79,6 +79,7 @@ static NSString * const reuseIdentifier = @"calssCell";
     GDMoreTableViewController *moreVC = [GDMoreTableViewController new];
     ClassDataModel *cellItem = self.data[indexPath.item];
     moreVC.catId = cellItem.cat_id;
+    moreVC.name = cellItem.name;
     [self.navigationController pushViewController:moreVC animated:YES];
 }
 

@@ -41,7 +41,7 @@
         _titleLable = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 25)];
         _titleLable.font = [UIFont systemFontOfSize:13];
         _titleLable.textAlignment = NSTextAlignmentCenter;
-        _titleLable.textColor = [UIColor blackColor];
+        _titleLable.textColor = [UIColor darkGrayColor];
         [_alphaView addSubview: _titleLable];
     }
     

@@ -14,7 +14,8 @@
 @interface GDGroupViewController ()
 @end
 
-#define textURL @"http://api.18touch.com/index.php?c=Nzs&a=getcontent&helper=ACG%E7%B2%BE%E5%93%81%E6%96%87%E7%AB%A0&id=751403&v=a07271552&type=acg"
+#define textURL @"http://api.18touch.com/index.php?c=acg&a=getVedioNameList"
+
 @implementation GDGroupViewController
 
 - (void)viewDidLoad {

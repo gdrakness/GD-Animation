@@ -93,7 +93,7 @@
     
     _title = [[UILabel alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 120, 5, 100, 15)];
     _title.font = [UIFont systemFontOfSize:12];
-    _title.textColor = [UIColor blackColor];
+    _title.textColor = [UIColor darkGrayColor];
     _title.textAlignment = NSTextAlignmentCenter;
     [_firstCoverView addSubview:_title];
     
@@ -211,16 +211,16 @@
     [_thirdlyCoverView addSubview:_fourImageView];
     
     _oneTitleLab = [[UILabel alloc]initWithFrame:CGRectMake(9, _alphaView.height - 27, _alphaView.width - 10, 10)];
-    [GDCompositorTableViewCell getTitleTextLable:_oneTitleLab textColor:[UIColor blackColor] textFontSize:12];
+    [GDCompositorTableViewCell getTitleTextLable:_oneTitleLab textColor:[UIColor darkGrayColor] textFontSize:12];
     
     _twoTitleLab = [[UILabel alloc]initWithFrame:CGRectMake(166, _alphaView.height - 27, _alphaView.width - 10, 10)];
-    [GDCompositorTableViewCell getTitleTextLable:_twoTitleLab textColor:[UIColor blackColor] textFontSize:12];
+    [GDCompositorTableViewCell getTitleTextLable:_twoTitleLab textColor:[UIColor darkGrayColor] textFontSize:12];
     
     _threeTitleLab = [[UILabel alloc]initWithFrame:CGRectMake(9, _alphaView.height - 27 + 164, _alphaView.width - 10, 10)];
-    [GDCompositorTableViewCell getTitleTextLable:_threeTitleLab textColor:[UIColor blackColor] textFontSize:12];
+    [GDCompositorTableViewCell getTitleTextLable:_threeTitleLab textColor:[UIColor darkGrayColor] textFontSize:12];
     
     _fourTitleLab = [[UILabel alloc]initWithFrame:CGRectMake(166, _alphaView.height - 27 + 164, _alphaView.width - 10, 10)];
-    [GDCompositorTableViewCell getTitleTextLable:_fourTitleLab textColor:[UIColor blackColor] textFontSize:12];
+    [GDCompositorTableViewCell getTitleTextLable:_fourTitleLab textColor:[UIColor darkGrayColor] textFontSize:12];
     
     [_thirdlyCoverView addSubview:_oneTitleLab];
     [_thirdlyCoverView addSubview:_twoTitleLab];

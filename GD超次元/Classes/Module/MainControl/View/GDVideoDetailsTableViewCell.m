@@ -42,13 +42,13 @@
         _titleName = [[UILabel alloc]initWithFrame:CGRectMake(90, 10, 245, 20)];
         _titleName.textAlignment = NSTextAlignmentLeft;
         _titleName.font = [UIFont systemFontOfSize:16];
-        [_titleName setTintColor:[UIColor blackColor]];
+        [_titleName setTintColor:[UIColor darkGrayColor]];
 //        [_titleName setText:@"飙速宅男第二季"];
         [self.contentView addSubview:_titleName];
         
         UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(90, 35, 40, 15)];
         [lable setFont:[UIFont systemFontOfSize:12]];
-        [lable setTextColor:[UIColor blackColor]];
+        [lable setTextColor:[UIColor darkGrayColor]];
         [lable setText:@"热度:"];
         [self.contentView addSubview:lable];
         
@@ -68,13 +68,13 @@
         
         UILabel *castLab = [[UILabel alloc]initWithFrame:CGRectMake(90, 55, 245, 15)];
         [castLab setFont:[UIFont systemFontOfSize:12]];
-        [castLab setTextColor:[UIColor blackColor]];
+        [castLab setTextColor:[UIColor darkGrayColor]];
         [castLab setText:@"声优: admin"];
         [self.contentView addSubview:castLab];
         
         UILabel *statLab = [[UILabel alloc]initWithFrame:CGRectMake(90, 75, 60, 15)];
         statLab.font = [UIFont systemFontOfSize:12];
-        [statLab setTextColor:[UIColor blackColor]];
+        [statLab setTextColor:[UIColor darkGrayColor]];
         statLab.textAlignment = NSTextAlignmentLeft;
         [statLab setText:@"开播时间:"];
         [self.contentView addSubview:statLab];
@@ -88,7 +88,7 @@
         
         UILabel *tyLab = [[UILabel alloc]initWithFrame:CGRectMake(90, 95, 40, 15)];
         tyLab.font = [UIFont systemFontOfSize:12];
-        [tyLab setTextColor:[UIColor blackColor]];
+        [tyLab setTextColor:[UIColor darkGrayColor]];
         tyLab.textAlignment = NSTextAlignmentLeft;
         [tyLab setText:@"类型: "];
         [self.contentView addSubview:tyLab];

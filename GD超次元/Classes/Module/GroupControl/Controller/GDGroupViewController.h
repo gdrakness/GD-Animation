@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GDGroupViewController : UITableViewController
+@interface GDGroupViewController : UIViewController
 
 @end

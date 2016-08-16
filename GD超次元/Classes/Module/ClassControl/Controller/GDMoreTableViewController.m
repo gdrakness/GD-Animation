@@ -36,6 +36,9 @@ static NSString *Identifier = @"GDMoreTableViewController";
     imageView.frame = [UIScreen mainScreen].bounds;
 //    self.tableView.backgroundView = imageView;
     
+    self.navigationItem.title = _name;
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:blueColor,NSForegroundColorAttributeName, nil]];
+    
     [self getDataIsMore:NO];
 }
 

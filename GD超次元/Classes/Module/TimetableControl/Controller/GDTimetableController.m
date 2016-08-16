@@ -51,6 +51,8 @@ static NSString *SunIdentifier = @"SuntimeTableController";
     [self.tableView registerClass:[GDTableViewSundayCell class] forCellReuseIdentifier:SunIdentifier];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    self.navigationItem.title = @"时间表";
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:blueColor,NSForegroundColorAttributeName, nil]];
 }
 
 - (void)didReceiveMemoryWarning {

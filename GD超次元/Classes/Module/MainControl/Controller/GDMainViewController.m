@@ -60,6 +60,7 @@ static NSString *Identifier = @"Identifier";
 //    [self.tableView.mj_header beginRefreshing];
     [self getDataIsMore:NO];
     
+       
 }
 
 - (void)viewDidAppear:(BOOL)animated {

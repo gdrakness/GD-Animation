@@ -37,7 +37,6 @@ static NSString * const reuseIdentifier = @"videoCollectionCell";
     
     if (self) {
         UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.contentView.width, 44)];
-//        titleView.backgroundColor = blueColor;
         [self.contentView addSubview:titleView];
         
         UIImageView *playImage = [[UIImageView alloc]initWithFrame:CGRectMake(5, 5, 34, 34)];
@@ -47,8 +46,7 @@ static NSString * const reuseIdentifier = @"videoCollectionCell";
         _titleArray = [[UILabel alloc]initWithFrame:CGRectMake(50, 5, 50, 34)];
         _titleArray.textAlignment = NSTextAlignmentLeft;
         _titleArray.font = [UIFont systemFontOfSize:14];
-        [_titleArray setTextColor:[UIColor blackColor]];
-//        [_titleArray setText:@"24集全"];
+        [_titleArray setTextColor:[UIColor darkGrayColor]];
         [titleView addSubview:_titleArray];
         
         UIView *alphaView = [[UIView alloc]initWithFrame:CGRectMake(10, 43, titleView.width - 20, 1)];
@@ -87,8 +85,6 @@ static NSString * const reuseIdentifier = @"videoCollectionCell";
     flowLayout.itemSize = CGSizeMake((_collection.width), (_collection.height));
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     flowLayout.minimumLineSpacing = 0;
-//    flowLayout.minimumInteritemSpacing = 5;
-//    flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
     
     _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, _collection.width, _collection.height) collectionViewLayout:flowLayout];
     _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -148,10 +144,6 @@ static NSString * const reuseIdentifier = @"videoCollectionCell";
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-//     GDVideosDetailsModel*cellItem = [self.videos reverseObjectEnumerator];
-    
-//    NSLog(@"%@",cellItem);
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     

@@ -31,7 +31,7 @@
         _titleLable.textAlignment = NSTextAlignmentLeft;
         _titleLable.font = [UIFont systemFontOfSize:14];
         _titleLable.numberOfLines = 0;
-        [_titleLable setTextColor:[UIColor blackColor]];
+        [_titleLable setTextColor:[UIColor darkGrayColor]];
 //        [_titleLable setText:@"谁要这种反差萌啊喂！那些年我们追过的“两幅面孔”的二次元角色"];
         [self.contentView addSubview:_titleLable];
         
