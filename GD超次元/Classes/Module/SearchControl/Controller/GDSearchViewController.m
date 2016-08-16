@@ -15,17 +15,20 @@
 
 @interface GDSearchViewController ()<UISearchBarDelegate>
 @property(nonatomic,strong)NSMutableArray<GDSearchDataModel *> *data;
+@property(nonatomic,strong)NSMutableArray *nameArray;
 @property(nonatomic,strong) DBSphereView *sphereView;
 @property(nonatomic,strong)UIButton *sphereBtn;
 @property(nonatomic,strong)UISearchBar *searchBar;
 @property(nonatomic,strong)UIImageView *btnImage;
 @property (nonatomic, assign) double angle;
 @property (nonatomic, assign) BOOL flag;
+@property (nonatomic, assign) NSUInteger updataNum;
 @end
 
 @implementation GDSearchViewController
 
 @synthesize sphereView;
+@synthesize updataNum;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,6 +41,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"搜索" style:UIBarButtonItemStylePlain target:self action:nil];
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor darkGrayColor]];
     
+    updataNum = 0;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -85,7 +89,7 @@
     for (int i = 0; i < 50; i++) {
         _sphereBtn = [UIButton buttonWithType:UIButtonTypeSystem];
 //        [_sphereBtn setTitle:[NSString stringWithFormat:@"Fuck%d",i] forState:UIControlStateNormal];
-        GDSearchRequestData *nameData = [self.data objectAtIndex:i];
+        GDSearchRequestData *nameData = [self.data objectAtIndex:i + updataNum];
         [_sphereBtn setTitle:nameData.name forState:UIControlStateNormal];
         [_sphereBtn setTitleColor:[UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0] forState:UIControlStateNormal];
         _sphereBtn.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -121,24 +125,36 @@
 
 -(void)selectUploadButtonMethod:(UIButton *)send{
    
-    _angle = 0.0;
-    if (_angle == 0) {
-        [self startAnimation];
-    }
+    [self startAnimation];
     _flag = YES;
-
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        _flag = NO;
+        _angle = 0.0;
+        [self stopAnimation];
+        
+        updataNum += 10;
+        [sphereView removeFromSuperview];
+        [sphereView timerStop];
+        [self showSphereView];
+    });
+    
+    
+    if (updataNum > self.data.count - 60) {
+        updataNum = 0;
+    }
+    
 }
 
 -(void)selectSphereButtonMethod:(UIButton *)send{
     
-    GDSearchRequestData *nameData = [self.data objectAtIndex:send.tag];
-        NSLog(@"%@",nameData.fan_id);
-    GDMoreTableViewController *moreVC = [[GDMoreTableViewController alloc]init];
-    moreVC.catId = nameData.fan_id;
-    [self.navigationController pushViewController:moreVC animated:YES];
-//    _flag = NO;
-//    _angle = 0.0;
-//    [self stopAnimation];
+    GDSearchRequestData *nameData = [self.data objectAtIndex:send.tag + updataNum];
+        NSLog(@"%@",nameData.name);
+//    GDMoreTableViewController *moreVC = [[GDMoreTableViewController alloc]init];
+//    moreVC.catId = nameData.fan_id;
+//    [self.navigationController pushViewController:moreVC animated:YES];
+
 }
 
 -(void)prepareSearchBar{
@@ -170,9 +186,13 @@
     if (searchText.length == 0) {
         
     }
-//    GDSearchRequestData *
+    for (int i = 0; i < self.data.count; i++) {
+        
+        GDSearchRequestData *nameData = [self.data objectAtIndex:i];
+        [_nameArray addObject:nameData.name];
+    }
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@",searchText];
-    NSMutableArray *reusltArray = [NSMutableArray arrayWithArray:[self.data filteredArrayUsingPredicate:predicate]];
+    NSMutableArray *reusltArray = [NSMutableArray arrayWithArray:[self.nameArray filteredArrayUsingPredicate:predicate]];
     
     NSLog(@"%@",reusltArray);
 }
@@ -217,7 +237,7 @@
     
     CGAffineTransform endAngle = CGAffineTransformMakeRotation(_angle * (M_PI / 180.0f));
     
-    [UIView animateWithDuration:0.07 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:0.03 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         _btnImage.transform = endAngle;
         
     } completion:^(BOOL finished) {
@@ -249,6 +269,16 @@
     _data = [NSMutableArray array];
     
     return _data;
+}
+
+-(NSMutableArray *)nameArray{
+    if (_nameArray != nil) {
+        return _nameArray;
+    }
+    //实例化
+    _nameArray = [NSMutableArray array];
+    
+    return _nameArray;
 }
 
 /*
