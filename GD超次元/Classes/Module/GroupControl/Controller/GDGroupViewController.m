@@ -11,11 +11,14 @@
 #import "LORequestManger.h"
 #import "GDHomeManager.h"
 #import "GDDetailsDataModel.h"
+#import <QuartzCore/QuartzCore.h>
+
 
 @interface GDGroupViewController ()
+@property(nonatomic,strong)UIView *VIEW;
 @end
 
-#define textURL @"http://api.18touch.com/index.php?c=acg&a=getVedioNameList"
+#define textURL @"http://api.moeju.cn/Product/lists"
 
 @implementation GDGroupViewController
 
@@ -23,7 +26,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    [SVProgressHUD showInfoWithStatus:@"load"];
+//    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(50, 400, 100, 44)];
+//    button.backgroundColor = [UIColor darkGrayColor];
+//    [button addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:button];
+}
 
+-(void)viewDidDisappear:(BOOL)animated{
+    
+    [_VIEW removeFromSuperview];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,19 +42,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
     
-//    [LORequestManger GET:textURL parame:nil success:^(id response) {
-//        
-//        NSLog(@"%@",response);
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        
-//    }];
-
+    [LORequestManger GET:textURL parame:nil success:^(id response) {
+        
+        NSLog(@"%@",response);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
     
-
+    
+    
 
 //    [[GDNetWorkManager shareManager]requestWithGET:URL paramaeters:nil success:^(id responseObjcet) {
 ////        NSLog(@"%@",responseObjcet);

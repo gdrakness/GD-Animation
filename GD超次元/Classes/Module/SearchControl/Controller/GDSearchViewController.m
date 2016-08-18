@@ -12,8 +12,10 @@
 #import "GDSearchDataModel.h"
 #import "LORequestManger.h"
 #import "GDMoreTableViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
-@interface GDSearchViewController ()<UISearchBarDelegate>
+
+@interface GDSearchViewController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)NSMutableArray<GDSearchDataModel *> *data;
 @property(nonatomic,strong)NSMutableArray *nameArray;
 @property(nonatomic,strong) DBSphereView *sphereView;
@@ -23,10 +25,13 @@
 @property (nonatomic, assign) double angle;
 @property (nonatomic, assign) BOOL flag;
 @property (nonatomic, assign) NSUInteger updataNum;
+@property(nonatomic,strong)UIView *reusltView;
+@property(nonatomic,strong)UITableView *tableView;
+@property(nonatomic,copy)NSMutableArray *reusltArray;
 @end
 
 @implementation GDSearchViewController
-
+static NSString *identifier = @"GDSearchViewController";
 @synthesize sphereView;
 @synthesize updataNum;
 
@@ -48,6 +53,7 @@
     [super viewWillDisappear:animated];
     [self.searchBar removeFromSuperview];
     [sphereView timerStop];
+    [_reusltView removeFromSuperview];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -128,7 +134,7 @@
     [self startAnimation];
     _flag = YES;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         _flag = NO;
         _angle = 0.0;
@@ -149,11 +155,21 @@
 
 -(void)selectSphereButtonMethod:(UIButton *)send{
     
+    [sphereView timerStop];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        send.transform = CGAffineTransformMakeScale(2., 2.);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.3 animations:^{
+            send.transform = CGAffineTransformMakeScale(1., 1.);
+        } completion:^(BOOL finished) {
+            [sphereView timerStart];
+        }];
+    }];
+    
     GDSearchRequestData *nameData = [self.data objectAtIndex:send.tag + updataNum];
-        NSLog(@"%@",nameData.name);
-//    GDMoreTableViewController *moreVC = [[GDMoreTableViewController alloc]init];
-//    moreVC.catId = nameData.fan_id;
-//    [self.navigationController pushViewController:moreVC animated:YES];
+    
+    NSLog(@"%@ --",nameData.fan_id);
 
 }
 
@@ -186,15 +202,62 @@
     if (searchText.length == 0) {
         
     }
-    for (int i = 0; i < self.data.count; i++) {
+    
+    for (GDSearchRequestData *nameData in self.data) {
         
-        GDSearchRequestData *nameData = [self.data objectAtIndex:i];
         [_nameArray addObject:nameData.name];
+
     }
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@",searchText];
-    NSMutableArray *reusltArray = [NSMutableArray arrayWithArray:[self.nameArray filteredArrayUsingPredicate:predicate]];
+    _reusltArray = [NSMutableArray arrayWithArray:[self.nameArray filteredArrayUsingPredicate:predicate]];
     
-    NSLog(@"%@",reusltArray);
+    if (_reusltArray.count != 0) {
+        [self prepareReusltViewWithArray:_reusltArray];
+    }else{
+        [self dismissReusltView];
+    }
+//    NSLog(@"%@",_reusltArray);
+}
+
+-(void)prepareReusltViewWithArray:(NSMutableArray *)reusltArray{
+    
+    _reusltView = [[UIView alloc]initWithFrame:CGRectMake(70, 66, self.view.width - 60 * 2, 180)];
+    _reusltView.backgroundColor = [UIColor whiteColor];
+    CATransition *animationView = [CATransition animation];
+    [animationView setDuration:0.3];
+    [animationView setFillMode:kCAFillModeForwards];
+    [animationView setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+    [animationView setType:kCATransitionPush];
+    [animationView setSubtype:kCATransitionFromBottom];
+    animationView.delegate = self;
+    [_reusltView.layer addAnimation:animationView forKey:@"animation"];
+    [_reusltView exchangeSubviewAtIndex:1 withSubviewAtIndex:0];
+    
+    [self.view addSubview:_reusltView];
+    [self prepareTableView];
+}
+
+-(void)prepareTableView{
+    
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.width - 60 * 2, 180)];
+    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier];
+    [_tableView setDataSource:self];
+    [_tableView setDelegate:self];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.showsVerticalScrollIndicator = NO;
+    [_reusltView addSubview:_tableView];
+}
+
+-(void)dismissReusltView{
+    
+    __weak typeof(self) weakSelf=self;
+    [UIView transitionWithView:_reusltView duration:0.7 options:UIViewAnimationOptionLayoutSubviews animations:^{
+        weakSelf.reusltView.alpha = 0;
+    } completion:^(BOOL finished) {
+        [weakSelf.reusltView removeFromSuperview];
+        [weakSelf.reusltView removeFromSuperview];
+
+    }];
 }
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
@@ -232,16 +295,51 @@
     searchBar.showsCancelButton = NO;
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return _reusltArray.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 30;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    cell.textLabel.text = _reusltArray[indexPath.row];
+    cell.textLabel.textColor = [UIColor darkGrayColor];
+    cell.textLabel.font = [UIFont systemFontOfSize:12];
+    cell.textLabel.textAlignment = NSTextAlignmentLeft;
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    for (GDSearchRequestData *nameData in self.data) {
+        if ([_reusltArray[indexPath.row] isEqualToString:nameData.name]) {
+            NSLog(@"%@ -- %@",_reusltArray[indexPath.row],nameData.fan_id);
+        }
+    }
+}
+
 
 -(void)startAnimation{
     
     CGAffineTransform endAngle = CGAffineTransformMakeRotation(_angle * (M_PI / 180.0f));
     
-    [UIView animateWithDuration:0.03 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:0.02 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         _btnImage.transform = endAngle;
         
     } completion:^(BOOL finished) {
-        _angle += 8;
+        _angle += 5;
         if (_flag) {
             [self startAnimation];
         }
@@ -280,6 +378,7 @@
     
     return _nameArray;
 }
+
 
 /*
 #pragma mark - Navigation

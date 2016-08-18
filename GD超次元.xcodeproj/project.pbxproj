@@ -63,6 +63,8 @@
 		D72FDB451D48A1A500612295 /* GDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D72FDB441D48A1A500612295 /* GDWebViewController.m */; };
 		D72FDB481D49183B00612295 /* GDHTMLDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D72FDB471D49183B00612295 /* GDHTMLDataModel.m */; };
 		D730D7501D13088A00273EAA /* GDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D730D74F1D13088A00273EAA /* GDTabBarController.m */; };
+		D746495C1D645F73003302CD /* GDCustomShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649591D645F73003302CD /* GDCustomShareView.m */; };
+		D746495D1D645F73003302CD /* GDShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = D746495B1D645F73003302CD /* GDShareView.m */; };
 		D77D2AE11D1535DC00C838D0 /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */; };
 		D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE41D177CA200C838D0 /* GDHomeManager.m */; };
 		D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78039E21CD3BE56001AD14C /* GDNavigationViewController.m */; };
@@ -307,6 +309,10 @@
 		D72FDB471D49183B00612295 /* GDHTMLDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDHTMLDataModel.m; sourceTree = "<group>"; };
 		D730D74E1D13088A00273EAA /* GDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTabBarController.h; sourceTree = "<group>"; };
 		D730D74F1D13088A00273EAA /* GDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTabBarController.m; sourceTree = "<group>"; };
+		D74649581D645F73003302CD /* GDCustomShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDCustomShareView.h; sourceTree = "<group>"; };
+		D74649591D645F73003302CD /* GDCustomShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDCustomShareView.m; sourceTree = "<group>"; };
+		D746495A1D645F73003302CD /* GDShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDShareView.h; sourceTree = "<group>"; };
+		D746495B1D645F73003302CD /* GDShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDShareView.m; sourceTree = "<group>"; };
 		D77D2ADF1D1535DC00C838D0 /* NSObject+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Log.h"; sourceTree = "<group>"; };
 		D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Log.m"; sourceTree = "<group>"; };
 		D77D2AE31D177CA200C838D0 /* GDHomeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDHomeManager.h; sourceTree = "<group>"; };
@@ -1096,6 +1102,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D74649571D645F73003302CD /* GDShareView */ = {
+			isa = PBXGroup;
+			children = (
+				D74649581D645F73003302CD /* GDCustomShareView.h */,
+				D74649591D645F73003302CD /* GDCustomShareView.m */,
+				D746495A1D645F73003302CD /* GDShareView.h */,
+				D746495B1D645F73003302CD /* GDShareView.m */,
+			);
+			path = GDShareView;
+			sourceTree = "<group>";
+		};
 		D77D2AE21D153C6300C838D0 /* HomeManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1187,6 +1204,7 @@
 		D7803A761CD3C295001AD14C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				D74649571D645F73003302CD /* GDShareView */,
 				D7D1878B1D6228050084CA2F /* DBSphereTagCloud */,
 				D7D912D01D5798BE00CC2950 /* AnimationControllers */,
 				D7D912E71D5798BE00CC2950 /* InteractionControllers */,
@@ -1655,6 +1673,7 @@
 				D72D2AD51D31763E00940A53 /* GDTableViewMondayCell.m in Sources */,
 				D7D187901D6228050084CA2F /* DBSphereView.m in Sources */,
 				D716569C1CCE918E003CE4B8 /* GDMainViewController.m in Sources */,
+				D746495C1D645F73003302CD /* GDCustomShareView.m in Sources */,
 				D72FDB481D49183B00612295 /* GDHTMLDataModel.m in Sources */,
 				D71D98C31D449F77000DFED3 /* GDTableViewSundayCell.m in Sources */,
 				D72D2ADB1D33497900940A53 /* GDTimeCollectionViewCell.m in Sources */,
@@ -1694,6 +1713,7 @@
 				D7D912FA1D5798BE00CC2950 /* CETurnAnimationController.m in Sources */,
 				D7D912B61D56455400CC2950 /* GDVideoWebViewController.m in Sources */,
 				D7D187961D62287C0084CA2F /* GDSearchViewController.m in Sources */,
+				D746495D1D645F73003302CD /* GDShareView.m in Sources */,
 				D7803A741CD3C0C4001AD14C /* GDBarButtonItem.m in Sources */,
 				D7D912F81D5798BE00CC2950 /* CEPortalAnimationController.m in Sources */,
 				D7D984071D18E7340027FAF6 /* AFURLConnectionOperation.m in Sources */,

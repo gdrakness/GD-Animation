@@ -26,9 +26,6 @@
 
 //#define BaseUrl [NSURL URLWithString:@"http://api.18touch.com/index.php?c=acg&a=lists&limit=500&v=2"]
 /*
-搜索
-http://api.18touch.com/index.php?c=acg&a=getHotKeyWords
-http://api.18touch.com/index.php?c=acg&a=getVedioNameList
 
 
 轮播

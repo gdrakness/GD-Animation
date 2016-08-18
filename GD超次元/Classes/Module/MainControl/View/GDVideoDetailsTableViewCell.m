@@ -83,7 +83,6 @@
         _statTimeLab.textAlignment = NSTextAlignmentLeft;
         _statTimeLab.font = [UIFont systemFontOfSize:12];
         [_statTimeLab setTextColor:[UIColor grayColor]];
-//        [_statTimeLab setText:[NSString stringWithFormat:@"开播时间:2014年10月6日"]];
         [self.contentView addSubview:_statTimeLab];
         
         UILabel *tyLab = [[UILabel alloc]initWithFrame:CGRectMake(90, 95, 40, 15)];
@@ -97,14 +96,12 @@
         _typeLab.textAlignment = NSTextAlignmentLeft;
         _typeLab.font = [UIFont systemFontOfSize:12];
         [_typeLab setTextColor:[UIColor grayColor]];
-//        [_typeLab setText:[NSString stringWithFormat:@"类型: 十月番、热血、竞技、励志"]];
         [self.contentView addSubview: _typeLab];
         
         _descLab = [[UILabel alloc]initWithFrame:CGRectMake(10, 110, self.contentView.width - 15, 55)];
         _descLab.textAlignment = NSTextAlignmentJustified;
         _descLab.font = [UIFont systemFontOfSize:12];
         [_descLab setTextColor:[UIColor grayColor]];
-//        [_descLab setText:@"  御宅族高中新生小野田坂道，遇上活跃于各大自行车比赛的今泉俊辅，两人间挥洒汗水的青春物语就此开始御宅族高中新生小野田坂道，遇上活跃于各大自行车比赛的今泉俊辅，两人间挥洒汗水的青春物语就此开始。"];
         _descLab.numberOfLines = 0;
         [self.contentView addSubview:_descLab];
     }
