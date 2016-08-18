@@ -10,16 +10,7 @@
 
 #import "GDHomeManager.h"
 
-#import "GDRequestMCDataModel.h"
-#import "GDDetailsDataModel.h"
-#import "GDClassRequstDataModel.h"
-#import "GDCompositorDataModel.h"
-#import "GDTimeTableModel.h"
-#import "GDInformationRequstDataModel.h"
-#import "GDDetailBluesDataModel.h"
-#import "GDHTMLDataModel.h"
-#import "GDSearchDataModel.h"
-#import "GDFavoritesDataMoel.h"
+
 
 #import "LORequestManger.h"
 @interface GDHomeManager ()
@@ -259,4 +250,28 @@
         self.error(error);
     }];
 }
+
+/***********************排行榜************************/
+-(void)getFindLeadeBoardRequestWithURL:(NSString *)url
+                               success:(void(^)(GDLeaderBoardDataModel *dataModel))success
+                                 error:(void(^)(NSError *error))error{
+    
+    self.success = success;
+    self.error = error;
+    [LORequestManger GET:LeaderBoradURL parame:nil success:^(id response) {
+        
+        [GDLeaderBoardDataModel mj_setupObjectClassInArray:^NSDictionary *{
+            return@{
+                    @"data":@"GDLeaderBoardRequestData"
+                    };
+        }];
+        GDLeaderBoardDataModel *dataMoel = [GDLeaderBoardDataModel mj_objectWithKeyValues:response];
+        self.success(dataMoel);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        self.error(error);
+    }];
+}
+    
 @end

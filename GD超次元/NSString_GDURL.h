@@ -33,5 +33,7 @@
 //轮播
 #define PageFlowURL @"http://api.moeju.cn/startup/slider"
 
+//排行榜
+#define LeaderBoradURL @"http://www.moeju.cn/api/leaderboard?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&v=2.1.0"
 
 @end

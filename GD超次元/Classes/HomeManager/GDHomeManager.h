@@ -7,16 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-@class GDRequestMCDataModel;
-@class GDDetailsDataModel;
-@class GDClassRequstDataModel;
-@class GDTimeTableModel;
-@class GDInformationRequstDataModel;
-@class GDHTMLDataModel;
-@class GDDetailBluesDataModel;
-@class GDCompositorDataModel;
-@class GDSearchDataModel;
-@class GDFavoritesDataMoel;
+#import "GDRequestMCDataModel.h"
+#import "GDDetailsDataModel.h"
+#import "GDClassRequstDataModel.h"
+#import "GDCompositorDataModel.h"
+#import "GDTimeTableModel.h"
+#import "GDInformationRequstDataModel.h"
+#import "GDDetailBluesDataModel.h"
+#import "GDHTMLDataModel.h"
+#import "GDSearchDataModel.h"
+#import "GDFavoritesDataMoel.h"
+#import "GDLeaderBoardDataModel.h"
 
 @interface GDHomeManager : NSObject
 
@@ -60,4 +61,9 @@
 -(void)getFindFaovritesRequestWithURl:(NSString *)url
                               success:(void(^)(GDFavoritesDataMoel *dataModel))success
                                 error:(void(^)(NSError *error))error;
+
+
+-(void)getFindLeadeBoardRequestWithURL:(NSString *)url
+                               success:(void(^)(GDLeaderBoardDataModel *dataModel))success
+                                 error:(void(^)(NSError *error))error;
 @end

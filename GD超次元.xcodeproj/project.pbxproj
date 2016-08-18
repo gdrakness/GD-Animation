@@ -69,6 +69,8 @@
 		D74649721D65F255003302CD /* PGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = D746496E1D65F255003302CD /* PGIndexBannerSubiew.m */; };
 		D74649731D65F255003302CD /* NewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649711D65F255003302CD /* NewPagedFlowView.m */; };
 		D74649761D65F3F2003302CD /* GDFavoritesDataMoel.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649751D65F3F2003302CD /* GDFavoritesDataMoel.m */; };
+		D74649791D663870003302CD /* GDLeaderBoardDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649781D663870003302CD /* GDLeaderBoardDataModel.m */; };
+		D746497C1D663D7B003302CD /* GDLerderBoradTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D746497B1D663D7B003302CD /* GDLerderBoradTableViewCell.m */; };
 		D77D2AE11D1535DC00C838D0 /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */; };
 		D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE41D177CA200C838D0 /* GDHomeManager.m */; };
 		D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78039E21CD3BE56001AD14C /* GDNavigationViewController.m */; };
@@ -325,6 +327,10 @@
 		D74649711D65F255003302CD /* NewPagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPagedFlowView.m; sourceTree = "<group>"; };
 		D74649741D65F3F2003302CD /* GDFavoritesDataMoel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDFavoritesDataMoel.h; sourceTree = "<group>"; };
 		D74649751D65F3F2003302CD /* GDFavoritesDataMoel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDFavoritesDataMoel.m; sourceTree = "<group>"; };
+		D74649771D663870003302CD /* GDLeaderBoardDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDLeaderBoardDataModel.h; sourceTree = "<group>"; };
+		D74649781D663870003302CD /* GDLeaderBoardDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDLeaderBoardDataModel.m; sourceTree = "<group>"; };
+		D746497A1D663D7B003302CD /* GDLerderBoradTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDLerderBoradTableViewCell.h; sourceTree = "<group>"; };
+		D746497B1D663D7B003302CD /* GDLerderBoradTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDLerderBoradTableViewCell.m; sourceTree = "<group>"; };
 		D77D2ADF1D1535DC00C838D0 /* NSObject+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Log.h"; sourceTree = "<group>"; };
 		D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Log.m"; sourceTree = "<group>"; };
 		D77D2AE31D177CA200C838D0 /* GDHomeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDHomeManager.h; sourceTree = "<group>"; };
@@ -719,11 +725,11 @@
 				D74649641D65EF9A003302CD /* FavoritesController(收藏夹) */,
 				D716569D1CCE9655003CE4B8 /* SettingControl(设置) */,
 				D71656A11CCE9655003CE4B8 /* TimetableControl(时间表) */,
-				D716568B1CCE8F85003CE4B8 /* MainControl(新番速递) */,
+				D716568B1CCE8F85003CE4B8 /* MainControl(次元新番) */,
 				D716567B1CCE8F85003CE4B8 /* ClassControl(分类推荐) */,
 				D716567F1CCE8F85003CE4B8 /* CompositorControl(动画排行) */,
 				D71656831CCE8F85003CE4B8 /* GroupControl */,
-				D71656871CCE8F85003CE4B8 /* InformationControl(动漫资讯) */,
+				D71656871CCE8F85003CE4B8 /* InformationControl(次元资讯) */,
 				D716568F1CCE8F85003CE4B8 /* SearchControl(搜索) */,
 			);
 			path = Module;
@@ -846,14 +852,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D71656871CCE8F85003CE4B8 /* InformationControl(动漫资讯) */ = {
+		D71656871CCE8F85003CE4B8 /* InformationControl(次元资讯) */ = {
 			isa = PBXGroup;
 			children = (
 				D71656881CCE8F85003CE4B8 /* Controller */,
 				D71656891CCE8F85003CE4B8 /* Model */,
 				D716568A1CCE8F85003CE4B8 /* View */,
 			);
-			name = "InformationControl(动漫资讯)";
+			name = "InformationControl(次元资讯)";
 			path = InformationControl;
 			sourceTree = "<group>";
 		};
@@ -896,14 +902,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D716568B1CCE8F85003CE4B8 /* MainControl(新番速递) */ = {
+		D716568B1CCE8F85003CE4B8 /* MainControl(次元新番) */ = {
 			isa = PBXGroup;
 			children = (
 				D716568C1CCE8F85003CE4B8 /* Controller */,
 				D716568D1CCE8F85003CE4B8 /* Model */,
 				D716568E1CCE8F85003CE4B8 /* View */,
 			);
-			name = "MainControl(新番速递)";
+			name = "MainControl(次元新番)";
 			path = MainControl;
 			sourceTree = "<group>";
 		};
@@ -1158,6 +1164,8 @@
 			children = (
 				D74649741D65F3F2003302CD /* GDFavoritesDataMoel.h */,
 				D74649751D65F3F2003302CD /* GDFavoritesDataMoel.m */,
+				D74649771D663870003302CD /* GDLeaderBoardDataModel.h */,
+				D74649781D663870003302CD /* GDLeaderBoardDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1165,6 +1173,8 @@
 		D74649671D65EF9A003302CD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D746497A1D663D7B003302CD /* GDLerderBoradTableViewCell.h */,
+				D746497B1D663D7B003302CD /* GDLerderBoradTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1759,6 +1769,7 @@
 				D7D187901D6228050084CA2F /* DBSphereView.m in Sources */,
 				D716569C1CCE918E003CE4B8 /* GDMainViewController.m in Sources */,
 				D746495C1D645F73003302CD /* GDCustomShareView.m in Sources */,
+				D746497C1D663D7B003302CD /* GDLerderBoradTableViewCell.m in Sources */,
 				D72FDB481D49183B00612295 /* GDHTMLDataModel.m in Sources */,
 				D71D98C31D449F77000DFED3 /* GDTableViewSundayCell.m in Sources */,
 				D72D2ADB1D33497900940A53 /* GDTimeCollectionViewCell.m in Sources */,
@@ -1791,6 +1802,7 @@
 				D7866F991D1CCB2A00A0B1E0 /* GDVideoDetailsTableViewCell.m in Sources */,
 				D71655A51CCE73FE003CE4B8 /* AppDelegate.m in Sources */,
 				D71826031D22D119001AE243 /* GDCompositorTableViewCell.m in Sources */,
+				D74649791D663870003302CD /* GDLeaderBoardDataModel.m in Sources */,
 				D7D984051D18E7340027FAF6 /* AFNetworkReachabilityManager.m in Sources */,
 				D7D9840A1D18E7340027FAF6 /* AFURLSessionManager.m in Sources */,
 				D746496A1D65F1B0003302CD /* GDFavritesViewController.m in Sources */,

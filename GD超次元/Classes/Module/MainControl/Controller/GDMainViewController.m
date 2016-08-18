@@ -111,7 +111,7 @@ static NSString *Identifier = @"Identifier";
 
 +(WMPageController *)pageControlStyleFlood{
     NSArray *viewControl = @[[GDCompositorTableViewController class],[GDClassViewController class],[GDMainViewController class],[GDInformationController class],[GDGroupViewController class]];
-    NSArray *title = @[@"动画排行",@"分类推荐",@"新番速递",@"动漫资讯",@"兴趣小组"];
+    NSArray *title = @[@"动画排行",@"分类推荐",@"次元新番",@"次元资讯",@"兴趣小组"];
     
     WMPageController *pageControl = [[WMPageController alloc]initWithViewControllerClasses:viewControl andTheirTitles:title];
     pageControl.showOnNavigationBar = NO;

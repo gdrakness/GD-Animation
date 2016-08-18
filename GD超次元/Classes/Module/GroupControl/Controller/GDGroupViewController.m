@@ -18,8 +18,9 @@
 @end
 
 #define BDWeather_KEY @"17IvzuqmKrK1cGwNL6VQebF9"
-#define textURL @"http://api.moeju.cn/startup/slider"
 #define BDWeather_URL @"http://api.map.baidu.com/telematics/v3/weather"
+
+#define textURL @"http://www.moeju.cn/api/leaderboard?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&v=2.1.0"
 
 
 @implementation GDGroupViewController
@@ -46,7 +47,7 @@
 
 //    NSDictionary *parameters = @{@"location":@"珠海",@"output":@"json",@"ak":BDWeather_KEY};
 
-    [LORequestManger GET:PageFlowURL parame:nil success:^(id response) {
+    [LORequestManger GET:textURL parame:nil success:^(id response) {
         
         NSLog(@"%@",response);
         
