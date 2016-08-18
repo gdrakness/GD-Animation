@@ -30,5 +30,8 @@
 //时间表
 #define TimeURL @"http://api.18touch.com/?c=acg&a=timeline"
 
+//轮播
+#define PageFlowURL @"http://api.moeju.cn/startup/slider"
+
 
 @end

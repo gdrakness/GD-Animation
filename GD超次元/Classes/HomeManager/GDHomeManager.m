@@ -19,6 +19,7 @@
 #import "GDDetailBluesDataModel.h"
 #import "GDHTMLDataModel.h"
 #import "GDSearchDataModel.h"
+#import "GDFavoritesDataMoel.h"
 
 #import "LORequestManger.h"
 @interface GDHomeManager ()
@@ -235,6 +236,27 @@
     }];
 }
 
-/***********************搜索************************/
-
+/***********************轮播************************/
+-(void)getFindFaovritesRequestWithURl:(NSString *)url
+                              success:(void(^)(GDFavoritesDataMoel *dataModel))success
+                                error:(void(^)(NSError *error))error{
+    
+    self.success = success;
+    self.error = error;
+    [LORequestManger GET:PageFlowURL parame:nil success:^(id response) {
+        
+       [GDFavoritesDataMoel mj_setupObjectClassInArray:^NSDictionary *{
+           return@{
+                   @"data":@"GDFaovritesRequestData"
+                   };
+       }];
+        
+        GDFavoritesDataMoel *dataModel = [GDFavoritesDataMoel mj_objectWithKeyValues:response];
+        self.success(dataModel);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        self.error(error);
+    }];
+}
 @end

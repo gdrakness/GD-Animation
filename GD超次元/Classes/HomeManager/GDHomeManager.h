@@ -16,6 +16,7 @@
 @class GDDetailBluesDataModel;
 @class GDCompositorDataModel;
 @class GDSearchDataModel;
+@class GDFavoritesDataMoel;
 
 @interface GDHomeManager : NSObject
 
@@ -55,6 +56,8 @@
 -(void)parsingHTMLRequestWithURL:(NSString *)url
                             success:(void(^)(GDHTMLDataModel *dataMoedel))success
                             error:(void(^)(NSError *error))error;
-
-
+//轮播
+-(void)getFindFaovritesRequestWithURl:(NSString *)url
+                              success:(void(^)(GDFavoritesDataMoel *dataModel))success
+                                error:(void(^)(NSError *error))error;
 @end

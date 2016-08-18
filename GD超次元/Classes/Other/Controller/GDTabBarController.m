@@ -18,6 +18,7 @@
 #import "GDTimetableController.h"
 #import "GDSetingViewController.h"
 #import "GDSearchViewController.h"
+#import "GDFavritesViewController.h"
 #import <MMDrawerBarButtonItem.h>
 #import <UIViewController+MMDrawerController.h>
 
@@ -135,7 +136,7 @@ CEHorizontalSwipeInteractionController *_swipeInteractionController;
     
     GDBarButtonItem *scheduleItem = [GDBarButtonItem barButtonItemWithImageHighlighted:@"clock_hover@2x" image:@"clock@2x" target:self action:@selector(scheduleAction:)];
     
-    GDBarButtonItem *collectionItem = [GDBarButtonItem barButtonItemWithImageHighlighted:@"sc_hover@2x" image:@"sc@2x" target:self action:@selector(collectionAction:)];
+    GDBarButtonItem *collectionItem = [GDBarButtonItem barButtonItemWithImageHighlighted:@"sc_hover@2x" image:@"sc@2x" target:self action:@selector(favoritesAction:)];
     
     self.navigationItem.rightBarButtonItems = @[collectionItem,scheduleItem];
     
@@ -154,12 +155,15 @@ CEHorizontalSwipeInteractionController *_swipeInteractionController;
 
 -(void)scheduleAction:(id)sender{
 //    NSLog(@"%s",__func__);
-   GDTimetableController *Tvc =  [[GDTimetableController alloc]init];
-    [self.navigationController pushViewController:Tvc animated:YES];
+   GDTimetableController *Timevc =  [[GDTimetableController alloc]init];
+    [self.navigationController pushViewController:Timevc animated:YES];
 }
 
--(void)collectionAction:(id)sender{
-    NSLog(@"%s",__func__);
+-(void)favoritesAction:(id)sender{
+//    NSLog(@"%s",__func__);
+    GDFavritesViewController *favoritesVC = [[GDFavritesViewController alloc]init];
+    [self.navigationController pushViewController:favoritesVC animated:YES];
+    
 }
 
 

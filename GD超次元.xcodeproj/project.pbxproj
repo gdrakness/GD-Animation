@@ -65,6 +65,10 @@
 		D730D7501D13088A00273EAA /* GDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D730D74F1D13088A00273EAA /* GDTabBarController.m */; };
 		D746495C1D645F73003302CD /* GDCustomShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649591D645F73003302CD /* GDCustomShareView.m */; };
 		D746495D1D645F73003302CD /* GDShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = D746495B1D645F73003302CD /* GDShareView.m */; };
+		D746496A1D65F1B0003302CD /* GDFavritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649691D65F1B0003302CD /* GDFavritesViewController.m */; };
+		D74649721D65F255003302CD /* PGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = D746496E1D65F255003302CD /* PGIndexBannerSubiew.m */; };
+		D74649731D65F255003302CD /* NewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649711D65F255003302CD /* NewPagedFlowView.m */; };
+		D74649761D65F3F2003302CD /* GDFavoritesDataMoel.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649751D65F3F2003302CD /* GDFavoritesDataMoel.m */; };
 		D77D2AE11D1535DC00C838D0 /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */; };
 		D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE41D177CA200C838D0 /* GDHomeManager.m */; };
 		D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78039E21CD3BE56001AD14C /* GDNavigationViewController.m */; };
@@ -313,6 +317,14 @@
 		D74649591D645F73003302CD /* GDCustomShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDCustomShareView.m; sourceTree = "<group>"; };
 		D746495A1D645F73003302CD /* GDShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDShareView.h; sourceTree = "<group>"; };
 		D746495B1D645F73003302CD /* GDShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDShareView.m; sourceTree = "<group>"; };
+		D74649681D65F1B0003302CD /* GDFavritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDFavritesViewController.h; sourceTree = "<group>"; };
+		D74649691D65F1B0003302CD /* GDFavritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDFavritesViewController.m; sourceTree = "<group>"; };
+		D746496D1D65F255003302CD /* PGIndexBannerSubiew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGIndexBannerSubiew.h; sourceTree = "<group>"; };
+		D746496E1D65F255003302CD /* PGIndexBannerSubiew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGIndexBannerSubiew.m; sourceTree = "<group>"; };
+		D74649701D65F255003302CD /* NewPagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPagedFlowView.h; sourceTree = "<group>"; };
+		D74649711D65F255003302CD /* NewPagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPagedFlowView.m; sourceTree = "<group>"; };
+		D74649741D65F3F2003302CD /* GDFavoritesDataMoel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDFavoritesDataMoel.h; sourceTree = "<group>"; };
+		D74649751D65F3F2003302CD /* GDFavoritesDataMoel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDFavoritesDataMoel.m; sourceTree = "<group>"; };
 		D77D2ADF1D1535DC00C838D0 /* NSObject+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Log.h"; sourceTree = "<group>"; };
 		D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Log.m"; sourceTree = "<group>"; };
 		D77D2AE31D177CA200C838D0 /* GDHomeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDHomeManager.h; sourceTree = "<group>"; };
@@ -704,25 +716,27 @@
 		D716567A1CCE8F85003CE4B8 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				D716569D1CCE9655003CE4B8 /* SettingControl */,
-				D71656A11CCE9655003CE4B8 /* TimetableControl */,
-				D716568B1CCE8F85003CE4B8 /* MainControl */,
-				D716567B1CCE8F85003CE4B8 /* ClassControl */,
-				D716567F1CCE8F85003CE4B8 /* CompositorControl */,
+				D74649641D65EF9A003302CD /* FavoritesController(收藏夹) */,
+				D716569D1CCE9655003CE4B8 /* SettingControl(设置) */,
+				D71656A11CCE9655003CE4B8 /* TimetableControl(时间表) */,
+				D716568B1CCE8F85003CE4B8 /* MainControl(新番速递) */,
+				D716567B1CCE8F85003CE4B8 /* ClassControl(分类推荐) */,
+				D716567F1CCE8F85003CE4B8 /* CompositorControl(动画排行) */,
 				D71656831CCE8F85003CE4B8 /* GroupControl */,
-				D71656871CCE8F85003CE4B8 /* InformationControl */,
-				D716568F1CCE8F85003CE4B8 /* SearchControl */,
+				D71656871CCE8F85003CE4B8 /* InformationControl(动漫资讯) */,
+				D716568F1CCE8F85003CE4B8 /* SearchControl(搜索) */,
 			);
 			path = Module;
 			sourceTree = "<group>";
 		};
-		D716567B1CCE8F85003CE4B8 /* ClassControl */ = {
+		D716567B1CCE8F85003CE4B8 /* ClassControl(分类推荐) */ = {
 			isa = PBXGroup;
 			children = (
 				D716567C1CCE8F85003CE4B8 /* Controller */,
 				D716567D1CCE8F85003CE4B8 /* Model */,
 				D716567E1CCE8F85003CE4B8 /* View */,
 			);
+			name = "ClassControl(分类推荐)";
 			path = ClassControl;
 			sourceTree = "<group>";
 		};
@@ -759,13 +773,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D716567F1CCE8F85003CE4B8 /* CompositorControl */ = {
+		D716567F1CCE8F85003CE4B8 /* CompositorControl(动画排行) */ = {
 			isa = PBXGroup;
 			children = (
 				D71656801CCE8F85003CE4B8 /* Controller */,
 				D71656811CCE8F85003CE4B8 /* Model */,
 				D71656821CCE8F85003CE4B8 /* View */,
 			);
+			name = "CompositorControl(动画排行)";
 			path = CompositorControl;
 			sourceTree = "<group>";
 		};
@@ -831,13 +846,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D71656871CCE8F85003CE4B8 /* InformationControl */ = {
+		D71656871CCE8F85003CE4B8 /* InformationControl(动漫资讯) */ = {
 			isa = PBXGroup;
 			children = (
 				D71656881CCE8F85003CE4B8 /* Controller */,
 				D71656891CCE8F85003CE4B8 /* Model */,
 				D716568A1CCE8F85003CE4B8 /* View */,
 			);
+			name = "InformationControl(动漫资讯)";
 			path = InformationControl;
 			sourceTree = "<group>";
 		};
@@ -880,13 +896,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D716568B1CCE8F85003CE4B8 /* MainControl */ = {
+		D716568B1CCE8F85003CE4B8 /* MainControl(新番速递) */ = {
 			isa = PBXGroup;
 			children = (
 				D716568C1CCE8F85003CE4B8 /* Controller */,
 				D716568D1CCE8F85003CE4B8 /* Model */,
 				D716568E1CCE8F85003CE4B8 /* View */,
 			);
+			name = "MainControl(新番速递)";
 			path = MainControl;
 			sourceTree = "<group>";
 		};
@@ -935,13 +952,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D716568F1CCE8F85003CE4B8 /* SearchControl */ = {
+		D716568F1CCE8F85003CE4B8 /* SearchControl(搜索) */ = {
 			isa = PBXGroup;
 			children = (
 				D71656901CCE8F85003CE4B8 /* Controller */,
 				D71656911CCE8F85003CE4B8 /* Model */,
 				D71656921CCE8F85003CE4B8 /* View */,
 			);
+			name = "SearchControl(搜索)";
 			path = SearchControl;
 			sourceTree = "<group>";
 		};
@@ -985,13 +1003,14 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
-		D716569D1CCE9655003CE4B8 /* SettingControl */ = {
+		D716569D1CCE9655003CE4B8 /* SettingControl(设置) */ = {
 			isa = PBXGroup;
 			children = (
 				D716569E1CCE9655003CE4B8 /* Controller */,
 				D716569F1CCE9655003CE4B8 /* Model */,
 				D71656A01CCE9655003CE4B8 /* View */,
 			);
+			name = "SettingControl(设置)";
 			path = SettingControl;
 			sourceTree = "<group>";
 		};
@@ -1018,13 +1037,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D71656A11CCE9655003CE4B8 /* TimetableControl */ = {
+		D71656A11CCE9655003CE4B8 /* TimetableControl(时间表) */ = {
 			isa = PBXGroup;
 			children = (
 				D71656A21CCE9655003CE4B8 /* Controller */,
 				D71656A31CCE9655003CE4B8 /* Model */,
 				D71656A41CCE9655003CE4B8 /* View */,
 			);
+			name = "TimetableControl(时间表)";
 			path = TimetableControl;
 			sourceTree = "<group>";
 		};
@@ -1111,6 +1131,69 @@
 				D746495B1D645F73003302CD /* GDShareView.m */,
 			);
 			path = GDShareView;
+			sourceTree = "<group>";
+		};
+		D74649641D65EF9A003302CD /* FavoritesController(收藏夹) */ = {
+			isa = PBXGroup;
+			children = (
+				D74649651D65EF9A003302CD /* Controller */,
+				D74649661D65EF9A003302CD /* Model */,
+				D74649671D65EF9A003302CD /* View */,
+			);
+			name = "FavoritesController(收藏夹)";
+			path = FavoritesController;
+			sourceTree = "<group>";
+		};
+		D74649651D65EF9A003302CD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D74649681D65F1B0003302CD /* GDFavritesViewController.h */,
+				D74649691D65F1B0003302CD /* GDFavritesViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D74649661D65EF9A003302CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D74649741D65F3F2003302CD /* GDFavoritesDataMoel.h */,
+				D74649751D65F3F2003302CD /* GDFavoritesDataMoel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D74649671D65EF9A003302CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D746496B1D65F255003302CD /* PageFlowView */ = {
+			isa = PBXGroup;
+			children = (
+				D746496C1D65F255003302CD /* CustomeView */,
+				D746496F1D65F255003302CD /* NewPagedFlowView */,
+			);
+			path = PageFlowView;
+			sourceTree = "<group>";
+		};
+		D746496C1D65F255003302CD /* CustomeView */ = {
+			isa = PBXGroup;
+			children = (
+				D746496D1D65F255003302CD /* PGIndexBannerSubiew.h */,
+				D746496E1D65F255003302CD /* PGIndexBannerSubiew.m */,
+			);
+			path = CustomeView;
+			sourceTree = "<group>";
+		};
+		D746496F1D65F255003302CD /* NewPagedFlowView */ = {
+			isa = PBXGroup;
+			children = (
+				D74649701D65F255003302CD /* NewPagedFlowView.h */,
+				D74649711D65F255003302CD /* NewPagedFlowView.m */,
+			);
+			path = NewPagedFlowView;
 			sourceTree = "<group>";
 		};
 		D77D2AE21D153C6300C838D0 /* HomeManager */ = {
@@ -1204,6 +1287,7 @@
 		D7803A761CD3C295001AD14C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				D746496B1D65F255003302CD /* PageFlowView */,
 				D74649571D645F73003302CD /* GDShareView */,
 				D7D1878B1D6228050084CA2F /* DBSphereTagCloud */,
 				D7D912D01D5798BE00CC2950 /* AnimationControllers */,
@@ -1665,6 +1749,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7023D801D2E4FCE001139EC /* UIView+Roundify.m in Sources */,
+				D74649761D65F3F2003302CD /* GDFavoritesDataMoel.m in Sources */,
 				D7C93D5C1D47A5AF00AF96EE /* GDInformatTableViewCell.m in Sources */,
 				D7D984101D18E7340027FAF6 /* UIProgressView+AFNetworking.m in Sources */,
 				D7D9840F1D18E7340027FAF6 /* UIImageView+AFNetworking.m in Sources */,
@@ -1708,6 +1793,7 @@
 				D71826031D22D119001AE243 /* GDCompositorTableViewCell.m in Sources */,
 				D7D984051D18E7340027FAF6 /* AFNetworkReachabilityManager.m in Sources */,
 				D7D9840A1D18E7340027FAF6 /* AFURLSessionManager.m in Sources */,
+				D746496A1D65F1B0003302CD /* GDFavritesViewController.m in Sources */,
 				D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */,
 				D7C93D561D47A57300AF96EE /* GDInformatTableBigPictureCell.m in Sources */,
 				D7D912FA1D5798BE00CC2950 /* CETurnAnimationController.m in Sources */,
@@ -1715,6 +1801,7 @@
 				D7D187961D62287C0084CA2F /* GDSearchViewController.m in Sources */,
 				D746495D1D645F73003302CD /* GDShareView.m in Sources */,
 				D7803A741CD3C0C4001AD14C /* GDBarButtonItem.m in Sources */,
+				D74649721D65F255003302CD /* PGIndexBannerSubiew.m in Sources */,
 				D7D912F81D5798BE00CC2950 /* CEPortalAnimationController.m in Sources */,
 				D7D984071D18E7340027FAF6 /* AFURLConnectionOperation.m in Sources */,
 				D7D984091D18E7340027FAF6 /* AFURLResponseSerialization.m in Sources */,
@@ -1753,6 +1840,7 @@
 				D7023DB11D30FA7B001139EC /* GDTimetableController.m in Sources */,
 				D7866FAA1D1E5B1200A0B1E0 /* GDClassCollectionViewCell.m in Sources */,
 				D7D161D91D4D1BF900B20DFA /* GDVideoBluesTableViewCell.m in Sources */,
+				D74649731D65F255003302CD /* NewPagedFlowView.m in Sources */,
 				D71656A71CCE9699003CE4B8 /* GDSetingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

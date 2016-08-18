@@ -32,6 +32,8 @@
 http://api.moeju.cn/startup/slider
 
 http://api.moeju.cn/Product/lists
+ 
+http://www.moeju.cn/api/newsdetail?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&id=752119&os=iOS&v=2.1.0
 
 http://api.moeju.cn/picture/special?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&gender=1&os=iOS&v=2.1.0
 http://api.moeju.cn/picture/special?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&v=2.1.0

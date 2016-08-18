@@ -15,26 +15,22 @@
 
 
 @interface GDGroupViewController ()
-@property(nonatomic,strong)UIView *VIEW;
 @end
 
-#define textURL @"http://api.18touch.com/index.php?c=acg&a=searchVedio&name=%E7%99%BD%E9%93%B6%E7%9A%84%E6%84%8F%E5%BF%97%20Argevollen&offset=1"
+#define BDWeather_KEY @"17IvzuqmKrK1cGwNL6VQebF9"
+#define textURL @"http://api.moeju.cn/startup/slider"
+#define BDWeather_URL @"http://api.map.baidu.com/telematics/v3/weather"
+
 
 @implementation GDGroupViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [SVProgressHUD showInfoWithStatus:@"load"];
-//    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(50, 400, 100, 44)];
-//    button.backgroundColor = [UIColor darkGrayColor];
-//    [button addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
     
-    [_VIEW removeFromSuperview];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,12 +40,13 @@
 
 
 
+
+
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    NSMutableDictionary *parame = [NSMutableDictionary dictionary];
-    parame[@"name"] = @"白银的意志 Argevollen";
-    parame[@"&offset"] = @"1";
-    [LORequestManger GET:SearchUrl parame:parame success:^(id response) {
+//    NSDictionary *parameters = @{@"location":@"珠海",@"output":@"json",@"ak":BDWeather_KEY};
+
+    [LORequestManger GET:PageFlowURL parame:nil success:^(id response) {
         
         NSLog(@"%@",response);
         
@@ -88,15 +85,6 @@
 //    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 
