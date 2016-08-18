@@ -10,7 +10,7 @@
 
 @interface GDSearchRequestData : NSObject
 @property(nonatomic,copy)NSString *name;
-@property(nonatomic,assign)NSString *fan_id;
+@property(nonatomic,copy)NSString *fan_id;
 @end
 
 @interface GDSearchDataModel : NSObject

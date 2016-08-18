@@ -37,8 +37,6 @@ static NSString *identifier = @"GDSearchViewController";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self prepareSearchBar];
     [self prepareUploadButton];
     [self getDataIsMore:NO];
     
@@ -47,6 +45,7 @@ static NSString *identifier = @"GDSearchViewController";
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor darkGrayColor]];
     
     updataNum = 0;
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -58,6 +57,8 @@ static NSString *identifier = @"GDSearchViewController";
 
 -(void)viewWillAppear:(BOOL)animated{
     [sphereView timerStart];
+    [self prepareSearchBar];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,14 +88,11 @@ static NSString *identifier = @"GDSearchViewController";
 
 -(void)showSphereView{
     
-    
-    
     sphereView = [[DBSphereView alloc]initWithFrame:CGRectMake(10, 120, 300, 300)];
     NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:0];
     
     for (int i = 0; i < 50; i++) {
         _sphereBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-//        [_sphereBtn setTitle:[NSString stringWithFormat:@"Fuck%d",i] forState:UIControlStateNormal];
         GDSearchRequestData *nameData = [self.data objectAtIndex:i + updataNum];
         [_sphereBtn setTitle:nameData.name forState:UIControlStateNormal];
         [_sphereBtn setTitleColor:[UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0] forState:UIControlStateNormal];
@@ -169,44 +167,35 @@ static NSString *identifier = @"GDSearchViewController";
     
     GDSearchRequestData *nameData = [self.data objectAtIndex:send.tag + updataNum];
     
-    NSLog(@"%@ --",nameData.fan_id);
+    GDMoreTableViewController *moreVC = [[GDMoreTableViewController alloc]init];
+    moreVC.name = nameData.name;
+    [self.navigationController pushViewController:moreVC animated:YES];
 
 }
 
 -(void)prepareSearchBar{
     
-     _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(70, 0, self.view.width - 70 * 2, 44)];
-    _searchBar.keyboardType = UIKeyboardTypeDefault;
-    _searchBar.searchBarStyle = UISearchBarStyleProminent;
-    _searchBar.barStyle = UIBarStyleDefault;
-    _searchBar.barTintColor = [UIColor whiteColor];
-    _searchBar.placeholder = @"搜索番名";
-    _searchBar.delegate = self;
-    
     UIView *searchTextField = nil;
     searchTextField = [[[self.searchBar.subviews firstObject]subviews]lastObject];
-//    for (UIView *subviews in self.searchBar.subviews) {
-//        if ([subviews isKindOfClass:NSClassFromString(@"UISearchBarTextField")]) {
-//            searchTextField = subviews;
-//        }
-//    }
+    //    for (UIView *subviews in self.searchBar.subviews) {
+    //        if ([subviews isKindOfClass:NSClassFromString(@"UISearchBarTextField")]) {
+    //            searchTextField = subviews;
+    //        }
+    //    }
     searchTextField.layer.borderColor = [[UIColor darkGrayColor]CGColor];
     searchTextField.layer.borderWidth = 1;
     searchTextField.layer.cornerRadius = 5;
-    
     [self.navigationController.navigationBar addSubview:_searchBar];
 }
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     
-    if (searchText.length == 0) {
-        
-    }
+ 
     
+
     for (GDSearchRequestData *nameData in self.data) {
         
         [_nameArray addObject:nameData.name];
-
     }
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@",searchText];
     _reusltArray = [NSMutableArray arrayWithArray:[self.nameArray filteredArrayUsingPredicate:predicate]];
@@ -217,6 +206,7 @@ static NSString *identifier = @"GDSearchViewController";
         [self dismissReusltView];
     }
 //    NSLog(@"%@",_reusltArray);
+    
 }
 
 -(void)prepareReusltViewWithArray:(NSMutableArray *)reusltArray{
@@ -323,11 +313,13 @@ static NSString *identifier = @"GDSearchViewController";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    GDMoreTableViewController *moreVC = [[GDMoreTableViewController alloc]init];
     for (GDSearchRequestData *nameData in self.data) {
         if ([_reusltArray[indexPath.row] isEqualToString:nameData.name]) {
-            NSLog(@"%@ -- %@",_reusltArray[indexPath.row],nameData.fan_id);
+            moreVC.name = nameData.name;
         }
     }
+    [self.navigationController pushViewController:moreVC animated:YES];
 }
 
 
@@ -358,6 +350,24 @@ static NSString *identifier = @"GDSearchViewController";
     }];
 }
 
+-(UISearchBar *)searchBar{
+    if (_searchBar != nil) {
+        return _searchBar;
+    }
+    //实例化
+    _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(70, 0, self.view.width - 70 * 2, 44)];
+    _searchBar.keyboardType = UIKeyboardTypeDefault;
+    _searchBar.searchBarStyle = UISearchBarStyleProminent;
+    _searchBar.barStyle = UIBarStyleDefault;
+    _searchBar.barTintColor = [UIColor whiteColor];
+    _searchBar.placeholder = @"搜索番名";
+    _searchBar.delegate = self;
+    
+    [self prepareSearchBar];
+    
+    return _searchBar;
+}
+
 -(NSMutableArray<GDSearchDataModel *> *)data{
     
     if (_data != nil) {
@@ -378,6 +388,8 @@ static NSString *identifier = @"GDSearchViewController";
     
     return _nameArray;
 }
+
+
 
 
 /*

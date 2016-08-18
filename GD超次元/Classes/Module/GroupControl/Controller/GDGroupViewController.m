@@ -18,7 +18,7 @@
 @property(nonatomic,strong)UIView *VIEW;
 @end
 
-#define textURL @"http://api.moeju.cn/Product/lists"
+#define textURL @"http://api.18touch.com/index.php?c=acg&a=searchVedio&name=%E7%99%BD%E9%93%B6%E7%9A%84%E6%84%8F%E5%BF%97%20Argevollen&offset=1"
 
 @implementation GDGroupViewController
 
@@ -46,8 +46,10 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    
-    [LORequestManger GET:textURL parame:nil success:^(id response) {
+    NSMutableDictionary *parame = [NSMutableDictionary dictionary];
+    parame[@"name"] = @"白银的意志 Argevollen";
+    parame[@"&offset"] = @"1";
+    [LORequestManger GET:SearchUrl parame:parame success:^(id response) {
         
         NSLog(@"%@",response);
         

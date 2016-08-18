@@ -97,7 +97,6 @@ http://api.moeju.cn/picture/imageList?id=15251
 
 //#import "GDNetWorkManager.h"
 #import "UIImageView+WebCache.h"
-//#import "AFNetworkReachabilityManager.h"
 //#import "AFHTTPSessionManager.h"
 #import "UIImageView+WebCache.h"
 #import <MMDrawerController.h>

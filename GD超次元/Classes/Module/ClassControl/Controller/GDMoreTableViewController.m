@@ -15,6 +15,7 @@
 
 @interface GDMoreTableViewController ()
 @property(nonatomic,strong)NSMutableArray<GDMoreDataModel *>*posts;
+@property(nonatomic,strong)UILabel *lable;
 @end
 
 @implementation GDMoreTableViewController
@@ -29,7 +30,7 @@ static NSString *Identifier = @"GDMoreTableViewController";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    self.tableView.separatorStyle = NO;
     UIImage *Image = [UIImage imageNamed:@"1421035825228917"];
     UIImage *blurredImage = [Image applyBlurWithRadius:13.5f tintColor:[UIColor colorWithWhite:0 alpha:0] saturationDeltaFactor:1.1 maskImage:nil];
     UIImageView *imageView = [[UIImageView alloc]initWithImage:blurredImage];
@@ -40,7 +41,9 @@ static NSString *Identifier = @"GDMoreTableViewController";
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:blueColor,NSForegroundColorAttributeName, nil]];
     
     [self getDataIsMore:NO];
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -50,9 +53,17 @@ static NSString *Identifier = @"GDMoreTableViewController";
 -(void)getDataIsMore:(BOOL)isMore{
     
     NSMutableDictionary *parame = [NSMutableDictionary dictionary];
-    parame[@"cat_id"] = _catId;
-    
-    [LORequestManger GET:ClassUrl parame:parame success:^(id response) {
+    NSString *URL = [NSString string];
+    if (_catId) {
+        parame[@"cat_id"] = _catId;
+        URL = ClassUrl;
+    }else if (!_catId){
+        parame[@"name"] = _name;
+        parame[@"&offset"] = @"1";
+        URL = SearchUrl;
+    }
+   
+    [LORequestManger GET:URL parame:parame success:^(id response) {
     [GDClassMoreDataModel mj_setupObjectClassInArray:^NSDictionary *{
         return @{
                  @"posts":@"GDMoreDataModel"
@@ -61,9 +72,19 @@ static NSString *Identifier = @"GDMoreTableViewController";
         GDClassMoreDataModel *dataModel = [GDClassMoreDataModel mj_objectWithKeyValues:response];
         [self.posts addObjectsFromArray:dataModel.posts];
         [self.tableView reloadData];
+        if (_posts.count == 0) {
+    
+            _lable = [[UILabel alloc]initWithFrame:CGRectMake(self.view.width - 100 * 2, self.view.height - 200 * 2, 100, 44)];
+            [_lable setText:@"该类型暂无"];
+            _lable.textColor = [UIColor darkGrayColor];
+            _lable.font = [UIFont systemFontOfSize: 20];
+            _lable.textAlignment = NSTextAlignmentCenter;
+            [self.tableView addSubview:_lable];
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
+
 }
 
 #pragma mark - Table view data source
@@ -83,9 +104,9 @@ static NSString *Identifier = @"GDMoreTableViewController";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GDMoreTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor clearColor];
-    [cell setModel:self.posts[indexPath.row]];
-    
+        cell.backgroundColor = [UIColor clearColor];
+        [cell setModel:self.posts[indexPath.row]];
+
     return cell;
 }
 
@@ -106,6 +127,8 @@ static NSString *Identifier = @"GDMoreTableViewController";
     
     return _posts;
 }
+
+
 
 /*
 // Override to support conditional editing of the table view.
