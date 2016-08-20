@@ -12,7 +12,8 @@
 #import "GDHomeManager.h"
 #import "NewPagedFlowView.h"
 #import "PGIndexBannerSubiew.h"
-#import "GDLerderBoradTableViewCell.h"
+#import "GDParallaxLeaderBoradTableViwCell.h"
+#import "GDParallaxTableViewCell.h"
 
 @interface GDFavritesViewController ()<NewPagedFlowViewDelegate,NewPagedFlowViewDataSource,UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)NewPagedFlowView *pageFlowView;
@@ -114,15 +115,13 @@ static NSString *Identifier = @"GDFavritesViewController";
     
     [_headerView addSubview:bottomScrollView];
     
-
-    
     
 }
 
 -(void)setupTableView{
     
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
-    [_tableView registerClass:[GDLerderBoradTableViewCell class] forCellReuseIdentifier:Identifier];
+    _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    [_tableView registerClass:[GDParallaxLeaderBoradTableViwCell class] forCellReuseIdentifier:Identifier];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableView setDataSource:self];
     [_tableView setDelegate:self];
@@ -130,14 +129,10 @@ static NSString *Identifier = @"GDFavritesViewController";
     _tableView.tableHeaderView = _headerView;
     
     [self.view addSubview:_tableView];
-    
+    [_tableView reloadData];
     
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    
-    return 1;
-}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -146,17 +141,31 @@ static NSString *Identifier = @"GDFavritesViewController";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 170;
+    return [GDParallaxLeaderBoradTableViwCell getHeight];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     GDLeaderBoardRequestData *cellRow = self.LeaderData[indexPath.row];
     
-    GDLerderBoradTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
+    GDParallaxLeaderBoradTableViwCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
+    [cell resetParallaxState];
+    [cell parallaxWithView:cell.pictureView offsetUp:60 offsetDown:50];
+    [cell parallaxWithView:cell.titleLab offsetUp:10 offsetDown:10];
+
+    [cell updateViewFrameWithScrollView:tableView];
     
     [cell setModel:cellRow];
+    
+    
     return cell;
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    for (GDParallaxLeaderBoradTableViwCell *cell in self.tableView.visibleCells) {
+        [cell updateViewFrameWithScrollView:scrollView];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

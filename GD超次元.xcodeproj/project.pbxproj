@@ -70,7 +70,8 @@
 		D74649731D65F255003302CD /* NewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649711D65F255003302CD /* NewPagedFlowView.m */; };
 		D74649761D65F3F2003302CD /* GDFavoritesDataMoel.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649751D65F3F2003302CD /* GDFavoritesDataMoel.m */; };
 		D74649791D663870003302CD /* GDLeaderBoardDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649781D663870003302CD /* GDLeaderBoardDataModel.m */; };
-		D746497C1D663D7B003302CD /* GDLerderBoradTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D746497B1D663D7B003302CD /* GDLerderBoradTableViewCell.m */; };
+		D746497F1D6660E0003302CD /* GDParallaxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D746497E1D6660E0003302CD /* GDParallaxTableViewCell.m */; };
+		D74649851D6666D7003302CD /* GDParallaxLeaderBoradTableViwCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649841D6666D7003302CD /* GDParallaxLeaderBoradTableViwCell.m */; };
 		D77D2AE11D1535DC00C838D0 /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */; };
 		D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE41D177CA200C838D0 /* GDHomeManager.m */; };
 		D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78039E21CD3BE56001AD14C /* GDNavigationViewController.m */; };
@@ -329,8 +330,10 @@
 		D74649751D65F3F2003302CD /* GDFavoritesDataMoel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDFavoritesDataMoel.m; sourceTree = "<group>"; };
 		D74649771D663870003302CD /* GDLeaderBoardDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDLeaderBoardDataModel.h; sourceTree = "<group>"; };
 		D74649781D663870003302CD /* GDLeaderBoardDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDLeaderBoardDataModel.m; sourceTree = "<group>"; };
-		D746497A1D663D7B003302CD /* GDLerderBoradTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDLerderBoradTableViewCell.h; sourceTree = "<group>"; };
-		D746497B1D663D7B003302CD /* GDLerderBoradTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDLerderBoradTableViewCell.m; sourceTree = "<group>"; };
+		D746497D1D6660E0003302CD /* GDParallaxTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDParallaxTableViewCell.h; sourceTree = "<group>"; };
+		D746497E1D6660E0003302CD /* GDParallaxTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDParallaxTableViewCell.m; sourceTree = "<group>"; };
+		D74649831D6666D7003302CD /* GDParallaxLeaderBoradTableViwCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDParallaxLeaderBoradTableViwCell.h; sourceTree = "<group>"; };
+		D74649841D6666D7003302CD /* GDParallaxLeaderBoradTableViwCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDParallaxLeaderBoradTableViwCell.m; sourceTree = "<group>"; };
 		D77D2ADF1D1535DC00C838D0 /* NSObject+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Log.h"; sourceTree = "<group>"; };
 		D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Log.m"; sourceTree = "<group>"; };
 		D77D2AE31D177CA200C838D0 /* GDHomeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDHomeManager.h; sourceTree = "<group>"; };
@@ -1173,8 +1176,10 @@
 		D74649671D65EF9A003302CD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D746497A1D663D7B003302CD /* GDLerderBoradTableViewCell.h */,
-				D746497B1D663D7B003302CD /* GDLerderBoradTableViewCell.m */,
+				D746497D1D6660E0003302CD /* GDParallaxTableViewCell.h */,
+				D746497E1D6660E0003302CD /* GDParallaxTableViewCell.m */,
+				D74649831D6666D7003302CD /* GDParallaxLeaderBoradTableViwCell.h */,
+				D74649841D6666D7003302CD /* GDParallaxLeaderBoradTableViwCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1769,7 +1774,6 @@
 				D7D187901D6228050084CA2F /* DBSphereView.m in Sources */,
 				D716569C1CCE918E003CE4B8 /* GDMainViewController.m in Sources */,
 				D746495C1D645F73003302CD /* GDCustomShareView.m in Sources */,
-				D746497C1D663D7B003302CD /* GDLerderBoradTableViewCell.m in Sources */,
 				D72FDB481D49183B00612295 /* GDHTMLDataModel.m in Sources */,
 				D71D98C31D449F77000DFED3 /* GDTableViewSundayCell.m in Sources */,
 				D72D2ADB1D33497900940A53 /* GDTimeCollectionViewCell.m in Sources */,
@@ -1804,6 +1808,7 @@
 				D71826031D22D119001AE243 /* GDCompositorTableViewCell.m in Sources */,
 				D74649791D663870003302CD /* GDLeaderBoardDataModel.m in Sources */,
 				D7D984051D18E7340027FAF6 /* AFNetworkReachabilityManager.m in Sources */,
+				D746497F1D6660E0003302CD /* GDParallaxTableViewCell.m in Sources */,
 				D7D9840A1D18E7340027FAF6 /* AFURLSessionManager.m in Sources */,
 				D746496A1D65F1B0003302CD /* GDFavritesViewController.m in Sources */,
 				D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */,
@@ -1824,6 +1829,7 @@
 				D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */,
 				D71D98BA1D449EDE000DFED3 /* GDTableViewThursdayCell.m in Sources */,
 				D7D912F11D5798BE00CC2950 /* CECrossfadeAnimationController.m in Sources */,
+				D74649851D6666D7003302CD /* GDParallaxLeaderBoradTableViwCell.m in Sources */,
 				D730D7501D13088A00273EAA /* GDTabBarController.m in Sources */,
 				D7D187831D60E00F0084CA2F /* GDClassMoreDataModel.m in Sources */,
 				D71D98C01D449F6B000DFED3 /* GDTableViewSaturdayCell.m in Sources */,
