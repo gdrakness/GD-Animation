@@ -15,7 +15,6 @@
 
 -(void)setModel:(GDLeaderBoardRequestData *)model;
 
-- (void)imageOffset;
 
 +(CGFloat)getHeight;
 @end

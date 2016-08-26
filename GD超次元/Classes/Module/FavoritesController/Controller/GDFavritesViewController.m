@@ -14,6 +14,8 @@
 #import "PGIndexBannerSubiew.h"
 #import "GDParallaxLeaderBoradTableViwCell.h"
 #import "GDParallaxTableViewCell.h"
+#import "GDVideoWebViewController.h"
+#import "GDContentWebViewController.h"
 
 @interface GDFavritesViewController ()<NewPagedFlowViewDelegate,NewPagedFlowViewDataSource,UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)NewPagedFlowView *pageFlowView;
@@ -32,17 +34,19 @@ static NSString *Identifier = @"GDFavritesViewController";
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 20, 5, 70)];
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 20, 5, 65)];
     imageView.image = [UIImage imageNamed:@"new_logo"];
     self.navigationItem.titleView = imageView;
     
     [self setupTableView];
-    [self getDataIsMore:NO];
-    [self getLeaderBoradDataIsMore:NO];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    
+    [self getDataIsMore:NO];
+    [self getLeaderBoradDataIsMore:NO];
 //        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(prepareUI) userInfo:nil repeats:YES];
 //        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
@@ -51,7 +55,8 @@ static NSString *Identifier = @"GDFavritesViewController";
     [super viewDidDisappear:animated];
     [_pageFlowView stopTimer];
     [_pageFlowView removeFromSuperview];
-    [_pageControl removeFromSuperview];
+    [self.data removeAllObjects];
+//    [_pageControl removeFromSuperview];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,7 +75,7 @@ static NSString *Identifier = @"GDFavritesViewController";
        }];
        GDFavoritesDataMoel *dataMoel = [GDFavoritesDataMoel mj_objectWithKeyValues:response];
        [self.data addObjectsFromArray:dataMoel.data];
-       
+//       NSLog(@"%@",dataMoel.data);
        [self prepareUI];
        
    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -84,7 +89,7 @@ static NSString *Identifier = @"GDFavritesViewController";
         
         [self.LeaderData addObjectsFromArray:dataModel.data];
         [_tableView reloadData];
-        
+//        NSLog(@"%@",dataModel.data);
     } error:^(NSError *error) {
         
     }];
@@ -179,6 +184,20 @@ static NSString *Identifier = @"GDFavritesViewController";
 
 -(void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex{
     
+    GDVideoWebViewController *WebVC = [[GDVideoWebViewController alloc]init];
+    GDContentWebViewController *ConVC = [[GDContentWebViewController alloc]init];
+    NSLog(@"%ld -- %@",(long)subIndex,subView);
+    GDFaovritesRequestData *dataType = self.data[subIndex];
+    if ([dataType.type isEqualToString:@"activity"]) {
+        WebVC.url = dataType.url;
+        [self.navigationController pushViewController:WebVC animated:YES];
+    }else if ([dataType.type isEqualToString:@"ad"]){
+        WebVC.url = dataType.url;
+        [self.navigationController pushViewController:WebVC animated:YES];
+    }
+    
+    ConVC.getID = dataType.id;
+    [self.navigationController pushViewController:ConVC animated:YES];
 }
 
 -(NSInteger)numberOfPagesInFlowView:(NewPagedFlowView *)flowView{

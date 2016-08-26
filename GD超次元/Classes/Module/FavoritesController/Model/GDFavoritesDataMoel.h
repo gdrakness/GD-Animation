@@ -13,7 +13,7 @@
 @property(nonatomic,copy)NSString *type;
 @property(nonatomic,copy)NSString *url;
 @property (nonatomic, assign) NSUInteger aid;
-@property (nonatomic, assign) NSUInteger id;
+@property (nonatomic, copy) NSString *id;
 @end
 
 @interface GDFavoritesDataMoel : NSObject

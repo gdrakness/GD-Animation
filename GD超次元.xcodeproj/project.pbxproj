@@ -72,6 +72,8 @@
 		D74649791D663870003302CD /* GDLeaderBoardDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649781D663870003302CD /* GDLeaderBoardDataModel.m */; };
 		D746497F1D6660E0003302CD /* GDParallaxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D746497E1D6660E0003302CD /* GDParallaxTableViewCell.m */; };
 		D74649851D6666D7003302CD /* GDParallaxLeaderBoradTableViwCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649841D6666D7003302CD /* GDParallaxLeaderBoradTableViwCell.m */; };
+		D76F87921D702A8100FC6142 /* GDContentWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76F87911D702A8100FC6142 /* GDContentWebViewController.m */; };
+		D76F87951D706C7B00FC6142 /* GDContentDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D76F87941D706C7B00FC6142 /* GDContentDataModel.m */; };
 		D77D2AE11D1535DC00C838D0 /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */; };
 		D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE41D177CA200C838D0 /* GDHomeManager.m */; };
 		D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78039E21CD3BE56001AD14C /* GDNavigationViewController.m */; };
@@ -334,6 +336,10 @@
 		D746497E1D6660E0003302CD /* GDParallaxTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDParallaxTableViewCell.m; sourceTree = "<group>"; };
 		D74649831D6666D7003302CD /* GDParallaxLeaderBoradTableViwCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDParallaxLeaderBoradTableViwCell.h; sourceTree = "<group>"; };
 		D74649841D6666D7003302CD /* GDParallaxLeaderBoradTableViwCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDParallaxLeaderBoradTableViwCell.m; sourceTree = "<group>"; };
+		D76F87901D702A8100FC6142 /* GDContentWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDContentWebViewController.h; sourceTree = "<group>"; };
+		D76F87911D702A8100FC6142 /* GDContentWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDContentWebViewController.m; sourceTree = "<group>"; };
+		D76F87931D706C7B00FC6142 /* GDContentDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDContentDataModel.h; sourceTree = "<group>"; };
+		D76F87941D706C7B00FC6142 /* GDContentDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDContentDataModel.m; sourceTree = "<group>"; };
 		D77D2ADF1D1535DC00C838D0 /* NSObject+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Log.h"; sourceTree = "<group>"; };
 		D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Log.m"; sourceTree = "<group>"; };
 		D77D2AE31D177CA200C838D0 /* GDHomeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDHomeManager.h; sourceTree = "<group>"; };
@@ -1158,6 +1164,8 @@
 			children = (
 				D74649681D65F1B0003302CD /* GDFavritesViewController.h */,
 				D74649691D65F1B0003302CD /* GDFavritesViewController.m */,
+				D76F87901D702A8100FC6142 /* GDContentWebViewController.h */,
+				D76F87911D702A8100FC6142 /* GDContentWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1169,6 +1177,8 @@
 				D74649751D65F3F2003302CD /* GDFavoritesDataMoel.m */,
 				D74649771D663870003302CD /* GDLeaderBoardDataModel.h */,
 				D74649781D663870003302CD /* GDLeaderBoardDataModel.m */,
+				D76F87931D706C7B00FC6142 /* GDContentDataModel.h */,
+				D76F87941D706C7B00FC6142 /* GDContentDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1769,6 +1779,7 @@
 				D7D984101D18E7340027FAF6 /* UIProgressView+AFNetworking.m in Sources */,
 				D7D9840F1D18E7340027FAF6 /* UIImageView+AFNetworking.m in Sources */,
 				D7D984021D18E7340027FAF6 /* AFHTTPRequestOperation.m in Sources */,
+				D76F87951D706C7B00FC6142 /* GDContentDataModel.m in Sources */,
 				D7D913011D586DA700CC2950 /* GDFooterTableViewCell.m in Sources */,
 				D72D2AD51D31763E00940A53 /* GDTableViewMondayCell.m in Sources */,
 				D7D187901D6228050084CA2F /* DBSphereView.m in Sources */,
@@ -1847,6 +1858,7 @@
 				D7866F9E1D1DB56800A0B1E0 /* GDCompositorDataModel.m in Sources */,
 				D7975C351D606A0600D66BE2 /* GDCompositorSecondTableViewCell.m in Sources */,
 				D7D984111D18E7340027FAF6 /* UIRefreshControl+AFNetworking.m in Sources */,
+				D76F87921D702A8100FC6142 /* GDContentWebViewController.m in Sources */,
 				D7D1877D1D60CDE00084CA2F /* GDMoreTableViewCell.m in Sources */,
 				D7D984031D18E7340027FAF6 /* AFHTTPRequestOperationManager.m in Sources */,
 				D71D98C61D45B961000DFED3 /* GDInformationController.m in Sources */,
