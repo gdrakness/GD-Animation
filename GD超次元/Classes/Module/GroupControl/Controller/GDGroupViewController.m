@@ -20,7 +20,7 @@
 #define BDWeather_KEY @"17IvzuqmKrK1cGwNL6VQebF9"
 #define BDWeather_URL @"http://api.map.baidu.com/telematics/v3/weather"
 
-#define textURL @"http://www.moeju.cn/api/newsdetail?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&id=752119&os=iOS&v=2.1.0"
+#define textURL @"http://api.moeju.cn/picture/special?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&gender=1&os=iOS&v=2.2.0"
 
 
 @implementation GDGroupViewController
@@ -43,7 +43,7 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
 //    NSDictionary *parameters = @{@"location":@"珠海",@"output":@"json",@"ak":BDWeather_KEY};
-
+    NSDictionary *parame = @{@"id":@"15725"};
     [LORequestManger GET:textURL parame:nil success:^(id response) {
         
         NSLog(@"%@",response);

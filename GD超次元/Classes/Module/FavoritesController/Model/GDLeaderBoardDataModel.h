@@ -14,7 +14,8 @@
 @property (nonatomic, assign) NSUInteger like;
 @property (nonatomic, assign) NSUInteger liked;
 @property (nonatomic, assign) NSUInteger count;
-@property (nonatomic, assign) NSUInteger id;
+@property (nonatomic, copy) NSString *postTime;
+@property (nonatomic, copy) NSString *id;
 @end
 
 @interface GDLeaderBoardDataModel : NSObject

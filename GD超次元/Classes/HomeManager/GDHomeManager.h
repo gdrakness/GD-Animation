@@ -62,8 +62,9 @@
                               success:(void(^)(GDFavoritesDataMoel *dataModel))success
                                 error:(void(^)(NSError *error))error;
 
-
+//排行榜
 -(void)getFindLeadeBoardRequestWithURL:(NSString *)url
+                                parame:(NSDictionary *)parame
                                success:(void(^)(GDLeaderBoardDataModel *dataModel))success
                                  error:(void(^)(NSError *error))error;
 @end

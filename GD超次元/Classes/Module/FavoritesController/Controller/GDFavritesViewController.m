@@ -16,6 +16,7 @@
 #import "GDParallaxTableViewCell.h"
 #import "GDVideoWebViewController.h"
 #import "GDContentWebViewController.h"
+#import "GDPictureViewController.h"
 
 @interface GDFavritesViewController ()<NewPagedFlowViewDelegate,NewPagedFlowViewDataSource,UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)NewPagedFlowView *pageFlowView;
@@ -39,7 +40,7 @@ static NSString *Identifier = @"GDFavritesViewController";
     self.navigationItem.titleView = imageView;
     
     [self setupTableView];
-    
+    [self setRefresh];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -55,7 +56,7 @@ static NSString *Identifier = @"GDFavritesViewController";
     [super viewDidDisappear:animated];
     [_pageFlowView stopTimer];
     [_pageFlowView removeFromSuperview];
-    [self.data removeAllObjects];
+//    [self.data removeAllObjects];
 //    [_pageControl removeFromSuperview];
 }
 
@@ -64,7 +65,21 @@ static NSString *Identifier = @"GDFavritesViewController";
     // Dispose of any resources that can be recreated.
 }
 
+-(void)setRefresh{
+    
+    __unsafe_unretained UITableView *tableView = self.tableView;
+    
+    tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        
+        [self getLeaderBoradDataIsMore:YES];
+    }];
+}
+
 -(void)getDataIsMore:(BOOL)isMore{
+    
+    if (isMore) {
+        [self.data removeAllObjects];
+    }
     
    [LORequestManger GET:PageFlowURL parame:nil success:^(id response) {
        
@@ -85,17 +100,29 @@ static NSString *Identifier = @"GDFavritesViewController";
 
 -(void)getLeaderBoradDataIsMore:(BOOL)isMore{
     
-    [[GDHomeManager shareInstance]getFindLeadeBoardRequestWithURL:nil success:^(GDLeaderBoardDataModel *dataModel) {
+    NSMutableDictionary *parame = [NSMutableDictionary dictionary];
+    
+    if (isMore) {
+        parame[@"lastId"] = self.LeaderData.lastObject.id;
+        parame[@"lastTime"] = self.LeaderData.lastObject.postTime;
+//        [self.LeaderData removeAllObjects];
+        
+    }else{
+        parame[@"gender"] = @"1";
+        parame[@"os"] = @"iOS";
+        parame[@"v"] = @"2.2.0";
+    }
+    
+    [[GDHomeManager shareInstance]getFindLeadeBoardRequestWithURL:nil parame:parame success:^(GDLeaderBoardDataModel *dataModel) {
         
         [self.LeaderData addObjectsFromArray:dataModel.data];
         [_tableView reloadData];
-//        NSLog(@"%@",dataModel.data);
+        //        NSLog(@"%@",dataModel.data);
+        [self.tableView.mj_footer endRefreshing];
     } error:^(NSError *error) {
         
     }];
 }
-
-
 
 -(void)prepareUI{
     
@@ -162,8 +189,17 @@ static NSString *Identifier = @"GDFavritesViewController";
     
     [cell setModel:cellRow];
     
-    
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    GDPictureViewController *pictureVC = [[GDPictureViewController alloc]init];
+    GDLeaderBoardRequestData *cellRow = self.LeaderData[indexPath.row];
+    pictureVC.getID = cellRow.id;
+    pictureVC.getPostTime = cellRow.postTime;
+    
+    [self.navigationController pushViewController:pictureVC animated:YES];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -186,7 +222,7 @@ static NSString *Identifier = @"GDFavritesViewController";
     
     GDVideoWebViewController *WebVC = [[GDVideoWebViewController alloc]init];
     GDContentWebViewController *ConVC = [[GDContentWebViewController alloc]init];
-    NSLog(@"%ld -- %@",(long)subIndex,subView);
+//    NSLog(@"%ld -- %@",(long)subIndex,subView);
     GDFaovritesRequestData *dataType = self.data[subIndex];
     if ([dataType.type isEqualToString:@"activity"]) {
         WebVC.url = dataType.url;

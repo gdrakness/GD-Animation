@@ -43,10 +43,16 @@ http://api.moeju.cn/startup/openscreen
 
 主界面
 http://api.moeju.cn/picture/special?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&v=2.1.0
+ 
+ http://api.moeju.cn/picture/special?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&lastId=15719&lastTime=1472123437&os=iOS&v=2.2.0
+ 
+ http://api.moeju.cn/picture/special?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&lastId=16007&lastTime=1472215538&os=iOS&v=2.2.0
 排行版
 http://www.moeju.cn/api/leaderboard?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&v=2.1.0
 
 http://www.moeju.cn/api/leaderboard?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&v=2.1.0
+
+ 
 
 绅士
 http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&themeId=13&v=2.1.0

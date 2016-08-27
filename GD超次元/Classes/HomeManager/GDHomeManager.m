@@ -253,12 +253,13 @@
 
 /***********************排行榜************************/
 -(void)getFindLeadeBoardRequestWithURL:(NSString *)url
+                                parame:(NSDictionary *)parame
                                success:(void(^)(GDLeaderBoardDataModel *dataModel))success
                                  error:(void(^)(NSError *error))error{
     
     self.success = success;
     self.error = error;
-    [LORequestManger GET:LeaderBoradURL parame:nil success:^(id response) {
+    [LORequestManger GET:PictureURL parame:parame success:^(id response) {
         
         [GDLeaderBoardDataModel mj_setupObjectClassInArray:^NSDictionary *{
             return@{

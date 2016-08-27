@@ -32,8 +32,8 @@
     
     NSMutableDictionary *parame = [NSMutableDictionary dictionary];
     parame[@"id"] = self.getID;
-    parame[@"&os"] = @"iOS";
-    parame[@"&v"] = @"2.1.0";
+    parame[@"os"] = @"iOS";
+    parame[@"v"] = @"2.1.0";
     [LORequestManger GET:requestURL parame:parame success:^(id response) {
         
         GDContentDataModel *dataModel = [GDContentDataModel mj_objectWithKeyValues:response];
