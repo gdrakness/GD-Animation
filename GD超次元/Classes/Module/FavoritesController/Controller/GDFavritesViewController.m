@@ -197,7 +197,6 @@ static NSString *Identifier = @"GDFavritesViewController";
     GDPictureViewController *pictureVC = [[GDPictureViewController alloc]init];
     GDLeaderBoardRequestData *cellRow = self.LeaderData[indexPath.row];
     pictureVC.getID = cellRow.id;
-    pictureVC.getPostTime = cellRow.postTime;
     
     [self.navigationController pushViewController:pictureVC animated:YES];
 }

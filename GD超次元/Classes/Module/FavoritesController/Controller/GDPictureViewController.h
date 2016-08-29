@@ -10,5 +10,4 @@
 
 @interface GDPictureViewController : UIViewController
 @property (nonatomic, copy) NSString *getID;
-@property (nonatomic, copy) NSString *getPostTime;
 @end
