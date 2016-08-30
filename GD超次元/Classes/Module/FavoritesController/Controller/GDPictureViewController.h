@@ -10,4 +10,6 @@
 
 @interface GDPictureViewController : UIViewController
 @property (nonatomic, copy) NSString *getID;
+@property(nonatomic,strong)UICollectionView *collectionView;
+@property(nonatomic,strong)NSIndexPath *currentIndexPath;
 @end

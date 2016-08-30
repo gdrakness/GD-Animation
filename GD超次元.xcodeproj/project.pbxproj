@@ -79,6 +79,7 @@
 		D76F879E1D7438A500FC6142 /* GDWaterfallPictureViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D76F879D1D7438A500FC6142 /* GDWaterfallPictureViewFlowLayout.m */; };
 		D76F87A11D74C5F800FC6142 /* GDCustomTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D76F87A01D74C5F800FC6142 /* GDCustomTransition.m */; };
 		D76F87A41D7561CF00FC6142 /* GDPictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76F87A31D7561CF00FC6142 /* GDPictureCollectionViewCell.m */; };
+		D76F87A71D75D05F00FC6142 /* GDCheckPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76F87A61D75D05F00FC6142 /* GDCheckPictureViewController.m */; };
 		D77D2AE11D1535DC00C838D0 /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */; };
 		D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE41D177CA200C838D0 /* GDHomeManager.m */; };
 		D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78039E21CD3BE56001AD14C /* GDNavigationViewController.m */; };
@@ -355,6 +356,8 @@
 		D76F87A01D74C5F800FC6142 /* GDCustomTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDCustomTransition.m; sourceTree = "<group>"; };
 		D76F87A21D7561CF00FC6142 /* GDPictureCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDPictureCollectionViewCell.h; sourceTree = "<group>"; };
 		D76F87A31D7561CF00FC6142 /* GDPictureCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDPictureCollectionViewCell.m; sourceTree = "<group>"; };
+		D76F87A51D75D05F00FC6142 /* GDCheckPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDCheckPictureViewController.h; sourceTree = "<group>"; };
+		D76F87A61D75D05F00FC6142 /* GDCheckPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDCheckPictureViewController.m; sourceTree = "<group>"; };
 		D77D2ADF1D1535DC00C838D0 /* NSObject+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Log.h"; sourceTree = "<group>"; };
 		D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Log.m"; sourceTree = "<group>"; };
 		D77D2AE31D177CA200C838D0 /* GDHomeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDHomeManager.h; sourceTree = "<group>"; };
@@ -1183,6 +1186,8 @@
 				D76F87911D702A8100FC6142 /* GDContentWebViewController.m */,
 				D76F87961D71AC7100FC6142 /* GDPictureViewController.h */,
 				D76F87971D71AC7100FC6142 /* GDPictureViewController.m */,
+				D76F87A51D75D05F00FC6142 /* GDCheckPictureViewController.h */,
+				D76F87A61D75D05F00FC6142 /* GDCheckPictureViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1890,6 +1895,7 @@
 				D76F87921D702A8100FC6142 /* GDContentWebViewController.m in Sources */,
 				D7D1877D1D60CDE00084CA2F /* GDMoreTableViewCell.m in Sources */,
 				D7D984031D18E7340027FAF6 /* AFHTTPRequestOperationManager.m in Sources */,
+				D76F87A71D75D05F00FC6142 /* GDCheckPictureViewController.m in Sources */,
 				D71D98C61D45B961000DFED3 /* GDInformationController.m in Sources */,
 				D7D912FB1D5798BE00CC2950 /* CEBaseInteractionController.m in Sources */,
 				D7D984061D18E7340027FAF6 /* AFSecurityPolicy.m in Sources */,

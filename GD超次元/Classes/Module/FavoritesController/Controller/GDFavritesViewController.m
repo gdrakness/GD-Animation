@@ -35,7 +35,7 @@ static NSString *Identifier = @"GDFavritesViewController";
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 20, 5, 65)];
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 20, 5, 60)];
     imageView.image = [UIImage imageNamed:@"new_logo"];
     self.navigationItem.titleView = imageView;
 

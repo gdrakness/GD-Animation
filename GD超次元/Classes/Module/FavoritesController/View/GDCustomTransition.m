@@ -8,6 +8,8 @@
 
 #import "GDCustomTransition.h"
 #import "GDPictureViewController.h"
+#import "GDCheckPictureViewController.h"
+#import "GDPictureCollectionViewCell.h"
 
 @interface GDCustomTransition ()
 @property (nonatomic, assign) TransitionType type;
@@ -38,10 +40,54 @@
 }
 
 -(void)pushAnimation:(id<UIViewControllerContextTransitioning>)transitionContext{
+    
     GDPictureViewController *fromeVC = (GDPictureViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    GDCheckPictureViewController *toVC = (GDCheckPictureViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    GDPictureCollectionViewCell *cell = (GDPictureCollectionViewCell *)[fromeVC.collectionView cellForItemAtIndexPath:fromeVC.currentIndexPath];
+    UIView *containerView = [transitionContext containerView];
+    UIView *tempView = [cell snapshotViewAfterScreenUpdates:NO];
+    tempView.frame = [cell convertRect:cell.contentView.bounds toView:containerView];
+    
+    cell.hidden = YES;
+    toVC.view.alpha = 0;
+    toVC.imageView.hidden = YES;
+    [containerView addSubview:toVC.view];
+    [containerView addSubview:tempView];
+    
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
+        tempView.frame = [toVC.imageView convertRect:toVC.imageView.bounds toView:containerView];
+        toVC.view.alpha = 1;
+    } completion:^(BOOL finished) {
+        tempView.hidden = NO;
+        toVC.imageView.hidden = NO;
+        [transitionContext completeTransition:YES];
+    }];
 }
 
 -(void)popAnimation:(id<UIViewControllerContextTransitioning>)transitionContext{
+    GDCheckPictureViewController *fromeVC = (GDCheckPictureViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    GDPictureViewController *toVC = (GDPictureViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    GDPictureCollectionViewCell *cell = (GDPictureCollectionViewCell *)[toVC.collectionView cellForItemAtIndexPath:toVC.currentIndexPath];
+    UIView *containerView = [transitionContext containerView];
+    UIView *tempView = containerView.subviews.lastObject;
     
+    cell.hidden = YES;
+    fromeVC.imageView.hidden = YES;
+    tempView.hidden = NO;
+    [containerView insertSubview:toVC.view atIndex:0];
+    
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
+        tempView.frame = [cell.contentView convertRect:cell.contentView.bounds toView:containerView];
+        fromeVC.view.alpha = 0;
+    } completion:^(BOOL finished) {
+        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+        if ([transitionContext transitionWasCancelled]) {
+            tempView.hidden = YES;
+            fromeVC.imageView.hidden = NO;
+        }else{
+            cell.hidden = NO;
+            [tempView removeFromSuperview];
+        }
+    }];
 }
 @end

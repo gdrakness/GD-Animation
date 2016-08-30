@@ -12,9 +12,9 @@
 #import "GDWaterfallPictureViewFlowLayout.h"
 #import "GDPictureCollectionViewCell.h"
 #import "UIImageView+WebCache.h"
+#import "GDCheckPictureViewController.h"
 
 @interface GDPictureViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,GDWaterfallPictureViewFlowLayoutDelegate>
-@property(nonatomic,strong)UICollectionView *collectionView;
 @property(nonatomic,strong)GDDetailsPictureDataModel *dataArray;
 @property(nonatomic,strong)UIProgressView *progress;
 @end
@@ -82,7 +82,6 @@ static NSString *identifier = @"GDPictureViewController";
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     GDPictureCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    cell.backgroundColor = blueColor;
     
     _progress = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
 
@@ -90,27 +89,32 @@ static NSString *identifier = @"GDPictureViewController";
     __weak typeof(self) weakSelf=self;
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:_dataArray.images[indexPath.item]] placeholderImage:nil options:SDWebImageCacheMemoryOnly progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
+        cell.backgroundColor = blueColor;
         weakSelf.progress.frame = CGRectMake(5, 0, cell.imageView.width - 5, 5);
         weakSelf.progress.center = cell.imageView.center;
         CGFloat currentProgress = (CGFloat)receivedSize / (CGFloat)expectedSize;
         weakSelf.progress.progress = currentProgress;
         [cell.imageView addSubview:weakSelf.progress];
-        NSLog(@"%f",currentProgress);
         
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
        
         [weakSelf.progress removeFromSuperview];
-        [weakSelf.progress removeFromSuperview];
-
+        cell.backgroundColor = [UIColor clearColor];
 
     }];
-    
+    [_progress removeFromSuperview];
     [cell sizeToFit];
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
+    GDCheckPictureViewController *toVC = [[GDCheckPictureViewController alloc]init];
+    GDPictureCollectionViewCell *cell = (GDPictureCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+//    [toVC.view addSubview:cell.imageView];
+    _currentIndexPath = indexPath;
+    self.navigationController.delegate = toVC;
+    [self.navigationController pushViewController:toVC animated:YES];
     
 }
 
