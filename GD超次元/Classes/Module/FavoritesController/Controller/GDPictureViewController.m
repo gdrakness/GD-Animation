@@ -11,10 +11,12 @@
 #import "GDDetailsPictureDataModel.h"
 #import "GDWaterfallPictureViewFlowLayout.h"
 #import "GDPictureCollectionViewCell.h"
+#import "UIImageView+WebCache.h"
 
 @interface GDPictureViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,GDWaterfallPictureViewFlowLayoutDelegate>
 @property(nonatomic,strong)UICollectionView *collectionView;
 @property(nonatomic,strong)GDDetailsPictureDataModel *dataArray;
+@property(nonatomic,strong)UIProgressView *progress;
 @end
 
 @implementation GDPictureViewController
@@ -42,13 +44,11 @@ static NSString *identifier = @"GDPictureViewController";
         
         GDDetailsPictureDataModel *dataModel = [GDDetailsPictureDataModel mj_objectWithKeyValues:response];
         _dataArray = dataModel;
-        NSLog(@"%@",_dataArray);
+//        NSLog(@"%@",_dataArray);
         [self.collectionView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
-
-    
 }
 
 
@@ -82,7 +82,29 @@ static NSString *identifier = @"GDPictureViewController";
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     GDPictureCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:_dataArray.images[indexPath.item]]];
+    cell.backgroundColor = blueColor;
+    
+    _progress = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
+
+    
+    __weak typeof(self) weakSelf=self;
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:_dataArray.images[indexPath.item]] placeholderImage:nil options:SDWebImageCacheMemoryOnly progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        
+        weakSelf.progress.frame = CGRectMake(5, 0, cell.imageView.width - 5, 5);
+        weakSelf.progress.center = cell.imageView.center;
+        CGFloat currentProgress = (CGFloat)receivedSize / (CGFloat)expectedSize;
+        weakSelf.progress.progress = currentProgress;
+        [cell.imageView addSubview:weakSelf.progress];
+        NSLog(@"%f",currentProgress);
+        
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+       
+        [weakSelf.progress removeFromSuperview];
+        [weakSelf.progress removeFromSuperview];
+
+
+    }];
+    
     [cell sizeToFit];
     return cell;
 }

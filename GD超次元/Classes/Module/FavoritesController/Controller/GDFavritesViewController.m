@@ -38,7 +38,7 @@ static NSString *Identifier = @"GDFavritesViewController";
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 20, 5, 65)];
     imageView.image = [UIImage imageNamed:@"new_logo"];
     self.navigationItem.titleView = imageView;
-    
+
     [self setupTableView];
     [self setRefresh];
 }
@@ -47,7 +47,7 @@ static NSString *Identifier = @"GDFavritesViewController";
     [super viewDidAppear:animated];
     
     [self getDataIsMore:NO];
-    [self getLeaderBoradDataIsMore:NO];
+
 //        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(prepareUI) userInfo:nil repeats:YES];
 //        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
@@ -55,7 +55,7 @@ static NSString *Identifier = @"GDFavritesViewController";
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     [_pageFlowView stopTimer];
-    [_pageFlowView removeFromSuperview];
+//    [_pageFlowView removeFromSuperview];
 //    [self.data removeAllObjects];
 //    [_pageControl removeFromSuperview];
 }
@@ -90,12 +90,14 @@ static NSString *Identifier = @"GDFavritesViewController";
        }];
        GDFavoritesDataMoel *dataMoel = [GDFavoritesDataMoel mj_objectWithKeyValues:response];
        [self.data addObjectsFromArray:dataMoel.data];
-//       NSLog(@"%@",dataMoel.data);
+       NSLog(@"%@",dataMoel.data);
        [self prepareUI];
-       
+
    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
        
    }];
+    
+
 }
 
 -(void)getLeaderBoradDataIsMore:(BOOL)isMore{
@@ -256,11 +258,12 @@ static NSString *Identifier = @"GDFavritesViewController";
 
 -(NSMutableArray<GDFaovritesRequestData *> *)data{
     if (_data != nil) {
+        
         return _data;
     }
     //实例化
     _data = [NSMutableArray array];
-    
+
     return _data;
 }
 
@@ -270,7 +273,8 @@ static NSString *Identifier = @"GDFavritesViewController";
     }
     //实例化
     _LeaderData = [NSMutableArray array];
-    
+    [self getLeaderBoradDataIsMore:NO];
+
     return _LeaderData;
 }
 /*
