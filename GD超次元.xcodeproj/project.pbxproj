@@ -77,6 +77,8 @@
 		D76F87981D71AC7100FC6142 /* GDPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76F87971D71AC7100FC6142 /* GDPictureViewController.m */; };
 		D76F879B1D71FE6200FC6142 /* GDDetailsPictureDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D76F879A1D71FE6200FC6142 /* GDDetailsPictureDataModel.m */; };
 		D76F879E1D7438A500FC6142 /* GDWaterfallPictureViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D76F879D1D7438A500FC6142 /* GDWaterfallPictureViewFlowLayout.m */; };
+		D76F87A11D74C5F800FC6142 /* GDCustomTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D76F87A01D74C5F800FC6142 /* GDCustomTransition.m */; };
+		D76F87A41D7561CF00FC6142 /* GDPictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D76F87A31D7561CF00FC6142 /* GDPictureCollectionViewCell.m */; };
 		D77D2AE11D1535DC00C838D0 /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */; };
 		D77D2AE51D177CA200C838D0 /* GDHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D77D2AE41D177CA200C838D0 /* GDHomeManager.m */; };
 		D78039E31CD3BE56001AD14C /* GDNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78039E21CD3BE56001AD14C /* GDNavigationViewController.m */; };
@@ -349,6 +351,10 @@
 		D76F879A1D71FE6200FC6142 /* GDDetailsPictureDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDetailsPictureDataModel.m; sourceTree = "<group>"; };
 		D76F879C1D7438A500FC6142 /* GDWaterfallPictureViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDWaterfallPictureViewFlowLayout.h; sourceTree = "<group>"; };
 		D76F879D1D7438A500FC6142 /* GDWaterfallPictureViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDWaterfallPictureViewFlowLayout.m; sourceTree = "<group>"; };
+		D76F879F1D74C5F800FC6142 /* GDCustomTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDCustomTransition.h; sourceTree = "<group>"; };
+		D76F87A01D74C5F800FC6142 /* GDCustomTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDCustomTransition.m; sourceTree = "<group>"; };
+		D76F87A21D7561CF00FC6142 /* GDPictureCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDPictureCollectionViewCell.h; sourceTree = "<group>"; };
+		D76F87A31D7561CF00FC6142 /* GDPictureCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDPictureCollectionViewCell.m; sourceTree = "<group>"; };
 		D77D2ADF1D1535DC00C838D0 /* NSObject+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Log.h"; sourceTree = "<group>"; };
 		D77D2AE01D1535DC00C838D0 /* NSObject+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Log.m"; sourceTree = "<group>"; };
 		D77D2AE31D177CA200C838D0 /* GDHomeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDHomeManager.h; sourceTree = "<group>"; };
@@ -1205,6 +1211,10 @@
 				D74649841D6666D7003302CD /* GDParallaxLeaderBoradTableViwCell.m */,
 				D76F879C1D7438A500FC6142 /* GDWaterfallPictureViewFlowLayout.h */,
 				D76F879D1D7438A500FC6142 /* GDWaterfallPictureViewFlowLayout.m */,
+				D76F879F1D74C5F800FC6142 /* GDCustomTransition.h */,
+				D76F87A01D74C5F800FC6142 /* GDCustomTransition.m */,
+				D76F87A21D7561CF00FC6142 /* GDPictureCollectionViewCell.h */,
+				D76F87A31D7561CF00FC6142 /* GDPictureCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1797,6 +1807,7 @@
 				D76F87951D706C7B00FC6142 /* GDContentDataModel.m in Sources */,
 				D7D913011D586DA700CC2950 /* GDFooterTableViewCell.m in Sources */,
 				D72D2AD51D31763E00940A53 /* GDTableViewMondayCell.m in Sources */,
+				D76F87A11D74C5F800FC6142 /* GDCustomTransition.m in Sources */,
 				D7D187901D6228050084CA2F /* DBSphereView.m in Sources */,
 				D716569C1CCE918E003CE4B8 /* GDMainViewController.m in Sources */,
 				D746495C1D645F73003302CD /* GDCustomShareView.m in Sources */,
@@ -1849,6 +1860,7 @@
 				D7D912F81D5798BE00CC2950 /* CEPortalAnimationController.m in Sources */,
 				D7D984071D18E7340027FAF6 /* AFURLConnectionOperation.m in Sources */,
 				D7D984091D18E7340027FAF6 /* AFURLResponseSerialization.m in Sources */,
+				D76F87A41D7561CF00FC6142 /* GDPictureCollectionViewCell.m in Sources */,
 				D7D983A41D18DFC50027FAF6 /* LORequestManger.m in Sources */,
 				D71D98BD1D449EF9000DFED3 /* GDTableViewFridayCell.m in Sources */,
 				D7D912F21D5798BE00CC2950 /* CECubeAnimationController.m in Sources */,

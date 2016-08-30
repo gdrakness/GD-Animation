@@ -17,13 +17,13 @@
 @interface GDWaterfallPictureViewFlowLayout : UICollectionViewFlowLayout
 
 //列数
-@property (nonatomic, assign) NSInteger cloumnNumber;
+@property (nonatomic, assign) NSInteger columnNumber;
 
 //间隔
 @property (nonatomic, assign) CGFloat padding;
 
 //集合视图整体边框
-@property (nonatomic, assign) UIEdgeInsets degIndsets;
+@property (nonatomic, assign) UIEdgeInsets edgIndsets;
 
 @property (nonatomic, weak) id<GDWaterfallPictureViewFlowLayoutDelegate> delegate;
 @end

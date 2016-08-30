@@ -9,9 +9,12 @@
 #import "GDPictureViewController.h"
 #import "LORequestManger.h"
 #import "GDDetailsPictureDataModel.h"
+#import "GDWaterfallPictureViewFlowLayout.h"
+#import "GDPictureCollectionViewCell.h"
 
-@interface GDPictureViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface GDPictureViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,GDWaterfallPictureViewFlowLayoutDelegate>
 @property(nonatomic,strong)UICollectionView *collectionView;
+@property(nonatomic,strong)GDDetailsPictureDataModel *dataArray;
 @end
 
 @implementation GDPictureViewController
@@ -20,8 +23,9 @@ static NSString *identifier = @"GDPictureViewController";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self addCollectionView];
     [self getFindDataIsMore];
+    [self addCollectionView];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,23 +41,30 @@ static NSString *identifier = @"GDPictureViewController";
     [LORequestManger GET:DetailsPictureURL parame:parame success:^(id response) {
         
         GDDetailsPictureDataModel *dataModel = [GDDetailsPictureDataModel mj_objectWithKeyValues:response];
-        NSLog(@"%@",dataModel);
+        _dataArray = dataModel;
+        NSLog(@"%@",_dataArray);
+        [self.collectionView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
+
     
 }
 
 
 -(void)addCollectionView{
 
-    UICollectionViewFlowLayout *flowLaytout = [[UICollectionViewFlowLayout alloc]init];
+    GDWaterfallPictureViewFlowLayout *laytout = [[GDWaterfallPictureViewFlowLayout alloc]init];
+    laytout.columnNumber = 3;
+    laytout.delegate = self;
+    laytout.padding = 5;
+    laytout.edgIndsets = UIEdgeInsetsMake(5, 5, 20, 5);
     
-    _collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:flowLaytout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:laytout];
     _collectionView.backgroundColor = [UIColor colorWithRed:208 / 255.0f green:208 / 255.0f blue:208 / 255.0f alpha:0.5];
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
-    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:identifier];
+    [_collectionView registerClass:[GDPictureCollectionViewCell class] forCellWithReuseIdentifier:identifier];
     [self.view addSubview:_collectionView];
 }
 
@@ -64,19 +75,27 @@ static NSString *identifier = @"GDPictureViewController";
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return 20;
+    return _dataArray.images.count;
 }
+
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    
+    GDPictureCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:_dataArray.images[indexPath.item]]];
+    [cell sizeToFit];
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     
+}
+
+-(CGFloat)WaterfallPictureViewHeightForItemAtIndex:(NSIndexPath *)index{
+    
+        return arc4random_uniform(20) + 100;
+//    return 120;
 }
 
 @end
