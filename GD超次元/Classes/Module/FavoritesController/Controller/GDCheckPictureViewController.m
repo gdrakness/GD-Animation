@@ -9,7 +9,7 @@
 #import "GDCheckPictureViewController.h"
 #import "GDCustomTransition.h"
 
-@interface GDCheckPictureViewController ()
+@interface GDCheckPictureViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @end
 
@@ -19,7 +19,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = [UIColor clearColor];
-    _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 74, CGRectGetWidth(self.view.frame) - 20, 400)];
+    _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 74, CGRectGetWidth(self.view.frame) - 20, 400)];
     [self.view addSubview:_imageView];
 }
 
@@ -32,6 +32,8 @@
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
     return [[GDCustomTransition alloc] initWithTransitionType:operation == UINavigationControllerOperationPush? push :pop];
 }
+
+
 /*
 #pragma mark - Navigation
 

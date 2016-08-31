@@ -13,6 +13,7 @@
 
 @interface GDCustomTransition ()
 @property (nonatomic, assign) TransitionType type;
+@property(nonatomic,strong)UIView *bgView;
 @end
 
 @implementation GDCustomTransition
@@ -54,7 +55,25 @@
     [containerView addSubview:toVC.view];
     [containerView addSubview:tempView];
     
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
+//    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
+//        tempView.frame = [toVC.imageView convertRect:toVC.imageView.bounds toView:containerView];
+//        toVC.view.alpha = 1;
+//    } completion:^(BOOL finished) {
+//        tempView.hidden = YES;
+//        toVC.imageView.hidden = NO;
+//        [transitionContext completeTransition:YES];
+//    }];
+    
+    CGFloat timeInterval = .52f;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:timeInterval-.3f animations:^{
+            self.bgView.alpha = 1;
+            self.bgView.backgroundColor = [UIColor blackColor];
+        }];
+    });
+    
+    [UIView animateWithDuration:timeInterval delay:0 usingSpringWithDamping:.52f initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         tempView.frame = [toVC.imageView convertRect:toVC.imageView.bounds toView:containerView];
         toVC.view.alpha = 1;
     } completion:^(BOOL finished) {
@@ -76,7 +95,21 @@
     tempView.hidden = NO;
     [containerView insertSubview:toVC.view atIndex:0];
     
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
+//    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
+//        tempView.frame = [cell.contentView convertRect:cell.contentView.bounds toView:containerView];
+//        fromeVC.view.alpha = 0;
+//    } completion:^(BOOL finished) {
+//        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+//        if ([transitionContext transitionWasCancelled]) {
+//            tempView.hidden = YES;
+//            fromeVC.imageView.hidden = NO;
+//        }else{
+//            cell.hidden = NO;
+//            [tempView removeFromSuperview];
+//        }
+//    }];
+    
+    [UIView animateWithDuration:.5f delay:0 usingSpringWithDamping:.6f initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         tempView.frame = [cell.contentView convertRect:cell.contentView.bounds toView:containerView];
         fromeVC.view.alpha = 0;
     } completion:^(BOOL finished) {
@@ -88,6 +121,7 @@
             cell.hidden = NO;
             [tempView removeFromSuperview];
         }
+
     }];
 }
 @end

@@ -61,7 +61,7 @@ static NSString *identifier = @"GDPictureViewController";
     laytout.edgIndsets = UIEdgeInsetsMake(5, 5, 20, 5);
     
     _collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:laytout];
-    _collectionView.backgroundColor = [UIColor colorWithRed:208 / 255.0f green:208 / 255.0f blue:208 / 255.0f alpha:0.5];
+    _collectionView.backgroundColor = [UIColor whiteColor];
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
     [_collectionView registerClass:[GDPictureCollectionViewCell class] forCellWithReuseIdentifier:identifier];
