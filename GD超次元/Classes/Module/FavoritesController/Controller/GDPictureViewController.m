@@ -16,7 +16,8 @@
 
 @interface GDPictureViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,GDWaterfallPictureViewFlowLayoutDelegate>
 @property(nonatomic,strong)GDDetailsPictureDataModel *dataArray;
-@property(nonatomic,strong)UIProgressView *progress;
+@property(nonatomic,assign)NSInteger changeIndexPath;
+
 @end
 
 @implementation GDPictureViewController
@@ -27,8 +28,12 @@ static NSString *identifier = @"GDPictureViewController";
     // Do any additional setup after loading the view.
     [self getFindDataIsMore];
     [self addCollectionView];
-
+    
+    self.navigationItem.title = _titleName;
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:blueColor,NSForegroundColorAttributeName, nil]];
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -83,40 +88,55 @@ static NSString *identifier = @"GDPictureViewController";
     
     GDPictureCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    _progress = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
-
-    
-    __weak typeof(self) weakSelf=self;
+    UIProgressView *progress = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:_dataArray.images[indexPath.item]] placeholderImage:nil options:SDWebImageCacheMemoryOnly progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
         cell.backgroundColor = blueColor;
-        weakSelf.progress.frame = CGRectMake(5, 0, cell.imageView.width - 5, 5);
-        weakSelf.progress.center = cell.imageView.center;
+        progress.frame = CGRectMake(5, 0, cell.imageView.width - 5, 5);
+        progress.center = cell.imageView.center;
         CGFloat currentProgress = (CGFloat)receivedSize / (CGFloat)expectedSize;
-        weakSelf.progress.progress = currentProgress;
-        [cell.imageView addSubview:weakSelf.progress];
+        [progress setProgress:currentProgress];
+        [cell.contentView addSubview:progress];
         
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
        
-        [weakSelf.progress removeFromSuperview];
+//        [progress removeFromSuperview];
+        while ([progress.subviews lastObject] != nil) {
+            [(UIView *)[progress.subviews lastObject] removeFromSuperview];
+        }
         cell.backgroundColor = [UIColor clearColor];
 
     }];
-    [_progress removeFromSuperview];
+    
     [cell sizeToFit];
+    
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     GDCheckPictureViewController *toVC = [[GDCheckPictureViewController alloc]init];
-    GDPictureCollectionViewCell *cell = (GDPictureCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+//    GDPictureCollectionViewCell *cell = (GDPictureCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
 //    [toVC.view addSubview:cell.imageView];
-    _currentIndexPath = indexPath;
+    [toVC.pictureArray addObjectsFromArray:_dataArray.images];
+    toVC.currentIndexPath = indexPath.item;
+//    _currentIndexPath = indexPath;
+    toVC.indexPathBlock = ^(NSInteger indexPath){
+        _changeIndexPath = indexPath;
+        NSLog(@"change = %ld",(long)_changeIndexPath);
+    };
+    
+    
+    
+    NSLog(@"%ld",(long)_currentIndexPath.item);
+//    [self.collectionView scrollToItemAtIndexPath:indexpath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    
     self.navigationController.delegate = toVC;
     [self.navigationController pushViewController:toVC animated:YES];
     
 }
+
+
 
 -(CGFloat)WaterfallPictureViewHeightForItemAtIndex:(NSIndexPath *)index{
     

@@ -90,8 +90,8 @@ static NSString *Identifier = @"GDFavritesViewController";
        }];
        GDFavoritesDataMoel *dataMoel = [GDFavoritesDataMoel mj_objectWithKeyValues:response];
        [self.data addObjectsFromArray:dataMoel.data];
-       NSLog(@"%@",dataMoel.data);
-       [self prepareUI];
+//       NSLog(@"%@",dataMoel.data);
+//       [self prepareUI];
 
    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
        
@@ -199,7 +199,7 @@ static NSString *Identifier = @"GDFavritesViewController";
     GDPictureViewController *pictureVC = [[GDPictureViewController alloc]init];
     GDLeaderBoardRequestData *cellRow = self.LeaderData[indexPath.row];
     pictureVC.getID = cellRow.id;
-    
+    pictureVC.titleName = cellRow.title;
     [self.navigationController pushViewController:pictureVC animated:YES];
 }
 

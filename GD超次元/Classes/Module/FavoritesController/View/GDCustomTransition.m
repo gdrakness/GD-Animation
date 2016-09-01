@@ -77,7 +77,7 @@
         tempView.frame = [toVC.imageView convertRect:toVC.imageView.bounds toView:containerView];
         toVC.view.alpha = 1;
     } completion:^(BOOL finished) {
-        tempView.hidden = NO;
+        tempView.hidden = YES;
         toVC.imageView.hidden = NO;
         [transitionContext completeTransition:YES];
     }];

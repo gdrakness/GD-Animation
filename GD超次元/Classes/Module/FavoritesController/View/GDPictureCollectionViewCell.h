@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "GDDetailsPictureDataModel.h"
+#import "GDDetailsPictureDataModel.h"
 
 @interface GDPictureCollectionViewCell : UICollectionViewCell
 @property(nonatomic,strong)UIImageView *imageView;
-
+-(void)setModel:(GDDetailsPictureDataModel *)model indexPath:(NSIndexPath *)indexPath;
 @end

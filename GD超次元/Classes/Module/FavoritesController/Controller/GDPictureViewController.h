@@ -12,4 +12,5 @@
 @property (nonatomic, copy) NSString *getID;
 @property(nonatomic,strong)UICollectionView *collectionView;
 @property(nonatomic,strong)NSIndexPath *currentIndexPath;
+@property(nonatomic,copy)NSString *titleName;
 @end
