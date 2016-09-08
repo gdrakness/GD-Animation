@@ -37,9 +37,9 @@ static NSString *identifier = @"GDSearchViewController";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self prepareUploadButton];
     [self getDataIsMore:NO];
-    
+    [self.view setFrame:CGRectMake(0,[UIScreen mainScreen].bounds.size.height - 62, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"搜索" style:UIBarButtonItemStylePlain target:self action:nil];
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor darkGrayColor]];
@@ -58,6 +58,7 @@ static NSString *identifier = @"GDSearchViewController";
 -(void)viewWillAppear:(BOOL)animated{
     [sphereView timerStart];
     [self prepareSearchBar];
+    [self prepareUploadButton];
 
 }
 

@@ -15,5 +15,5 @@
 
 @interface GDSearchDataModel : NSObject
 @property(nonatomic,copy)NSString *status;
-@property(nonatomic,strong) NSArray <GDSearchRequestData *> *data;
+@property(nonatomic,strong) NSMutableArray <GDSearchRequestData *> *data;
 @end

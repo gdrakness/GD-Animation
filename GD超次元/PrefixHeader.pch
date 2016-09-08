@@ -113,5 +113,6 @@ http://api.moeju.cn/picture/imageList?id=15251
 #import <MJExtension.h>
 #import "MJRefresh.h"
 #import "SVProgressHUD.h"
+#import "CoreConst.h"
 
 #import "GDHomeManager.h"

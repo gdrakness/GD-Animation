@@ -13,6 +13,7 @@
 #import "GDPictureCollectionViewCell.h"
 #import "UIImageView+WebCache.h"
 #import "GDCheckPictureViewController.h"
+#import "GDProgressView.h"
 
 @interface GDPictureViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,GDWaterfallPictureViewFlowLayoutDelegate>
 @property(nonatomic,strong)GDDetailsPictureDataModel *dataArray;
@@ -28,12 +29,15 @@ static NSString *identifier = @"GDPictureViewController";
     // Do any additional setup after loading the view.
     [self getFindDataIsMore];
     [self addCollectionView];
-    
+
     self.navigationItem.title = _titleName;
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:blueColor,NSForegroundColorAttributeName, nil]];
 }
 
-
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+//    self.view.frame = [UIScreen mainScreen].bounds;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -63,10 +67,10 @@ static NSString *identifier = @"GDPictureViewController";
     laytout.columnNumber = 3;
     laytout.delegate = self;
     laytout.padding = 5;
-    laytout.edgIndsets = UIEdgeInsetsMake(5, 5, 20, 5);
+    laytout.edgIndsets = UIEdgeInsetsMake(5, 5, 65, 5);
     
-    _collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:laytout];
-    _collectionView.backgroundColor = [UIColor whiteColor];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) collectionViewLayout:laytout];
+    _collectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
     [_collectionView registerClass:[GDPictureCollectionViewCell class] forCellWithReuseIdentifier:identifier];
@@ -88,12 +92,12 @@ static NSString *identifier = @"GDPictureViewController";
     
     GDPictureCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    UIProgressView *progress = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
+     GDProgressView *progress = [[GDProgressView alloc]init];
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:_dataArray.images[indexPath.item]] placeholderImage:nil options:SDWebImageCacheMemoryOnly progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
         cell.backgroundColor = blueColor;
-        progress.frame = CGRectMake(5, 0, cell.imageView.width - 5, 5);
-        progress.center = cell.imageView.center;
+        progress.frame = CGRectMake(cell.imageView.width * 0.5 - 20, cell.imageView.height * 0.5 - 20, 40, 40);
+//        progress.center = cell.imageView.center;
         CGFloat currentProgress = (CGFloat)receivedSize / (CGFloat)expectedSize;
         [progress setProgress:currentProgress];
         [cell.contentView addSubview:progress];
@@ -116,19 +120,17 @@ static NSString *identifier = @"GDPictureViewController";
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     GDCheckPictureViewController *toVC = [[GDCheckPictureViewController alloc]init];
-//    GDPictureCollectionViewCell *cell = (GDPictureCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-//    [toVC.view addSubview:cell.imageView];
     [toVC.pictureArray addObjectsFromArray:_dataArray.images];
     toVC.currentIndexPath = indexPath.item;
 //    _currentIndexPath = indexPath;
     toVC.indexPathBlock = ^(NSInteger indexPath){
         _changeIndexPath = indexPath;
-        NSLog(@"change = %ld",(long)_changeIndexPath);
+//        NSLog(@"change = %ld",(long)_changeIndexPath);
     };
     
     
     
-    NSLog(@"%ld",(long)_currentIndexPath.item);
+//    NSLog(@"%ld",(long)_currentIndexPath.item);
 //    [self.collectionView scrollToItemAtIndexPath:indexpath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     
     self.navigationController.delegate = toVC;

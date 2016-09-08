@@ -13,4 +13,5 @@
 -(void)addRoundedCorners:(UIRectCorner)corners withRadii:(CGSize)radii;
 -(CALayer*)maskForRoundedCorners:(UIRectCorner)corners withRadii:(CGSize)radii;
 
++(CGRect)frameWithW:(CGFloat)w h:(CGFloat)h center:(CGPoint)center;
 @end

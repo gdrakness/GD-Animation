@@ -35,7 +35,7 @@
             const char *name = ivar_getName(var);
             // 4.成员变量名转化成oc字符串
             NSString *varName = [NSString stringWithUTF8String:name];
-            // 5.获得成员变量对应的值
+//             5.获得成员变量对应的值
             id value = [self valueForKey:varName];
             [resultStr appendFormat:@"\t%@ = %@;\n", varName, value];
         }
