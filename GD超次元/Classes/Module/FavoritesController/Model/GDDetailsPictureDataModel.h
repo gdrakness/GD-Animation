@@ -20,4 +20,8 @@
 @property (nonatomic, assign) NSUInteger like;
 @property (nonatomic, assign) NSUInteger liked;
 @property(nonatomic,strong)NSMutableArray *images;
+
+-(BOOL)readLocalImage;
+
+-(void)saveImageToLocal;
 @end

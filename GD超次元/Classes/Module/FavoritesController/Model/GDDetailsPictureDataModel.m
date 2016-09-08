@@ -7,7 +7,18 @@
 //
 
 #import "GDDetailsPictureDataModel.h"
+#import "CoreArchive.h"
 
 @implementation GDDetailsPictureDataModel
 
+-(BOOL)readLocalImage{
+    
+    return [CoreArchive boolForKey:[NSString stringWithFormat:@"%@",self.fileName]];
+}
+
+-(void)saveImageToLocal{
+    
+    [CoreArchive setBool:YES key:[NSString stringWithFormat:@"%@",self.fileName]];
+
+}
 @end

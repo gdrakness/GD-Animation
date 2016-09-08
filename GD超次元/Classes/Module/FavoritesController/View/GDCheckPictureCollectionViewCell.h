@@ -15,4 +15,7 @@
 }
 @property(nonatomic,strong)UIImageView *imageView;
 @property (nonatomic, copy) void (^itemViewFullBlock)();
+
+-(void)save:(void(^)())ItemImageSaveCompleteBlock failBlock:(void(^)())failBlock;
+
 @end

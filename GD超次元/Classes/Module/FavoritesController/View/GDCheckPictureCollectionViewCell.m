@@ -8,6 +8,7 @@
 
 #import "GDCheckPictureCollectionViewCell.h"
 #import "UIView+Roundify.h"
+#import "UIImage+Extend.h"
 
 @interface GDCheckPictureCollectionViewCell ()<UIScrollViewDelegate>{
     CGFloat _zoomScale;
@@ -185,5 +186,7 @@
     
     return zoomRect;
 }
+
+
 
 @end

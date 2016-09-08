@@ -53,7 +53,7 @@ static NSString *identifier = @"GDPictureViewController";
         
         GDDetailsPictureDataModel *dataModel = [GDDetailsPictureDataModel mj_objectWithKeyValues:response];
         _dataArray = dataModel;
-//        NSLog(@"%@",_dataArray);
+        NSLog(@"%@",_dataArray);
         [self.collectionView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         

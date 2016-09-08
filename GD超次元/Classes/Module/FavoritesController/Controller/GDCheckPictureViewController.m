@@ -11,6 +11,10 @@
 #import "GDCustomTransition.h"
 #import "GDCheckPictureCollectionViewCell.h"
 #import "GDProgressView.h"
+#import "GDDetailsPictureDataModel.h"
+#import "CoreSVP.h"
+#import "UIImage+Extend.h"
+#import "ZBFallenBricksAnimator.h"
 
 @interface GDCheckPictureViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong)UICollectionView *collectionView;
@@ -19,6 +23,9 @@
 @property(nonatomic,strong)UILabel *titleLab;
 @property(nonatomic,strong)UIButton *backBtn;
 @property(nonatomic,strong)UIButton *saveBtn;
+@property (nonatomic, assign) BOOL hasImage;
+@property (nonatomic, weak) GDCheckPictureCollectionViewCell *currentPictureURL;
+@property(nonatomic,strong)UIImageView *currentPicture;
 @end
 
 @implementation GDCheckPictureViewController
@@ -58,7 +65,7 @@ static NSString *Identifier = @"GDCheckPictureViewController";
     
     self.navigationController.navigationBar.hidden = YES;
     self.view.backgroundColor = [UIColor whiteColor];
-    
+//    self.navigationController.delegate = self;
     [self.view addSubview:self.collectionView];
     [self.collectionView reloadData];
     
@@ -99,12 +106,46 @@ static NSString *Identifier = @"GDCheckPictureViewController";
 
 -(void)savePictureAction:(id)send{
     
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.pictureArray[_currentIndexPath]]];
+    UIImage *image = [UIImage imageWithData:data];
+    [CoreSVP showSVPWithType:CoreSVPTypeLoadingInterface Msg:@"图片保存中..." duration:1.0f allowEdit:NO beginBlock:nil completeBlock:nil];
+    
+    [self saveImageToPhotos:image];
+    
+    if (!_hasImage) {
+        [CoreSVP showSVPWithType:CoreSVPTypeError Msg:@"无图片数据" duration:1.0f allowEdit:NO beginBlock:nil completeBlock:nil];
+        return;
+    }
+//    if ([itemModel readLocalImage]) {
+//        [CoreSVP showSVPWithType:CoreSVPTypeInfo Msg:@"图片已存在" duration:1.0f allowEdit:NO beginBlock:nil completeBlock:nil];
+//    }else{
+}
+
+- (void)saveImageToPhotos:(UIImage*)savedImage{
+    UIImageWriteToSavedPhotosAlbum(savedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
     
 }
 
+- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo{
+    
+    if (error != NULL) {
+       [CoreSVP showSVPWithType:CoreSVPTypeError Msg:@"保存失败" duration:1.0f allowEdit:NO beginBlock:nil completeBlock:nil];
+    }else{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [CoreSVP showSVPWithType:CoreSVPTypeSuccess Msg:@"保存成功" duration:1.0f allowEdit:NO beginBlock:nil completeBlock:nil];
+        });
+    }
+}
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
-    return [[GDCustomTransition alloc] initWithTransitionType:operation == UINavigationControllerOperationPush? push :pop];
+
+        NSObject <UIViewControllerAnimatedTransitioning> *animator;
+        // create
+        animator = [[ZBFallenBricksAnimator alloc] init];
+        return animator;
+    
+//    return [[GDCustomTransition alloc] initWithTransitionType:operation == UINavigationControllerOperationPush? push :pop];
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -123,6 +164,7 @@ static NSString *Identifier = @"GDCheckPictureViewController";
     GDCheckPictureCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:Identifier forIndexPath:indexPath];
 //    _imageView = [[UIImageView alloc]initWithFrame:self.view.bounds];
     cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.currentPicture = [self.pictureArray objectAtIndex:_currentIndexPath];
     
     GDProgressView *progress = [[GDProgressView alloc]init];
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:_pictureArray[indexPath.item]] placeholderImage:nil options:SDWebImageCacheMemoryOnly progress:^(NSInteger receivedSize, NSInteger expectedSize) {
@@ -135,10 +177,17 @@ static NSString *Identifier = @"GDCheckPictureViewController";
         
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
+        self.hasImage = cell.imageView !=nil;
+        
         while ([progress.subviews lastObject] != nil) {
             [(UIView *)[progress.subviews lastObject] removeFromSuperview];
         }
+        if (error) {
+            self.hasImage = YES;
+        }
+        
     }];
+    
     cell.itemViewFullBlock = ^(){
         [self fullViewMethod];
     };
@@ -165,8 +214,7 @@ static NSString *Identifier = @"GDCheckPictureViewController";
 //
 //    }];
 //
-//    BOOL flag =  +1;
-//    
+//
 //    NSLog(@" %d",flag);
 }
 

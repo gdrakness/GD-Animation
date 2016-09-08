@@ -91,7 +91,7 @@ static NSString *Identifier = @"GDFavritesViewController";
        GDFavoritesDataMoel *dataMoel = [GDFavoritesDataMoel mj_objectWithKeyValues:response];
        [self.data addObjectsFromArray:dataMoel.data];
 //       NSLog(@"%@",dataMoel.data);
-//       [self prepareUI];
+       [self prepareUI];
 
    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
        
@@ -134,7 +134,7 @@ static NSString *Identifier = @"GDFavritesViewController";
     _pageFlowView.dataSource = self;
     _pageFlowView.minimumPageAlpha = 0.4;
     _pageFlowView.minimumPageScale = 0.85;
-    _pageFlowView.orginPageCount = self.data.count;
+    _pageFlowView.orginPageCount = self.data.count == 0? 3:self.data.count;
 
     _pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0, _pageFlowView.height - 20, self.view.width, 8)];
     _pageControl.currentPageIndicatorTintColor = blueColor;
