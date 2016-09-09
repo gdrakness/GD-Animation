@@ -274,5 +274,55 @@
         self.error(error);
     }];
 }
+
+/***********************Duoji************************/
+
+-(void)getFindDuojiAtlasRequestWithURL:(NSString *)url
+                                parame:(NSDictionary *)parame
+                               success:(void(^)(GDDoujiAtlasDataModel *dataModel))success
+                                 error:(void(^)(NSError *error))error{
+    self.success = success;
+    self.error = error;
+    [LORequestManger GET:DoujiURL parame:parame success:^(id response) {
+        
+        [GDDoujiAtlasDataModel mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"data":@"GDDoujiAtlasRequestData"
+                     };
+        }];
+        GDDoujiAtlasDataModel *dataModel = [GDDoujiAtlasDataModel mj_objectWithKeyValues:response];
+        self.success(dataModel);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        self.error(error);
+    }];
+}
+
+
+/***********************DoujiDetails************************/
+
+-(void)getFindDoujiDetailsRequestWithURL:(NSString *)url
+                                  parame:(NSDictionary *)parame
+                                 success:(void(^)(GDDoujiDetailsDataModel *dataModel))success error:(void(^)(NSError *error))error{
+    self.success = success;
+    self.error = error;
+    
+    [LORequestManger GET:url parame:parame success:^(id response) {
+        
+        [GDDoujiDetailsDataModel mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"data":@"GDDoujiDetailsRequestData"
+                     };
+        }];
+        GDDoujiDetailsDataModel *dataModel = [GDDoujiDetailsDataModel mj_objectWithKeyValues:response];
+        self.success(dataModel);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        self.error(error);
+    }];
+   
+}
     
 @end

@@ -41,8 +41,14 @@
 //排行榜详情
 #define DetailsPictureURL @"http://api.moeju.cn/picture/imageList?"
 
+//排行榜图片图集
 #define PictureURL @"http://api.moeju.cn/picture/special?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b"
 
+//同人图集
+#define DoujiURL @"http://api.moeju.cn/picture/theme?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b&os=iOS&v=2.1.0"
+
+//同人图集详情
+#define DoujiDetailsURL @"http://api.moeju.cn/picture/themePicture?ak=&channel=AppStore&dk=a0e3fd2d4d860ff7fe4711e5e1319d4e714c055b"
 
 
 @end

@@ -18,6 +18,8 @@
 #import "GDSearchDataModel.h"
 #import "GDFavoritesDataMoel.h"
 #import "GDLeaderBoardDataModel.h"
+#import "GDDoujiAtlasDataModel.h"
+#import "GDDoujiDetailsDataModel.h"
 
 @interface GDHomeManager : NSObject
 
@@ -67,4 +69,13 @@
                                 parame:(NSDictionary *)parame
                                success:(void(^)(GDLeaderBoardDataModel *dataModel))success
                                  error:(void(^)(NSError *error))error;
+//同人图集
+-(void)getFindDuojiAtlasRequestWithURL:(NSString *)url
+                                parame:(NSDictionary *)parame
+                               success:(void(^)(GDDoujiAtlasDataModel *dataModel))success
+                                 error:(void(^)(NSError *error))error;
+//同人图集详情
+-(void)getFindDoujiDetailsRequestWithURL:(NSString *)url
+                                  parame:(NSDictionary *)parame
+                                 success:(void(^)(GDDoujiDetailsDataModel *dataModel))success error:(void(^)(NSError *error))error;
 @end

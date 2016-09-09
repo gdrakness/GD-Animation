@@ -58,11 +58,14 @@
 		D71D98C01D449F6B000DFED3 /* GDTableViewSaturdayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D98BF1D449F6B000DFED3 /* GDTableViewSaturdayCell.m */; };
 		D71D98C31D449F77000DFED3 /* GDTableViewSundayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D98C21D449F77000DFED3 /* GDTableViewSundayCell.m */; };
 		D71D98C61D45B961000DFED3 /* GDInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D98C51D45B961000DFED3 /* GDInformationController.m */; };
+		D72A6E4D1D828DBB00151638 /* GDDoujiDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D72A6E4C1D828DBB00151638 /* GDDoujiDetailsViewController.m */; };
+		D72A6E501D829E5D00151638 /* GDGDDoujiDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D72A6E4F1D829E5D00151638 /* GDGDDoujiDetailsTableViewCell.m */; };
 		D72D2AD51D31763E00940A53 /* GDTableViewMondayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D72D2AD41D31763E00940A53 /* GDTableViewMondayCell.m */; };
 		D72D2ADB1D33497900940A53 /* GDTimeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D72D2ADA1D33497900940A53 /* GDTimeCollectionViewCell.m */; };
 		D72FDB451D48A1A500612295 /* GDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D72FDB441D48A1A500612295 /* GDWebViewController.m */; };
 		D72FDB481D49183B00612295 /* GDHTMLDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D72FDB471D49183B00612295 /* GDHTMLDataModel.m */; };
 		D730D7501D13088A00273EAA /* GDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D730D74F1D13088A00273EAA /* GDTabBarController.m */; };
+		D734270E1D8288EA00976ABB /* GDDoujiDetailsDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D734270D1D8288EA00976ABB /* GDDoujiDetailsDataModel.m */; };
 		D746495C1D645F73003302CD /* GDCustomShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649591D645F73003302CD /* GDCustomShareView.m */; };
 		D746495D1D645F73003302CD /* GDShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = D746495B1D645F73003302CD /* GDShareView.m */; };
 		D746496A1D65F1B0003302CD /* GDFavritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D74649691D65F1B0003302CD /* GDFavritesViewController.m */; };
@@ -175,6 +178,8 @@
 		D7C444A61D81B74000B83DB9 /* HUTransitionVerticalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C4449C1D81B74000B83DB9 /* HUTransitionVerticalLinesAnimator.m */; };
 		D7C444A71D81B74000B83DB9 /* UIViewController+Animator.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C4449E1D81B74000B83DB9 /* UIViewController+Animator.m */; };
 		D7C444A81D81B74000B83DB9 /* ZBFallenBricksAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C444A01D81B74000B83DB9 /* ZBFallenBricksAnimator.m */; };
+		D7C444AB1D81C2F000B83DB9 /* GDDoujiAtlasDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C444AA1D81C2F000B83DB9 /* GDDoujiAtlasDataModel.m */; };
+		D7C444AE1D81C90600B83DB9 /* GDDuojiAtlasCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C444AD1D81C90600B83DB9 /* GDDuojiAtlasCollectionViewCell.m */; };
 		D7C93D531D4650DA00AF96EE /* GDInformationCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C93D521D4650DA00AF96EE /* GDInformationCollectionCell.m */; };
 		D7C93D561D47A57300AF96EE /* GDInformatTableBigPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C93D551D47A57300AF96EE /* GDInformatTableBigPictureCell.m */; };
 		D7C93D591D47A59800AF96EE /* GDInformatTablePictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C93D581D47A59800AF96EE /* GDInformatTablePictureCell.m */; };
@@ -358,6 +363,10 @@
 		D71D98C41D45B961000DFED3 /* GDInformationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformationController.h; sourceTree = "<group>"; };
 		D71D98C51D45B961000DFED3 /* GDInformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInformationController.m; sourceTree = "<group>"; };
 		D721750E4E15F54EC19FD3D4 /* Pods-GD超次元UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GD超次元UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GD超次元UITests/Pods-GD超次元UITests.release.xcconfig"; sourceTree = "<group>"; };
+		D72A6E4B1D828DBB00151638 /* GDDoujiDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDDoujiDetailsViewController.h; sourceTree = "<group>"; };
+		D72A6E4C1D828DBB00151638 /* GDDoujiDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDoujiDetailsViewController.m; sourceTree = "<group>"; };
+		D72A6E4E1D829E5D00151638 /* GDGDDoujiDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDGDDoujiDetailsTableViewCell.h; sourceTree = "<group>"; };
+		D72A6E4F1D829E5D00151638 /* GDGDDoujiDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDGDDoujiDetailsTableViewCell.m; sourceTree = "<group>"; };
 		D72D2AD31D31763E00940A53 /* GDTableViewMondayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTableViewMondayCell.h; sourceTree = "<group>"; };
 		D72D2AD41D31763E00940A53 /* GDTableViewMondayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTableViewMondayCell.m; sourceTree = "<group>"; };
 		D72D2AD91D33497900940A53 /* GDTimeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTimeCollectionViewCell.h; sourceTree = "<group>"; };
@@ -368,6 +377,8 @@
 		D72FDB471D49183B00612295 /* GDHTMLDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDHTMLDataModel.m; sourceTree = "<group>"; };
 		D730D74E1D13088A00273EAA /* GDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTabBarController.h; sourceTree = "<group>"; };
 		D730D74F1D13088A00273EAA /* GDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTabBarController.m; sourceTree = "<group>"; };
+		D734270C1D8288EA00976ABB /* GDDoujiDetailsDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDDoujiDetailsDataModel.h; sourceTree = "<group>"; };
+		D734270D1D8288EA00976ABB /* GDDoujiDetailsDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDoujiDetailsDataModel.m; sourceTree = "<group>"; };
 		D74649581D645F73003302CD /* GDCustomShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDCustomShareView.h; sourceTree = "<group>"; };
 		D74649591D645F73003302CD /* GDCustomShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDCustomShareView.m; sourceTree = "<group>"; };
 		D746495A1D645F73003302CD /* GDShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDShareView.h; sourceTree = "<group>"; };
@@ -549,6 +560,10 @@
 		D7C4449E1D81B74000B83DB9 /* UIViewController+Animator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Animator.m"; sourceTree = "<group>"; };
 		D7C4449F1D81B74000B83DB9 /* ZBFallenBricksAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBFallenBricksAnimator.h; sourceTree = "<group>"; };
 		D7C444A01D81B74000B83DB9 /* ZBFallenBricksAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBFallenBricksAnimator.m; sourceTree = "<group>"; };
+		D7C444A91D81C2F000B83DB9 /* GDDoujiAtlasDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDDoujiAtlasDataModel.h; sourceTree = "<group>"; };
+		D7C444AA1D81C2F000B83DB9 /* GDDoujiAtlasDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDoujiAtlasDataModel.m; sourceTree = "<group>"; };
+		D7C444AC1D81C90600B83DB9 /* GDDuojiAtlasCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDDuojiAtlasCollectionViewCell.h; sourceTree = "<group>"; };
+		D7C444AD1D81C90600B83DB9 /* GDDuojiAtlasCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDuojiAtlasCollectionViewCell.m; sourceTree = "<group>"; };
 		D7C93D511D4650DA00AF96EE /* GDInformationCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformationCollectionCell.h; sourceTree = "<group>"; };
 		D7C93D521D4650DA00AF96EE /* GDInformationCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInformationCollectionCell.m; sourceTree = "<group>"; };
 		D7C93D541D47A57300AF96EE /* GDInformatTableBigPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInformatTableBigPictureCell.h; sourceTree = "<group>"; };
@@ -986,6 +1001,8 @@
 			children = (
 				D71656C61CCFC952003CE4B8 /* GDGroupViewController.h */,
 				D71656C71CCFC952003CE4B8 /* GDGroupViewController.m */,
+				D72A6E4B1D828DBB00151638 /* GDDoujiDetailsViewController.h */,
+				D72A6E4C1D828DBB00151638 /* GDDoujiDetailsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -993,6 +1010,10 @@
 		D71656851CCE8F85003CE4B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D7C444A91D81C2F000B83DB9 /* GDDoujiAtlasDataModel.h */,
+				D7C444AA1D81C2F000B83DB9 /* GDDoujiAtlasDataModel.m */,
+				D734270C1D8288EA00976ABB /* GDDoujiDetailsDataModel.h */,
+				D734270D1D8288EA00976ABB /* GDDoujiDetailsDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1000,6 +1021,10 @@
 		D71656861CCE8F85003CE4B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D7C444AC1D81C90600B83DB9 /* GDDuojiAtlasCollectionViewCell.h */,
+				D7C444AD1D81C90600B83DB9 /* GDDuojiAtlasCollectionViewCell.m */,
+				D72A6E4E1D829E5D00151638 /* GDGDDoujiDetailsTableViewCell.h */,
+				D72A6E4F1D829E5D00151638 /* GDGDDoujiDetailsTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2206,6 +2231,7 @@
 				D716569C1CCE918E003CE4B8 /* GDMainViewController.m in Sources */,
 				D7C444471D81396E00B83DB9 /* UITableViewCell+Extend.m in Sources */,
 				D7C444601D813B8D00B83DB9 /* LFRoundProgressView.m in Sources */,
+				D72A6E4D1D828DBB00151638 /* GDDoujiDetailsViewController.m in Sources */,
 				D746495C1D645F73003302CD /* GDCustomShareView.m in Sources */,
 				D72FDB481D49183B00612295 /* GDHTMLDataModel.m in Sources */,
 				D7C444A71D81B74000B83DB9 /* UIViewController+Animator.m in Sources */,
@@ -2222,6 +2248,7 @@
 				D797B30B1D19B03A00209739 /* GDDetailsViewController.m in Sources */,
 				D7D9840C1D18E7340027FAF6 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				D71D7F961D4C8DC100A0FF5E /* GDWKWebViewController.m in Sources */,
+				D72A6E501D829E5D00151638 /* GDGDDoujiDetailsTableViewCell.m in Sources */,
 				D71825FD1D22C397001AE243 /* GDInformationRequstDataModel.m in Sources */,
 				D7D912F91D5798BE00CC2950 /* CEReversibleAnimationController.m in Sources */,
 				D7D912FC1D5798BE00CC2950 /* CEHorizontalSwipeInteractionController.m in Sources */,
@@ -2231,6 +2258,7 @@
 				D7C4446F1D81A06300B83DB9 /* CoreArchive.m in Sources */,
 				D7D1877A1D60CAE70084CA2F /* GDMoreTableViewController.m in Sources */,
 				D7C444A51D81B74000B83DB9 /* HUTransitionHorizontalLinesAnimator.m in Sources */,
+				D7C444AB1D81C2F000B83DB9 /* GDDoujiAtlasDataModel.m in Sources */,
 				D7D984041D18E7340027FAF6 /* AFHTTPSessionManager.m in Sources */,
 				D7D9840B1D18E7340027FAF6 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				D7D912FD1D5798BE00CC2950 /* CEPinchInteractionController.m in Sources */,
@@ -2239,6 +2267,7 @@
 				D7C4443D1D81396E00B83DB9 /* NSString+Extend.m in Sources */,
 				D7D912F41D5798BE00CC2950 /* CEFlipAnimationController.m in Sources */,
 				D7D913031D58BC0100CC2950 /* Foundation+Log.m in Sources */,
+				D734270E1D8288EA00976ABB /* GDDoujiDetailsDataModel.m in Sources */,
 				D7C444431D81396E00B83DB9 /* UIImage+Cut.m in Sources */,
 				D7C444571D813A3900B83DB9 /* SVIndefiniteAnimatedView.m in Sources */,
 				D7D9840D1D18E7340027FAF6 /* UIAlertView+AFNetworking.m in Sources */,
@@ -2268,6 +2297,7 @@
 				D74649721D65F255003302CD /* PGIndexBannerSubiew.m in Sources */,
 				D7C4443B1D81396E00B83DB9 /* NSDate+Extend.m in Sources */,
 				D7D912F81D5798BE00CC2950 /* CEPortalAnimationController.m in Sources */,
+				D7C444AE1D81C90600B83DB9 /* GDDuojiAtlasCollectionViewCell.m in Sources */,
 				D7D984071D18E7340027FAF6 /* AFURLConnectionOperation.m in Sources */,
 				D7D984091D18E7340027FAF6 /* AFURLResponseSerialization.m in Sources */,
 				D76F87A41D7561CF00FC6142 /* GDPictureCollectionViewCell.m in Sources */,
