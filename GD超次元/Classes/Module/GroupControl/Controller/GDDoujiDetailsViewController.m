@@ -43,7 +43,7 @@ static NSString *Identifier = @"GDDoujiDetailsViewController";
         
         [self.data addObjectsFromArray:dataModel.data];
         [self.tableView reloadData];
-        NSLog(@"%@",dataModel);
+//        NSLog(@"%@",dataModel);
         
     } error:^(NSError *error) {
         
@@ -56,6 +56,7 @@ static NSString *Identifier = @"GDDoujiDetailsViewController";
     [_tableView setDataSource:self];
     [_tableView setDelegate:self];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    _tableView.contentInset = UIEdgeInsetsMake(7, 0, 0, 0);
     [_tableView registerClass:[GDGDDoujiDetailsTableViewCell class] forCellReuseIdentifier:Identifier];
     [self.view addSubview:_tableView];
 }
@@ -70,12 +71,48 @@ static NSString *Identifier = @"GDDoujiDetailsViewController";
     return(self.data.count);
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return[GDGDDoujiDetailsTableViewCell getHeight];
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     GDGDDoujiDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
-    cell.backgroundColor = blueColor;
+    [cell setModel:self.data[indexPath.item]];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.backgroundColor = blueColor;
     return  cell;
 }
+
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    CATransform3D rotation;//3D旋转
+    
+    rotation = CATransform3DMakeTranslation(0 ,50 ,20);
+    //        rotation = CATransform3DMakeRotation( M_PI_4 , 0.0, 0.7, 0.4);
+    //逆时针旋转
+    
+    rotation = CATransform3DScale(rotation, 0.9, .9, 1);
+    
+    rotation.m34 = 1.0/ -600;
+    
+    cell.layer.shadowColor = [[UIColor blackColor]CGColor];
+    cell.layer.shadowOffset = CGSizeMake(10, 10);
+    cell.alpha = 0;
+    
+    cell.layer.transform = rotation;
+    
+    [UIView beginAnimations:@"rotation" context:NULL];
+    //旋转时间
+    [UIView setAnimationDuration:0.6];
+    cell.layer.transform = CATransform3DIdentity;
+    cell.alpha = 1;
+    cell.layer.shadowOffset = CGSizeMake(0, 0);
+    [UIView commitAnimations];
+}
+
 
 -(NSMutableArray<GDDoujiDetailsRequestData *> *)data{
     if (_data != nil) {

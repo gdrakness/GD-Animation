@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GDDoujiDetailsDataModel.h"
 
 @interface GDGDDoujiDetailsTableViewCell : UITableViewCell
+@property(nonatomic,strong)UIImageView *pictureView;
+@property(nonatomic,strong)UILabel *titleLab;
 
+-(void)setModel:(GDDoujiDetailsRequestData *)model;
+
++(CGFloat)getHeight;
 @end

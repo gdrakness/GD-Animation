@@ -125,7 +125,9 @@ static NSString *Identifier = @"GDGroupViewController";
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    [LORequestManger GET:textURL parame:nil success:^(id response) {
+    //    NSDictionary *parame = @{@"id":@"16475"};
+
+    [LORequestManger GET:DetailsPictureURL parame:nil success:^(id response) {
         
         NSLog(@"%@",response);
         
@@ -134,7 +136,6 @@ static NSString *Identifier = @"GDGroupViewController";
     }];
 
 //    NSDictionary *parameters = @{@"location":@"珠海",@"output":@"json",@"ak":BDWeather_KEY};
-//    NSDictionary *parame = @{@"id":@"15725"};
 
 
 //    [[GDNetWorkManager shareManager]requestWithGET:URL paramaeters:nil success:^(id responseObjcet) {
