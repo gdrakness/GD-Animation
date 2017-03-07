@@ -244,7 +244,7 @@ static NSString *identifier = @"GDInformationCollectionCell";
     if (indexPath.row % 8 == 0) {
        return [GDInformatTableBigPictureCell getCellHeight];
     }else if (indexPath.row % 4 == 0){
-        return  100;
+        return  140;
     }else {
         return 87;
     }

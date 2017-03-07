@@ -160,7 +160,7 @@ static NSString *Identifier = @"Identifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
     
 //    DataModel *model = self.posts[indexPath.row];
-//    
+//
 //    cell.model = model;
     
     return  cell;

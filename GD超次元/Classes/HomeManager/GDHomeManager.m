@@ -10,8 +10,6 @@
 
 #import "GDHomeManager.h"
 
-
-
 #import "LORequestManger.h"
 @interface GDHomeManager ()
 
@@ -122,6 +120,7 @@
         }];
         GDCompositorDataModel *dataModel = [GDCompositorDataModel mj_objectWithKeyValues:response];
         self.success(dataModel);
+        NSLog(@"%@",dataModel);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         self.error(error);

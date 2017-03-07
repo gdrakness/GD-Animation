@@ -247,6 +247,8 @@
 
 -(void)setModel:(GDCompositorPostsModel *)model{
     
+    NSLog(@"---%@",model.sort);
+    
     if ([model.sort isEqualToString:@"1"]) {
         [_firstView sd_setImageWithURL:[NSURL URLWithString:model.img]];
         [_title setText:model.title];
